@@ -112,7 +112,7 @@ The ruleset changes **what the player may do around the unlock**, not which card
 
 Ruleset caveats compose: the ruleset's own `caveats` are attached to every resolution, then any `rulesetCaveats.<ruleset>` on the matched rule or override are merged on top. Nothing else in the pipeline branches on ruleset. If a future ruling needs the unlock *set* to differ by ruleset, that is a spec change, not a data change - see section 13.
 
-**`extreme` is currently defined from the osrscardexchange framing only** (gather-then-bank vs cannot-interact-with-source). The Reddit extreme-cardlocked-ironman thread is not fetchable by tooling and has not been read. Until it is, `extreme` ships at `contested` confidence. See DEC-0004.
+**`extreme` is defined from the osrscardexchange framing only** (gather-then-bank vs cannot-interact-with-source), a deliberate choice rather than a placeholder pending a further source - see DEC-0004/DEC-0034. It ships at `contested` confidence as one community reading among several, not as a stand-in for an unread source.
 
 ---
 
@@ -170,15 +170,13 @@ Actions come from the family's `actions`, overridden per member where the member
 
 **Semantics:** unlocks every member of the set. Unordered, so `excluded` is empty. Covers outfits, wilderness rings, and tierless items that unlock sideways.
 
-### 6.6 `npc-hierarchy`
+### 6.6 `npc-hierarchy` (superseded, see DEC-0032)
 
-**Input:** deferred to Phase 7.
+**Input:** none. This strategy is not needed.
 
-The strategy slot exists and the resolution order reserves its position. The only source, TheSeahorsie's page, gives a resolution order (`Pets -> Boss -> Superior -> Normal npc`) and states that NPCs with variants unlock horizontally, but does not state what a foil at a given rank actually grants. That is not enough to specify an unlock, so nothing is specified.
+DEC-0032 settled the shape: the `Pets -> Boss -> Superior -> Normal npc` order from TheSeahorsie's page is a resolution-order ranking only, not an unlock ladder - a foil at one rank does not unlock ranks below it. Each rank unlocks only itself plus its own horizontal recolour siblings (a superior variant is excluded from its base NPC's recolour set). That is a flat, unordered set - exactly the existing `group` strategy (6.5) - scoped per rank, so no cross-rank strategy code is required.
 
-**Until Phase 7 this strategy never matches, and Monster cards resolve `unresolved`.** NPC variant groups can be recorded factually now as `kind: "set"` families; that data is inert without a rule.
-
-This is the one known boundary where a future ruling will need engine work as well as data. It is declared rather than faked.
+**Monster cards still resolve `unresolved` today** because the ~1,227 monster cards and their per-rank recolour/family groupings have not been entered into `families.json` yet. That is a data-entry task, not an open ruling - once entered as `kind: "set"` families with a `group` rule per rank, they resolve like any other group.
 
 ### 6.7 `unresolved`
 
@@ -199,9 +197,8 @@ resolve(cardName, ruleset) -> Resolution
 3. `state-pair`
 4. `ladder-down`
 5. `components`
-6. `group`
-7. `npc-hierarchy` (never matches before Phase 7)
-8. `unresolved`
+6. `group` (also covers NPC recolour sets per rank, once entered - see 6.6/DEC-0032)
+7. `unresolved`
 
 Then, whatever resolved: apply every `mode: "annotate"` override for this card, merge the ruleset caveats, and derive the product boundary caveat.
 
@@ -468,8 +465,7 @@ No engine change. No new module. No test that needs rewriting beyond adding the 
 
 ## 14. Open items
 
-- The Reddit extreme-cardlocked-ironman thread has still not been read; `extreme` is defined from the osrscardexchange framing alone and capped at `contested`. DEC-0004.
-- Cosmetic tiers - Gilded, `(t)`/`(g)`, White - deferred to Phase 7. DEC-0003.
-- Whether a foil trimmed variant unlocks the trimmed variants of lower tiers. Undecided, and downstream of the cosmetic question.
-- The NPC hierarchy data model. Section 6.6, Phase 7.
+- Cosmetic tiers - Gilded, `(t)`/`(g)`, White - deferred to Phase 7. DEC-0003. Trimmed/gilded ladder shape now resolved regardless, DEC-0030.
+- The NPC hierarchy data model: shape resolved (DEC-0032, flat `group` per rank), but the ~1,227 monster cards and their recolour/rank groupings still need entering into `families.json`. Data-entry task, not an open ruling.
 - Whether the ruleset toggle persists in `localStorage`. UI concern, Phase 4/5.
+- Code cleanup: `npc-hierarchy` strategy slot in `types.ts` and this spec (6.6, resolution order) is now dead per DEC-0032 and can be removed in a follow-up.

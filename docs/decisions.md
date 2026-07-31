@@ -91,7 +91,7 @@ Rejected: adopting siblings on the grounds that stats are what matter. Defensibl
 
 ### DEC-0004 - `extreme` defined from the osrscardexchange framing only
 
-**Status:** Active
+**Status:** Superseded by DEC-0034
 **Date:** 2026-07-30
 
 **Ruling.** The `extreme` ruleset is defined as: the unlock set is unchanged, but any interaction with a locked source is forbidden, so acquisition verbs on not-yet-unlocked cards are unavailable and the player cannot gather-then-bank ahead of the unlock. `standard` permits gather-then-bank.
@@ -436,3 +436,156 @@ Reporting them anyway produced a screen that contradicted itself: foil Zenyte dr
 The precedence of `state-pair` over `ladder-down` (DEC-0001) is untouched. Raw trout still stops a fish ladder if one is ever given a rule, and the excluded list still fills in that case. What changed is only which ladders count as stopped.
 
 **Source.** Rhys, this session (2026-07-31): "this logic shouldnt even be touching them, it should just be state pair for all gems, cut or uncut", and the same for herbs.
+
+---
+
+### DEC-0027 - Godswords unlock the godsword, its hilt, all shards, and the blade, as components
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** A foil godsword (Bandos, Armadyl, Saradomin or Zamorak) unlocks the godsword itself, its own hilt, all three godsword shards, and the assembled Godsword blade. A foil of a shard or the blade alone does not unlock the godsword back - see DEC-0028 for what a foil hilt alone does, which is a different answer.
+
+Modelled as a `components` family per god (`bandos-godsword`, `armadyl-godsword`, `saradomin-godsword`, `zamorak-godsword`), replacing the previous `bandos-hilt-group` `set` family, which existed for Bandos only and left the other three gods with no rule at all. The `hilt-group` rule and tag are retired; a new `godsword-components` rule selects the four families via a shared `godsword` tag through the existing `components` strategy.
+
+**Rationale.** The three shards (and the blade assembled from them) are the same physical items across all four gods - shard 1 is not a Bandos shard or an Armadyl shard, it is a shard. Modelling each god as a `group` (`set`) family containing the shards, as the old Bandos-only entry did, works only in isolation: once a second god-family also lists the same shard cards as members, `matchFamily`'s tag-based lookup returns whichever candidate family sorts first alphabetically, not the one the player actually foiled toward. `components` sidesteps this by design - rules-spec 6.4 fires it only when the searched card is the *whole*, so a foil shard or blade never resolves through this rule at all, and the four-way collision never happens. What a bare foil shard or blade unlocks by itself is not decided by this ruling and falls to `unresolved`.
+
+Ancient godsword and Ancient hilt are excluded here. Whether they follow the same shard-combination mechanic as the four GWD generals is uncertain and not investigated as part of this ruling.
+
+**Source.** Rhys, this session (2026-07-31): "Godswords unlock the godsword, respective hilt and all shards", clarified to include the assembled Godsword blade card alongside the shards.
+
+---
+
+### DEC-0028 - A foil godsword hilt unlocks only itself and the godsword
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** A foil godsword hilt (Bandos, Armadyl, Saradomin or Zamorak) unlocks itself and the completed godsword only - not the shards, not the Godsword blade. This is narrower than what a foil of the completed godsword grants (DEC-0027): the relationship is not symmetric.
+
+Modelled as a second `components` family per god (`bandos-hilt-godsword`, `armadyl-hilt-godsword`, `saradomin-hilt-godsword`, `zamorak-hilt-godsword`), each with the hilt as `whole` and the godsword as its only `part`. A new `godsword-hilt-components` rule selects these via a `godsword-hilt` tag. The hilt is the `whole` of this family and a `part` of its god's `godsword` family from DEC-0027 at the same time; `matchFamily` filters composite candidates to where the searched card equals that family's `whole`, so the two families do not collide - foiling the hilt matches only the hilt-family, foiling the godsword matches only the godsword-family.
+
+**Rationale.** Rhys's phrasing was explicit and asymmetric: "a foil godsword hilt unlocks the hilt and godsword, not the blades" against "a foil godsword would unlock the godsword, hilt and blades" - two different unlock sets depending on which card is foiled, not one mutual set. This is a deliberate departure from the symmetric shape every other `components` family in this dataset has used so far (Barronite mace, DEC-0016) and is worth naming as its own decision rather than folding into DEC-0027, since a future session reading DEC-0027 alone would otherwise reasonably assume the hilt granted everything the godsword does.
+
+A foil shard or foil Godsword blade alone is still not decided and still resolves `unresolved`.
+
+**Source.** Rhys, this session (2026-07-31): "I would say a foil godsword hilt unlocks the hilt and godsword, not the blades. A foil godsword would unlock the godsword, hilt and blades." "Blades" confirmed to mean both the three shards and the separate Godsword blade card.
+
+---
+
+### DEC-0029 - Enchanted jewellery unlocks itself, its unenchanted base, and every charge tier
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** A foil enchanted jewellery item (e.g. Amulet of glory, Ring of wealth) unlocks: itself, the unenchanted base item it was made from (e.g. Sapphire amulet), and every charge variant of that same enchanted item (uncharged through to its highest charge count). It does not descend the wider gem-tier ladder (DEC-0011) - enchantment breaks that ladder.
+
+No cards of this shape exist in the current plugin dataset yet, so this rule is not yet instantiated in `data/rules.json`. It is recorded now so the shape is settled before such cards are added.
+
+**Rationale.** Enchanted jewellery is a distinct item line from its unenchanted base once enchanted, but charge count is cosmetic to what the item unlocks, not a separate tier - all charges of the same enchanted item are the same card family. Unlike unenchanted jewellery, enchantment does not chain to other gems' enchanted versions.
+
+**Source.** Rhys, this session (2026-07-31): "Itself, unenchanted base and all charged values, i.e. 1 charge, 2 charges etc."
+
+---
+
+### DEC-0030 - Trimmed and gilded armour form their own descending sets, separate from the plain ladder
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** A foil trimmed (t) armour piece unlocks the trimmed set - that piece and every trimmed tier below it - not the plain ladder. A foil gilded (g) piece unlocks the gilded set the same way. Trimmed and gilded each form their own independent descending ladder, mirroring the plain armour-ladder-down shape (DEC-0007 / `armour-ladder-down`) but not chaining into it or into each other.
+
+No (t) or (g) cards exist in the current plugin dataset, so this rule is not yet instantiated in `data/rules.json`. Recorded now so the shape is settled before such cards are added.
+
+**Rationale.** Supersedes the "moot and unanswered" framing this question had under DEC-0003/`trimmed-variants`. Trim and gild are their own progression, not a plain-armour with a coat of paint, so they get their own ladder rather than inheriting or feeding the plain one - consistent with how Cosmetic tiers (White/Gilded, DEC-0006) were already treated as their own rungs.
+
+**Source.** Rhys, this session (2026-07-31): "trimmed and gilded items unlock their respective set."
+
+---
+
+### DEC-0031 - A foil boss unique, on its own, unlocks the same boss group as foiling the boss
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Foiling one of a boss's unique drops unlocks the same `boss-group` as foiling the boss card itself - the relationship is symmetric, matching DEC-0022. This was already the engine's behaviour (the `group` strategy matches on family membership, not on which member card was foiled) since uniques are listed as members of the `boss-group`-tagged family alongside the boss; this entry confirms it's the intended ruling rather than an accident of the implementation.
+
+**Rationale.** Resolves the question left open at DEC-0022. Bosses and their uniques are a single named set either way you enter it, consistent with how every other `group` family in this dataset behaves (community sets, DEC-0013; Camdozaal lockboxes, DEC-0014).
+
+**Source.** Rhys, this session (2026-07-31): "Unlocks the whole boss group."
+
+---
+
+### DEC-0032 - NPC hierarchy ranks do not cascade; each rank unlocks only itself and its recolour set
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** The Pet -> Boss -> Superior -> Normal npc order from TheSeahorsie's page is a resolution-order ranking, not an unlock ladder. Foiling an NPC at a given rank does **not** unlock the ranks below it - a foil pet does not unlock its boss, a foil boss does not unlock its superior or normal forms, and so on. Each rank unlocks only itself plus its horizontal recolour siblings at that same rank (e.g. foiling one Elemental wizard colour unlocks the other Elemental wizard colours, all still Normal-rank; it does not touch the superior variant).
+
+Horizontal recolour sets are a flat `group` (unordered, symmetric) - foiling any one recolour unlocks every recolour in that set, same mechanics as DEC-0013/DEC-0022. Per the source, a recolour set does not include that NPC's superior variant; the superior sits in its own recolour set (if it has one) at its own rank.
+
+**Engine implication.** This removes the need for a distinct `npc-hierarchy` strategy with cross-rank logic. Recolour sets can be modelled as ordinary `kind: "set"` / `group`-strategy families, scoped per rank - a `normal-wizard-colours` set is independent of a `superior-wizard-colours` set for the same base NPC, and neither reaches the boss. The `npc-hierarchy` strategy slot in `rules-spec.md` 6.6 and the resolution order (7.7) can be dropped once this lands, in favour of routing recolour sets through the existing `group` step. Boss + uniques (DEC-0022/DEC-0031) already follow this same flat-group shape and don't need to change.
+
+This ruling settles the *shape*; it does not populate the ~1,227 monster cards or their recolour/rank groupings into `data/families.json` - that data-entry work is still outstanding and tracked separately.
+
+**Rationale.** A cascading ladder across pet/boss/superior/normal would mean a foil pet (the rarest, hardest-to-get form) unlocks everything, which does not match how the community actually plays it and was never claimed by the source - the source only ever states an order, not a grant. Treating each rank as its own flat group is the narrower, more defensible reading and reuses machinery the engine already has, rather than adding new cross-rank strategy code for a claim the source doesn't make.
+
+**Source.** Rhys, this session (2026-07-31): "Each rank unlocks only itself (+ recolours)"; "Yes, flat group" for horizontal recolour unlocks. TheSeahorsie's page confirms the rank order and the horizontal-unlock/superior-exclusion wording (fetched 2026-07-31): "Pets -> Boss -> Superior -> Normal npc"; "Npc's unlock horizontally if they have any"; horizontal unlock does not apply "if you obtained the superior variant instead."
+
+---
+
+### DEC-0033 - DEC-0029 implemented: enchanted jewellery mapped to unenchanted bases
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Corrects an aside in DEC-0029, which assumed no enchanted-jewellery cards existed yet - they do. 27 `components` families were added (tag `enchanted-jewellery`, one rule `enchanted-jewellery-components` selecting all of them), each mapping an enchanted item to the unenchanted gem item it is created from via the standard Enchant spells:
+
+| Gem | Ring | Necklace | Amulet | Bracelet |
+|---|---|---|---|---|
+| Sapphire | Ring of recoil | Games necklace | Amulet of magic | Bracelet of clay |
+| Emerald | Ring of dueling | Binding necklace | Amulet of defence | Castle wars bracelet |
+| Ruby | Ring of forging | Digsite pendant | Amulet of strength | Inoculation bracelet |
+| Diamond | Ring of life | Phoenix necklace | Amulet of power | Abyssal bracelet |
+| Dragonstone | Ring of wealth | Skills necklace (base: Dragon necklace) | Amulet of Glory | Combat bracelet |
+| Onyx | *(excluded, see below)* | Berserker necklace | Amulet of fury | Regen bracelet |
+| Zenyte | Ring of suffering | Necklace of anguish | Amulet of torture | Tormented bracelet |
+
+**Exception.** Ring of stone (from Onyx ring, per Lvl-6 Enchant) is excluded. Onyx ring is not present in the plugin's card dataset, so no `parts` entry can reference it - the schema requires every referenced card to exist in `cards.json`. Ring of stone therefore has no rule yet and resolves `unresolved` until this is revisited.
+
+The charge-tier half of DEC-0029's ruling (foiling one charge count unlocks all others of the same enchanted item) is not encoded in data: none of these items have separate per-charge cards in the current dataset (e.g. no "Amulet of glory (1)"), so it stays moot in practice, same as the trimmed-variant situation before DEC-0030.
+
+**Rationale.** One `components` family per enchanted item, selected by a shared `enchanted-jewellery` tag, mirrors the godsword pattern (DEC-0027) rather than writing 27 near-identical rule entries.
+
+**Source.** OSRS Wiki, fetched 2026-07-31: [Amulet of glory](https://oldschool.runescape.wiki/w/Amulet_of_glory) ("The amulet of glory is a dragonstone amulet that has been enchanted... the Lvl-5 Enchant spell"); [Lvl-1 Enchant](https://oldschool.runescape.wiki/w/Lvl-1_Enchant), [Lvl-2 Enchant](https://oldschool.runescape.wiki/w/Lvl-2_Enchant), [Lvl-3 Enchant](https://oldschool.runescape.wiki/w/Lvl-3_Enchant), [Lvl-4 Enchant](https://oldschool.runescape.wiki/w/Lvl-4_Enchant), [Lvl-5 Enchant](https://oldschool.runescape.wiki/w/Lvl-5_Enchant), [Lvl-6 Enchant](https://oldschool.runescape.wiki/w/Lvl-6_Enchant), [Lvl-7 Enchant](https://oldschool.runescape.wiki/w/Lvl-7_Enchant) (List of items tables, base -> enchanted result per gem).
+
+---
+
+### DEC-0034 - `extreme`'s definition drops the unread Reddit thread; osrscardexchange stands alone as its source
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Supersedes DEC-0004's rationale, not its ruling - the `extreme` ruleset definition itself is unchanged (unlock set same as `standard`; any interaction with a locked source is forbidden; `confidence: "contested"`). What changes is the citation: the Reddit extreme-cardlocked-ironman thread is dropped from the project entirely rather than carried as an unread "primary source, still needs reading" reference. [osrscardexchange - Foil cards: what people say](https://www.osrscardexchange.com/blog/foil-cards-what-people-say) is now the sole, sufficient source for this ruleset's definition.
+
+**Rationale.** The thread lives on reddit.com, which this project's tooling cannot fetch (blocked by policy, confirmed again this session across direct fetch, a raw JSON endpoint, and two Reddit-mirror sites) and which nobody has manually read since DEC-0004 was written. Carrying an unreadable citation and an open item that can never close on its own is worse than not citing it - it implies a verification path that doesn't exist. `extreme` stays `contested` on its own terms: it is one community reading among several (DEC-0004's `standard`/`extreme`/`plain-foil` three-way split), not because a second source is still pending.
+
+If someone reads the Reddit thread by hand in the future and it says something different, that is new information and gets its own decision entry - this entry closes the "still needs a manual read" loop, it does not pre-empt a future correction.
+
+**Source.** Rhys, this session (2026-07-31): "Ignore the reddit thread, remove it entirely from this project, we're not relying on it."
+
+---
+
+### DEC-0035 - A foil monster collection-log drop unlocks every unique for that monster
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Extends DEC-0022/DEC-0031's boss + uniques logic to every monster with a collection log, not bosses alone: a foil of any collection-log drop item unlocks every unique tied to that monster's log, as a flat symmetric `group` (foiling any one unique, or the monster itself if it has its own card, reaches every member of the same set). This does not fold ordinary/common drops (drops shared across many monsters, not log-gated) into this shape - only collection-log-tracked uniques count as members of a given monster's set.
+
+This settles the shape; it does not populate specific monster `boss-group`/collection-log `set` families beyond General Graardor (DEC-0022) - that data-entry work is tracked alongside the wider monster/NPC card population (see DEC-0032).
+
+**Rationale.** Generalises the one worked case (General Graardor) into a general principle rather than leaving every other monster's uniques to be ruled on individually later. Matches the existing `group` strategy exactly, so no new engine work is needed - only data entry, same as DEC-0032's recolour sets.
+
+**Source.** Rhys, this session (2026-07-31): "A foil of a monsters collection log unlocks all uniques for that monster."

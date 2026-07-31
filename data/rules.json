@@ -36,6 +36,11 @@
           "decision": "DEC-0004"
         },
         {
+          "kind": "decision",
+          "label": "Extreme's definition drops the unread Reddit thread; osrscardexchange stands alone as its source",
+          "decision": "DEC-0034"
+        },
+        {
           "kind": "community",
           "label": "osrscardexchange - Foil cards: what people say",
           "url": "https://www.osrscardexchange.com/blog/foil-cards-what-people-say",
@@ -324,20 +329,38 @@
       ]
     },
     {
-      "id": "hilt-group",
-      "strategy": "group",
+      "id": "godsword-components",
+      "strategy": "components",
       "applies": {
         "familyTags": [
-          "hilt-group"
+          "godsword"
         ]
       },
-      "explanation": "A foil hilt or one of its godsword shards unlocks the whole set. {card} is part of {family} - {count} in total.",
+      "explanation": "A foil godsword unlocks itself, its hilt, all three shards, and the assembled blade. {card} covers {count} cards in total. A foil hilt, shard, or blade alone does not unlock the godsword back - only the completed weapon triggers this.",
       "confidence": "sourced",
       "sources": [
         {
           "kind": "decision",
-          "label": "Hilts unlock godsword shards only, not armor",
-          "decision": "DEC-0023"
+          "label": "Godswords unlock the godsword, its hilt, all shards, and the blade, as components",
+          "decision": "DEC-0027"
+        }
+      ]
+    },
+    {
+      "id": "godsword-hilt-components",
+      "strategy": "components",
+      "applies": {
+        "familyTags": [
+          "godsword-hilt"
+        ]
+      },
+      "explanation": "A foil godsword hilt unlocks itself and the completed godsword, and nothing else - not the shards, not the blade. {card} covers {count} cards in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "A foil godsword hilt unlocks only itself and the godsword",
+          "decision": "DEC-0028"
         }
       ]
     },
@@ -464,6 +487,29 @@
           "kind": "decision",
           "label": "Tiered utility items descend like armour and weapons",
           "decision": "DEC-0024"
+        }
+      ]
+    },
+    {
+      "id": "enchanted-jewellery-components",
+      "strategy": "components",
+      "applies": {
+        "familyTags": [
+          "enchanted-jewellery"
+        ]
+      },
+      "explanation": "A foil enchanted jewellery item unlocks itself and the unenchanted item it was enchanted from. {card} covers {count} cards in total. It does not descend the wider gem-tier ladder - enchantment breaks that ladder.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Enchanted jewellery unlocks itself, its unenchanted base, and every charge tier",
+          "decision": "DEC-0029"
+        },
+        {
+          "kind": "decision",
+          "label": "DEC-0029 implemented: enchanted jewellery mapped to unenchanted bases",
+          "decision": "DEC-0033"
         }
       ]
     }
