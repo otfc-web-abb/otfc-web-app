@@ -311,20 +311,66 @@
       ]
     },
     {
-      "id": "boss-group",
-      "strategy": "group",
+      "id": "boss-components",
+      "strategy": "components",
       "applies": {
         "familyTags": [
-          "boss-group"
+          "boss"
         ]
       },
-      "explanation": "A foil boss or one of its uniques unlocks the whole set. {card} is part of {family} - {count} in total.",
+      "explanation": "A foil boss unlocks the boss and all of its unique drops. {card} covers {count} cards in total. A foil unique alone does not unlock the boss - see the boss's own unique set.",
       "confidence": "sourced",
       "sources": [
         {
           "kind": "decision",
           "label": "NPC hierarchy, first case: General Graardor's uniques",
           "decision": "DEC-0022"
+        },
+        {
+          "kind": "decision",
+          "label": "Correction: a foil boss unique does not unlock the boss, only its sibling uniques",
+          "decision": "DEC-0036"
+        }
+      ]
+    },
+    {
+      "id": "boss-uniques-group",
+      "strategy": "group",
+      "applies": {
+        "familyTags": [
+          "boss-uniques"
+        ]
+      },
+      "explanation": "A foil of one of this boss's unique drops unlocks the other unique drops from the same boss, not the boss itself. {card} is part of {family} - {count} in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "A foil monster collection-log drop unlocks every unique for that monster",
+          "decision": "DEC-0035"
+        },
+        {
+          "kind": "decision",
+          "label": "Correction: a foil boss unique does not unlock the boss, only its sibling uniques",
+          "decision": "DEC-0036"
+        }
+      ]
+    },
+    {
+      "id": "chromatic-dragon-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "familyTags": [
+          "chromatic-dragon-line"
+        ]
+      },
+      "explanation": "A foil chromatic dragon unlocks that dragon and every tier below. {card} covers {count} cards down to {lowest}. The {excludedCount} tiers above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Brutal, normal, and baby chromatic dragons form a descending ladder per colour",
+          "decision": "DEC-0037"
         }
       ]
     },
@@ -510,6 +556,31 @@
           "kind": "decision",
           "label": "DEC-0029 implemented: enchanted jewellery mapped to unenchanted bases",
           "decision": "DEC-0033"
+        }
+      ]
+    },
+    {
+      "id": "monster-recolour-group",
+      "strategy": "group",
+      "applies": {
+        "familyTags": [
+          "monster-recolour"
+        ]
+      },
+      "explanation": "This NPC has recolour siblings and they unlock horizontally. {card} is part of {family} - {count} in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "NPC hierarchy ranks do not cascade; each rank unlocks only itself and its recolour set",
+          "decision": "DEC-0032"
+        },
+        {
+          "kind": "wiki",
+          "label": "User:TheSeahorsie/TCG Foil Rules",
+          "url": "https://oldschool.runescape.wiki/w/User:TheSeahorsie/TCG_Foil_Rules",
+          "quote": "Npc's unlock horizontally if they have any",
+          "retrieved": "2026-07-30"
         }
       ]
     }

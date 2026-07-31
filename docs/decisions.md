@@ -505,7 +505,7 @@ No (t) or (g) cards exist in the current plugin dataset, so this rule is not yet
 
 ### DEC-0031 - A foil boss unique, on its own, unlocks the same boss group as foiling the boss
 
-**Status:** Active
+**Status:** Superseded by DEC-0036
 **Date:** 2026-07-31
 
 **Ruling.** Foiling one of a boss's unique drops unlocks the same `boss-group` as foiling the boss card itself - the relationship is symmetric, matching DEC-0022. This was already the engine's behaviour (the `group` strategy matches on family membership, not on which member card was foiled) since uniques are listed as members of the `boss-group`-tagged family alongside the boss; this entry confirms it's the intended ruling rather than an accident of the implementation.
@@ -579,7 +579,7 @@ If someone reads the Reddit thread by hand in the future and it says something d
 
 ### DEC-0035 - A foil monster collection-log drop unlocks every unique for that monster
 
-**Status:** Active
+**Status:** Superseded by DEC-0036
 **Date:** 2026-07-31
 
 **Ruling.** Extends DEC-0022/DEC-0031's boss + uniques logic to every monster with a collection log, not bosses alone: a foil of any collection-log drop item unlocks every unique tied to that monster's log, as a flat symmetric `group` (foiling any one unique, or the monster itself if it has its own card, reaches every member of the same set). This does not fold ordinary/common drops (drops shared across many monsters, not log-gated) into this shape - only collection-log-tracked uniques count as members of a given monster's set.
@@ -589,3 +589,40 @@ This settles the shape; it does not populate specific monster `boss-group`/colle
 **Rationale.** Generalises the one worked case (General Graardor) into a general principle rather than leaving every other monster's uniques to be ruled on individually later. Matches the existing `group` strategy exactly, so no new engine work is needed - only data entry, same as DEC-0032's recolour sets.
 
 **Source.** Rhys, this session (2026-07-31): "A foil of a monsters collection log unlocks all uniques for that monster."
+
+---
+
+### DEC-0036 - Correction: a foil boss unique does not unlock the boss, only its sibling uniques
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Supersedes the symmetric framing of DEC-0031 and DEC-0035. The boss-to-unique relationship is one-directional, not symmetric:
+
+- Foiling the **boss** unlocks the boss and every one of its unique drops (unchanged from DEC-0022/DEC-0027's shape - a `components` relationship, boss as `whole`, uniques as `parts`).
+- Foiling a **unique drop on its own** unlocks only the *other* uniques from the same boss - not the boss itself. This is its own flat `group` among just the uniques.
+
+General Graardor's unique set also gains **Bandos hilt**, which the original DEC-0022 implementation omitted - foiling General Graardor now unlocks Graardor + Bandos chestplate + Bandos tassets + Bandos boots + Bandos hilt (5 cards, not 4). Kree'arra, Commander Zilyana, and K'ril Tsutsaroth (added this session per DEC-0035) get the same composite + uniques-group pair.
+
+**Exception, already covered elsewhere.** Godsword hilts (Bandos/Armadyl/Saradomin/Zamorak hilt) are each the `whole` of their own `components` family (DEC-0028: hilt unlocks hilt + assembled godsword only). Since `components` resolves before `group` in the strategy order, foiling one of these hilts follows DEC-0028, not this entry's uniques-group - it does not additionally unlock its boss's other armour uniques. This is intentional, not an oversight: DEC-0028 is a specific, already-reasoned ruling for hilts and takes precedence.
+
+**Rationale.** Caught by hands-on testing: foiling Saradomin sword was unlocking Commander Zilyana, which does not match how the community or Rhys actually reads it - a unique drop proves you can get that unique, not that you've fought the boss enough to be considered to have "unlocked" it in the collection-log sense the boss card represents. The asymmetry mirrors the godsword/hilt shape (DEC-0027/0028) that was already precedent in this dataset: a whole grants its parts, but a part alone does not imply the whole.
+
+**Engine/data implication.** Every `boss-group`-tagged `set` family becomes two families: a `composite` (tag `boss`, boss as `whole`, uniques as `parts`) and a `set` (tag `boss-uniques`, uniques only, boss excluded). Two rules replace the old single `boss-group` rule: `boss-components` (strategy `components`) and `boss-uniques-group` (strategy `group`).
+
+**Source.** Rhys, this session (2026-07-31), from testing: "Saradomin sword unlocks the boss, it should only unlock the unique drops. General graador should unlock the bandos hilt too."
+
+---
+
+### DEC-0037 - Brutal, normal, and baby chromatic dragons form a descending ladder per colour
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** For each of the four chromatic dragon colours (red, green, blue, black), the baby, normal, and brutal variants form a three-rung `ladder-down` family, lowest to highest: baby -> normal -> brutal. Foiling the brutal variant unlocks brutal + normal + baby. Foiling the normal variant unlocks normal + baby (not brutal). Foiling the baby variant unlocks only itself. Four families (`red-dragon-line`, `green-dragon-line`, `blue-dragon-line`, `black-dragon-line`), tag `chromatic-dragon-line`, one shared rule.
+
+This is a different, unrelated ladder to `metallic-dragons` (DEC-0032's flat recolour set of bronze/iron/steel/mithril/adamant/rune) - chromatic and metallic dragons are separate lines with no interaction between them.
+
+**Rationale.** Caught by hands-on testing: baby and brutal variants of the same colour were unresolved, with no rule connecting them to their normal-tier counterpart. Rhys specified the exact shape - normal unlocks baby too, brutal unlocks both - which is the standard `ladder-down` shape already used throughout this dataset (armour, weapons, cannonballs, etc.), just applied to a monster line instead of an item line.
+
+**Source.** Rhys, this session (2026-07-31): "Red, Green, Blue, black etc dragons should unlock their baby variants too. Brutal variants of the above dragons unlocks the normal dragon and baby dragon variant."
