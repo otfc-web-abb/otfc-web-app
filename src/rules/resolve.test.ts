@@ -707,7 +707,11 @@ describe('the sweep', () => {
   // DEC-0024 added six utility ladders (+40 cards) and DEC-0025 regrouped the keys
   // by tier (+25). state-pair is unchanged at 190: DEC-0026 altered which ladder a
   // pair reports, never which cards it unlocks.
-  it('reports the Phase 7 round 3 coverage numbers', () => {
+  // DEC-0028 gave each godsword hilt its own components family (hilt -> hilt +
+  // godsword, asymmetric with the godsword -> godsword + hilt + shards + blade of
+  // DEC-0027), so the 4 hilts move from unresolved to components alongside the 4
+  // godswords: components rises from 4 to 8, unresolved drops by the same 4.
+  it('reports the Phase 7 round 5 coverage numbers', () => {
     const counts = new Map<string, number>()
     for (const card of shippedData.cards) {
       const s = resolve(card.name).strategy
@@ -716,11 +720,15 @@ describe('the sweep', () => {
 
     assert.equal(counts.get('ladder-down'), 522)
     assert.equal(counts.get('state-pair'), 190)
-    assert.equal(counts.get('group'), 143)
-    assert.equal(counts.get('unresolved'), 5521)
+    assert.equal(counts.get('group'), 139)
+    assert.equal(counts.get('components'), 8)
+    assert.equal(counts.get('unresolved'), 5517)
     assert.equal(
-      counts.get('ladder-down')! + counts.get('state-pair')! + counts.get('group')!,
-      855,
+      counts.get('ladder-down')! +
+        counts.get('state-pair')! +
+        counts.get('group')! +
+        counts.get('components')!,
+      859,
     )
   })
 })

@@ -347,20 +347,139 @@
       ]
     },
     {
-      "id": "bandos-hilt-group",
-      "label": "Bandos hilt and godsword",
-      "kind": "set",
+      "id": "bandos-godsword",
+      "label": "Bandos godsword",
+      "kind": "composite",
       "tags": [
-        "hilt-group"
+        "godsword"
       ],
       "actions": [
         "use"
       ],
-      "members": [
+      "whole": "Bandos godsword",
+      "parts": [
         "Bandos hilt",
         "Godsword shard 1",
         "Godsword shard 2",
-        "Godsword shard 3"
+        "Godsword shard 3",
+        "Godsword blade"
+      ]
+    },
+    {
+      "id": "bandos-hilt-godsword",
+      "label": "Bandos hilt",
+      "kind": "composite",
+      "tags": [
+        "godsword-hilt"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Bandos hilt",
+      "parts": [
+        "Bandos godsword"
+      ]
+    },
+    {
+      "id": "armadyl-godsword",
+      "label": "Armadyl godsword",
+      "kind": "composite",
+      "tags": [
+        "godsword"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Armadyl godsword",
+      "parts": [
+        "Armadyl hilt",
+        "Godsword shard 1",
+        "Godsword shard 2",
+        "Godsword shard 3",
+        "Godsword blade"
+      ]
+    },
+    {
+      "id": "armadyl-hilt-godsword",
+      "label": "Armadyl hilt",
+      "kind": "composite",
+      "tags": [
+        "godsword-hilt"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Armadyl hilt",
+      "parts": [
+        "Armadyl godsword"
+      ]
+    },
+    {
+      "id": "saradomin-godsword",
+      "label": "Saradomin godsword",
+      "kind": "composite",
+      "tags": [
+        "godsword"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Saradomin godsword",
+      "parts": [
+        "Saradomin hilt",
+        "Godsword shard 1",
+        "Godsword shard 2",
+        "Godsword shard 3",
+        "Godsword blade"
+      ]
+    },
+    {
+      "id": "saradomin-hilt-godsword",
+      "label": "Saradomin hilt",
+      "kind": "composite",
+      "tags": [
+        "godsword-hilt"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Saradomin hilt",
+      "parts": [
+        "Saradomin godsword"
+      ]
+    },
+    {
+      "id": "zamorak-godsword",
+      "label": "Zamorak godsword",
+      "kind": "composite",
+      "tags": [
+        "godsword"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Zamorak godsword",
+      "parts": [
+        "Zamorak hilt",
+        "Godsword shard 1",
+        "Godsword shard 2",
+        "Godsword shard 3",
+        "Godsword blade"
+      ]
+    },
+    {
+      "id": "zamorak-hilt-godsword",
+      "label": "Zamorak hilt",
+      "kind": "composite",
+      "tags": [
+        "godsword-hilt"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Zamorak hilt",
+      "parts": [
+        "Zamorak godsword"
       ]
     },
     {

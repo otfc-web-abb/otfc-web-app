@@ -251,7 +251,13 @@ function matchesAt(card: string, strategy: string): { rule: Rule; explicit: bool
     }
 
     const kind = KIND_FOR_STRATEGY[strategy]
-    const inKind = (familiesByCard.get(card) ?? []).filter((f) => f.kind === kind)
+    // A composite family only fires for its `whole` - a card that is merely one of
+    // its `parts` is not a candidate. Mirrors src/rules/match.ts matchFamily, which
+    // filters the same way; a card can legitimately be the whole of one composite
+    // family and a part of another (godsword hilts and godswords, DEC-0027/0028).
+    const inKind = (familiesByCard.get(card) ?? [])
+      .filter((f) => f.kind === kind)
+      .filter((f) => (f.kind === 'composite' ? f.whole === card : true))
     if (rule.applies.families?.some((id) => inKind.some((f) => f.id === id))) {
       out.push({ rule, explicit: true })
     } else if (rule.applies.familyTags?.some((t) => inKind.some((f) => (f.tags ?? []).includes(t)))) {

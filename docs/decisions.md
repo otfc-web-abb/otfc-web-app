@@ -436,3 +436,37 @@ Reporting them anyway produced a screen that contradicted itself: foil Zenyte dr
 The precedence of `state-pair` over `ladder-down` (DEC-0001) is untouched. Raw trout still stops a fish ladder if one is ever given a rule, and the excluded list still fills in that case. What changed is only which ladders count as stopped.
 
 **Source.** Rhys, this session (2026-07-31): "this logic shouldnt even be touching them, it should just be state pair for all gems, cut or uncut", and the same for herbs.
+
+---
+
+### DEC-0027 - Godswords unlock the godsword, its hilt, all shards, and the blade, as components
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** A foil godsword (Bandos, Armadyl, Saradomin or Zamorak) unlocks the godsword itself, its own hilt, all three godsword shards, and the assembled Godsword blade. A foil of a shard or the blade alone does not unlock the godsword back - see DEC-0028 for what a foil hilt alone does, which is a different answer.
+
+Modelled as a `components` family per god (`bandos-godsword`, `armadyl-godsword`, `saradomin-godsword`, `zamorak-godsword`), replacing the previous `bandos-hilt-group` `set` family, which existed for Bandos only and left the other three gods with no rule at all. The `hilt-group` rule and tag are retired; a new `godsword-components` rule selects the four families via a shared `godsword` tag through the existing `components` strategy.
+
+**Rationale.** The three shards (and the blade assembled from them) are the same physical items across all four gods - shard 1 is not a Bandos shard or an Armadyl shard, it is a shard. Modelling each god as a `group` (`set`) family containing the shards, as the old Bandos-only entry did, works only in isolation: once a second god-family also lists the same shard cards as members, `matchFamily`'s tag-based lookup returns whichever candidate family sorts first alphabetically, not the one the player actually foiled toward. `components` sidesteps this by design - rules-spec 6.4 fires it only when the searched card is the *whole*, so a foil shard or blade never resolves through this rule at all, and the four-way collision never happens. What a bare foil shard or blade unlocks by itself is not decided by this ruling and falls to `unresolved`.
+
+Ancient godsword and Ancient hilt are excluded here. Whether they follow the same shard-combination mechanic as the four GWD generals is uncertain and not investigated as part of this ruling.
+
+**Source.** Rhys, this session (2026-07-31): "Godswords unlock the godsword, respective hilt and all shards", clarified to include the assembled Godsword blade card alongside the shards.
+
+---
+
+### DEC-0028 - A foil godsword hilt unlocks only itself and the godsword
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** A foil godsword hilt (Bandos, Armadyl, Saradomin or Zamorak) unlocks itself and the completed godsword only - not the shards, not the Godsword blade. This is narrower than what a foil of the completed godsword grants (DEC-0027): the relationship is not symmetric.
+
+Modelled as a second `components` family per god (`bandos-hilt-godsword`, `armadyl-hilt-godsword`, `saradomin-hilt-godsword`, `zamorak-hilt-godsword`), each with the hilt as `whole` and the godsword as its only `part`. A new `godsword-hilt-components` rule selects these via a `godsword-hilt` tag. The hilt is the `whole` of this family and a `part` of its god's `godsword` family from DEC-0027 at the same time; `matchFamily` filters composite candidates to where the searched card equals that family's `whole`, so the two families do not collide - foiling the hilt matches only the hilt-family, foiling the godsword matches only the godsword-family.
+
+**Rationale.** Rhys's phrasing was explicit and asymmetric: "a foil godsword hilt unlocks the hilt and godsword, not the blades" against "a foil godsword would unlock the godsword, hilt and blades" - two different unlock sets depending on which card is foiled, not one mutual set. This is a deliberate departure from the symmetric shape every other `components` family in this dataset has used so far (Barronite mace, DEC-0016) and is worth naming as its own decision rather than folding into DEC-0027, since a future session reading DEC-0027 alone would otherwise reasonably assume the hilt granted everything the godsword does.
+
+A foil shard or foil Godsword blade alone is still not decided and still resolves `unresolved`.
+
+**Source.** Rhys, this session (2026-07-31): "I would say a foil godsword hilt unlocks the hilt and godsword, not the blades. A foil godsword would unlock the godsword, hilt and blades." "Blades" confirmed to mean both the three shards and the separate Godsword blade card.
