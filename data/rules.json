@@ -583,6 +583,42 @@
           "retrieved": "2026-07-30"
         }
       ]
+    },
+    {
+      "id": "voidwaker-assembly-group",
+      "strategy": "group",
+      "applies": {
+        "families": [
+          "voidwaker-assembly"
+        ]
+      },
+      "explanation": "Voidwaker's three pieces and the assembled weapon unlock each other, regardless of which boss dropped which piece. {card} covers {count} cards in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Voidwaker's three pieces form a cross-boss assembly group, taking precedence over the boss-uniques group",
+          "decision": "DEC-0039"
+        }
+      ]
+    },
+    {
+      "id": "dt2-shared-drops-group",
+      "strategy": "group",
+      "applies": {
+        "families": [
+          "dt2-shared-drops"
+        ]
+      },
+      "explanation": "Virtus armour, Chromium ingot, and Awakener's orb are shared across all four Desert Treasure II bosses and unlock each other, regardless of which boss dropped which piece. {card} covers {count} cards in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Duke Sucellus, The Leviathan, The Whisperer, and Vardorvis added; their shared drops form a cross-boss group",
+          "decision": "DEC-0041"
+        }
+      ]
     }
   ]
 }

@@ -626,3 +626,85 @@ This is a different, unrelated ladder to `metallic-dragons` (DEC-0032's flat rec
 **Rationale.** Caught by hands-on testing: baby and brutal variants of the same colour were unresolved, with no rule connecting them to their normal-tier counterpart. Rhys specified the exact shape - normal unlocks baby too, brutal unlocks both - which is the standard `ladder-down` shape already used throughout this dataset (armour, weapons, cannonballs, etc.), just applied to a monster line instead of an item line.
 
 **Source.** Rhys, this session (2026-07-31): "Red, Green, Blue, black etc dragons should unlock their baby variants too. Brutal variants of the above dragons unlocks the normal dragon and baby dragon variant."
+
+---
+
+### DEC-0038 - Boss-unique scope policy, and ten more bosses added under the DEC-0036 shape
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Establishes the scope policy for what counts as a "unique" in a boss's `boss`/`boss-uniques` family pair (DEC-0036): pets and jars (and other collection-log trophies of that kind) **are** included as members; tertiary drops that aren't boss-identity items - clue scrolls, brimstone keys, mutagens, key-master teleports - are **not**. Items that merely happen to drop from the boss but are common across many other monsters (e.g. Dragon 2h sword, Dragon pickaxe, Dragon med helm, Mystic robes, Rune warhammer/longsword) are excluded regardless of rarity - they are not boss-identity uniques.
+
+Under this policy and the DEC-0036 shape (boss `composite`: whole=boss, parts=uniques; paired `set` of just the uniques for DEC-0036's sibling-group behaviour), ten more bosses were added, each verified against the OSRS Wiki's own drop tables:
+
+- **Corporeal Beast**: Spirit shield, Holy elixir, Spectral/Arcane/Elysian sigil, Jar of spirits, Pet dark core.
+- **Zulrah**: Tanzanite fang, Magic fang, Serpentine visage, Uncut onyx, Jar of swamp, Pet snakeling.
+- **Vorkath**: Dragonbone necklace, Draconic visage, Skeletal visage, Vorkath's head, Jar of decay, Vorki.
+- **Cerberus**: Primordial/Pegasian/Eternal crystal, Smouldering stone, Jar of souls, Hellpuppy.
+- **Kraken**: Kraken tentacle, Jar of dirt, Pet kraken.
+- **Thermonuclear smoke devil**: Occult necklace, Smoke battlestaff, Jar of smoke, Pet smoke devil.
+- **Alchemical Hydra**: Hydra's eye/fang/heart, Hydra tail, Hydra leather, Hydra's claw, Jar of chemicals, Ikkle hydra.
+- **Sarachnis**: Sarachnis cudgel, Jar of eyes, Sraracha.
+- **Callisto and Artio** (share one loot pool, two boss cards): Claws of callisto, Voidwaker hilt, Callisto cub, plus Tyrannical ring (via the boss only, see exception below).
+- **Venenatis and Spindel** (share one loot pool): Fangs of venenatis, Voidwaker gem, Venenatis spiderling, plus Treasonous ring (via the boss only).
+- **Vet'ion and Calvar'ion** (share one loot pool): Skull of vet'ion, Voidwaker blade, Vet'ion jr., plus Ring of the gods (via the boss only).
+
+**Exception - the three wilderness rings.** Tyrannical ring, Treasonous ring, and Ring of the gods are each a `part` of their boss's `composite` family (so foiling the boss still unlocks the ring), but are deliberately left out of the paired `boss-uniques` sibling `set` for that boss. All three rings already belong to the existing `wilderness-rings` community set (DEC-0013/0018), which unlocks them symmetrically among themselves. Adding them to a second `set` family under a different tag would put a card in two `group`-strategy set families at once - `validate-rules`' ambiguity check (section 11) would catch this and fail the build, since a `part` of a composite can appear in unlimited families with no conflict, but a `set` membership cannot be split across two same-strategy rules. Leaving the wilderness-rings ruling as the sole authority for those three rings' sibling behaviour was the simpler, non-conflicting choice, rather than re-opening DEC-0013/0018 to merge the two groups.
+
+**Rationale.** The tertiary-exclusion policy mirrors the general/common-drop exclusion already implicit in DEC-0035/0036 ("not common/shared drops"); pets and jars are boss-identity trophies in the same spirit as armour/weapon uniques, so they're treated the same way rather than carved out as a separate category. The wilderness boss pairs sharing one family pair per boss card (not per pair) keeps each boss individually foilable while the identical unique item set is reused rather than duplicated as data.
+
+**Source.** Rhys, this session (2026-07-31): "boss uniques unlock the jars and pets but no tertiary items"; approved each boss and the wilderness-pair shape as proposed. OSRS Wiki drop tables, fetched 2026-07-31, for [Corporeal Beast](https://oldschool.runescape.wiki/w/Corporeal_Beast), [Zulrah](https://oldschool.runescape.wiki/w/Zulrah), [Vorkath](https://oldschool.runescape.wiki/w/Vorkath), [Cerberus](https://oldschool.runescape.wiki/w/Cerberus), [Kraken](https://oldschool.runescape.wiki/w/Kraken), [Thermonuclear smoke devil](https://oldschool.runescape.wiki/w/Thermonuclear_smoke_devil), [Alchemical Hydra](https://oldschool.runescape.wiki/w/Alchemical_Hydra), [Sarachnis](https://oldschool.runescape.wiki/w/Sarachnis), [Callisto](https://oldschool.runescape.wiki/w/Callisto), [Artio](https://oldschool.runescape.wiki/w/Artio), [Venenatis](https://oldschool.runescape.wiki/w/Venenatis), [Vet'ion](https://oldschool.runescape.wiki/w/Vet%27ion).
+
+---
+
+### DEC-0039 - Voidwaker's three pieces form a cross-boss assembly group, taking precedence over the boss-uniques group
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Voidwaker hilt (Callisto/Artio), Voidwaker blade (Vet'ion/Calvar'ion), and Voidwaker gem (Venenatis/Spindel) each come from a different wilderness boss pair, but assemble into one weapon (Voidwaker). Foiling any of the four cards (the three pieces or the assembled Voidwaker) unlocks all four, as a flat symmetric `group` - crossing boss lines, unlike anything else ruled on so far.
+
+This takes precedence over the ordinary boss-uniques sibling behaviour (DEC-0036/0038) for the three piece cards specifically: foiling Voidwaker hilt unlocks the Voidwaker assembly, not Claws of callisto/Callisto cub. Mechanically this needed no engine change - the `voidwaker-assembly` family is selected by an explicit rule (`rules.json` names the family by id, not by tag), and explicit selection already beats a tag-based ("broad") match per the existing resolution-order rule (docs/rules-spec.md section 7.1). The boss-uniques-group rule still selects each boss's other uniques normally.
+
+**Rationale.** A player who foils one Voidwaker piece cares about assembling the weapon, not about the specific boss that happened to drop that piece - the three pieces are one item's components in every practical sense, closer to the godsword/Barronite mace component patterns (DEC-0016/0027) than to an ordinary boss-uniques sibling set.
+
+**Source.** Rhys, this session (2026-07-31): "Yes, chain them" - "Foiling one Voidwaker piece unlocks all 3 pieces + assembled Voidwaker, mirroring the godsword shard pattern."
+
+---
+
+### DEC-0040 - Five more bosses added under the DEC-0036/0038 shape
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Under the same policy as DEC-0038 (pets/jars/trophies included; tertiary and common cross-monster drops excluded), the following bosses were added, verified against the OSRS Wiki:
+
+- **Nex**: Ancient hilt, Nihil horn, Torva full helm, Torva platebody, Torva platelegs, Zaryte vambraces, Nexling.
+- **The Nightmare and Phosani's Nightmare** (share one loot pool, two boss cards): Nightmare staff, Inquisitor's great helm/hauberk/plateskirt/mace, Eldritch orb, Harmonised orb, Volatile orb, Little nightmare, Jar of dreams.
+- **Skotizo**: Dark totem base/middle/top, the assembled Dark totem, Dark claw, Jar of darkness, Skotos. (Shield left half and Uncut onyx excluded - both are shared with other sources; see the onyx note below.)
+- **Dawn and Dusk** (Grotesque Guardians, share one loot pool, two boss cards): Granite maul, Granite gloves, Granite ring, Granite hammer, Black tourmaline core, Jar of stone, Noon.
+
+**Known inconsistency, left as-is.** Uncut onyx was included in Zulrah's unique set under DEC-0038, but it also drops from Skotizo (and other sources) - it isn't actually Zulrah-exclusive either, by the same "not common/shared drops" policy DEC-0038 itself states. Rhys chose to leave Zulrah's entry as already shipped rather than revise it, and Uncut onyx is excluded from Skotizo's set to avoid a two-boss-uniques-set membership conflict. A future session tightening boss-unique accuracy should revisit whether Uncut onyx belongs in Zulrah's set at all.
+
+**Source.** Rhys, this session (2026-07-31): approved each boss as proposed; "Yes, leave Zulrah as-is" on the onyx inconsistency. OSRS Wiki drop tables, fetched 2026-07-31, for [Nex](https://oldschool.runescape.wiki/w/Nex), [The Nightmare](https://oldschool.runescape.wiki/w/The_Nightmare), [Skotizo](https://oldschool.runescape.wiki/w/Skotizo), [Grotesque Guardians](https://oldschool.runescape.wiki/w/Grotesque_Guardians).
+
+---
+
+### DEC-0041 - Duke Sucellus, The Leviathan, The Whisperer, and Vardorvis added; their shared drops form a cross-boss group
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** The four Desert Treasure II bosses each get a `boss`/`boss-uniques` pair for their exclusive drops:
+
+- **Duke Sucellus**: Eye of the duke, Magus vestige, Frozen tablet, Ice quartz, Baron.
+- **The Leviathan**: Leviathan's lure, Venator vestige, Scarred tablet, Smoke quartz, Lil'viathan.
+- **The Whisperer**: Siren's staff, Bellator vestige, Sirenic tablet, Shadow quartz, Wisp.
+- **Vardorvis**: Ultor vestige, Strangled tablet, Blood quartz, Butch. (Executioner's axe head is not present in the plugin's card dataset at all, so it is left out entirely - not even unresolved-by-omission, there is no card to resolve.)
+
+All four bosses also share five items - Virtus mask, Virtus robe top, Virtus robe bottom, Chromium ingot, Awakener's orb - which drop from any of the four. These form their own cross-boss `dt2-shared-drops` group (mirroring DEC-0039's Voidwaker shape exactly): foiling any of the 5 shared items unlocks all 5, regardless of which of the four bosses is thought of as the source. Selected by an explicit rule (`dt2-shared-drops-group`, naming the family by id), so it takes precedence over each boss's own `boss-uniques-group` broad match, the same mechanism as DEC-0039.
+
+**Rationale.** Same reasoning as DEC-0039: a player foiling Virtus mask cares about the shared armour line, not which specific boss is credited, so a cross-boss shared group is the more honest shape than arbitrarily assigning it to one boss's set or duplicating it across four.
+
+**Source.** Rhys, this session (2026-07-31): "Shared pool, like Voidwaker" for the DT2 items; approved each boss as proposed. OSRS Wiki drop tables, fetched 2026-07-31, for [Duke Sucellus](https://oldschool.runescape.wiki/w/Duke_Sucellus), [The Leviathan](https://oldschool.runescape.wiki/w/The_Leviathan), [The Whisperer](https://oldschool.runescape.wiki/w/The_Whisperer), [Vardorvis](https://oldschool.runescape.wiki/w/Vardorvis).

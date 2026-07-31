@@ -4004,7 +4004,8 @@
         "Pyromancer hood",
         "Pyromancer garb",
         "Pyromancer robe",
-        "Pyromancer boots"
+        "Pyromancer boots",
+        "Warm gloves"
       ]
     },
     {
@@ -5654,6 +5655,865 @@
             "Brutal black dragon"
           ]
         }
+      ]
+    },
+    {
+      "id": "boss-corporeal-beast",
+      "label": "Corporeal Beast and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Corporeal Beast",
+      "parts": [
+        "Spirit shield",
+        "Holy elixir",
+        "Spectral sigil",
+        "Arcane sigil",
+        "Elysian sigil",
+        "Jar of spirits",
+        "Pet dark core"
+      ]
+    },
+    {
+      "id": "corporeal-beast-uniques",
+      "label": "Corporeal Beast's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Spirit shield",
+        "Holy elixir",
+        "Spectral sigil",
+        "Arcane sigil",
+        "Elysian sigil",
+        "Jar of spirits",
+        "Pet dark core"
+      ]
+    },
+    {
+      "id": "boss-zulrah",
+      "label": "Zulrah and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Zulrah",
+      "parts": [
+        "Tanzanite fang",
+        "Magic fang",
+        "Serpentine visage",
+        "Uncut onyx",
+        "Jar of swamp",
+        "Pet snakeling"
+      ]
+    },
+    {
+      "id": "zulrah-uniques",
+      "label": "Zulrah's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Tanzanite fang",
+        "Magic fang",
+        "Serpentine visage",
+        "Uncut onyx",
+        "Jar of swamp",
+        "Pet snakeling"
+      ]
+    },
+    {
+      "id": "boss-vorkath",
+      "label": "Vorkath and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Vorkath",
+      "parts": [
+        "Dragonbone necklace",
+        "Draconic visage",
+        "Skeletal visage",
+        "Vorkath's head",
+        "Jar of decay",
+        "Vorki"
+      ]
+    },
+    {
+      "id": "vorkath-uniques",
+      "label": "Vorkath's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Dragonbone necklace",
+        "Draconic visage",
+        "Skeletal visage",
+        "Vorkath's head",
+        "Jar of decay",
+        "Vorki"
+      ]
+    },
+    {
+      "id": "boss-cerberus",
+      "label": "Cerberus and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Cerberus",
+      "parts": [
+        "Primordial crystal",
+        "Pegasian crystal",
+        "Eternal crystal",
+        "Smouldering stone",
+        "Jar of souls",
+        "Hellpuppy"
+      ]
+    },
+    {
+      "id": "cerberus-uniques",
+      "label": "Cerberus's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Primordial crystal",
+        "Pegasian crystal",
+        "Eternal crystal",
+        "Smouldering stone",
+        "Jar of souls",
+        "Hellpuppy"
+      ]
+    },
+    {
+      "id": "boss-kraken",
+      "label": "Kraken and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Kraken",
+      "parts": [
+        "Kraken tentacle",
+        "Jar of dirt",
+        "Pet kraken"
+      ]
+    },
+    {
+      "id": "kraken-uniques",
+      "label": "Kraken's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Kraken tentacle",
+        "Jar of dirt",
+        "Pet kraken"
+      ]
+    },
+    {
+      "id": "boss-thermonuclear-smoke-devil",
+      "label": "Thermonuclear smoke devil and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Thermonuclear smoke devil",
+      "parts": [
+        "Occult necklace",
+        "Smoke battlestaff",
+        "Jar of smoke",
+        "Pet smoke devil"
+      ]
+    },
+    {
+      "id": "thermonuclear-smoke-devil-uniques",
+      "label": "Thermonuclear smoke devil's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Occult necklace",
+        "Smoke battlestaff",
+        "Jar of smoke",
+        "Pet smoke devil"
+      ]
+    },
+    {
+      "id": "boss-alchemical-hydra",
+      "label": "Alchemical Hydra and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Alchemical Hydra",
+      "parts": [
+        "Hydra's eye",
+        "Hydra's fang",
+        "Hydra's heart",
+        "Hydra tail",
+        "Hydra leather",
+        "Hydra's claw",
+        "Jar of chemicals",
+        "Ikkle hydra"
+      ]
+    },
+    {
+      "id": "alchemical-hydra-uniques",
+      "label": "Alchemical Hydra's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Hydra's eye",
+        "Hydra's fang",
+        "Hydra's heart",
+        "Hydra tail",
+        "Hydra leather",
+        "Hydra's claw",
+        "Jar of chemicals",
+        "Ikkle hydra"
+      ]
+    },
+    {
+      "id": "boss-sarachnis",
+      "label": "Sarachnis and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Sarachnis",
+      "parts": [
+        "Sarachnis cudgel",
+        "Jar of eyes",
+        "Sraracha"
+      ]
+    },
+    {
+      "id": "sarachnis-uniques",
+      "label": "Sarachnis's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Sarachnis cudgel",
+        "Jar of eyes",
+        "Sraracha"
+      ]
+    },
+    {
+      "id": "boss-callisto",
+      "label": "Callisto and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Callisto",
+      "parts": [
+        "Claws of callisto",
+        "Voidwaker hilt",
+        "Tyrannical ring",
+        "Callisto cub"
+      ]
+    },
+    {
+      "id": "boss-artio",
+      "label": "Artio and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Artio",
+      "parts": [
+        "Claws of callisto",
+        "Voidwaker hilt",
+        "Tyrannical ring",
+        "Callisto cub"
+      ]
+    },
+    {
+      "id": "callisto-artio-uniques",
+      "label": "Callisto and Artio's shared uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Tyrannical ring is excluded here - it is already governed by the wilderness-rings community set (DEC-0018/0013), which this does not override.",
+      "members": [
+        "Claws of callisto",
+        "Voidwaker hilt",
+        "Callisto cub"
+      ]
+    },
+    {
+      "id": "boss-venenatis",
+      "label": "Venenatis and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Venenatis",
+      "parts": [
+        "Fangs of venenatis",
+        "Voidwaker gem",
+        "Treasonous ring",
+        "Venenatis spiderling"
+      ]
+    },
+    {
+      "id": "boss-spindel",
+      "label": "Spindel and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Spindel",
+      "parts": [
+        "Fangs of venenatis",
+        "Voidwaker gem",
+        "Treasonous ring",
+        "Venenatis spiderling"
+      ]
+    },
+    {
+      "id": "venenatis-spindel-uniques",
+      "label": "Venenatis and Spindel's shared uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Treasonous ring is excluded here - it is already governed by the wilderness-rings community set (DEC-0018/0013), which this does not override.",
+      "members": [
+        "Fangs of venenatis",
+        "Voidwaker gem",
+        "Venenatis spiderling"
+      ]
+    },
+    {
+      "id": "boss-vetion",
+      "label": "Vet'ion and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Vet'ion",
+      "parts": [
+        "Skull of vet'ion",
+        "Voidwaker blade",
+        "Ring of the gods",
+        "Vet'ion jr."
+      ]
+    },
+    {
+      "id": "boss-calvarion",
+      "label": "Calvar'ion and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Calvar'ion",
+      "parts": [
+        "Skull of vet'ion",
+        "Voidwaker blade",
+        "Ring of the gods",
+        "Vet'ion jr."
+      ]
+    },
+    {
+      "id": "vetion-calvarion-uniques",
+      "label": "Vet'ion and Calvar'ion's shared uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Ring of the gods is excluded here - it is already governed by the wilderness-rings community set (DEC-0018/0013), which this does not override.",
+      "members": [
+        "Skull of vet'ion",
+        "Voidwaker blade",
+        "Vet'ion jr."
+      ]
+    },
+    {
+      "id": "voidwaker-assembly",
+      "label": "Voidwaker and its pieces",
+      "kind": "set",
+      "tags": [
+        "assembled-item"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Selected explicitly by rules.json, not by tag, so it takes precedence over the boss-uniques group for the three pieces - DEC-0039.",
+      "members": [
+        "Voidwaker",
+        "Voidwaker hilt",
+        "Voidwaker blade",
+        "Voidwaker gem"
+      ]
+    },
+    {
+      "id": "boss-nex",
+      "label": "Nex and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Nex",
+      "parts": [
+        "Ancient hilt",
+        "Nihil horn",
+        "Torva full helm",
+        "Torva platebody",
+        "Torva platelegs",
+        "Zaryte vambraces",
+        "Nexling"
+      ]
+    },
+    {
+      "id": "nex-uniques",
+      "label": "Nex's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Ancient hilt",
+        "Nihil horn",
+        "Torva full helm",
+        "Torva platebody",
+        "Torva platelegs",
+        "Zaryte vambraces",
+        "Nexling"
+      ]
+    },
+    {
+      "id": "boss-the-nightmare",
+      "label": "The Nightmare and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "The Nightmare",
+      "parts": [
+        "Nightmare staff",
+        "Inquisitor's great helm",
+        "Inquisitor's hauberk",
+        "Inquisitor's plateskirt",
+        "Inquisitor's mace",
+        "Eldritch orb",
+        "Harmonised orb",
+        "Volatile orb",
+        "Little nightmare",
+        "Jar of dreams"
+      ]
+    },
+    {
+      "id": "boss-phosanis-nightmare",
+      "label": "Phosani's Nightmare and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Phosani's Nightmare",
+      "parts": [
+        "Nightmare staff",
+        "Inquisitor's great helm",
+        "Inquisitor's hauberk",
+        "Inquisitor's plateskirt",
+        "Inquisitor's mace",
+        "Eldritch orb",
+        "Harmonised orb",
+        "Volatile orb",
+        "Little nightmare",
+        "Jar of dreams"
+      ]
+    },
+    {
+      "id": "nightmare-uniques",
+      "label": "The Nightmare's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Nightmare staff",
+        "Inquisitor's great helm",
+        "Inquisitor's hauberk",
+        "Inquisitor's plateskirt",
+        "Inquisitor's mace",
+        "Eldritch orb",
+        "Harmonised orb",
+        "Volatile orb",
+        "Little nightmare",
+        "Jar of dreams"
+      ]
+    },
+    {
+      "id": "boss-skotizo",
+      "label": "Skotizo and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Skotizo",
+      "parts": [
+        "Dark totem base",
+        "Dark totem middle",
+        "Dark totem top",
+        "Dark totem",
+        "Dark claw",
+        "Jar of darkness",
+        "Skotos"
+      ]
+    },
+    {
+      "id": "skotizo-uniques",
+      "label": "Skotizo's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Dark totem base",
+        "Dark totem middle",
+        "Dark totem top",
+        "Dark totem",
+        "Dark claw",
+        "Jar of darkness",
+        "Skotos"
+      ]
+    },
+    {
+      "id": "boss-dawn",
+      "label": "Dawn and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Dawn",
+      "parts": [
+        "Granite maul",
+        "Granite gloves",
+        "Granite ring",
+        "Granite hammer",
+        "Black tourmaline core",
+        "Jar of stone",
+        "Noon"
+      ]
+    },
+    {
+      "id": "boss-dusk",
+      "label": "Dusk and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Dusk",
+      "parts": [
+        "Granite maul",
+        "Granite gloves",
+        "Granite ring",
+        "Granite hammer",
+        "Black tourmaline core",
+        "Jar of stone",
+        "Noon"
+      ]
+    },
+    {
+      "id": "dawn-dusk-uniques",
+      "label": "Dawn and Dusk's shared uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Granite maul",
+        "Granite gloves",
+        "Granite ring",
+        "Granite hammer",
+        "Black tourmaline core",
+        "Jar of stone",
+        "Noon"
+      ]
+    },
+    {
+      "id": "boss-duke-sucellus",
+      "label": "Duke Sucellus and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Duke Sucellus",
+      "parts": [
+        "Eye of the duke",
+        "Magus vestige",
+        "Frozen tablet",
+        "Ice quartz",
+        "Baron"
+      ]
+    },
+    {
+      "id": "duke-sucellus-uniques",
+      "label": "Duke Sucellus's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Eye of the duke",
+        "Magus vestige",
+        "Frozen tablet",
+        "Ice quartz",
+        "Baron"
+      ]
+    },
+    {
+      "id": "boss-the-leviathan",
+      "label": "The Leviathan and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "The Leviathan",
+      "parts": [
+        "Leviathan's lure",
+        "Venator vestige",
+        "Scarred tablet",
+        "Smoke quartz",
+        "Lil'viathan"
+      ]
+    },
+    {
+      "id": "the-leviathan-uniques",
+      "label": "The Leviathan's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Leviathan's lure",
+        "Venator vestige",
+        "Scarred tablet",
+        "Smoke quartz",
+        "Lil'viathan"
+      ]
+    },
+    {
+      "id": "boss-the-whisperer",
+      "label": "The Whisperer and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "The Whisperer",
+      "parts": [
+        "Siren's staff",
+        "Bellator vestige",
+        "Sirenic tablet",
+        "Shadow quartz",
+        "Wisp"
+      ]
+    },
+    {
+      "id": "the-whisperer-uniques",
+      "label": "The Whisperer's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Siren's staff",
+        "Bellator vestige",
+        "Sirenic tablet",
+        "Shadow quartz",
+        "Wisp"
+      ]
+    },
+    {
+      "id": "boss-vardorvis",
+      "label": "Vardorvis and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Vardorvis",
+      "parts": [
+        "Ultor vestige",
+        "Strangled tablet",
+        "Blood quartz",
+        "Butch"
+      ]
+    },
+    {
+      "id": "vardorvis-uniques",
+      "label": "Vardorvis's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Ultor vestige",
+        "Strangled tablet",
+        "Blood quartz",
+        "Butch"
+      ]
+    },
+    {
+      "id": "dt2-shared-drops",
+      "label": "Desert Treasure II shared boss drops",
+      "kind": "set",
+      "tags": [
+        "assembled-item"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Selected explicitly by rules.json, not by tag, so it takes precedence over each boss's boss-uniques group - DEC-0041, mirroring DEC-0039's Voidwaker shape.",
+      "members": [
+        "Virtus mask",
+        "Virtus robe top",
+        "Virtus robe bottom",
+        "Chromium ingot",
+        "Awakener's orb"
       ]
     }
   ]
