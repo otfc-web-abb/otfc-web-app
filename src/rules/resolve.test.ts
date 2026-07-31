@@ -773,6 +773,18 @@ describe('the sweep', () => {
   // Sucellus, The Leviathan, The Whisperer, Vardorvis) plus their cross-boss
   // dt2-shared-drops group. Net: group 210 -> 265, components 53 -> 63, unresolved
   // 5389 -> 5324.
+  // DEC-0042 added Zalcano, Scorpia (pet only), Scurrius, and Giant Mole, plus the
+  // Long bone/Curved bone pair (kept separate from either boss's uniques since
+  // both items drop from most monsters). Net: group 265 -> 274, components 63 ->
+  // 67, unresolved 5324 -> 5311.
+  // DEC-0043 added Obor, Bryophyta, the three Dagannoth Kings, Chaos Elemental,
+  // Kalphite Queen, and King Black Dragon, plus recognised Dragon pickaxe as a
+  // real shared unique across nine bosses (added as a composite part only, not a
+  // sibling-group member, so it stays unresolved when foiled directly). Net: group
+  // 274 -> 281, components 67 -> 75, unresolved 5311 -> 5296.
+  // DEC-0044 added the six Barrows brothers, Hespori, and two un-anchored
+  // minigame-reward groups (Wintertodt, Tempoross - neither has a boss card).
+  // Net: group 281 -> 320, components 75 -> 82, unresolved 5296 -> 5250.
   it('reports the Phase 7 round 5 coverage numbers', () => {
     const counts = new Map<string, number>()
     for (const card of shippedData.cards) {
@@ -782,15 +794,15 @@ describe('the sweep', () => {
 
     assert.equal(counts.get('ladder-down'), 534)
     assert.equal(counts.get('state-pair'), 190)
-    assert.equal(counts.get('group'), 265)
-    assert.equal(counts.get('components'), 63)
-    assert.equal(counts.get('unresolved'), 5324)
+    assert.equal(counts.get('group'), 320)
+    assert.equal(counts.get('components'), 82)
+    assert.equal(counts.get('unresolved'), 5250)
     assert.equal(
       counts.get('ladder-down')! +
         counts.get('state-pair')! +
         counts.get('group')! +
         counts.get('components')!,
-      1052,
+      1126,
     )
   })
 })

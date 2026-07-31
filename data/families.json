@@ -5974,7 +5974,8 @@
         "Claws of callisto",
         "Voidwaker hilt",
         "Tyrannical ring",
-        "Callisto cub"
+        "Callisto cub",
+        "Dragon pickaxe"
       ]
     },
     {
@@ -5992,7 +5993,8 @@
         "Claws of callisto",
         "Voidwaker hilt",
         "Tyrannical ring",
-        "Callisto cub"
+        "Callisto cub",
+        "Dragon pickaxe"
       ]
     },
     {
@@ -6027,7 +6029,8 @@
         "Fangs of venenatis",
         "Voidwaker gem",
         "Treasonous ring",
-        "Venenatis spiderling"
+        "Venenatis spiderling",
+        "Dragon pickaxe"
       ]
     },
     {
@@ -6045,7 +6048,8 @@
         "Fangs of venenatis",
         "Voidwaker gem",
         "Treasonous ring",
-        "Venenatis spiderling"
+        "Venenatis spiderling",
+        "Dragon pickaxe"
       ]
     },
     {
@@ -6080,7 +6084,8 @@
         "Skull of vet'ion",
         "Voidwaker blade",
         "Ring of the gods",
-        "Vet'ion jr."
+        "Vet'ion jr.",
+        "Dragon pickaxe"
       ]
     },
     {
@@ -6098,7 +6103,8 @@
         "Skull of vet'ion",
         "Voidwaker blade",
         "Ring of the gods",
-        "Vet'ion jr."
+        "Vet'ion jr.",
+        "Dragon pickaxe"
       ]
     },
     {
@@ -6514,6 +6520,609 @@
         "Virtus robe bottom",
         "Chromium ingot",
         "Awakener's orb"
+      ]
+    },
+    {
+      "id": "boss-zalcano",
+      "label": "Zalcano and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Zalcano",
+      "parts": [
+        "Crystal tool seed",
+        "Zalcano shard",
+        "Smolcano"
+      ]
+    },
+    {
+      "id": "zalcano-uniques",
+      "label": "Zalcano's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Crystal tool seed",
+        "Zalcano shard",
+        "Smolcano"
+      ]
+    },
+    {
+      "id": "boss-scorpia",
+      "label": "Scorpia and its unique",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Scorpia",
+      "note": "Odium shard 3 and Malediction shard 3 also drop here but are deferred - they're shared with Revenants and need their own ruling before being added.",
+      "parts": [
+        "Scorpia's offspring"
+      ]
+    },
+    {
+      "id": "boss-scurrius",
+      "label": "Scurrius and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Scurrius",
+      "parts": [
+        "Scurrius' spine",
+        "Scurry"
+      ]
+    },
+    {
+      "id": "scurrius-uniques",
+      "label": "Scurrius's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Scurrius' spine",
+        "Scurry"
+      ]
+    },
+    {
+      "id": "boss-giant-mole",
+      "label": "Giant Mole and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Giant Mole",
+      "parts": [
+        "Mole skin",
+        "Baby mole"
+      ]
+    },
+    {
+      "id": "giant-mole-uniques",
+      "label": "Giant Mole's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Mole skin",
+        "Baby mole"
+      ]
+    },
+    {
+      "id": "long-curved-bone",
+      "label": "Long bone and Curved bone",
+      "kind": "set",
+      "tags": [
+        "bone-pair"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "These drop from most monsters in the game, not from Scurrius or Giant Mole specifically - kept as their own pair, not part of either boss's uniques.",
+      "members": [
+        "Long bone",
+        "Curved bone"
+      ]
+    },
+    {
+      "id": "boss-obor",
+      "label": "Obor and its unique",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Obor",
+      "note": "Giant champion scroll and Ensouled giant head excluded - both are globally obtained, not exclusive to Obor.",
+      "parts": [
+        "Hill giant club"
+      ]
+    },
+    {
+      "id": "boss-bryophyta",
+      "label": "Bryophyta and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Bryophyta",
+      "note": "Giant champion scroll and Ensouled giant head excluded - both are globally obtained, not exclusive to Bryophyta.",
+      "parts": [
+        "Bryophyta's essence",
+        "Bryophyta's staff"
+      ]
+    },
+    {
+      "id": "bryophyta-uniques",
+      "label": "Bryophyta's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Bryophyta's essence",
+        "Bryophyta's staff"
+      ]
+    },
+    {
+      "id": "boss-dagannoth-rex",
+      "label": "Dagannoth Rex and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Dagannoth Rex",
+      "note": "Berserker ring and Warrior ring are already governed by the fremennik-rings community set (DEC-0018/0013) - included as parts so foiling Rex still unlocks them, but no boss-uniques sibling set is created since both remaining items are rings.",
+      "parts": [
+        "Berserker ring",
+        "Warrior ring"
+      ]
+    },
+    {
+      "id": "boss-dagannoth-prime",
+      "label": "Dagannoth Prime and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Dagannoth Prime",
+      "note": "Seers ring is already governed by the fremennik-rings community set (DEC-0018/0013) - included as a part so foiling Prime still unlocks it, but no boss-uniques sibling set is created since only one non-ring item remains.",
+      "parts": [
+        "Seers ring",
+        "Mud battlestaff"
+      ]
+    },
+    {
+      "id": "boss-dagannoth-supreme",
+      "label": "Dagannoth Supreme and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Dagannoth Supreme",
+      "note": "Archers ring is already governed by the fremennik-rings community set (DEC-0018/0013) - included as a part so foiling Supreme still unlocks it, but no boss-uniques sibling set is created since only one non-ring item remains.",
+      "parts": [
+        "Archers ring",
+        "Seercull"
+      ]
+    },
+    {
+      "id": "boss-chaos-elemental",
+      "label": "Chaos Elemental and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Chaos Elemental",
+      "parts": [
+        "Pet chaos elemental",
+        "Dragon pickaxe"
+      ]
+    },
+    {
+      "id": "boss-kalphite-queen",
+      "label": "Kalphite Queen and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Kalphite Queen",
+      "parts": [
+        "Kq head",
+        "Jar of sand",
+        "Kalphite princess",
+        "Dragon pickaxe"
+      ]
+    },
+    {
+      "id": "kalphite-queen-uniques",
+      "label": "Kalphite Queen's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Dragon pickaxe excluded - shared across several bosses, see the dragon-pickaxe-bosses note on those composites.",
+      "members": [
+        "Kq head",
+        "Jar of sand",
+        "Kalphite princess"
+      ]
+    },
+    {
+      "id": "boss-king-black-dragon",
+      "label": "King Black Dragon and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "King Black Dragon",
+      "note": "Draconic visage is already governed by Vorkath's uniques set (DEC-0038) - included as a part so foiling King Black Dragon still unlocks it, but it is not duplicated into a King Black Dragon uniques set.",
+      "parts": [
+        "Kbd heads",
+        "Prince black dragon",
+        "Dragon pickaxe",
+        "Draconic visage"
+      ]
+    },
+    {
+      "id": "king-black-dragon-uniques",
+      "label": "King Black Dragon's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Kbd heads",
+        "Prince black dragon"
+      ]
+    },
+    {
+      "id": "boss-ahrim",
+      "label": "Ahrim the Blighted and his set",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Ahrim the Blighted",
+      "note": "Barrows gloves excluded - shared chest reward across all six brothers, not Ahrim-specific.",
+      "parts": [
+        "Ahrim's hood",
+        "Ahrim's robetop",
+        "Ahrim's robeskirt",
+        "Ahrim's staff"
+      ]
+    },
+    {
+      "id": "ahrim-uniques",
+      "label": "Ahrim's set",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Ahrim's hood",
+        "Ahrim's robetop",
+        "Ahrim's robeskirt",
+        "Ahrim's staff"
+      ]
+    },
+    {
+      "id": "boss-dharok",
+      "label": "Dharok the Wretched and his set",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Dharok the Wretched",
+      "note": "Barrows gloves excluded - shared chest reward across all six brothers, not Dharok-specific.",
+      "parts": [
+        "Dharok's helm",
+        "Dharok's platebody",
+        "Dharok's platelegs",
+        "Dharok's greataxe"
+      ]
+    },
+    {
+      "id": "dharok-uniques",
+      "label": "Dharok's set",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Dharok's helm",
+        "Dharok's platebody",
+        "Dharok's platelegs",
+        "Dharok's greataxe"
+      ]
+    },
+    {
+      "id": "boss-guthan",
+      "label": "Guthan the Infested and his set",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Guthan the Infested",
+      "note": "Barrows gloves excluded - shared chest reward across all six brothers, not Guthan-specific.",
+      "parts": [
+        "Guthan's helm",
+        "Guthan's platebody",
+        "Guthan's chainskirt",
+        "Guthan's warspear"
+      ]
+    },
+    {
+      "id": "guthan-uniques",
+      "label": "Guthan's set",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Guthan's helm",
+        "Guthan's platebody",
+        "Guthan's chainskirt",
+        "Guthan's warspear"
+      ]
+    },
+    {
+      "id": "boss-karil",
+      "label": "Karil the Tainted and his set",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Karil the Tainted",
+      "note": "Barrows gloves excluded - shared chest reward across all six brothers, not Karil-specific.",
+      "parts": [
+        "Karil's coif",
+        "Karil's leathertop",
+        "Karil's leatherskirt",
+        "Karil's crossbow"
+      ]
+    },
+    {
+      "id": "karil-uniques",
+      "label": "Karil's set",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Karil's coif",
+        "Karil's leathertop",
+        "Karil's leatherskirt",
+        "Karil's crossbow"
+      ]
+    },
+    {
+      "id": "boss-torag",
+      "label": "Torag the Corrupted and his set",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Torag the Corrupted",
+      "note": "Barrows gloves excluded - shared chest reward across all six brothers, not Torag-specific.",
+      "parts": [
+        "Torag's helm",
+        "Torag's platebody",
+        "Torag's platelegs",
+        "Torag's hammers"
+      ]
+    },
+    {
+      "id": "torag-uniques",
+      "label": "Torag's set",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Torag's helm",
+        "Torag's platebody",
+        "Torag's platelegs",
+        "Torag's hammers"
+      ]
+    },
+    {
+      "id": "boss-verac",
+      "label": "Verac the Defiled and his set",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Verac the Defiled",
+      "note": "Barrows gloves excluded - shared chest reward across all six brothers, not Verac-specific.",
+      "parts": [
+        "Verac's helm",
+        "Verac's brassard",
+        "Verac's plateskirt",
+        "Verac's flail"
+      ]
+    },
+    {
+      "id": "verac-uniques",
+      "label": "Verac's set",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Verac's helm",
+        "Verac's brassard",
+        "Verac's plateskirt",
+        "Verac's flail"
+      ]
+    },
+    {
+      "id": "boss-hespori",
+      "label": "Hespori and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Hespori",
+      "parts": [
+        "Bottomless compost bucket",
+        "Tangleroot",
+        "Attas seed",
+        "Iasor seed",
+        "Kronos seed"
+      ]
+    },
+    {
+      "id": "hespori-uniques",
+      "label": "Hespori's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Bottomless compost bucket",
+        "Tangleroot",
+        "Attas seed",
+        "Iasor seed",
+        "Kronos seed"
+      ]
+    },
+    {
+      "id": "wintertodt-rewards",
+      "label": "Wintertodt rewards",
+      "kind": "set",
+      "tags": [
+        "minigame-reward-group"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Wintertodt has no monster/boss card in this dataset to anchor a boss composite, so this is a plain item group. Dragon axe is also the top rung of the existing 'axe' ladder (ladder-down resolves first if Dragon axe itself is foiled), but still lists correctly as an unlock from the other members here.",
+      "members": [
+        "Tome of fire",
+        "Bruma torch",
+        "Burnt page",
+        "Phoenix",
+        "Dragon axe"
+      ]
+    },
+    {
+      "id": "tempoross-rewards",
+      "label": "Tempoross rewards",
+      "kind": "set",
+      "tags": [
+        "minigame-reward-group"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Tempoross has no monster/boss card in this dataset to anchor a boss composite, so this is a plain item group.",
+      "members": [
+        "Tome of water",
+        "Dragon harpoon",
+        "Fish barrel",
+        "Soaked page",
+        "Tackle box",
+        "Tiny tempor"
       ]
     }
   ]

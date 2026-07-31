@@ -619,6 +619,42 @@
           "decision": "DEC-0041"
         }
       ]
+    },
+    {
+      "id": "bone-pair-group",
+      "strategy": "group",
+      "applies": {
+        "familyTags": [
+          "bone-pair"
+        ]
+      },
+      "explanation": "Long bone and Curved bone unlock each other, independent of which boss or monster is thought to have dropped them - both drop from most of the game's monsters. {card} covers {count} cards in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Zalcano, Scorpia, Scurrius, and Giant Mole added; Long bone/Curved bone kept separate from either boss's uniques",
+          "decision": "DEC-0042"
+        }
+      ]
+    },
+    {
+      "id": "minigame-reward-group",
+      "strategy": "group",
+      "applies": {
+        "familyTags": [
+          "minigame-reward-group"
+        ]
+      },
+      "explanation": "These are unique rewards from the same minigame, which has no boss card of its own to anchor a components family - so they unlock each other directly instead. {card} is part of {family} - {count} in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Barrows brothers and Hespori added; Wintertodt and Tempoross rewards grouped without a boss anchor",
+          "decision": "DEC-0044"
+        }
+      ]
     }
   ]
 }

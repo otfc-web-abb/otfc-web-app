@@ -708,3 +708,66 @@ All four bosses also share five items - Virtus mask, Virtus robe top, Virtus rob
 **Rationale.** Same reasoning as DEC-0039: a player foiling Virtus mask cares about the shared armour line, not which specific boss is credited, so a cross-boss shared group is the more honest shape than arbitrarily assigning it to one boss's set or duplicating it across four.
 
 **Source.** the maintainer, this session (2026-07-31): "Shared pool, like Voidwaker" for the DT2 items; approved each boss as proposed. OSRS Wiki drop tables, fetched 2026-07-31, for [Duke Sucellus](https://oldschool.runescape.wiki/w/Duke_Sucellus), [The Leviathan](https://oldschool.runescape.wiki/w/The_Leviathan), [The Whisperer](https://oldschool.runescape.wiki/w/The_Whisperer), [Vardorvis](https://oldschool.runescape.wiki/w/Vardorvis).
+
+---
+
+### DEC-0042 - Zalcano, Scorpia, Scurrius, and Giant Mole added; Long bone/Curved bone kept separate from either boss's uniques
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Four more bosses added under the DEC-0036/0038 policy:
+
+- **Zalcano**: Crystal tool seed, Zalcano shard, Smolcano.
+- **Scorpia**: Scorpia's offspring (pet) only. Odium shard 3 and Malediction shard 3 also drop here but are deliberately deferred - both also drop from Revenants, and assembling them into Odium/Malediction wards is a wider cross-monster network that needs its own ruling rather than a guess folded into this entry.
+- **Scurrius**: Scurrius' spine, Scurry (pet).
+- **Giant Mole**: Mole skin, Baby mole (pet).
+
+**Exception.** Long bone and Curved bone are excluded from both Scurrius's and Giant Mole's unique sets - corrected mid-proposal by the maintainer, who pointed out both items drop from most monsters in the game, not from either boss specifically. They instead form their own small flat `group` (`long-curved-bone`, tag `bone-pair`): foiling either one unlocks the other, independent of any boss.
+
+**Rationale.** Keeps the "not common/shared drops" policy from DEC-0038 honest - Long bone/Curved bone looked boss-flavoured (both Scurrius and Giant Mole are rodent-adjacent) but are mechanically ordinary widespread drops, so tying them to either boss's identity would have been wrong. The Odium/Malediction shard deferral follows the same discipline: better to ship Scorpia with just its pet than guess at a cross-monster ward-assembly rule under time pressure.
+
+**Source.** the maintainer, this session (2026-07-31): approved Zalcano and the pet-only Scorpia; "Long Bone and curved bone shouldn't be unlocks from bosses as these can be dropped from the majority of monsters in the game. However a foil long or foil curved would unlock both." OSRS Wiki drop tables, fetched 2026-07-31, for [Zalcano](https://oldschool.runescape.wiki/w/Zalcano), [Scorpia](https://oldschool.runescape.wiki/w/Scorpia), [Scurrius](https://oldschool.runescape.wiki/w/Scurrius), [Giant Mole](https://oldschool.runescape.wiki/w/Giant_Mole).
+
+---
+
+### DEC-0043 - Obor, Bryophyta, the Dagannoth Kings, Chaos Elemental, Kalphite Queen, and King Black Dragon added; Dragon pickaxe recognised as a real shared unique across nine bosses
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.**
+
+- **Obor**: Hill giant club only - the chest reward behind Obor's key. Giant champion scroll and Ensouled giant head excluded, both globally obtainable, not Obor-specific.
+- **Bryophyta**: Bryophyta's essence (the chest reward behind Bryophyta's key) and Bryophyta's staff (a direct rare drop). Same exclusions as Obor.
+- **Dagannoth Rex**: Berserker ring, Warrior ring. **Dagannoth Prime**: Seers ring, Mud battlestaff. **Dagannoth Supreme**: Archers ring, Seercull. Dagannoth bones deliberately excluded - the maintainer confirmed it's not boss-exclusive enough to count. The four combat rings are already governed by the existing `fremennik-rings` community set (DEC-0013/0018): each ring is a `part` of its king's `boss` composite (so foiling the king still unlocks its rings), but no `boss-uniques` sibling set was created for any of the three kings, since removing the ring(s) each king would otherwise share leaves too few items (0 or 1) to form a valid set.
+- **Chaos Elemental**: Pet chaos elemental, Dragon pickaxe.
+- **Kalphite Queen**: Kq head, Jar of sand, Kalphite princess, Dragon pickaxe.
+- **King Black Dragon**: Kbd heads, Prince black dragon, Dragon pickaxe, Draconic visage.
+
+**Correction: Dragon pickaxe is a real cross-boss unique, not a common drop.** DEC-0038 originally excluded Dragon pickaxe from the wilderness boss pairs' unique sets, treating it as ordinary Rare-Drop-Table filler. The maintainer corrected this: Dragon pickaxe is added as a `part` to nine bosses' composites - Chaos Elemental, Callisto, Artio, Venenatis, Spindel, Vet'ion, Calvar'ion, Kalphite Queen, and King Black Dragon - so foiling any of these nine now also unlocks Dragon pickaxe. It is deliberately **not** added to any `boss-uniques` sibling set, since a single card cannot belong to more than one `group`-strategy set without an ambiguity failure (the same constraint as the wilderness rings, DEC-0038) - with it shared across nine bosses, no single boss's sibling set can claim it. Foiling Dragon pickaxe directly therefore still resolves `unresolved` for now, same as a godsword shard foiled alone (DEC-0027) - only foiling one of the nine bosses unlocks it.
+
+**Similarly, Draconic visage** is added as a `part` of King Black Dragon's composite (it does drop there) without duplicating it into a new King Black Dragon uniques set, since it is already the authority via Vorkath's uniques set (DEC-0038).
+
+**Rationale.** Dagannoth bones and the ring-sharing situation follow the same discipline established for wilderness rings and DT2 items: a composite's `parts` list can safely reference a card governed elsewhere, but a `set`'s `members` list cannot, so the sibling-group behaviour always defers to whichever ruling already owns that card. Obor/Bryophyta's exclusions keep faith with the "not globally obtained" boundary the maintainer drew explicitly this session.
+
+**Source.** the maintainer, this session (2026-07-31): "both giants drop respective keys, these keys unlock the chest... These two items should be unlocked when a foil obor or foil bryophyta card is opened. Champion scroll and ensouled heads should not be included as these are globally obtained items"; "yes to all apart from the bones" (Dagannoth Kings); "add dragon pick too, infact add it to all bosses that drop it: Chaos Elemental Callisto Vet'ion Venenatis Artio Calvar'ion Spindel Kalphite Queen King Black Dragon"; "Include the staff too" (Bryophyta's staff). OSRS Wiki drop tables, fetched 2026-07-31, for [Obor](https://oldschool.runescape.wiki/w/Obor), [Bryophyta](https://oldschool.runescape.wiki/w/Bryophyta), [Dagannoth Kings](https://oldschool.runescape.wiki/w/Dagannoth_Kings), [Chaos Elemental](https://oldschool.runescape.wiki/w/Chaos_Elemental), [Kalphite Queen](https://oldschool.runescape.wiki/w/Kalphite_Queen), [King Black Dragon](https://oldschool.runescape.wiki/w/King_Black_Dragon).
+
+---
+
+### DEC-0044 - Barrows brothers and Hespori added; Wintertodt and Tempoross rewards grouped without a boss anchor
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.**
+
+- **The six Barrows brothers** (Ahrim, Dharok, Guthan, Karil, Torag, Verac) each get a `boss`/`boss-uniques` pair for their own 4-piece armour/weapon set. Barrows gloves is excluded from all six - a shared chest reward across every brother, not brother-specific, same reasoning as the wilderness rings/DT2 items.
+- **Hespori**: Bottomless compost bucket, Tangleroot, Attas seed, Iasor seed, Kronos seed. The other three seeds on its drop table (White lily, Magic, Spirit, Redwood tree) are excluded - they're also obtainable from the Managers' zone reward shop and other farming sources, so not Hespori-exclusive; Attas/Iasor/Kronos are, per the maintainer.
+- **Wintertodt** and **Tempoross** have no monster/boss card in this plugin's dataset at all - there is nothing to foil that represents "the boss", so neither gets a `boss` composite. Their rewards instead form two plain `minigame-reward-group`-tagged `set` families with no boss anchor: `wintertodt-rewards` (Tome of fire, Bruma torch, Burnt page, Phoenix, Dragon axe) and `tempoross-rewards` (Tome of water, Dragon harpoon, Fish barrel, Soaked page, Tackle box, Tiny tempor).
+
+**Note on Dragon axe.** It is also the second-highest rung of the existing `axe` ladder family. Since `ladder-down` resolves before `group` in the strategy order, foiling Dragon axe itself still resolves via the axe ladder, not the Wintertodt group - but foiling any other Wintertodt reward still correctly lists Dragon axe as one of its unlocks, since `group` lists a family's members factually rather than re-resolving each one. Not a conflict, just an asymmetry worth naming.
+
+**Rationale.** New pattern needed here: DEC-0036's `components` shape depends on a boss card to be the `whole`. Wintertodt and Tempoross don't have one, so a flat, un-anchored `group` (mirroring how community sets like the Pyromancer outfit already work) is the correct fallback rather than inventing a fake boss card or leaving the items disconnected.
+
+**Source.** the maintainer, this session (2026-07-31): "Yes, all 6, gloves excluded" (Barrows); "yes but add attas, iasor and kronos seeds, they only come from hespori" (Hespori); "Tome of fire, bruma torch, burnt pages, pheonix and dragon axe should be their own group. Tome of water, dragon harpoon, fish barrel, soaked page, tackle box, tiny tempor from their own group too" (Wintertodt/Tempoross). OSRS Wiki, fetched 2026-07-31, for [Barrows](https://oldschool.runescape.wiki/w/Barrows), [Wintertodt](https://oldschool.runescape.wiki/w/Wintertodt), [Tempoross](https://oldschool.runescape.wiki/w/Tempoross), [Hespori](https://oldschool.runescape.wiki/w/Hespori).
