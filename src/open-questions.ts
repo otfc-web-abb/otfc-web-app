@@ -78,7 +78,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderShell(
         Questions that have been raised and deliberately left unanswered. Each one is recorded as
         deferred rather than quietly dropped, and none of them will be answered in a hurry.
       </p>
-      <ul class="principles">
+      ${
+        OPEN_QUESTIONS.length > 0
+          ? `<ul class="principles">
         ${OPEN_QUESTIONS.map(
           (q) => `
           <li class="principles__item">
@@ -88,7 +90,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderShell(
           </li>
         `,
         ).join('')}
-      </ul>
+      </ul>`
+          : `<p class="about__body">None right now - every question raised so far has been ruled on or closed. That will change; this list grows again the moment a new one comes up.</p>`
+      }
     </section>
 
     <section class="result__section">

@@ -67,18 +67,7 @@ export const DISAGREEMENT_MODES = [
  * or phased_plan.md. Hand-maintained: an entry leaves this list when a DEC entry answers
  * it, and answering one is what removes it - not quietly dropping it.
  */
-export const OPEN_QUESTIONS = [
-  {
-    label: 'What Extreme actually forbids',
-    weight: 'DEC-0004',
-    body: 'The definition rests on a secondhand summary. The cardlocked-ironman thread it describes has never been read directly, so every result under Extreme is capped at contested until it is.',
-  },
-  {
-    label: 'Monsters and NPCs',
-    weight: 'Largest open area',
-    body: '1,227 monster cards with no data model behind them. Pet, boss, superior and normal variants, horizontal unlocks between recolours, and collection-log drops all need a shape before any of them can have a rule.',
-  },
-]
+export const OPEN_QUESTIONS: { label: string; weight: string; body: string }[] = []
 
 /** docs/rules-spec.md section 7. Shown on the unresolved screen so a player can see
  *  which questions get asked, and that this card reached the end without matching. */

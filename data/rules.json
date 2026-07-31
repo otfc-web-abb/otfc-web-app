@@ -36,6 +36,11 @@
           "decision": "DEC-0004"
         },
         {
+          "kind": "decision",
+          "label": "Extreme's definition drops the unread Reddit thread; osrscardexchange stands alone as its source",
+          "decision": "DEC-0034"
+        },
+        {
           "kind": "community",
           "label": "osrscardexchange - Foil cards: what people say",
           "url": "https://www.osrscardexchange.com/blog/foil-cards-what-people-say",
@@ -482,6 +487,29 @@
           "kind": "decision",
           "label": "Tiered utility items descend like armour and weapons",
           "decision": "DEC-0024"
+        }
+      ]
+    },
+    {
+      "id": "enchanted-jewellery-components",
+      "strategy": "components",
+      "applies": {
+        "familyTags": [
+          "enchanted-jewellery"
+        ]
+      },
+      "explanation": "A foil enchanted jewellery item unlocks itself and the unenchanted item it was enchanted from. {card} covers {count} cards in total. It does not descend the wider gem-tier ladder - enchantment breaks that ladder.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Enchanted jewellery unlocks itself, its unenchanted base, and every charge tier",
+          "decision": "DEC-0029"
+        },
+        {
+          "kind": "decision",
+          "label": "DEC-0029 implemented: enchanted jewellery mapped to unenchanted bases",
+          "decision": "DEC-0033"
         }
       ]
     }

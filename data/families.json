@@ -4967,6 +4967,411 @@
         "Zealot's robe bottom",
         "Zealot's boots"
       ]
+    },
+    {
+      "id": "ring-of-recoil",
+      "label": "Ring of recoil",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Ring of recoil",
+      "parts": [
+        "Sapphire ring"
+      ]
+    },
+    {
+      "id": "games-necklace",
+      "label": "Games necklace",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Games necklace",
+      "parts": [
+        "Sapphire necklace"
+      ]
+    },
+    {
+      "id": "amulet-of-magic",
+      "label": "Amulet of magic",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Amulet of magic",
+      "parts": [
+        "Sapphire amulet"
+      ]
+    },
+    {
+      "id": "bracelet-of-clay",
+      "label": "Bracelet of clay",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Bracelet of clay",
+      "parts": [
+        "Sapphire bracelet"
+      ]
+    },
+    {
+      "id": "ring-of-dueling",
+      "label": "Ring of dueling",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Ring of dueling",
+      "parts": [
+        "Emerald ring"
+      ]
+    },
+    {
+      "id": "binding-necklace",
+      "label": "Binding necklace",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Binding necklace",
+      "parts": [
+        "Emerald necklace"
+      ]
+    },
+    {
+      "id": "amulet-of-defence",
+      "label": "Amulet of defence",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Amulet of defence",
+      "parts": [
+        "Emerald amulet"
+      ]
+    },
+    {
+      "id": "castle-wars-bracelet",
+      "label": "Castle wars bracelet",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Castle wars bracelet",
+      "parts": [
+        "Emerald bracelet"
+      ]
+    },
+    {
+      "id": "ring-of-forging",
+      "label": "Ring of forging",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Ring of forging",
+      "parts": [
+        "Ruby ring"
+      ]
+    },
+    {
+      "id": "digsite-pendant",
+      "label": "Digsite pendant",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Digsite pendant",
+      "parts": [
+        "Ruby necklace"
+      ]
+    },
+    {
+      "id": "amulet-of-strength",
+      "label": "Amulet of strength",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Amulet of strength",
+      "parts": [
+        "Ruby amulet"
+      ]
+    },
+    {
+      "id": "inoculation-bracelet",
+      "label": "Inoculation bracelet",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Inoculation bracelet",
+      "parts": [
+        "Ruby bracelet"
+      ]
+    },
+    {
+      "id": "ring-of-life",
+      "label": "Ring of life",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Ring of life",
+      "parts": [
+        "Diamond ring"
+      ]
+    },
+    {
+      "id": "phoenix-necklace",
+      "label": "Phoenix necklace",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Phoenix necklace",
+      "parts": [
+        "Diamond necklace"
+      ]
+    },
+    {
+      "id": "amulet-of-power",
+      "label": "Amulet of power",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Amulet of power",
+      "parts": [
+        "Diamond amulet"
+      ]
+    },
+    {
+      "id": "abyssal-bracelet",
+      "label": "Abyssal bracelet",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Abyssal bracelet",
+      "parts": [
+        "Diamond bracelet"
+      ]
+    },
+    {
+      "id": "ring-of-wealth",
+      "label": "Ring of wealth",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Ring of wealth",
+      "parts": [
+        "Dragonstone ring"
+      ]
+    },
+    {
+      "id": "skills-necklace",
+      "label": "Skills necklace",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Skills necklace",
+      "parts": [
+        "Dragon necklace"
+      ]
+    },
+    {
+      "id": "amulet-of-glory",
+      "label": "Amulet of Glory",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Amulet of Glory",
+      "parts": [
+        "Dragonstone amulet"
+      ]
+    },
+    {
+      "id": "combat-bracelet",
+      "label": "Combat bracelet",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Combat bracelet",
+      "parts": [
+        "Dragonstone bracelet"
+      ]
+    },
+    {
+      "id": "berserker-necklace",
+      "label": "Berserker necklace",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Berserker necklace",
+      "parts": [
+        "Onyx necklace"
+      ]
+    },
+    {
+      "id": "amulet-of-fury",
+      "label": "Amulet of fury",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Amulet of fury",
+      "parts": [
+        "Onyx amulet"
+      ]
+    },
+    {
+      "id": "regen-bracelet",
+      "label": "Regen bracelet",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Regen bracelet",
+      "parts": [
+        "Onyx bracelet"
+      ]
+    },
+    {
+      "id": "ring-of-suffering",
+      "label": "Ring of suffering",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Ring of suffering",
+      "parts": [
+        "Zenyte ring"
+      ]
+    },
+    {
+      "id": "necklace-of-anguish",
+      "label": "Necklace of anguish",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Necklace of anguish",
+      "parts": [
+        "Zenyte necklace"
+      ]
+    },
+    {
+      "id": "amulet-of-torture",
+      "label": "Amulet of torture",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Amulet of torture",
+      "parts": [
+        "Zenyte amulet"
+      ]
+    },
+    {
+      "id": "tormented-bracelet",
+      "label": "Tormented bracelet",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Tormented bracelet",
+      "parts": [
+        "Zenyte bracelet"
+      ]
     }
   ]
 }

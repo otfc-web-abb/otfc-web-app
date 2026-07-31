@@ -91,7 +91,7 @@ Rejected: adopting siblings on the grounds that stats are what matter. Defensibl
 
 ### DEC-0004 - `extreme` defined from the osrscardexchange framing only
 
-**Status:** Active
+**Status:** Superseded by DEC-0034
 **Date:** 2026-07-30
 
 **Ruling.** The `extreme` ruleset is defined as: the unlock set is unchanged, but any interaction with a locked source is forbidden, so acquisition verbs on not-yet-unlocked cards are unavailable and the player cannot gather-then-bank ahead of the unlock. `standard` permits gather-then-bank.
@@ -513,3 +513,79 @@ No (t) or (g) cards exist in the current plugin dataset, so this rule is not yet
 **Rationale.** Resolves the question left open at DEC-0022. Bosses and their uniques are a single named set either way you enter it, consistent with how every other `group` family in this dataset behaves (community sets, DEC-0013; Camdozaal lockboxes, DEC-0014).
 
 **Source.** Rhys, this session (2026-07-31): "Unlocks the whole boss group."
+
+---
+
+### DEC-0032 - NPC hierarchy ranks do not cascade; each rank unlocks only itself and its recolour set
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** The Pet -> Boss -> Superior -> Normal npc order from TheSeahorsie's page is a resolution-order ranking, not an unlock ladder. Foiling an NPC at a given rank does **not** unlock the ranks below it - a foil pet does not unlock its boss, a foil boss does not unlock its superior or normal forms, and so on. Each rank unlocks only itself plus its horizontal recolour siblings at that same rank (e.g. foiling one Elemental wizard colour unlocks the other Elemental wizard colours, all still Normal-rank; it does not touch the superior variant).
+
+Horizontal recolour sets are a flat `group` (unordered, symmetric) - foiling any one recolour unlocks every recolour in that set, same mechanics as DEC-0013/DEC-0022. Per the source, a recolour set does not include that NPC's superior variant; the superior sits in its own recolour set (if it has one) at its own rank.
+
+**Engine implication.** This removes the need for a distinct `npc-hierarchy` strategy with cross-rank logic. Recolour sets can be modelled as ordinary `kind: "set"` / `group`-strategy families, scoped per rank - a `normal-wizard-colours` set is independent of a `superior-wizard-colours` set for the same base NPC, and neither reaches the boss. The `npc-hierarchy` strategy slot in `rules-spec.md` 6.6 and the resolution order (7.7) can be dropped once this lands, in favour of routing recolour sets through the existing `group` step. Boss + uniques (DEC-0022/DEC-0031) already follow this same flat-group shape and don't need to change.
+
+This ruling settles the *shape*; it does not populate the ~1,227 monster cards or their recolour/rank groupings into `data/families.json` - that data-entry work is still outstanding and tracked separately.
+
+**Rationale.** A cascading ladder across pet/boss/superior/normal would mean a foil pet (the rarest, hardest-to-get form) unlocks everything, which does not match how the community actually plays it and was never claimed by the source - the source only ever states an order, not a grant. Treating each rank as its own flat group is the narrower, more defensible reading and reuses machinery the engine already has, rather than adding new cross-rank strategy code for a claim the source doesn't make.
+
+**Source.** Rhys, this session (2026-07-31): "Each rank unlocks only itself (+ recolours)"; "Yes, flat group" for horizontal recolour unlocks. TheSeahorsie's page confirms the rank order and the horizontal-unlock/superior-exclusion wording (fetched 2026-07-31): "Pets -> Boss -> Superior -> Normal npc"; "Npc's unlock horizontally if they have any"; horizontal unlock does not apply "if you obtained the superior variant instead."
+
+---
+
+### DEC-0033 - DEC-0029 implemented: enchanted jewellery mapped to unenchanted bases
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Corrects an aside in DEC-0029, which assumed no enchanted-jewellery cards existed yet - they do. 27 `components` families were added (tag `enchanted-jewellery`, one rule `enchanted-jewellery-components` selecting all of them), each mapping an enchanted item to the unenchanted gem item it is created from via the standard Enchant spells:
+
+| Gem | Ring | Necklace | Amulet | Bracelet |
+|---|---|---|---|---|
+| Sapphire | Ring of recoil | Games necklace | Amulet of magic | Bracelet of clay |
+| Emerald | Ring of dueling | Binding necklace | Amulet of defence | Castle wars bracelet |
+| Ruby | Ring of forging | Digsite pendant | Amulet of strength | Inoculation bracelet |
+| Diamond | Ring of life | Phoenix necklace | Amulet of power | Abyssal bracelet |
+| Dragonstone | Ring of wealth | Skills necklace (base: Dragon necklace) | Amulet of Glory | Combat bracelet |
+| Onyx | *(excluded, see below)* | Berserker necklace | Amulet of fury | Regen bracelet |
+| Zenyte | Ring of suffering | Necklace of anguish | Amulet of torture | Tormented bracelet |
+
+**Exception.** Ring of stone (from Onyx ring, per Lvl-6 Enchant) is excluded. Onyx ring is not present in the plugin's card dataset, so no `parts` entry can reference it - the schema requires every referenced card to exist in `cards.json`. Ring of stone therefore has no rule yet and resolves `unresolved` until this is revisited.
+
+The charge-tier half of DEC-0029's ruling (foiling one charge count unlocks all others of the same enchanted item) is not encoded in data: none of these items have separate per-charge cards in the current dataset (e.g. no "Amulet of glory (1)"), so it stays moot in practice, same as the trimmed-variant situation before DEC-0030.
+
+**Rationale.** One `components` family per enchanted item, selected by a shared `enchanted-jewellery` tag, mirrors the godsword pattern (DEC-0027) rather than writing 27 near-identical rule entries.
+
+**Source.** OSRS Wiki, fetched 2026-07-31: [Amulet of glory](https://oldschool.runescape.wiki/w/Amulet_of_glory) ("The amulet of glory is a dragonstone amulet that has been enchanted... the Lvl-5 Enchant spell"); [Lvl-1 Enchant](https://oldschool.runescape.wiki/w/Lvl-1_Enchant), [Lvl-2 Enchant](https://oldschool.runescape.wiki/w/Lvl-2_Enchant), [Lvl-3 Enchant](https://oldschool.runescape.wiki/w/Lvl-3_Enchant), [Lvl-4 Enchant](https://oldschool.runescape.wiki/w/Lvl-4_Enchant), [Lvl-5 Enchant](https://oldschool.runescape.wiki/w/Lvl-5_Enchant), [Lvl-6 Enchant](https://oldschool.runescape.wiki/w/Lvl-6_Enchant), [Lvl-7 Enchant](https://oldschool.runescape.wiki/w/Lvl-7_Enchant) (List of items tables, base -> enchanted result per gem).
+
+---
+
+### DEC-0034 - `extreme`'s definition drops the unread Reddit thread; osrscardexchange stands alone as its source
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Supersedes DEC-0004's rationale, not its ruling - the `extreme` ruleset definition itself is unchanged (unlock set same as `standard`; any interaction with a locked source is forbidden; `confidence: "contested"`). What changes is the citation: the Reddit extreme-cardlocked-ironman thread is dropped from the project entirely rather than carried as an unread "primary source, still needs reading" reference. [osrscardexchange - Foil cards: what people say](https://www.osrscardexchange.com/blog/foil-cards-what-people-say) is now the sole, sufficient source for this ruleset's definition.
+
+**Rationale.** The thread lives on reddit.com, which this project's tooling cannot fetch (blocked by policy, confirmed again this session across direct fetch, a raw JSON endpoint, and two Reddit-mirror sites) and which nobody has manually read since DEC-0004 was written. Carrying an unreadable citation and an open item that can never close on its own is worse than not citing it - it implies a verification path that doesn't exist. `extreme` stays `contested` on its own terms: it is one community reading among several (DEC-0004's `standard`/`extreme`/`plain-foil` three-way split), not because a second source is still pending.
+
+If someone reads the Reddit thread by hand in the future and it says something different, that is new information and gets its own decision entry - this entry closes the "still needs a manual read" loop, it does not pre-empt a future correction.
+
+**Source.** Rhys, this session (2026-07-31): "Ignore the reddit thread, remove it entirely from this project, we're not relying on it."
+
+---
+
+### DEC-0035 - A foil monster collection-log drop unlocks every unique for that monster
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Extends DEC-0022/DEC-0031's boss + uniques logic to every monster with a collection log, not bosses alone: a foil of any collection-log drop item unlocks every unique tied to that monster's log, as a flat symmetric `group` (foiling any one unique, or the monster itself if it has its own card, reaches every member of the same set). This does not fold ordinary/common drops (drops shared across many monsters, not log-gated) into this shape - only collection-log-tracked uniques count as members of a given monster's set.
+
+This settles the shape; it does not populate specific monster `boss-group`/collection-log `set` families beyond General Graardor (DEC-0022) - that data-entry work is tracked alongside the wider monster/NPC card population (see DEC-0032).
+
+**Rationale.** Generalises the one worked case (General Graardor) into a general principle rather than leaving every other monster's uniques to be ruled on individually later. Matches the existing `group` strategy exactly, so no new engine work is needed - only data entry, same as DEC-0032's recolour sets.
+
+**Source.** Rhys, this session (2026-07-31): "A foil of a monsters collection log unlocks all uniques for that monster."
