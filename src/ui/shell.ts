@@ -15,7 +15,7 @@ export function renderShell(
       <div class="site-header__inner">
         <a class="wordmark" href="/">
           <span class="wordmark__mark" aria-hidden="true">◆</span>
-          <h1 class="wordmark__text">OSRS TCG <span class="wordmark__accent">Foil Rules</span></h1>
+          <h1 class="wordmark__text">OSRS TCG <span class="wordmark__accent">Foil Checker</span></h1>
         </a>
         <nav class="site-nav" aria-label="Main">
           ${NAV.filter((item) => item.key !== options.current)

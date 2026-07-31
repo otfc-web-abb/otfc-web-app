@@ -74,21 +74,6 @@ export const OPEN_QUESTIONS = [
     body: 'The definition rests on a secondhand summary. The cardlocked-ironman thread it describes has never been read directly, so every result under Extreme is capped at contested until it is.',
   },
   {
-    label: 'Trimmed variants',
-    weight: 'Downstream of DEC-0003',
-    body: 'Whether a foil trimmed variant unlocks the trimmed variants of lower tiers. No (t) or (g) cards exist in the plugin list yet, so it is moot in practice and still unanswered in principle.',
-  },
-  {
-    label: 'Godswords',
-    weight: 'On hold twice',
-    body: 'Hilt plus blade looks like the clean "made of parts" case, and it has been raised and set aside in two separate rounds rather than ruled on. The one candidate that was ruled on, the Barronite mace, turned out not to work that way at all.',
-  },
-  {
-    label: 'A foil unique, on its own',
-    weight: 'Deferred at DEC-0022',
-    body: 'A foil of a boss unlocks that boss and its uniques. What a foil of one of those uniques unlocks by itself was raised at the same time and explicitly left open.',
-  },
-  {
     label: 'Monsters and NPCs',
     weight: 'Largest open area',
     body: '1,227 monster cards with no data model behind them. Pet, boss, superior and normal variants, horizontal unlocks between recolours, and collection-log drops all need a shape before any of them can have a rule.',

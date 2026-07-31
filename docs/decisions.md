@@ -470,3 +470,46 @@ Modelled as a second `components` family per god (`bandos-hilt-godsword`, `armad
 A foil shard or foil Godsword blade alone is still not decided and still resolves `unresolved`.
 
 **Source.** Rhys, this session (2026-07-31): "I would say a foil godsword hilt unlocks the hilt and godsword, not the blades. A foil godsword would unlock the godsword, hilt and blades." "Blades" confirmed to mean both the three shards and the separate Godsword blade card.
+
+---
+
+### DEC-0029 - Enchanted jewellery unlocks itself, its unenchanted base, and every charge tier
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** A foil enchanted jewellery item (e.g. Amulet of glory, Ring of wealth) unlocks: itself, the unenchanted base item it was made from (e.g. Sapphire amulet), and every charge variant of that same enchanted item (uncharged through to its highest charge count). It does not descend the wider gem-tier ladder (DEC-0011) - enchantment breaks that ladder.
+
+No cards of this shape exist in the current plugin dataset yet, so this rule is not yet instantiated in `data/rules.json`. It is recorded now so the shape is settled before such cards are added.
+
+**Rationale.** Enchanted jewellery is a distinct item line from its unenchanted base once enchanted, but charge count is cosmetic to what the item unlocks, not a separate tier - all charges of the same enchanted item are the same card family. Unlike unenchanted jewellery, enchantment does not chain to other gems' enchanted versions.
+
+**Source.** Rhys, this session (2026-07-31): "Itself, unenchanted base and all charged values, i.e. 1 charge, 2 charges etc."
+
+---
+
+### DEC-0030 - Trimmed and gilded armour form their own descending sets, separate from the plain ladder
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** A foil trimmed (t) armour piece unlocks the trimmed set - that piece and every trimmed tier below it - not the plain ladder. A foil gilded (g) piece unlocks the gilded set the same way. Trimmed and gilded each form their own independent descending ladder, mirroring the plain armour-ladder-down shape (DEC-0007 / `armour-ladder-down`) but not chaining into it or into each other.
+
+No (t) or (g) cards exist in the current plugin dataset, so this rule is not yet instantiated in `data/rules.json`. Recorded now so the shape is settled before such cards are added.
+
+**Rationale.** Supersedes the "moot and unanswered" framing this question had under DEC-0003/`trimmed-variants`. Trim and gild are their own progression, not a plain-armour with a coat of paint, so they get their own ladder rather than inheriting or feeding the plain one - consistent with how Cosmetic tiers (White/Gilded, DEC-0006) were already treated as their own rungs.
+
+**Source.** Rhys, this session (2026-07-31): "trimmed and gilded items unlock their respective set."
+
+---
+
+### DEC-0031 - A foil boss unique, on its own, unlocks the same boss group as foiling the boss
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Foiling one of a boss's unique drops unlocks the same `boss-group` as foiling the boss card itself - the relationship is symmetric, matching DEC-0022. This was already the engine's behaviour (the `group` strategy matches on family membership, not on which member card was foiled) since uniques are listed as members of the `boss-group`-tagged family alongside the boss; this entry confirms it's the intended ruling rather than an accident of the implementation.
+
+**Rationale.** Resolves the question left open at DEC-0022. Bosses and their uniques are a single named set either way you enter it, consistent with how every other `group` family in this dataset behaves (community sets, DEC-0013; Camdozaal lockboxes, DEC-0014).
+
+**Source.** Rhys, this session (2026-07-31): "Unlocks the whole boss group."
