@@ -389,3 +389,50 @@ Mechanically, this needed no `npc-hierarchy` engine work at all: it is expressed
 **Rationale.** The full NPC/boss domain is explicitly out of MVP scope and project-sized on its own (phased_plan.md, "Monster and NPC domain"). Rather than leave a real, concrete case on the table because the general model isn't built, this ruling establishes the pattern - boss + uniques as a `boss-group`-tagged set - that future sessions can repeat per boss without more engine work, while leaving the harder questions (variant hierarchy, what a foil unique alone grants, whether every boss's group should include the boss itself) genuinely open.
 
 **Source.** Rhys, this session (2026-07-31). Uniques list: OSRS Wiki, General Graardor.
+
+---
+
+### DEC-0024 - Tiered utility items descend like armour and weapons
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Six ladder families that had no rule now descend under the ordinary downward-unlock reading: `cannonball`, `coffin`, `locks`, `nails`, `limbs` and `keel-parts`. A foil of one unlocks that tier and every tier below it in the same family, and nothing above.
+
+**Rationale.** Each is a metal-tier progression with the same shape as the armour and weapon ladders already covered by DEC-0002's downward reading. Nothing about them argues for different treatment, and leaving them unresolved was an accident of coverage rather than a judgement that they were hard. They are given their own `families` selectors rather than a shared tag because they carry no common tag today and inventing one would imply a category that does not otherwise exist.
+
+**Source.** Rhys, this session (2026-07-31), ruling each family in turn.
+
+---
+
+### DEC-0025 - Keys unlock across eyelet colours at their own tier
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** A foil key unlocks every eyelet colour of a key at that same tier, and nothing above or below. A foil Bronze key black unlocks the bronze key in all five colours (black, brown, crimson, purple, red). The tiers are bronze, steel, black, silver, gold.
+
+This replaces the five per-colour ladder families (`key-black`, `key-brown`, `key-crimson`, `key-purple`, `key-red`) with five per-tier set families (`keys-bronze`, `keys-steel`, `keys-black`, `keys-silver`, `keys-gold`), each tagged `key-tier`, selected by one `group` rule.
+
+**Rationale.** The colour is an eyelet variant, not a progression step - the five colours at a tier are the same key. Modelling them as five colour ladders made the tier the thing you climb and the colour the thing you are locked into, which is backwards. Restructuring the data was preferred over adding a new `tier-group` strategy to the engine: the existing `group` strategy already expresses "these unlock together" exactly, and a new strategy would have needed spec, engine and validator work to say the same thing. The per-colour ladders are removed rather than left in place, because a ladder no rule descends is the failure mode DEC-0026 was written to stop.
+
+**Source.** Rhys, this session (2026-07-31): "so it goes bronze, steel, black, silver, gold. Any of these keys unlocks all of its colours".
+
+---
+
+### DEC-0026 - A state pair reports a stopped ladder only when a rule would have descended it
+
+**Status:** Active (amends rules-spec section 6.2)
+**Date:** 2026-07-31
+
+**Ruling.** When a `state-pair` resolution looks for the ladder it stopped, it considers only ladders that a `ladder-down` rule actually selects. A ladder family that exists as factual ordering but that no rule descends is not reported: no `family` context, no `excluded` list.
+
+In practice this means foil Zenyte, Uncut ruby, Grimy torstol and Green dragonhide now answer with their two states alone. The gem, herb, dragonhide and dragon-leather ladders are no longer drawn beneath them.
+
+**Rationale.** Section 6.2's excluded list exists so a player can see what the pair cost them - "the player needs to see that the state pair stopped the descent". That justification only holds where a descent would otherwise have happened. The gem, herb, dragonhide and dragon-leather families carry no `ladder-down` rule at all, so nothing was ever going to descend and the pair stopped nothing.
+
+Reporting them anyway produced a screen that contradicted itself: foil Zenyte drew the full ten-rung gem ladder with nine rungs marked "still locked", implying nine gems were forfeited, while the unlock section directly below it said "On Uncut zenyte, and nothing else". The partner card was pushed into that footnote precisely because it is not a member of the ladder being drawn. Both statements were generated from the same correct unlock set; only the framing was wrong.
+
+The precedence of `state-pair` over `ladder-down` (DEC-0001) is untouched. Raw trout still stops a fish ladder if one is ever given a rule, and the excluded list still fills in that case. What changed is only which ladders count as stopped.
+
+**Source.** Rhys, this session (2026-07-31): "this logic shouldnt even be touching them, it should just be state pair for all gems, cut or uncut", and the same for herbs.

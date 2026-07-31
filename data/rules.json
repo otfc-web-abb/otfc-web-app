@@ -340,6 +340,132 @@
           "decision": "DEC-0023"
         }
       ]
+    },
+    {
+      "id": "cannonball-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "families": [
+          "cannonball"
+        ]
+      },
+      "explanation": "A foil cannonball unlocks that cannonball and every tier below. {card} covers {count} cards down to {lowest}. The {excludedCount} tiers above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Tiered utility items descend like armour and weapons",
+          "decision": "DEC-0024"
+        }
+      ]
+    },
+    {
+      "id": "coffin-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "families": [
+          "coffin"
+        ]
+      },
+      "explanation": "A foil coffin unlocks that coffin and every tier below. {card} covers {count} cards down to {lowest}. The {excludedCount} tiers above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Tiered utility items descend like armour and weapons",
+          "decision": "DEC-0024"
+        }
+      ]
+    },
+    {
+      "id": "keys-tier-group",
+      "strategy": "group",
+      "applies": {
+        "familyTags": [
+          "key-tier"
+        ]
+      },
+      "explanation": "A foil key unlocks every eyelet colour at its own tier and nothing above or below. {card} is part of {family} - {count} in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Keys unlock across eyelet colours at their own tier",
+          "decision": "DEC-0025"
+        }
+      ]
+    },
+    {
+      "id": "locks-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "families": [
+          "locks"
+        ]
+      },
+      "explanation": "A foil lock unlocks that lock and every tier below. {card} covers {count} cards down to {lowest}. The {excludedCount} tiers above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Tiered utility items descend like armour and weapons",
+          "decision": "DEC-0024"
+        }
+      ]
+    },
+    {
+      "id": "nails-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "families": [
+          "nails"
+        ]
+      },
+      "explanation": "A foil nail unlocks that nail and every tier below. {card} covers {count} cards down to {lowest}. The {excludedCount} tiers above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Tiered utility items descend like armour and weapons",
+          "decision": "DEC-0024"
+        }
+      ]
+    },
+    {
+      "id": "limbs-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "families": [
+          "limbs"
+        ]
+      },
+      "explanation": "A foil limb unlocks that limb and every tier below. {card} covers {count} cards down to {lowest}. The {excludedCount} tiers above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Tiered utility items descend like armour and weapons",
+          "decision": "DEC-0024"
+        }
+      ]
+    },
+    {
+      "id": "keel-parts-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "families": [
+          "keel-parts"
+        ]
+      },
+      "explanation": "A foil keel part unlocks that part and every tier below. {card} covers {count} cards down to {lowest}. The {excludedCount} tiers above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Tiered utility items descend like armour and weapons",
+          "decision": "DEC-0024"
+        }
+      ]
     }
   ]
 }

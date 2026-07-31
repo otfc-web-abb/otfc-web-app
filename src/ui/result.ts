@@ -103,7 +103,12 @@ function renderUnlocks(resolution: Resolution): string {
   const orphans = unlocks.filter((u) => !inFamily.has(u.card.name))
   if (orphans.length === 0) return ''
 
-  if (sameActions(orphans)) {
+  // Collapsing several cards to one badge row drops their names, which only reads
+  // if a ladder is naming them alongside. A state pair with no ladder behind it has
+  // nothing else on the page, so "On all 2 unlocked cards" would be the whole answer.
+  const namesAreCovered = orphans.length === 1 || family !== undefined
+
+  if (sameActions(orphans) && namesAreCovered) {
     return `
       <section class="result__section">
         <h3 class="result__heading">What this lets you do</h3>

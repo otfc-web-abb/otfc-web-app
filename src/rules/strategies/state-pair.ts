@@ -10,12 +10,27 @@ import { ends, interpolate } from '../explanation.ts'
 import { matchStatePair } from '../match.ts'
 import type { Card, LadderFamily, Unlock } from '../types.ts'
 
+/** A ladder only counts as stopped if a `ladder-down` rule would actually have
+ *  descended it. Gems, herbs and hides sit in ladder families that exist as factual
+ *  ordering but that no rule selects, so the pair stopped nothing there and section
+ *  6.2 has nothing to report. */
+const wouldDescend = (d: Dataset, f: LadderFamily): boolean =>
+  d.rules.some(
+    (r) =>
+      r.strategy === 'ladder-down' &&
+      (r.applies.families?.includes(f.id) ||
+        (f.tags ?? []).some((t) => r.applies.familyTags?.includes(t))),
+  )
+
 /** The ladder the pair stopped the descent of. Section 6.2 reports the rest of it
  *  as excluded so the player can see what the pair cost them. Either state may be
  *  the one on the ladder - herbs are laddered under their clean name, so a foil
  *  Grimy guam leaf has to reach the herb ladder through its partner. */
 const stoppedLadder = (d: Dataset, cardNames: string[]): LadderFamily | undefined =>
-  cardNames.flatMap((n) => d.laddersByCard.get(n) ?? []).sort((a, b) => a.id.localeCompare(b.id))[0]
+  cardNames
+    .flatMap((n) => d.laddersByCard.get(n) ?? [])
+    .sort((a, b) => a.id.localeCompare(b.id))
+    .find((f) => wouldDescend(d, f))
 
 export const statePair: StrategyModule = (d: Dataset, card: Card): Draft | null => {
   const match = matchStatePair(d, card.name)

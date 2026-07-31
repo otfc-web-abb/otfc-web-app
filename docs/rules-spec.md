@@ -142,7 +142,9 @@ Every strategy takes the same shape: **factual input** (which cards are related 
 
 Card names in data are the exact `cards.json` names, which are not always the names people say: the herb pair is `Grimy guam leaf` / `Guam leaf`, not "grimy guam" / "clean guam". Validation rule 4 catches the difference.
 
-**Excluded:** if the card is also in a ladder, the rest of that ladder - above *and* below - is reported as excluded, because the player needs to see that the state pair stopped the descent.
+**Excluded:** if the card is also in a ladder **that a `ladder-down` rule selects**, the rest of that ladder - above *and* below - is reported as excluded, because the player needs to see that the state pair stopped the descent.
+
+A ladder family that no `ladder-down` rule selects is not reported at all: no `family` context, no `excluded`. Nothing was going to descend it, so the pair stopped nothing and there is no forfeited descent to show. This matters because the gem, herb, dragonhide and dragon-leather families are exactly that - factual ordering with no rule on them - and reporting them anyway drew a full ladder of "still locked" rungs implying a loss the player never faced. See DEC-0026.
 
 ### 6.3 `ladder-down`
 
