@@ -1,0 +1,4 @@
+{
+  "$schema": "./schema/overrides.schema.json",
+  "overrides": []
+}

@@ -1,0 +1,342 @@
+// The result view. Renders whatever resolve() returned, including `unresolved`,
+// which is a designed screen here rather than an error state - it is the common
+// case at launch and the app's honesty made visible.
+
+import { resolve, type Resolution, type Ruleset, type Unlock } from '../rules/index.ts'
+import { actionBadges } from './actions.ts'
+import {
+  CAMPS,
+  CAMPS_SOURCE,
+  CONFIDENCE_BLURBS,
+  CONFIDENCE_LABELS,
+  DISCORD_URL,
+  GUIDELINE_LINE,
+  RULESET_BLURBS,
+  SUGGEST_A_RULE_URL,
+} from './copy.ts'
+import { esc, plural } from './html.ts'
+import { renderLadder } from './ladder.ts'
+
+const RULESETS: Ruleset[] = ['standard', 'extreme', 'plain-foil']
+const RULESET_LABELS: Record<Ruleset, string> = {
+  standard: 'Standard',
+  extreme: 'Extreme',
+  'plain-foil': 'Plain foil',
+}
+
+// --- pieces -------------------------------------------------------------------
+
+/**
+ * The blurb under the toggle says what the selected ruleset changes. When the
+ * resolution carries caveats they say the same thing with the card's specifics
+ * attached, so they take the slot rather than repeating it in a section below.
+ */
+function renderToggle(active: Ruleset, caveats: string[]): string {
+  const lines = caveats.length > 0 ? caveats : [RULESET_BLURBS[active] ?? '']
+
+  return `
+    <div class="ruleset-field">
+      <span class="ruleset__legend" id="ruleset-legend">Ruleset</span>
+      <div class="ruleset" role="radiogroup" aria-labelledby="ruleset-legend">
+        ${RULESETS.map(
+          (r) => `
+          <button
+            class="ruleset__option${r === active ? ' ruleset__option--active' : ''}"
+            type="button"
+            role="radio"
+            aria-checked="${r === active}"
+            data-ruleset="${r}"
+          >${RULESET_LABELS[r]}</button>
+        `,
+        ).join('')}
+      </div>
+      ${lines.map((line) => `<p class="ruleset__blurb">${esc(line)}</p>`).join('')}
+    </div>
+  `
+}
+
+/** The foil treatment. Pure CSS - the sheen layers are empty elements the
+ *  stylesheet paints, so no image assets and nothing to load. */
+function renderHero(resolution: Resolution): string {
+  const card = resolution.card
+  if (!card) return ''
+
+  return `
+    <div class="hero">
+      <div class="foil">
+        <img class="foil__img" src="${esc(card.img)}" alt="" width="130" height="130" />
+        <span class="foil__sheen" aria-hidden="true"></span>
+        <span class="foil__glare" aria-hidden="true"></span>
+        <span class="foil__sparks" aria-hidden="true"
+          >${'<i class="foil__spark"></i>'.repeat(7)}</span
+        >
+      </div>
+      <p class="hero__eyebrow">Foil</p>
+      <h2 class="hero__name">${esc(card.name)}</h2>
+      ${card.examine ? `<p class="hero__examine">${esc(card.examine)}</p>` : ''}
+    </div>
+  `
+}
+
+const sameActions = (unlocks: Unlock[]): boolean =>
+  unlocks.every((u) => u.actions.join() === unlocks[0].actions.join())
+
+/**
+ * The verbs normally ride on the ladder rows they apply to. This covers what the
+ * ladder cannot draw: unlocks with no family at all, and unlocks sitting outside the
+ * family it did draw.
+ */
+function renderUnlocks(resolution: Resolution): string {
+  const { unlocks, family } = resolution
+  if (unlocks.length === 0) return ''
+
+  const inFamily = new Set(
+    family
+      ? [
+          ...(family.rungs ?? []).flatMap((r) => r.members),
+          ...(family.members ?? []),
+          ...(family.whole ? [family.whole] : []),
+        ].map((c) => c.name)
+      : [],
+  )
+
+  const orphans = unlocks.filter((u) => !inFamily.has(u.card.name))
+  if (orphans.length === 0) return ''
+
+  if (sameActions(orphans)) {
+    return `
+      <section class="result__section">
+        <h3 class="result__heading">What this lets you do</h3>
+        <div class="actions">${actionBadges(orphans[0].actions)}</div>
+        <p class="actions__note">${
+          orphans.length === 1
+            ? `On ${esc(orphans[0].card.name)}, and nothing else.`
+            : `On all ${plural(orphans.length, 'unlocked card')}.`
+        }</p>
+      </section>
+    `
+  }
+
+  return `
+    <section class="result__section">
+      <h3 class="result__heading">What you unlock</h3>
+      <ul class="unlocks">
+        ${orphans
+          .map(
+            (u) => `
+          <li class="unlocks__item">
+            <img class="unlocks__thumb" src="${esc(u.card.img)}" alt="" loading="lazy" width="28" height="28" />
+            <span class="unlocks__name">${esc(u.card.name)}</span>
+            <span class="unlocks__actions">${actionBadges(u.actions)}</span>
+            ${u.note ? `<span class="unlocks__note">${esc(u.note)}</span>` : ''}
+          </li>
+        `,
+          )
+          .join('')}
+      </ul>
+    </section>
+  `
+}
+
+/** The engine reports exclusions explicitly, and the ladder already renders them in
+ *  place. This covers the case where an excluded card is not a family member, so it
+ *  would otherwise go unmentioned. */
+function renderExcluded(resolution: Resolution): string {
+  const { excluded, family } = resolution
+  if (excluded.length === 0) return ''
+
+  const inFamily = new Set((family?.rungs ?? []).flatMap((r) => r.members).map((c) => c.name))
+  const orphans = excluded.filter((c) => !inFamily.has(c.name))
+  if (orphans.length === 0) return ''
+
+  return `
+    <section class="result__section">
+      <h3 class="result__heading">Still locked</h3>
+      <ul class="unlocks unlocks--locked">
+        ${orphans
+          .map(
+            (c) => `
+          <li class="unlocks__item">
+            <img class="unlocks__thumb" src="${esc(c.img)}" alt="" loading="lazy" width="28" height="28" />
+            <span class="unlocks__name">${esc(c.name)}</span>
+            <span class="badge badge--locked">Still locked</span>
+          </li>
+        `,
+          )
+          .join('')}
+      </ul>
+    </section>
+  `
+}
+
+/** The verdict, and how much to trust it. The strategy label and the tally both used
+ *  to sit here too - the explanation states the first, the ladder counts the second. */
+function renderRuling(resolution: Resolution): string {
+  const { confidence, explanation } = resolution
+
+  return `
+    <section class="result__section ruling">
+      <p class="ruling__explanation">${esc(explanation)}</p>
+      <p class="ruling__confidence">
+        <span class="badge badge--confidence badge--${confidence}">${esc(CONFIDENCE_LABELS[confidence] ?? confidence)}</span>
+        <span class="ruling__gloss">${esc(CONFIDENCE_BLURBS[confidence] ?? '')}</span>
+      </p>
+    </section>
+  `
+}
+
+// --- the unresolved screen ----------------------------------------------------
+
+const discordButton = (label: string): string =>
+  DISCORD_URL
+    ? `<a class="button button--primary" href="${esc(DISCORD_URL)}" target="_blank" rel="noopener">${label}</a>`
+    : ''
+
+const suggestButton = `<a class="button" href="${esc(SUGGEST_A_RULE_URL)}" target="_blank" rel="noopener">Suggest a rule</a>`
+
+/**
+ * rules-spec section 8: the card, the plain statement, the principles at play, then
+ * the hand-off. The buttons appear twice on purpose - once for the player who has
+ * read enough and wants to go argue it, once at the end with the reasoning.
+ *
+ * Nothing here may read as a suggested answer for this card. The camps are the
+ * positions people hold, not positions applied to the card on screen.
+ */
+function renderUnresolved(resolution: Resolution): string {
+  return `
+    ${renderRuling(resolution)}
+
+    <div class="handoff__actions handoff__actions--inline">
+      ${discordButton('Ask in the Discord')}
+      ${suggestButton}
+    </div>
+
+    ${renderLadder(resolution)}
+
+    <section class="result__section">
+      <h3 class="result__heading">The positions people hold</h3>
+      <p class="principles__lede">
+        These are the general arguments in circulation, not an answer for this card.
+      </p>
+      <ul class="principles">
+        ${CAMPS.map(
+          (c) => `
+          <li class="principles__item">
+            <p class="principles__label">${esc(c.label)}</p>
+            <p class="principles__weight">${esc(c.weight)}</p>
+            <p class="principles__body">${esc(c.body)}</p>
+          </li>
+        `,
+        ).join('')}
+      </ul>
+      <p class="principles__source">
+        Summarised from
+        <a class="link" href="${esc(CAMPS_SOURCE.url)}" target="_blank" rel="noopener">${esc(CAMPS_SOURCE.label)}</a>.
+      </p>
+    </section>
+
+    <section class="result__section handoff">
+      <h3 class="result__heading">Where this gets decided</h3>
+      <p class="handoff__body">
+        This case has not been settled yet. The community Discord is where these get argued out -
+        take it there, and once it is decided it gets recorded here with its reasoning.
+        <a class="link" href="/open-questions.html">Open questions</a> covers how that works and what
+        else is still undecided.
+      </p>
+      <div class="handoff__actions">
+        ${discordButton('Ask in the Discord')}
+        ${suggestButton}
+      </div>
+    </section>
+  `
+}
+
+// --- the view -----------------------------------------------------------------
+
+/** The ladder leads. The verdict prose and the source list both said in words what
+ *  the rows already show, so neither survives here - the unresolved screen keeps its
+ *  statement because there the words are the answer. */
+function renderResolved(resolution: Resolution): string {
+  return `
+    ${renderLadder(resolution)}
+    ${renderUnlocks(resolution)}
+    ${renderExcluded(resolution)}
+  `
+}
+
+function renderNotFound(name: string): string {
+  return `
+    <section class="result__section ruling">
+      <h3 class="result__heading">No card by that name</h3>
+      <p class="ruling__explanation">
+        Nothing in the plugin's card list matches "${esc(name)}", so there is nothing to reason about.
+        Check the spelling, or search again.
+      </p>
+    </section>
+  `
+}
+
+export function renderResult(cardName: string, ruleset: Ruleset): string {
+  const resolution = resolve(cardName, ruleset)
+
+  const body = !resolution.card
+    ? renderNotFound(cardName)
+    : resolution.strategy === 'unresolved'
+      ? renderUnresolved(resolution)
+      : renderResolved(resolution)
+
+  return `
+    <article class="result result--${resolution.strategy}">
+      <p class="guideline" role="note">${esc(GUIDELINE_LINE)}</p>
+      ${renderHero(resolution)}
+      ${renderToggle(ruleset, resolution.caveats)}
+      ${body}
+    </article>
+  `
+}
+
+export type ResultView = {
+  show: (cardName: string, ruleset?: Ruleset, options?: { scroll?: boolean }) => void
+  clear: () => void
+}
+
+function writeRulesetToUrl(ruleset: Ruleset): void {
+  const url = new URL(window.location.href)
+  if (ruleset === 'standard') url.searchParams.delete('ruleset')
+  else url.searchParams.set('ruleset', ruleset)
+  window.history.replaceState(window.history.state, '', url)
+}
+
+/** The toggle re-renders in place and mirrors the choice into `?ruleset=`, so a
+ *  shared link restores the same ruleset a player was viewing, not just the card. */
+export function createResultView(root: HTMLElement): ResultView {
+  let cardName: string | null = null
+  let ruleset: Ruleset = 'standard'
+
+  function render(): void {
+    root.innerHTML = cardName ? renderResult(cardName, ruleset) : ''
+  }
+
+  root.addEventListener('click', (event) => {
+    const option = (event.target as HTMLElement).closest<HTMLButtonElement>('.ruleset__option')
+    if (!option) return
+
+    ruleset = option.dataset.ruleset as Ruleset
+    writeRulesetToUrl(ruleset)
+    render()
+    root.querySelector<HTMLElement>('.ruleset__option--active')?.focus()
+  })
+
+  return {
+    show(name: string, initialRuleset?: Ruleset, options?: { scroll?: boolean }) {
+      cardName = name
+      if (initialRuleset) ruleset = initialRuleset
+      render()
+      if (options?.scroll !== false) root.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    },
+    clear() {
+      cardName = null
+      render()
+    },
+  }
+}

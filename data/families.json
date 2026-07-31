@@ -1,0 +1,4963 @@
+{
+  "$schema": "./schema/families.schema.json",
+  "families": [
+    {
+      "id": "2h-sword",
+      "label": "2h swords",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze 2h sword"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron 2h sword"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel 2h sword"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black 2h sword"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White 2h sword"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril 2h sword"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant 2h sword"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune 2h sword"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded 2h sword"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon 2h sword"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "amulet",
+      "label": "Amulets",
+      "kind": "ladder",
+      "actions": [
+        "wear"
+      ],
+      "note": "Ordered by the gem ladder.",
+      "rungs": [
+        {
+          "tier": "gold",
+          "members": [
+            "Gold amulet"
+          ]
+        },
+        {
+          "tier": "opal",
+          "members": [
+            "Opal amulet"
+          ]
+        },
+        {
+          "tier": "jade",
+          "members": [
+            "Jade amulet"
+          ]
+        },
+        {
+          "tier": "topaz",
+          "members": [
+            "Topaz amulet"
+          ]
+        },
+        {
+          "tier": "sapphire",
+          "members": [
+            "Sapphire amulet"
+          ]
+        },
+        {
+          "tier": "emerald",
+          "members": [
+            "Emerald amulet"
+          ]
+        },
+        {
+          "tier": "ruby",
+          "members": [
+            "Ruby amulet"
+          ]
+        },
+        {
+          "tier": "diamond",
+          "members": [
+            "Diamond amulet"
+          ]
+        },
+        {
+          "tier": "dragonstone",
+          "members": [
+            "Dragonstone amulet"
+          ]
+        },
+        {
+          "tier": "onyx",
+          "members": [
+            "Onyx amulet"
+          ]
+        },
+        {
+          "tier": "zenyte",
+          "members": [
+            "Zenyte amulet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "angler-outfit",
+      "label": "Angler outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Angler hat",
+        "Angler top",
+        "Angler waders",
+        "Angler boots"
+      ]
+    },
+    {
+      "id": "ardougne-cloak",
+      "label": "Ardougne cloak",
+      "kind": "ladder",
+      "tags": [
+        "diary-reward"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "tier1",
+          "members": [
+            "Ardougne cloak 1"
+          ]
+        },
+        {
+          "tier": "tier2",
+          "members": [
+            "Ardougne cloak 2"
+          ]
+        },
+        {
+          "tier": "tier3",
+          "members": [
+            "Ardougne cloak 3"
+          ]
+        },
+        {
+          "tier": "tier4",
+          "members": [
+            "Ardougne cloak 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arrow",
+      "label": "Arrows",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze arrow"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron arrow"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel arrow"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril arrow"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant arrow"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune arrow"
+          ]
+        },
+        {
+          "tier": "amethyst",
+          "members": [
+            "Amethyst arrow"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon arrow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "axe",
+      "label": "Axes",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "note": "Rung order is transcribed from the source, which places Gilded above Rune. See DEC-0003.",
+      "rungs": [
+        {
+          "tier": "bronze-axe",
+          "members": [
+            "Bronze axe"
+          ]
+        },
+        {
+          "tier": "iron-axe",
+          "members": [
+            "Iron axe"
+          ]
+        },
+        {
+          "tier": "steel-axe",
+          "members": [
+            "Steel axe"
+          ]
+        },
+        {
+          "tier": "black-axe",
+          "members": [
+            "Black axe"
+          ]
+        },
+        {
+          "tier": "mithril-axe",
+          "members": [
+            "Mithril axe"
+          ]
+        },
+        {
+          "tier": "adamant-axe",
+          "members": [
+            "Adamant axe"
+          ]
+        },
+        {
+          "tier": "rune-axe",
+          "members": [
+            "Rune axe"
+          ]
+        },
+        {
+          "tier": "gilded-axe",
+          "members": [
+            "Gilded axe"
+          ]
+        },
+        {
+          "tier": "dragon-axe",
+          "members": [
+            "Dragon axe"
+          ]
+        },
+        {
+          "tier": "3rd-age-axe",
+          "members": [
+            "3rd age axe"
+          ]
+        },
+        {
+          "tier": "crystal-axe",
+          "members": [
+            "Crystal axe"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bar",
+      "label": "Bars",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "smith"
+      ],
+      "note": "Order is the Smithing level to smelt the bar. Silver and gold bars are crafted, not smithed.",
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze bar"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron bar"
+          ]
+        },
+        {
+          "tier": "silver",
+          "members": [
+            {
+              "card": "Silver bar",
+              "actions": [
+                "craft"
+              ]
+            }
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel bar"
+          ]
+        },
+        {
+          "tier": "gold",
+          "members": [
+            {
+              "card": "Gold bar",
+              "actions": [
+                "craft"
+              ]
+            }
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril bar"
+          ]
+        },
+        {
+          "tier": "adamantite",
+          "members": [
+            "Adamantite bar"
+          ]
+        },
+        {
+          "tier": "runite",
+          "members": [
+            "Runite bar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "barbarian-assault-rewards",
+      "label": "Barbarian Assault reward equipment",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Fighter hat",
+        "Ranger hat",
+        "Healer hat",
+        "Runner hat",
+        "Fighter torso",
+        "Penance skirt",
+        "Runner boots",
+        "Penance gloves"
+      ]
+    },
+    {
+      "id": "barronite-components",
+      "label": "Barronite mace components",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Barronite guard",
+        "Barronite handle",
+        "Barronite head"
+      ]
+    },
+    {
+      "id": "barronite-mace-rewards",
+      "label": "Barronite mace and the Ancient/Imcando reward set",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Barronite mace",
+        "Ancient globe",
+        "Ancient astroscope",
+        "Ancient carcanet",
+        "Ancient ledger",
+        "Ancient treatise",
+        "Imcando hammer"
+      ]
+    },
+    {
+      "id": "battleaxe",
+      "label": "Battleaxes",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze battleaxe"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron battleaxe"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel battleaxe"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black battleaxe"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White battleaxe"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril battleaxe"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant battleaxe"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune battleaxe"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon battleaxe"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bolts",
+      "label": "Bolts",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze bolts"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron bolts"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel bolts"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril bolts"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant bolts"
+          ]
+        },
+        {
+          "tier": "runite",
+          "members": [
+            "Runite bolts"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon bolts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boots",
+      "label": "Bootss",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze boots"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron boots"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel boots"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black boots"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White boots"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril boots"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant boots"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune boots"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded boots"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon boots"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boss-general-graardor",
+      "label": "General Graardor and his uniques",
+      "kind": "set",
+      "tags": [
+        "boss-group"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "General Graardor",
+        "Bandos chestplate",
+        "Bandos tassets",
+        "Bandos boots"
+      ]
+    },
+    {
+      "id": "bandos-hilt-group",
+      "label": "Bandos hilt and godsword",
+      "kind": "set",
+      "tags": [
+        "hilt-group"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Bandos hilt",
+        "Godsword shard 1",
+        "Godsword shard 2",
+        "Godsword shard 3"
+      ]
+    },
+    {
+      "id": "bracelet",
+      "label": "Bracelets",
+      "kind": "ladder",
+      "actions": [
+        "wear"
+      ],
+      "note": "Ordered by the gem ladder.",
+      "rungs": [
+        {
+          "tier": "gold",
+          "members": [
+            "Gold bracelet"
+          ]
+        },
+        {
+          "tier": "opal",
+          "members": [
+            "Opal bracelet"
+          ]
+        },
+        {
+          "tier": "jade",
+          "members": [
+            "Jade bracelet"
+          ]
+        },
+        {
+          "tier": "topaz",
+          "members": [
+            "Topaz bracelet"
+          ]
+        },
+        {
+          "tier": "sapphire",
+          "members": [
+            "Sapphire bracelet"
+          ]
+        },
+        {
+          "tier": "emerald",
+          "members": [
+            "Emerald bracelet"
+          ]
+        },
+        {
+          "tier": "ruby",
+          "members": [
+            "Ruby bracelet"
+          ]
+        },
+        {
+          "tier": "diamond",
+          "members": [
+            "Diamond bracelet"
+          ]
+        },
+        {
+          "tier": "dragonstone",
+          "members": [
+            "Dragonstone bracelet"
+          ]
+        },
+        {
+          "tier": "onyx",
+          "members": [
+            "Onyx bracelet"
+          ]
+        },
+        {
+          "tier": "zenyte",
+          "members": [
+            "Zenyte bracelet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brutal",
+      "label": "Brutal arrows",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze brutal"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron brutal"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel brutal"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black brutal"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril brutal"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant brutal"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune brutal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cannonball",
+      "label": "Cannonballs",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze cannonball"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron cannonball"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel cannonball"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril cannonball"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant cannonball"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune cannonball"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon cannonball"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "carpenters-outfit",
+      "label": "Carpenter's outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Carpenter's helmet",
+        "Carpenter's shirt",
+        "Carpenter's trousers",
+        "Carpenter's boots"
+      ]
+    },
+    {
+      "id": "chainbody",
+      "label": "Chainbodys",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze chainbody"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron chainbody"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel chainbody"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black chainbody"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White chainbody"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril chainbody"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant chainbody"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune chainbody"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded chainbody"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon chainbody"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "claws",
+      "label": "Clawss",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze claws"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron claws"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel claws"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black claws"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White claws"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril claws"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant claws"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune claws"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon claws"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coffin",
+      "label": "Coffins",
+      "kind": "ladder",
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze coffin"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel coffin"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black coffin"
+          ]
+        },
+        {
+          "tier": "silver",
+          "members": [
+            "Silver coffin"
+          ]
+        },
+        {
+          "tier": "gold",
+          "members": [
+            "Gold coffin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combination-rune",
+      "label": "Combination runes",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "mist",
+          "members": [
+            "Mist rune"
+          ]
+        },
+        {
+          "tier": "dust",
+          "members": [
+            "Dust rune"
+          ]
+        },
+        {
+          "tier": "mud",
+          "members": [
+            "Mud rune"
+          ]
+        },
+        {
+          "tier": "smoke",
+          "members": [
+            "Smoke rune"
+          ]
+        },
+        {
+          "tier": "steam",
+          "members": [
+            "Steam rune"
+          ]
+        },
+        {
+          "tier": "lava",
+          "members": [
+            "Lava rune"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crossbow",
+      "label": "Crossbows",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze crossbow"
+          ]
+        },
+        {
+          "tier": "blurite",
+          "members": [
+            "Blurite crossbow"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron crossbow"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel crossbow"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril crossbow"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant crossbow"
+          ]
+        },
+        {
+          "tier": "runite",
+          "members": [
+            "Runite crossbow"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon crossbow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crystal-armour",
+      "label": "Crystal armour",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Crystal helm",
+        "Crystal body",
+        "Crystal legs"
+      ]
+    },
+    {
+      "id": "crystal-weapons",
+      "label": "Crystal weapons",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Bow of faerdhinen",
+        "Blade of saeldor"
+      ]
+    },
+    {
+      "id": "dagger",
+      "label": "Daggers",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze dagger"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron dagger"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel dagger"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black dagger"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White dagger"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril dagger"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant dagger"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune dagger"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon dagger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dart",
+      "label": "Darts",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze dart"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron dart"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel dart"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black dart"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril dart"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant dart"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune dart"
+          ]
+        },
+        {
+          "tier": "amethyst",
+          "members": [
+            "Amethyst dart"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon dart"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defender",
+      "label": "Defenders",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze defender"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron defender"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel defender"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black defender"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril defender"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant defender"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune defender"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon defender"
+          ]
+        },
+        {
+          "tier": "avernic",
+          "members": [
+            "Avernic defender"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "desert-amulet",
+      "label": "Desert amulet",
+      "kind": "ladder",
+      "tags": [
+        "diary-reward"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "tier1",
+          "members": [
+            "Desert amulet 1"
+          ]
+        },
+        {
+          "tier": "tier2",
+          "members": [
+            "Desert amulet 2"
+          ]
+        },
+        {
+          "tier": "tier3",
+          "members": [
+            "Desert amulet 3"
+          ]
+        },
+        {
+          "tier": "tier4",
+          "members": [
+            "Desert amulet 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dhide-body",
+      "label": "Dragonhide bodies",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "green",
+          "members": [
+            "Green d'hide body"
+          ]
+        },
+        {
+          "tier": "blue",
+          "members": [
+            "Blue d'hide body"
+          ]
+        },
+        {
+          "tier": "red",
+          "members": [
+            "Red d'hide body"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black d'hide body"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded d'hide body"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dhide-chaps",
+      "label": "Dragonhide chaps",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "green",
+          "members": [
+            "Green d'hide chaps"
+          ]
+        },
+        {
+          "tier": "blue",
+          "members": [
+            "Blue d'hide chaps"
+          ]
+        },
+        {
+          "tier": "red",
+          "members": [
+            "Red d'hide chaps"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black d'hide chaps"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded d'hide chaps"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dhide-vambraces",
+      "label": "Dragonhide vambraces",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "green",
+          "members": [
+            "Green d'hide vambraces"
+          ]
+        },
+        {
+          "tier": "blue",
+          "members": [
+            "Blue d'hide vambraces"
+          ]
+        },
+        {
+          "tier": "red",
+          "members": [
+            "Red d'hide vambraces"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black d'hide vambraces"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded d'hide vambraces"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dragon-leather",
+      "label": "Dragon leathers",
+      "kind": "ladder",
+      "actions": [
+        "craft"
+      ],
+      "rungs": [
+        {
+          "tier": "green",
+          "members": [
+            "Green dragon leather"
+          ]
+        },
+        {
+          "tier": "blue",
+          "members": [
+            "Blue dragon leather"
+          ]
+        },
+        {
+          "tier": "red",
+          "members": [
+            "Red dragon leather"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black dragon leather"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dragonhide",
+      "label": "Dragonhides",
+      "kind": "ladder",
+      "actions": [
+        "craft"
+      ],
+      "rungs": [
+        {
+          "tier": "green",
+          "members": [
+            {
+              "card": "Green dragonhide",
+              "produces": "Green dragon leather"
+            }
+          ]
+        },
+        {
+          "tier": "blue",
+          "members": [
+            {
+              "card": "Blue dragonhide",
+              "produces": "Blue dragon leather"
+            }
+          ]
+        },
+        {
+          "tier": "red",
+          "members": [
+            {
+              "card": "Red dragonhide",
+              "produces": "Red dragon leather"
+            }
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            {
+              "card": "Black dragonhide",
+              "produces": "Black dragon leather"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "elite-void",
+      "label": "Elite void",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Elite void robe",
+        "Elite void top"
+      ]
+    },
+    {
+      "id": "explorers-ring",
+      "label": "Explorer's ring",
+      "kind": "ladder",
+      "tags": [
+        "diary-reward"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "tier1",
+          "members": [
+            "Explorer's ring 1"
+          ]
+        },
+        {
+          "tier": "tier2",
+          "members": [
+            "Explorer's ring 2"
+          ]
+        },
+        {
+          "tier": "tier3",
+          "members": [
+            "Explorer's ring 3"
+          ]
+        },
+        {
+          "tier": "tier4",
+          "members": [
+            "Explorer's ring 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "falador-shield",
+      "label": "Falador shield",
+      "kind": "ladder",
+      "tags": [
+        "diary-reward"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "tier1",
+          "members": [
+            "Falador shield 1"
+          ]
+        },
+        {
+          "tier": "tier2",
+          "members": [
+            "Falador shield 2"
+          ]
+        },
+        {
+          "tier": "tier3",
+          "members": [
+            "Falador shield 3"
+          ]
+        },
+        {
+          "tier": "tier4",
+          "members": [
+            "Falador shield 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "farmers-outfit",
+      "label": "Farmer's outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Farmer's strawhat",
+        "Farmer's jacket",
+        "Farmer's boro trousers",
+        "Farmer's boots"
+      ]
+    },
+    {
+      "id": "fire-arrow",
+      "label": "Fire arrows",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze fire arrow"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron fire arrow"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel fire arrow"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril fire arrow"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant fire arrow"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune fire arrow"
+          ]
+        },
+        {
+          "tier": "amethyst",
+          "members": [
+            "Amethyst fire arrow"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon fire arrow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fire-infernal-cape",
+      "label": "Fire and Infernal capes",
+      "kind": "ladder",
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "fire",
+          "members": [
+            "Fire cape"
+          ]
+        },
+        {
+          "tier": "infernal",
+          "members": [
+            "Infernal cape"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fremennik-rings",
+      "label": "Fremennik rings",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Berserker ring",
+        "Archers ring",
+        "Warrior ring",
+        "Seers ring"
+      ]
+    },
+    {
+      "id": "fremennik-sea-boots",
+      "label": "Fremennik sea boots",
+      "kind": "ladder",
+      "tags": [
+        "diary-reward"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "tier1",
+          "members": [
+            "Fremennik sea boots 1"
+          ]
+        },
+        {
+          "tier": "tier2",
+          "members": [
+            "Fremennik sea boots 2"
+          ]
+        },
+        {
+          "tier": "tier3",
+          "members": [
+            "Fremennik sea boots 3"
+          ]
+        },
+        {
+          "tier": "tier4",
+          "members": [
+            "Fremennik sea boots 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "full-helm",
+      "label": "Full helms",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze full helm"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron full helm"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel full helm"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black full helm"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White full helm"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril full helm"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant full helm"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune full helm"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded full helm"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon full helm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gem",
+      "label": "Gems",
+      "kind": "ladder",
+      "actions": [
+        "craft"
+      ],
+      "note": "Cut gems. Each is also the processed half of an uncut/cut state pair.",
+      "rungs": [
+        {
+          "tier": "opal",
+          "members": [
+            "Opal"
+          ]
+        },
+        {
+          "tier": "jade",
+          "members": [
+            "Jade"
+          ]
+        },
+        {
+          "tier": "red-topaz",
+          "members": [
+            "Red topaz"
+          ]
+        },
+        {
+          "tier": "sapphire",
+          "members": [
+            "Sapphire"
+          ]
+        },
+        {
+          "tier": "emerald",
+          "members": [
+            "Emerald"
+          ]
+        },
+        {
+          "tier": "ruby",
+          "members": [
+            "Ruby"
+          ]
+        },
+        {
+          "tier": "diamond",
+          "members": [
+            "Diamond"
+          ]
+        },
+        {
+          "tier": "dragonstone",
+          "members": [
+            "Dragonstone"
+          ]
+        },
+        {
+          "tier": "onyx",
+          "members": [
+            "Onyx"
+          ]
+        },
+        {
+          "tier": "zenyte",
+          "members": [
+            "Zenyte"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gloves",
+      "label": "Glovess",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze gloves"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron gloves"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel gloves"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black gloves"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White gloves"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril gloves"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant gloves"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune gloves"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon gloves"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "graceful",
+      "label": "Graceful outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Graceful hood",
+        "Graceful top",
+        "Graceful legs",
+        "Graceful gloves",
+        "Graceful boots",
+        "Graceful cape"
+      ]
+    },
+    {
+      "id": "halberd",
+      "label": "Halberds",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze halberd"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron halberd"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel halberd"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black halberd"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White halberd"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril halberd"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant halberd"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune halberd"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon halberd"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hasta",
+      "label": "Hastas",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze hasta"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron hasta"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel hasta"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril hasta"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant hasta"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune hasta"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon hasta"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "herb",
+      "label": "Herbs",
+      "kind": "ladder",
+      "actions": [
+        "plant"
+      ],
+      "note": "Clean herbs in Herblore cleaning order. Huasca, Golpar, Noxifer and Buchu leaf are left off - their position in this order is not settled here.",
+      "rungs": [
+        {
+          "tier": "guam",
+          "members": [
+            "Guam leaf"
+          ]
+        },
+        {
+          "tier": "marrentill",
+          "members": [
+            "Marrentill"
+          ]
+        },
+        {
+          "tier": "tarromin",
+          "members": [
+            "Tarromin"
+          ]
+        },
+        {
+          "tier": "harralander",
+          "members": [
+            "Harralander"
+          ]
+        },
+        {
+          "tier": "ranarr",
+          "members": [
+            "Ranarr weed"
+          ]
+        },
+        {
+          "tier": "toadflax",
+          "members": [
+            "Toadflax"
+          ]
+        },
+        {
+          "tier": "irit",
+          "members": [
+            "Irit leaf"
+          ]
+        },
+        {
+          "tier": "avantoe",
+          "members": [
+            "Avantoe"
+          ]
+        },
+        {
+          "tier": "kwuarm",
+          "members": [
+            "Kwuarm"
+          ]
+        },
+        {
+          "tier": "snapdragon",
+          "members": [
+            "Snapdragon"
+          ]
+        },
+        {
+          "tier": "cadantine",
+          "members": [
+            "Cadantine"
+          ]
+        },
+        {
+          "tier": "lantadyme",
+          "members": [
+            "Lantadyme"
+          ]
+        },
+        {
+          "tier": "dwarf-weed",
+          "members": [
+            "Dwarf weed"
+          ]
+        },
+        {
+          "tier": "torstol",
+          "members": [
+            "Torstol"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "javelin",
+      "label": "Javelins",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze javelin"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron javelin"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel javelin"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril javelin"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant javelin"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune javelin"
+          ]
+        },
+        {
+          "tier": "amethyst",
+          "members": [
+            "Amethyst javelin"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon javelin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kandarin-headgear",
+      "label": "Kandarin headgear",
+      "kind": "ladder",
+      "tags": [
+        "diary-reward"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "tier1",
+          "members": [
+            "Kandarin headgear 1"
+          ]
+        },
+        {
+          "tier": "tier2",
+          "members": [
+            "Kandarin headgear 2"
+          ]
+        },
+        {
+          "tier": "tier3",
+          "members": [
+            "Kandarin headgear 3"
+          ]
+        },
+        {
+          "tier": "tier4",
+          "members": [
+            "Kandarin headgear 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "karamja-gloves",
+      "label": "Karamja gloves",
+      "kind": "ladder",
+      "tags": [
+        "diary-reward"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "tier1",
+          "members": [
+            "Karamja gloves 1"
+          ]
+        },
+        {
+          "tier": "tier2",
+          "members": [
+            "Karamja gloves 2"
+          ]
+        },
+        {
+          "tier": "tier3",
+          "members": [
+            "Karamja gloves 3"
+          ]
+        },
+        {
+          "tier": "tier4",
+          "members": [
+            "Karamja gloves 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "keel-parts",
+      "label": "Keel parts",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze keel parts"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron keel parts"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel keel parts"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril keel parts"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant keel parts"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune keel parts"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon keel parts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-black",
+      "label": "Black-eyelet keys",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze key black"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel key black"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black key black"
+          ]
+        },
+        {
+          "tier": "silver",
+          "members": [
+            "Silver key black"
+          ]
+        },
+        {
+          "tier": "gold",
+          "members": [
+            "Gold key black"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-brown",
+      "label": "Brown-eyelet keys",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze key brown"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel key brown"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black key brown"
+          ]
+        },
+        {
+          "tier": "silver",
+          "members": [
+            "Silver key brown"
+          ]
+        },
+        {
+          "tier": "gold",
+          "members": [
+            "Gold key brown"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-crimson",
+      "label": "Crimson-eyelet keys",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze key crimson"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel key crimson"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black key crimson"
+          ]
+        },
+        {
+          "tier": "silver",
+          "members": [
+            "Silver key crimson"
+          ]
+        },
+        {
+          "tier": "gold",
+          "members": [
+            "Gold key crimson"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-purple",
+      "label": "Purple-eyelet keys",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze key purple"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel key purple"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black key purple"
+          ]
+        },
+        {
+          "tier": "silver",
+          "members": [
+            "Silver key purple"
+          ]
+        },
+        {
+          "tier": "gold",
+          "members": [
+            "Gold key purple"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-red",
+      "label": "Red-eyelet keys",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze key red"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel key red"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black key red"
+          ]
+        },
+        {
+          "tier": "silver",
+          "members": [
+            "Silver key red"
+          ]
+        },
+        {
+          "tier": "gold",
+          "members": [
+            "Gold key red"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kiteshield",
+      "label": "Kiteshields",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze kiteshield"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron kiteshield"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel kiteshield"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black kiteshield"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White kiteshield"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril kiteshield"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant kiteshield"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune kiteshield"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded kiteshield"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon kiteshield"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "knife",
+      "label": "Knifes",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze knife"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron knife"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel knife"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black knife"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril knife"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant knife"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune knife"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon knife"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "limbs",
+      "label": "Crossbow limbs",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze limbs"
+          ]
+        },
+        {
+          "tier": "blurite",
+          "members": [
+            "Blurite limbs"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron limbs"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel limbs"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril limbs"
+          ]
+        },
+        {
+          "tier": "adamantite",
+          "members": [
+            "Adamantite limbs"
+          ]
+        },
+        {
+          "tier": "runite",
+          "members": [
+            "Runite limbs"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon limbs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lockbox",
+      "label": "Lockboxes",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Simple lockbox",
+        "Elaborate lockbox",
+        "Ornate lockbox"
+      ]
+    },
+    {
+      "id": "locks",
+      "label": "Chest locks",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze locks"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel locks"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black locks"
+          ]
+        },
+        {
+          "tier": "silver",
+          "members": [
+            "Silver locks"
+          ]
+        },
+        {
+          "tier": "gold",
+          "members": [
+            "Gold locks"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "logs",
+      "label": "Logs",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "chop",
+        "fletch"
+      ],
+      "note": "Order is Woodcutting level.",
+      "rungs": [
+        {
+          "tier": "normal",
+          "members": [
+            "Logs"
+          ]
+        },
+        {
+          "tier": "oak",
+          "members": [
+            "Oak logs"
+          ]
+        },
+        {
+          "tier": "willow",
+          "members": [
+            "Willow logs"
+          ]
+        },
+        {
+          "tier": "teak",
+          "members": [
+            "Teak logs"
+          ]
+        },
+        {
+          "tier": "maple",
+          "members": [
+            "Maple logs"
+          ]
+        },
+        {
+          "tier": "mahogany",
+          "members": [
+            "Mahogany logs"
+          ]
+        },
+        {
+          "tier": "yew",
+          "members": [
+            "Yew logs"
+          ]
+        },
+        {
+          "tier": "magic",
+          "members": [
+            "Magic logs"
+          ]
+        },
+        {
+          "tier": "redwood",
+          "members": [
+            "Redwood logs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "longbow",
+      "label": "Longbows",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "longbow",
+          "members": [
+            "Longbow"
+          ]
+        },
+        {
+          "tier": "oak-longbow",
+          "members": [
+            "Oak longbow"
+          ]
+        },
+        {
+          "tier": "willow-longbow",
+          "members": [
+            "Willow longbow"
+          ]
+        },
+        {
+          "tier": "maple-longbow",
+          "members": [
+            "Maple longbow"
+          ]
+        },
+        {
+          "tier": "yew-longbow",
+          "members": [
+            "Yew longbow"
+          ]
+        },
+        {
+          "tier": "magic-longbow",
+          "members": [
+            "Magic longbow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "longsword",
+      "label": "Longswords",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze longsword"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron longsword"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel longsword"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black longsword"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White longsword"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril longsword"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant longsword"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune longsword"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon longsword"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lumberjack-outfit",
+      "label": "Lumberjack outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Lumberjack hat",
+        "Lumberjack top",
+        "Lumberjack legs",
+        "Lumberjack boots"
+      ]
+    },
+    {
+      "id": "mace",
+      "label": "Maces",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze mace"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron mace"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel mace"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black mace"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White mace"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril mace"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant mace"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune mace"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon mace"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "med-helm",
+      "label": "Medium helms",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze med helm"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron med helm"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel med helm"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black med helm"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White med helm"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril med helm"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant med helm"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune med helm"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded med helm"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon med helm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "morytania-legs",
+      "label": "Morytania legs",
+      "kind": "ladder",
+      "tags": [
+        "diary-reward"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "tier1",
+          "members": [
+            "Morytania legs 1"
+          ]
+        },
+        {
+          "tier": "tier2",
+          "members": [
+            "Morytania legs 2"
+          ]
+        },
+        {
+          "tier": "tier3",
+          "members": [
+            "Morytania legs 3"
+          ]
+        },
+        {
+          "tier": "tier4",
+          "members": [
+            "Morytania legs 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nails",
+      "label": "Nails",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze nails"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron nails"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel nails"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black nails"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril nails"
+          ]
+        },
+        {
+          "tier": "adamantite",
+          "members": [
+            "Adamantite nails"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune nails"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon nails"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "necklace",
+      "label": "Necklaces",
+      "kind": "ladder",
+      "actions": [
+        "wear"
+      ],
+      "note": "Ordered by the gem ladder. The dragonstone rung is named 'Dragon necklace' in game.",
+      "rungs": [
+        {
+          "tier": "gold",
+          "members": [
+            "Gold necklace"
+          ]
+        },
+        {
+          "tier": "opal",
+          "members": [
+            "Opal necklace"
+          ]
+        },
+        {
+          "tier": "jade",
+          "members": [
+            "Jade necklace"
+          ]
+        },
+        {
+          "tier": "topaz",
+          "members": [
+            "Topaz necklace"
+          ]
+        },
+        {
+          "tier": "sapphire",
+          "members": [
+            "Sapphire necklace"
+          ]
+        },
+        {
+          "tier": "emerald",
+          "members": [
+            "Emerald necklace"
+          ]
+        },
+        {
+          "tier": "ruby",
+          "members": [
+            "Ruby necklace"
+          ]
+        },
+        {
+          "tier": "diamond",
+          "members": [
+            "Diamond necklace"
+          ]
+        },
+        {
+          "tier": "dragonstone",
+          "members": [
+            "Dragon necklace"
+          ]
+        },
+        {
+          "tier": "onyx",
+          "members": [
+            "Onyx necklace"
+          ]
+        },
+        {
+          "tier": "zenyte",
+          "members": [
+            "Zenyte necklace"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "obsidian-armour",
+      "label": "Obsidian armour",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Obsidian helmet",
+        "Obsidian platebody",
+        "Obsidian platelegs"
+      ]
+    },
+    {
+      "id": "ore",
+      "label": "Ores",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "mine",
+        "smelt"
+      ],
+      "note": "Order is Mining level. Copper and Tin share a rung - same level, same XP.",
+      "rungs": [
+        {
+          "tier": "copper-tin",
+          "members": [
+            {
+              "card": "Copper ore",
+              "produces": "Bronze bar"
+            },
+            {
+              "card": "Tin ore",
+              "produces": "Bronze bar"
+            }
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            {
+              "card": "Iron ore",
+              "produces": "Iron bar"
+            }
+          ]
+        },
+        {
+          "tier": "silver",
+          "members": [
+            {
+              "card": "Silver ore",
+              "produces": "Silver bar"
+            }
+          ]
+        },
+        {
+          "tier": "coal",
+          "members": [
+            "Coal"
+          ]
+        },
+        {
+          "tier": "gold",
+          "members": [
+            {
+              "card": "Gold ore",
+              "produces": "Gold bar"
+            }
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            {
+              "card": "Mithril ore",
+              "produces": "Mithril bar"
+            }
+          ]
+        },
+        {
+          "tier": "adamantite",
+          "members": [
+            {
+              "card": "Adamantite ore",
+              "produces": "Adamantite bar"
+            }
+          ]
+        },
+        {
+          "tier": "runite",
+          "members": [
+            {
+              "card": "Runite ore",
+              "produces": "Runite bar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pickaxe",
+      "label": "Pickaxes",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "note": "Rung order is transcribed from the source, which places Gilded above Rune. That is a faithful copy, not an adopted answer to the cosmetic-tier question - DEC-0003.",
+      "rungs": [
+        {
+          "tier": "bronze-pickaxe",
+          "members": [
+            "Bronze pickaxe"
+          ]
+        },
+        {
+          "tier": "iron-pickaxe",
+          "members": [
+            "Iron pickaxe"
+          ]
+        },
+        {
+          "tier": "steel-pickaxe",
+          "members": [
+            "Steel pickaxe"
+          ]
+        },
+        {
+          "tier": "black-pickaxe",
+          "members": [
+            "Black pickaxe"
+          ]
+        },
+        {
+          "tier": "mithril-pickaxe",
+          "members": [
+            "Mithril pickaxe"
+          ]
+        },
+        {
+          "tier": "adamant-pickaxe",
+          "members": [
+            "Adamant pickaxe"
+          ]
+        },
+        {
+          "tier": "rune-pickaxe",
+          "members": [
+            "Rune pickaxe"
+          ]
+        },
+        {
+          "tier": "gilded-pickaxe",
+          "members": [
+            "Gilded pickaxe"
+          ]
+        },
+        {
+          "tier": "dragon-pickaxe",
+          "members": [
+            "Dragon pickaxe"
+          ]
+        },
+        {
+          "tier": "3rd-age-pickaxe",
+          "members": [
+            "3rd age pickaxe"
+          ]
+        },
+        {
+          "tier": "crystal-pickaxe",
+          "members": [
+            "Crystal pickaxe"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plank",
+      "label": "Planks",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "normal",
+          "members": [
+            "Plank"
+          ]
+        },
+        {
+          "tier": "oak",
+          "members": [
+            "Oak plank"
+          ]
+        },
+        {
+          "tier": "teak",
+          "members": [
+            "Teak plank"
+          ]
+        },
+        {
+          "tier": "mahogany",
+          "members": [
+            "Mahogany plank"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "platebody",
+      "label": "Platebodys",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze platebody"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron platebody"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel platebody"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black platebody"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White platebody"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril platebody"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant platebody"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune platebody"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded platebody"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon platebody"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "platelegs",
+      "label": "Platelegss",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze platelegs"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron platelegs"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel platelegs"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black platelegs"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White platelegs"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril platelegs"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant platelegs"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune platelegs"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded platelegs"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon platelegs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plateskirt",
+      "label": "Plateskirts",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze plateskirt"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron plateskirt"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel plateskirt"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black plateskirt"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White plateskirt"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril plateskirt"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant plateskirt"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune plateskirt"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded plateskirt"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon plateskirt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prospector-outfit",
+      "label": "Prospector outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Prospector helmet",
+        "Prospector jacket",
+        "Prospector legs",
+        "Prospector boots"
+      ]
+    },
+    {
+      "id": "pyromancer-outfit",
+      "label": "Pyromancer outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Pyromancer hood",
+        "Pyromancer garb",
+        "Pyromancer robe",
+        "Pyromancer boots"
+      ]
+    },
+    {
+      "id": "rada-blessing",
+      "label": "Rada's blessing",
+      "kind": "ladder",
+      "tags": [
+        "diary-reward"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "tier1",
+          "members": [
+            "Rada's blessing 1"
+          ]
+        },
+        {
+          "tier": "tier2",
+          "members": [
+            "Rada's blessing 2"
+          ]
+        },
+        {
+          "tier": "tier3",
+          "members": [
+            "Rada's blessing 3"
+          ]
+        },
+        {
+          "tier": "tier4",
+          "members": [
+            "Rada's blessing 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ring",
+      "label": "Rings",
+      "kind": "ladder",
+      "actions": [
+        "wear"
+      ],
+      "note": "Ordered by the gem ladder. Onyx ring has no card in Card.json, so it has no rung.",
+      "rungs": [
+        {
+          "tier": "gold",
+          "members": [
+            "Gold ring"
+          ]
+        },
+        {
+          "tier": "opal",
+          "members": [
+            "Opal ring"
+          ]
+        },
+        {
+          "tier": "jade",
+          "members": [
+            "Jade ring"
+          ]
+        },
+        {
+          "tier": "topaz",
+          "members": [
+            "Topaz ring"
+          ]
+        },
+        {
+          "tier": "sapphire",
+          "members": [
+            "Sapphire ring"
+          ]
+        },
+        {
+          "tier": "emerald",
+          "members": [
+            "Emerald ring"
+          ]
+        },
+        {
+          "tier": "ruby",
+          "members": [
+            "Ruby ring"
+          ]
+        },
+        {
+          "tier": "diamond",
+          "members": [
+            "Diamond ring"
+          ]
+        },
+        {
+          "tier": "dragonstone",
+          "members": [
+            "Dragonstone ring"
+          ]
+        },
+        {
+          "tier": "zenyte",
+          "members": [
+            "Zenyte ring"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rogue-outfit",
+      "label": "Rogue outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Rogue mask",
+        "Rogue top",
+        "Rogue trousers",
+        "Rogue gloves",
+        "Rogue boots"
+      ]
+    },
+    {
+      "id": "rune",
+      "label": "Runes",
+      "kind": "ladder",
+      "actions": [
+        "use"
+      ],
+      "note": "Order is Runecraft level. Combination runes are a components case, not a rung - Phase 7.",
+      "rungs": [
+        {
+          "tier": "air",
+          "members": [
+            "Air rune"
+          ]
+        },
+        {
+          "tier": "mind",
+          "members": [
+            "Mind rune"
+          ]
+        },
+        {
+          "tier": "water",
+          "members": [
+            "Water rune"
+          ]
+        },
+        {
+          "tier": "earth",
+          "members": [
+            "Earth rune"
+          ]
+        },
+        {
+          "tier": "fire",
+          "members": [
+            "Fire rune"
+          ]
+        },
+        {
+          "tier": "body",
+          "members": [
+            "Body rune"
+          ]
+        },
+        {
+          "tier": "cosmic",
+          "members": [
+            "Cosmic rune"
+          ]
+        },
+        {
+          "tier": "chaos",
+          "members": [
+            "Chaos rune"
+          ]
+        },
+        {
+          "tier": "astral",
+          "members": [
+            "Astral rune"
+          ]
+        },
+        {
+          "tier": "nature",
+          "members": [
+            "Nature rune"
+          ]
+        },
+        {
+          "tier": "law",
+          "members": [
+            "Law rune"
+          ]
+        },
+        {
+          "tier": "death",
+          "members": [
+            "Death rune"
+          ]
+        },
+        {
+          "tier": "blood",
+          "members": [
+            "Blood rune"
+          ]
+        },
+        {
+          "tier": "soul",
+          "members": [
+            "Soul rune"
+          ]
+        },
+        {
+          "tier": "wrath",
+          "members": [
+            "Wrath rune"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scimitar",
+      "label": "Scimitars",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze scimitar"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron scimitar"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel scimitar"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black scimitar"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril scimitar"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant scimitar"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune scimitar"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon scimitar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shayzien-outfit",
+      "label": "Shayzien outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Shayzien hood",
+        "Shayzien scarf",
+        "Shayzien banner"
+      ]
+    },
+    {
+      "id": "shortbow",
+      "label": "Shortbows",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "note": "Transcribed from TheSeahorsie's page. The source also lists Magic shortbow (i) above Magic shortbow; it is not a card in Card.json, so it has no rung.",
+      "rungs": [
+        {
+          "tier": "shortbow",
+          "members": [
+            "Shortbow"
+          ]
+        },
+        {
+          "tier": "oak-shortbow",
+          "members": [
+            "Oak shortbow"
+          ]
+        },
+        {
+          "tier": "willow-shortbow",
+          "members": [
+            "Willow shortbow"
+          ]
+        },
+        {
+          "tier": "maple-shortbow",
+          "members": [
+            "Maple shortbow"
+          ]
+        },
+        {
+          "tier": "yew-shortbow",
+          "members": [
+            "Yew shortbow"
+          ]
+        },
+        {
+          "tier": "magic-shortbow",
+          "members": [
+            "Magic shortbow"
+          ]
+        },
+        {
+          "tier": "3rd-age-bow",
+          "members": [
+            "3rd age bow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "smiths-outfit",
+      "label": "Smiths outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Smiths tunic",
+        "Smiths trousers",
+        "Smiths gloves",
+        "Smiths boots"
+      ]
+    },
+    {
+      "id": "spear",
+      "label": "Spears",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze spear"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron spear"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel spear"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black spear"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril spear"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant spear"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune spear"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon spear"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sq-shield",
+      "label": "Square shields",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze sq shield"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron sq shield"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel sq shield"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black sq shield"
+          ]
+        },
+        {
+          "tier": "white",
+          "members": [
+            "White sq shield"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril sq shield"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant sq shield"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune sq shield"
+          ]
+        },
+        {
+          "tier": "gilded",
+          "members": [
+            "Gilded sq shield"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "staff-of-collection",
+      "label": "Staves of collection",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze staff of collection"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron staff of collection"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel staff of collection"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black staff of collection"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril staff of collection"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant staff of collection"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune staff of collection"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon staff of collection"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sword",
+      "label": "Swords",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze sword"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron sword"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel sword"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black sword"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril sword"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant sword"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune sword"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon sword"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "third-age-druidic",
+      "label": "3rd age druidic",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "3rd age druidic cloak",
+        "3rd age druidic robe bottoms",
+        "3rd age druidic robe top",
+        "3rd age druidic staff"
+      ]
+    },
+    {
+      "id": "third-age-mage",
+      "label": "3rd age mage",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "3rd age robe top",
+        "3rd age robe",
+        "3rd age mage hat",
+        "3rd age wand",
+        "3rd age amulet"
+      ]
+    },
+    {
+      "id": "third-age-melee",
+      "label": "3rd age melee",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "3rd age platebody",
+        "3rd age platelegs",
+        "3rd age plateskirt",
+        "3rd age kiteshield",
+        "3rd age full helmet",
+        "3rd age longsword",
+        "3rd age cloak"
+      ]
+    },
+    {
+      "id": "third-age-range",
+      "label": "3rd age range",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "3rd age range coif",
+        "3rd age range top",
+        "3rd age range legs",
+        "3rd age bow",
+        "3rd age vambraces"
+      ]
+    },
+    {
+      "id": "thrownaxe",
+      "label": "Thrownaxes",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze thrownaxe"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron thrownaxe"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel thrownaxe"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril thrownaxe"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant thrownaxe"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune thrownaxe"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon thrownaxe"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "varrock-armour",
+      "label": "Varrock armour",
+      "kind": "ladder",
+      "tags": [
+        "diary-reward"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        {
+          "tier": "tier1",
+          "members": [
+            "Varrock armour 1"
+          ]
+        },
+        {
+          "tier": "tier2",
+          "members": [
+            "Varrock armour 2"
+          ]
+        },
+        {
+          "tier": "tier3",
+          "members": [
+            "Varrock armour 3"
+          ]
+        },
+        {
+          "tier": "tier4",
+          "members": [
+            "Varrock armour 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "void-knight",
+      "label": "Void Knight equipment",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Void knight gloves",
+        "Void knight robe",
+        "Void knight top",
+        "Void mage helm",
+        "Void melee helm",
+        "Void ranger helm"
+      ]
+    },
+    {
+      "id": "warhammer",
+      "label": "Warhammers",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "bronze",
+          "members": [
+            "Bronze warhammer"
+          ]
+        },
+        {
+          "tier": "iron",
+          "members": [
+            "Iron warhammer"
+          ]
+        },
+        {
+          "tier": "steel",
+          "members": [
+            "Steel warhammer"
+          ]
+        },
+        {
+          "tier": "black",
+          "members": [
+            "Black warhammer"
+          ]
+        },
+        {
+          "tier": "mithril",
+          "members": [
+            "Mithril warhammer"
+          ]
+        },
+        {
+          "tier": "adamant",
+          "members": [
+            "Adamant warhammer"
+          ]
+        },
+        {
+          "tier": "rune",
+          "members": [
+            "Rune warhammer"
+          ]
+        },
+        {
+          "tier": "dragon",
+          "members": [
+            "Dragon warhammer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "western-banner",
+      "label": "Western banner",
+      "kind": "ladder",
+      "tags": [
+        "diary-reward"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "tier1",
+          "members": [
+            "Western banner 1"
+          ]
+        },
+        {
+          "tier": "tier2",
+          "members": [
+            "Western banner 2"
+          ]
+        },
+        {
+          "tier": "tier3",
+          "members": [
+            "Western banner 3"
+          ]
+        },
+        {
+          "tier": "tier4",
+          "members": [
+            "Western banner 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wilderness-rings",
+      "label": "Wilderness rings",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Ring of the gods",
+        "Treasonous ring",
+        "Tyrannical ring"
+      ]
+    },
+    {
+      "id": "wilderness-sword",
+      "label": "Wilderness sword",
+      "kind": "ladder",
+      "tags": [
+        "diary-reward"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        {
+          "tier": "tier1",
+          "members": [
+            "Wilderness sword 1"
+          ]
+        },
+        {
+          "tier": "tier2",
+          "members": [
+            "Wilderness sword 2"
+          ]
+        },
+        {
+          "tier": "tier3",
+          "members": [
+            "Wilderness sword 3"
+          ]
+        },
+        {
+          "tier": "tier4",
+          "members": [
+            "Wilderness sword 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zealots-outfit",
+      "label": "Zealot's outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Zealot's helm",
+        "Zealot's robe top",
+        "Zealot's robe bottom",
+        "Zealot's boots"
+      ]
+    }
+  ]
+}

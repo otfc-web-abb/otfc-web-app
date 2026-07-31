@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osrs-tcg-foils/schema/state-pairs.schema.json",
+  "title": "state-pairs.json - factual unprocessed/processed pairings",
+  "description": "FACTUAL data only. That Raw trout cooks into Trout is game data. That a foil on one unlocks the other is a ruling and lives in rules.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["statePairs"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "statePairs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/statePair" }
+    }
+  },
+  "$defs": {
+    "statePair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "kind", "states"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "label": {
+          "description": "Human readable name for the item, not for either state. 'Trout', not 'Raw trout'.",
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "description": "The transformation that links the two states. Conventional values: cook, clean, tan, smelt, spin, string, grind. Add a value only when the game supports it.",
+          "$ref": "common.schema.json#/$defs/id"
+        },
+        "states": {
+          "description": "Exactly two. A three-state chain is a schema error on purpose - it needs a recorded decision, not a silent extension.",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["card", "role"],
+            "properties": {
+              "card": { "$ref": "common.schema.json#/$defs/cardName" },
+              "role": { "enum": ["unprocessed", "processed"] },
+              "actions": { "$ref": "common.schema.json#/$defs/actions" },
+              "note": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

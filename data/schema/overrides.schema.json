@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osrs-tcg-foils/schema/overrides.schema.json",
+  "title": "overrides.json - per-card exceptions and caveats",
+  "description": "Judgemental, so 'sources' is mandatory here too. 'replace' wins outright over every rules.json entry; 'annotate' leaves the resolved strategy alone and adds to it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["overrides"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "overrides": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/override" }
+    }
+  },
+  "$defs": {
+    "unlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["card"],
+      "properties": {
+        "card": { "$ref": "common.schema.json#/$defs/cardName" },
+        "actions": { "$ref": "common.schema.json#/$defs/actions" },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    },
+    "base": {
+      "type": "object",
+      "required": ["card", "mode", "confidence", "sources"],
+      "properties": {
+        "card": { "$ref": "common.schema.json#/$defs/cardName" },
+        "mode": { "enum": ["replace", "annotate"] },
+        "caveats": { "$ref": "common.schema.json#/$defs/caveats" },
+        "rulesetCaveats": { "$ref": "common.schema.json#/$defs/rulesetCaveats" },
+        "confidence": { "$ref": "common.schema.json#/$defs/confidence" },
+        "sources": { "$ref": "common.schema.json#/$defs/sources" }
+      }
+    },
+    "replace": {
+      "description": "Answers this card outright. strategy 'unresolved' is the deliberate refusal case - a card a family rule would over-reach on.",
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["strategy", "explanation"],
+      "properties": {
+        "mode": { "const": "replace" },
+        "strategy": {
+          "enum": [
+            "override",
+            "state-pair",
+            "ladder-down",
+            "components",
+            "group",
+            "npc-hierarchy",
+            "unresolved"
+          ]
+        },
+        "unlocks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/unlock" }
+        },
+        "excluded": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/cardName" },
+          "uniqueItems": true
+        },
+        "explanation": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        { "$ref": "#/$defs/base" },
+        {
+          "if": {
+            "properties": { "strategy": { "const": "unresolved" } },
+            "required": ["strategy"]
+          },
+          "then": {
+            "properties": {
+              "confidence": { "const": "undecided" },
+              "unlocks": { "type": "array", "maxItems": 0 }
+            }
+          },
+          "else": {
+            "properties": { "confidence": { "$ref": "common.schema.json#/$defs/ruleConfidence" } },
+            "required": ["unlocks"]
+          }
+        }
+      ]
+    },
+    "annotate": {
+      "description": "Adds caveats to whatever the rules resolved. Confidence may only match or lower the resolved confidence - validate-rules enforces that, JSON Schema cannot.",
+      "type": "object",
+      "allOf": [{ "$ref": "#/$defs/base" }],
+      "unevaluatedProperties": false,
+      "required": ["caveats"],
+      "properties": {
+        "mode": { "const": "annotate" },
+        "caveats": {
+          "type": "array",
+          "allOf": [{ "$ref": "common.schema.json#/$defs/caveats" }],
+          "minItems": 1
+        }
+      }
+    },
+    "override": {
+      "oneOf": [{ "$ref": "#/$defs/replace" }, { "$ref": "#/$defs/annotate" }]
+    }
+  }
+}

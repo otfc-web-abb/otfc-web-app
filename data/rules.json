@@ -1,0 +1,345 @@
+{
+  "$schema": "./schema/rules.schema.json",
+  "rulesets": {
+    "standard": {
+      "label": "Standard",
+      "summary": "The common reading. A foil unlocks its family the way the community usually plays it, and gathering an item before its card is unlocked is allowed as long as you bank it.",
+      "caveats": [
+        "You may gather and bank an item before its card is unlocked. You just cannot use it until then."
+      ],
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "brief",
+          "label": "Project brief - downward unlocks"
+        },
+        {
+          "kind": "community",
+          "label": "osrscardexchange - Foil cards: what people say",
+          "url": "https://www.osrscardexchange.com/blog/foil-cards-what-people-say",
+          "quote": "vertical/downward unlocks, described as the leading consensus",
+          "retrieved": "2026-07-30"
+        }
+      ]
+    },
+    "extreme": {
+      "label": "Extreme",
+      "summary": "The strict cardlocked-ironman reading. The same cards are unlocked, but you may not interact with a locked source at all - no gathering ahead of the unlock and no pre-banking.",
+      "caveats": [
+        "Any interaction with a locked source is off the table. You cannot gather, mine, chop or catch a card you have not unlocked, even to bank it."
+      ],
+      "confidence": "contested",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Extreme defined from the osrscardexchange framing only",
+          "decision": "DEC-0004"
+        },
+        {
+          "kind": "community",
+          "label": "osrscardexchange - Foil cards: what people say",
+          "url": "https://www.osrscardexchange.com/blog/foil-cards-what-people-say",
+          "retrieved": "2026-07-30"
+        }
+      ]
+    },
+    "plain-foil": {
+      "label": "Plain foil",
+      "summary": "A foil is just a shiny duplicate. It unlocks the card it shows and nothing more. A vocal minority position, shown here as a first-class answer rather than an error.",
+      "caveats": [
+        "This is one of three community camps, not a settled rule. It is the most conservative reading available."
+      ],
+      "confidence": "contested",
+      "sources": [
+        {
+          "kind": "community",
+          "label": "osrscardexchange - Foil cards: what people say",
+          "url": "https://www.osrscardexchange.com/blog/foil-cards-what-people-say",
+          "quote": "a foil is just a foil",
+          "retrieved": "2026-07-30"
+        }
+      ]
+    }
+  },
+  "rules": [
+    {
+      "id": "armour-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "familyTags": [
+          "armour"
+        ]
+      },
+      "explanation": "A foil armour piece unlocks that piece and every tier of it below. {card} covers {count} cards down to {lowest}. The {excludedCount} tiers above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "brief",
+          "label": "Project brief - downward unlocks",
+          "quote": "A foil armour piece unlocks that piece and all tiers of the same piece below it, not above. Rune full helm -> all full helms Rune and below."
+        }
+      ]
+    },
+    {
+      "id": "weapon-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "familyTags": [
+          "weapon"
+        ]
+      },
+      "explanation": "A foil weapon unlocks that weapon and every tier of it below. {card} covers {count} cards down to {lowest}. The {excludedCount} tiers above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "brief",
+          "label": "Project brief - downward unlocks",
+          "quote": "Same for weapon types. Mithril platebody, Iron platelegs behave identically."
+        }
+      ]
+    },
+    {
+      "id": "resource-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "familyTags": [
+          "resource"
+        ]
+      },
+      "explanation": "A foil resource unlocks the verbs for that resource and everything below it. {card} covers {count} cards down to {lowest}. You get the actions, not what they produce.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "brief",
+          "label": "Project brief - downward unlocks",
+          "quote": "A foil resource unlocks the relevant verbs for that resource and all below it, but not the downstream product."
+        },
+        {
+          "kind": "decision",
+          "label": "Resource unlocks grant verbs, not downstream products",
+          "decision": "DEC-0005"
+        }
+      ]
+    },
+    {
+      "id": "state-pair-both-states-only",
+      "strategy": "state-pair",
+      "applies": {
+        "statePairKinds": [
+          "cook",
+          "clean",
+          "cut",
+          "tan"
+        ]
+      },
+      "explanation": "An item with an unprocessed and a processed form unlocks both forms of {card} and nothing else. It does not descend any ladder the card also sits in.",
+      "caveats": [
+        "Not everyone reads it this way. One community source treats a foil fish as unlocking every fish caught the same way. That reading is recorded here as input and not adopted - a pair is one item in two forms, so it stops a descent rather than starting one."
+      ],
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "State pairs unlock both states only, and beat downward unlocks",
+          "decision": "DEC-0001"
+        },
+        {
+          "kind": "decision",
+          "label": "State-pair rule widened to cut gems and tanned hides",
+          "decision": "DEC-0012"
+        }
+      ]
+    },
+    {
+      "id": "seahorsie-ladders",
+      "strategy": "ladder-down",
+      "applies": {
+        "families": [
+          "shortbow",
+          "longbow",
+          "pickaxe",
+          "axe"
+        ]
+      },
+      "explanation": "TheSeahorsie's foil rules give this ladder explicitly: go down vertically in progression and unlock everything under. {card} covers {count} cards down to {lowest}. The {excludedCount} above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "wiki",
+          "label": "User:TheSeahorsie/TCG Foil Rules",
+          "url": "https://oldschool.runescape.wiki/w/User:TheSeahorsie/TCG_Foil_Rules",
+          "quote": "if you can go down vertically in progression, unlock everything under",
+          "retrieved": "2026-07-30"
+        }
+      ]
+    },
+    {
+      "id": "rune-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "families": [
+          "rune"
+        ]
+      },
+      "explanation": "The elemental and catalytic rune ladder descends. {card} covers {count} cards down to {lowest}. The {excludedCount} above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Elemental/catalytic rune ladder descends",
+          "decision": "DEC-0008"
+        }
+      ]
+    },
+    {
+      "id": "combination-rune-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "families": [
+          "combination-rune"
+        ]
+      },
+      "explanation": "Combination runes unlock other combination runes, following the downward unlock rule among themselves. {card} covers {count} cards down to {lowest}. The {excludedCount} above stay locked.",
+      "caveats": [
+        "A combination rune is made from two elemental runes, so reading a foil one as unlocking those runes is a fair argument. It was considered and not adopted - this ladder stands separate from the elemental one."
+      ],
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Combination runes form their own descending ladder",
+          "decision": "DEC-0009"
+        }
+      ]
+    },
+    {
+      "id": "plank-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "families": [
+          "plank"
+        ]
+      },
+      "explanation": "The plank ladder descends. {card} covers {count} cards down to {lowest}. The {excludedCount} above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Plank ladder descends",
+          "decision": "DEC-0010"
+        }
+      ]
+    },
+    {
+      "id": "jewellery-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "families": [
+          "ring",
+          "necklace",
+          "amulet",
+          "bracelet"
+        ]
+      },
+      "explanation": "Unenchanted jewellery descends by gem tier, within the same piece type. {card} covers {count} cards down to {lowest}. The {excludedCount} above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Unenchanted jewellery ladders descend, by piece type",
+          "decision": "DEC-0011"
+        }
+      ]
+    },
+    {
+      "id": "community-set-group",
+      "strategy": "group",
+      "applies": {
+        "familyTags": [
+          "community-set"
+        ]
+      },
+      "explanation": "This card is part of a named set. A foil unlocks every card in {family} - {count} in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Named community sets unlock as a group",
+          "decision": "DEC-0013"
+        }
+      ]
+    },
+    {
+      "id": "fire-cape-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "families": [
+          "fire-infernal-cape"
+        ]
+      },
+      "explanation": "Infernal cape unlocks Fire cape below it. {card} covers {count} cards down to {lowest}. The {excludedCount} above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Fire cape / Infernal cape descends",
+          "decision": "DEC-0017"
+        }
+      ]
+    },
+    {
+      "id": "diary-reward-ladder-down",
+      "strategy": "ladder-down",
+      "applies": {
+        "familyTags": [
+          "diary-reward"
+        ]
+      },
+      "explanation": "Achievement diary reward items unlock the same downward-unlock rule as armour: {card} covers {count} cards down to {lowest}. The {excludedCount} above stay locked.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Achievement diary tiered reward items descend",
+          "decision": "DEC-0015"
+        }
+      ]
+    },
+    {
+      "id": "boss-group",
+      "strategy": "group",
+      "applies": {
+        "familyTags": [
+          "boss-group"
+        ]
+      },
+      "explanation": "A foil boss or one of its uniques unlocks the whole set. {card} is part of {family} - {count} in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "NPC hierarchy, first case: General Graardor's uniques",
+          "decision": "DEC-0022"
+        }
+      ]
+    },
+    {
+      "id": "hilt-group",
+      "strategy": "group",
+      "applies": {
+        "familyTags": [
+          "hilt-group"
+        ]
+      },
+      "explanation": "A foil hilt or one of its godsword shards unlocks the whole set. {card} is part of {family} - {count} in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Hilts unlock godsword shards only, not armor",
+          "decision": "DEC-0023"
+        }
+      ]
+    }
+  ]
+}

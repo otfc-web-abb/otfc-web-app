@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osrs-tcg-foils/schema/rules.schema.json",
+  "title": "rules.json - judgemental rulings, every one sourced",
+  "description": "The gated file. An entry here is a decision about what a foil does. 'sources' is mandatory everywhere, so an unsourced rule fails validation instead of shipping as an opinion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["rulesets", "rules"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "rulesets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["standard", "extreme", "plain-foil"],
+      "properties": {
+        "standard": { "$ref": "#/$defs/ruleset" },
+        "extreme": { "$ref": "#/$defs/ruleset" },
+        "plain-foil": { "$ref": "#/$defs/ruleset" }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/rule" }
+    }
+  },
+  "$defs": {
+    "ruleset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "summary", "confidence", "sources"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "summary": {
+          "description": "One or two sentences shown by the ruleset toggle.",
+          "type": "string",
+          "minLength": 1
+        },
+        "caveats": {
+          "description": "Attached to every resolution under this ruleset.",
+          "$ref": "common.schema.json#/$defs/caveats"
+        },
+        "confidence": { "$ref": "common.schema.json#/$defs/confidence" },
+        "sources": { "$ref": "common.schema.json#/$defs/sources" }
+      }
+    },
+    "selector": {
+      "description": "Exactly one selector key. 'families' and 'statePairs' are explicit; 'familyTags' and 'statePairKinds' are broad. Explicit beats broad when both match.",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["families"],
+          "properties": {
+            "families": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "$ref": "common.schema.json#/$defs/id" }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["familyTags"],
+          "properties": {
+            "familyTags": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "$ref": "common.schema.json#/$defs/id" }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["statePairs"],
+          "properties": {
+            "statePairs": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "$ref": "common.schema.json#/$defs/id" }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["statePairKinds"],
+          "properties": {
+            "statePairKinds": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "$ref": "common.schema.json#/$defs/id" }
+            }
+          }
+        }
+      ]
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "strategy", "applies", "explanation", "confidence", "sources"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "strategy": {
+          "enum": ["state-pair", "ladder-down", "components", "group", "npc-hierarchy"]
+        },
+        "applies": { "$ref": "#/$defs/selector" },
+        "grants": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "actions": {
+              "description": "'inherit' (default) takes the verb set from the factual data. An explicit list narrows or replaces it.",
+              "oneOf": [
+                { "const": "inherit" },
+                { "$ref": "common.schema.json#/$defs/actions" }
+              ]
+            },
+            "productBoundary": {
+              "description": "Force the verb-not-product caveat on or off. Omit to let the engine derive it: on when a granted transformation action produces a card outside the unlock set.",
+              "type": "boolean"
+            }
+          }
+        },
+        "explanation": {
+          "description": "Plain English 'why'. Placeholders: {card} {family} {lowest} {highest} {count} {excludedCount}.",
+          "type": "string",
+          "minLength": 1
+        },
+        "caveats": { "$ref": "common.schema.json#/$defs/caveats" },
+        "rulesetCaveats": { "$ref": "common.schema.json#/$defs/rulesetCaveats" },
+        "confidence": { "$ref": "common.schema.json#/$defs/ruleConfidence" },
+        "sources": { "$ref": "common.schema.json#/$defs/sources" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "strategy": { "const": "state-pair" } },
+            "required": ["strategy"]
+          },
+          "then": {
+            "properties": {
+              "applies": {
+                "type": "object",
+                "propertyNames": { "enum": ["statePairs", "statePairKinds"] }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "applies": {
+                "type": "object",
+                "propertyNames": { "enum": ["families", "familyTags"] }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

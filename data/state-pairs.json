@@ -1,0 +1,2001 @@
+{
+  "$schema": "./schema/state-pairs.schema.json",
+  "statePairs": [
+    {
+      "id": "avantoe",
+      "label": "Avantoe",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy avantoe",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Avantoe",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "buchu-leaf",
+      "label": "Buchu leaf",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy buchu leaf",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Buchu leaf",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cadantine",
+      "label": "Cadantine",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy cadantine",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Cadantine",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dwarf-weed",
+      "label": "Dwarf weed",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy dwarf weed",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Dwarf weed",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "golpar",
+      "label": "Golpar",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy golpar",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Golpar",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guam-leaf",
+      "label": "Guam leaf",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy guam leaf",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Guam leaf",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "harralander",
+      "label": "Harralander",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy harralander",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Harralander",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huasca",
+      "label": "Huasca",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy huasca",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Huasca",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "irit-leaf",
+      "label": "Irit leaf",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy irit leaf",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Irit leaf",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kwuarm",
+      "label": "Kwuarm",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy kwuarm",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Kwuarm",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lantadyme",
+      "label": "Lantadyme",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy lantadyme",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Lantadyme",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marrentill",
+      "label": "Marrentill",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy marrentill",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Marrentill",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noxifer",
+      "label": "Noxifer",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy noxifer",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Noxifer",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ranarr-weed",
+      "label": "Ranarr weed",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy ranarr weed",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Ranarr weed",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "snapdragon",
+      "label": "Snapdragon",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy snapdragon",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Snapdragon",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tarromin",
+      "label": "Tarromin",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy tarromin",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Tarromin",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toadflax",
+      "label": "Toadflax",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy toadflax",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Toadflax",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "torstol",
+      "label": "Torstol",
+      "kind": "clean",
+      "states": [
+        {
+          "card": "Grimy torstol",
+          "role": "unprocessed",
+          "actions": [
+            "use"
+          ]
+        },
+        {
+          "card": "Torstol",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anchovies",
+      "label": "Anchovies",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw anchovies",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Anchovies",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anglerfish",
+      "label": "Anglerfish",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw anglerfish",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Anglerfish",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "barb-tailed-kebbit",
+      "label": "Barb-tailed kebbit",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw barb-tailed kebbit",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked barb-tailed kebbit",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bass",
+      "label": "Bass",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw bass",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Bass",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beef",
+      "label": "Beef",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw beef",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Beef",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blue-crab-meat",
+      "label": "Blue crab meat",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw blue crab meat",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Blue crab meat",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bluefin",
+      "label": "Bluefin",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw bluefin",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Bluefin",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "catfish",
+      "label": "Catfish",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw catfish",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Catfish",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cave-eel",
+      "label": "Cave eel",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw cave eel",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cave eel",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cavefish",
+      "label": "Cavefish",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw cavefish",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cavefish",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chicken",
+      "label": "Chicken",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw chicken",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked chicken",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chompy",
+      "label": "Chompy",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw chompy",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked chompy",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cod",
+      "label": "Cod",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw cod",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cod",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-crab",
+      "label": "Dark crab",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw dark crab",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Dark crab",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dashing-kebbit",
+      "label": "Dashing kebbit",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw dashing kebbit",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked dashing kebbit",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fishlike-thing",
+      "label": "Fishlike thing",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw fishlike thing",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Fishlike thing",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "garden-pie",
+      "label": "Garden pie",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw garden pie",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Garden pie",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "giant-krill",
+      "label": "Giant krill",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw giant krill",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Giant krill",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "graahk",
+      "label": "Graahk",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw graahk",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked graahk",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guppy",
+      "label": "Guppy",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw guppy",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Guppy",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "haddock",
+      "label": "Haddock",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw haddock",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Haddock",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "halibut",
+      "label": "Halibut",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw halibut",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Halibut",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "harpoonfish",
+      "label": "Harpoonfish",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw harpoonfish",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Harpoonfish",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "herring",
+      "label": "Herring",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw herring",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Herring",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jumbo-squid",
+      "label": "Jumbo squid",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw jumbo squid",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Jumbo squid",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "karambwan",
+      "label": "Karambwan",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw karambwan",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked karambwan",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kyatt",
+      "label": "Kyatt",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw kyatt",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked kyatt",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "larupia",
+      "label": "Larupia",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw larupia",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked larupia",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lobster",
+      "label": "Lobster",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw lobster",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Lobster",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mackerel",
+      "label": "Mackerel",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw mackerel",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Mackerel",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manta-ray",
+      "label": "Manta ray",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw manta ray",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Manta ray",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marlin",
+      "label": "Marlin",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw marlin",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Marlin",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monkfish",
+      "label": "Monkfish",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw monkfish",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Monkfish",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moonlight-antelope",
+      "label": "Moonlight antelope",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw moonlight antelope",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked moonlight antelope",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mud-pie",
+      "label": "Mud pie",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw mud pie",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Mud pie",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mystery-meat",
+      "label": "Mystery meat",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw mystery meat",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked mystery meat",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paddlefish",
+      "label": "Paddlefish",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw paddlefish",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Paddlefish",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pike",
+      "label": "Pike",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw pike",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Pike",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pyre-fox",
+      "label": "Pyre fox",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw pyre fox",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked pyre fox",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rabbit",
+      "label": "Rabbit",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw rabbit",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked rabbit",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rainbow-crab-meat",
+      "label": "Rainbow crab meat",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw rainbow crab meat",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Rainbow crab meat",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rainbow-fish",
+      "label": "Rainbow fish",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw rainbow fish",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Rainbow fish",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "red-crab-meat",
+      "label": "Red crab meat",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw red crab meat",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Red crab meat",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "salmon",
+      "label": "Salmon",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw salmon",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Salmon",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sardine",
+      "label": "Sardine",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw sardine",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Sardine",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sea-turtle",
+      "label": "Sea turtle",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw sea turtle",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Sea turtle",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shark",
+      "label": "Shark",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw shark",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Shark",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shrimps",
+      "label": "Shrimps",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw shrimps",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Shrimps",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slimy-eel",
+      "label": "Slimy eel",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw slimy eel",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked slimy eel",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "summer-pie",
+      "label": "Summer pie",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw summer pie",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Summer pie",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sunlight-antelope",
+      "label": "Sunlight antelope",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw sunlight antelope",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked sunlight antelope",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "swamp-paste",
+      "label": "Swamp paste",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw swamp paste",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Swamp paste",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "swordfish",
+      "label": "Swordfish",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw swordfish",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Swordfish",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "swordtip-squid",
+      "label": "Swordtip squid",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw swordtip squid",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Swordtip squid",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t-bone-steak",
+      "label": "T-bone steak",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw t-bone steak",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked t-bone steak",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tetra",
+      "label": "Tetra",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw tetra",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Tetra",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trout",
+      "label": "Trout",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw trout",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Trout",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tuna",
+      "label": "Tuna",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw tuna",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Tuna",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ugthanki-meat",
+      "label": "Ugthanki meat",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw ugthanki meat",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Ugthanki meat",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wild-kebbit",
+      "label": "Wild kebbit",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw wild kebbit",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Cooked wild kebbit",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yellowfin",
+      "label": "Yellowfin",
+      "kind": "cook",
+      "states": [
+        {
+          "card": "Raw yellowfin",
+          "role": "unprocessed",
+          "actions": [
+            "catch"
+          ]
+        },
+        {
+          "card": "Yellowfin",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diamond",
+      "label": "Diamond",
+      "kind": "cut",
+      "states": [
+        {
+          "card": "Uncut diamond",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Diamond",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dragonstone",
+      "label": "Dragonstone",
+      "kind": "cut",
+      "states": [
+        {
+          "card": "Uncut dragonstone",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Dragonstone",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emerald",
+      "label": "Emerald",
+      "kind": "cut",
+      "states": [
+        {
+          "card": "Uncut emerald",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Emerald",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jade",
+      "label": "Jade",
+      "kind": "cut",
+      "states": [
+        {
+          "card": "Uncut jade",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Jade",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onyx",
+      "label": "Onyx",
+      "kind": "cut",
+      "states": [
+        {
+          "card": "Uncut onyx",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Onyx",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opal",
+      "label": "Opal",
+      "kind": "cut",
+      "states": [
+        {
+          "card": "Uncut opal",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Opal",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "red-topaz",
+      "label": "Red topaz",
+      "kind": "cut",
+      "states": [
+        {
+          "card": "Uncut red topaz",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Red topaz",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ruby",
+      "label": "Ruby",
+      "kind": "cut",
+      "states": [
+        {
+          "card": "Uncut ruby",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Ruby",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sapphire",
+      "label": "Sapphire",
+      "kind": "cut",
+      "states": [
+        {
+          "card": "Uncut sapphire",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Sapphire",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zenyte",
+      "label": "Zenyte",
+      "kind": "cut",
+      "states": [
+        {
+          "card": "Uncut zenyte",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Zenyte",
+          "role": "processed",
+          "actions": [
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "black-dragonhide",
+      "label": "Black dragonhide",
+      "kind": "tan",
+      "states": [
+        {
+          "card": "Black dragonhide",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Black dragon leather",
+          "role": "processed",
+          "actions": [
+            "craft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blue-dragonhide",
+      "label": "Blue dragonhide",
+      "kind": "tan",
+      "states": [
+        {
+          "card": "Blue dragonhide",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Blue dragon leather",
+          "role": "processed",
+          "actions": [
+            "craft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cowhide",
+      "label": "Cowhide",
+      "kind": "tan",
+      "states": [
+        {
+          "card": "Cowhide",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Leather",
+          "role": "processed",
+          "actions": [
+            "craft"
+          ]
+        }
+      ],
+      "note": "Cowhide also tans into Hard leather. Only the standard tan is recorded as the pair; the hard-leather step needs its own ruling."
+    },
+    {
+      "id": "green-dragonhide",
+      "label": "Green dragonhide",
+      "kind": "tan",
+      "states": [
+        {
+          "card": "Green dragonhide",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Green dragon leather",
+          "role": "processed",
+          "actions": [
+            "craft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "red-dragonhide",
+      "label": "Red dragonhide",
+      "kind": "tan",
+      "states": [
+        {
+          "card": "Red dragonhide",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Red dragon leather",
+          "role": "processed",
+          "actions": [
+            "craft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yak-hide",
+      "label": "Yak-hide",
+      "kind": "tan",
+      "states": [
+        {
+          "card": "Yak-hide",
+          "role": "unprocessed",
+          "actions": [
+            "craft"
+          ]
+        },
+        {
+          "card": "Cured yak-hide",
+          "role": "processed",
+          "actions": [
+            "craft"
+          ]
+        }
+      ]
+    }
+  ]
+}

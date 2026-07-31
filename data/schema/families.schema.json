@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osrs-tcg-foils/schema/families.schema.json",
+  "title": "families.json - factual structural relationships between cards",
+  "description": "FACTUAL data only. Membership, order, and verbs are read from the game. Nothing here says what a foil unlocks - that lives in rules.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["families"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "families": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/family" }
+    }
+  },
+  "$defs": {
+    "base": {
+      "type": "object",
+      "required": ["id", "label", "kind"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "label": {
+          "description": "Plural, human readable. Used in explanations and the ladder visual heading.",
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": { "enum": ["ladder", "set", "composite"] },
+        "tags": {
+          "description": "Selector handles for rules.json (armour, weapon, resource, ...). Factual classification, not a ruling.",
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/id" },
+          "uniqueItems": true
+        },
+        "actions": {
+          "description": "Default verb set for every member. A member may override it.",
+          "$ref": "common.schema.json#/$defs/actions"
+        },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    },
+    "ladder": {
+      "description": "Ordered progression. rungs[0] is the LOWEST rung. 'Down' means a lower index.",
+      "type": "object",
+      "allOf": [{ "$ref": "#/$defs/base" }],
+      "unevaluatedProperties": false,
+      "required": ["rungs"],
+      "properties": {
+        "kind": { "const": "ladder" },
+        "rungs": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["tier", "members"],
+            "properties": {
+              "tier": {
+                "description": "Rung label (bronze, iron, ...). Unique within the family.",
+                "$ref": "common.schema.json#/$defs/id"
+              },
+              "members": { "$ref": "common.schema.json#/$defs/members" }
+            }
+          }
+        }
+      }
+    },
+    "set": {
+      "description": "Unordered set - outfits, wilderness rings, tierless siblings, NPC variant groups. No rung is above any other.",
+      "type": "object",
+      "allOf": [{ "$ref": "#/$defs/base" }],
+      "unevaluatedProperties": false,
+      "required": ["members"],
+      "properties": {
+        "kind": { "const": "set" },
+        "members": {
+          "type": "array",
+          "allOf": [{ "$ref": "common.schema.json#/$defs/members" }],
+          "minItems": 2
+        }
+      }
+    },
+    "composite": {
+      "description": "A card that breaks down into named parts.",
+      "type": "object",
+      "allOf": [{ "$ref": "#/$defs/base" }],
+      "unevaluatedProperties": false,
+      "required": ["whole", "parts"],
+      "properties": {
+        "kind": { "const": "composite" },
+        "whole": { "$ref": "common.schema.json#/$defs/cardName" },
+        "parts": { "$ref": "common.schema.json#/$defs/members" }
+      }
+    },
+    "family": {
+      "oneOf": [
+        { "$ref": "#/$defs/ladder" },
+        { "$ref": "#/$defs/set" },
+        { "$ref": "#/$defs/composite" }
+      ]
+    }
+  }
+}

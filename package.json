@@ -1,0 +1,24 @@
+{
+  "name": "osrs-tcg-foils",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "node --import tsx --test \"src/**/*.test.ts\"",
+    "build:data": "tsx scripts/build-data.ts",
+    "gen:metal-families": "tsx scripts/gen-metal-families.ts",
+    "gen:state-pairs": "tsx scripts/gen-state-pairs.ts",
+    "validate-rules": "tsx scripts/validate-rules.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
+  }
+}
