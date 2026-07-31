@@ -347,6 +347,23 @@
       ]
     },
     {
+      "id": "bandos-hilt-group",
+      "label": "Bandos hilt and godsword",
+      "kind": "set",
+      "tags": [
+        "hilt-group"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Bandos hilt",
+        "Godsword shard 1",
+        "Godsword shard 2",
+        "Godsword shard 3"
+      ]
+    },
+    {
       "id": "bar",
       "label": "Bars",
       "kind": "ladder",
@@ -685,23 +702,6 @@
         "Bandos chestplate",
         "Bandos tassets",
         "Bandos boots"
-      ]
-    },
-    {
-      "id": "bandos-hilt-group",
-      "label": "Bandos hilt and godsword",
-      "kind": "set",
-      "tags": [
-        "hilt-group"
-      ],
-      "actions": [
-        "use"
-      ],
-      "members": [
-        "Bandos hilt",
-        "Godsword shard 1",
-        "Godsword shard 2",
-        "Godsword shard 3"
       ]
     },
     {
@@ -2548,203 +2548,93 @@
       ]
     },
     {
-      "id": "key-black",
-      "label": "Black-eyelet keys",
-      "kind": "ladder",
+      "id": "keys-black",
+      "label": "Black keys",
+      "kind": "set",
+      "tags": [
+        "key-tier"
+      ],
       "actions": [
         "use"
       ],
-      "rungs": [
-        {
-          "tier": "bronze",
-          "members": [
-            "Bronze key black"
-          ]
-        },
-        {
-          "tier": "steel",
-          "members": [
-            "Steel key black"
-          ]
-        },
-        {
-          "tier": "black",
-          "members": [
-            "Black key black"
-          ]
-        },
-        {
-          "tier": "silver",
-          "members": [
-            "Silver key black"
-          ]
-        },
-        {
-          "tier": "gold",
-          "members": [
-            "Gold key black"
-          ]
-        }
+      "members": [
+        "Black key black",
+        "Black key brown",
+        "Black key crimson",
+        "Black key purple",
+        "Black key red"
       ]
     },
     {
-      "id": "key-brown",
-      "label": "Brown-eyelet keys",
-      "kind": "ladder",
+      "id": "keys-bronze",
+      "label": "Bronze keys",
+      "kind": "set",
+      "tags": [
+        "key-tier"
+      ],
       "actions": [
         "use"
       ],
-      "rungs": [
-        {
-          "tier": "bronze",
-          "members": [
-            "Bronze key brown"
-          ]
-        },
-        {
-          "tier": "steel",
-          "members": [
-            "Steel key brown"
-          ]
-        },
-        {
-          "tier": "black",
-          "members": [
-            "Black key brown"
-          ]
-        },
-        {
-          "tier": "silver",
-          "members": [
-            "Silver key brown"
-          ]
-        },
-        {
-          "tier": "gold",
-          "members": [
-            "Gold key brown"
-          ]
-        }
+      "members": [
+        "Bronze key black",
+        "Bronze key brown",
+        "Bronze key crimson",
+        "Bronze key purple",
+        "Bronze key red"
       ]
     },
     {
-      "id": "key-crimson",
-      "label": "Crimson-eyelet keys",
-      "kind": "ladder",
+      "id": "keys-gold",
+      "label": "Gold keys",
+      "kind": "set",
+      "tags": [
+        "key-tier"
+      ],
       "actions": [
         "use"
       ],
-      "rungs": [
-        {
-          "tier": "bronze",
-          "members": [
-            "Bronze key crimson"
-          ]
-        },
-        {
-          "tier": "steel",
-          "members": [
-            "Steel key crimson"
-          ]
-        },
-        {
-          "tier": "black",
-          "members": [
-            "Black key crimson"
-          ]
-        },
-        {
-          "tier": "silver",
-          "members": [
-            "Silver key crimson"
-          ]
-        },
-        {
-          "tier": "gold",
-          "members": [
-            "Gold key crimson"
-          ]
-        }
+      "members": [
+        "Gold key black",
+        "Gold key brown",
+        "Gold key crimson",
+        "Gold key purple",
+        "Gold key red"
       ]
     },
     {
-      "id": "key-purple",
-      "label": "Purple-eyelet keys",
-      "kind": "ladder",
+      "id": "keys-silver",
+      "label": "Silver keys",
+      "kind": "set",
+      "tags": [
+        "key-tier"
+      ],
       "actions": [
         "use"
       ],
-      "rungs": [
-        {
-          "tier": "bronze",
-          "members": [
-            "Bronze key purple"
-          ]
-        },
-        {
-          "tier": "steel",
-          "members": [
-            "Steel key purple"
-          ]
-        },
-        {
-          "tier": "black",
-          "members": [
-            "Black key purple"
-          ]
-        },
-        {
-          "tier": "silver",
-          "members": [
-            "Silver key purple"
-          ]
-        },
-        {
-          "tier": "gold",
-          "members": [
-            "Gold key purple"
-          ]
-        }
+      "members": [
+        "Silver key black",
+        "Silver key brown",
+        "Silver key crimson",
+        "Silver key purple",
+        "Silver key red"
       ]
     },
     {
-      "id": "key-red",
-      "label": "Red-eyelet keys",
-      "kind": "ladder",
+      "id": "keys-steel",
+      "label": "Steel keys",
+      "kind": "set",
+      "tags": [
+        "key-tier"
+      ],
       "actions": [
         "use"
       ],
-      "rungs": [
-        {
-          "tier": "bronze",
-          "members": [
-            "Bronze key red"
-          ]
-        },
-        {
-          "tier": "steel",
-          "members": [
-            "Steel key red"
-          ]
-        },
-        {
-          "tier": "black",
-          "members": [
-            "Black key red"
-          ]
-        },
-        {
-          "tier": "silver",
-          "members": [
-            "Silver key red"
-          ]
-        },
-        {
-          "tier": "gold",
-          "members": [
-            "Gold key red"
-          ]
-        }
+      "members": [
+        "Steel key black",
+        "Steel key brown",
+        "Steel key crimson",
+        "Steel key purple",
+        "Steel key red"
       ]
     },
     {

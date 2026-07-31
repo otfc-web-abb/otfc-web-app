@@ -6,8 +6,10 @@ import { describe, it } from 'node:test'
 
 import { shippedData } from './data.ts'
 import { UNRESOLVED_EXPLANATION } from './explanation.ts'
+import { dataset } from './fixtures.ts'
 import { resolve } from './index.ts'
-import type { Resolution } from './types.ts'
+import { createResolver } from './resolve.ts'
+import type { Family, Resolution } from './types.ts'
 
 const names = (r: Resolution) => r.unlocks.map((u) => u.card.name)
 const excluded = (r: Resolution) => r.excluded.map((c) => c.name)
@@ -148,7 +150,7 @@ describe('foil Raw trout - the state pair', () => {
   })
 })
 
-describe('foil Grimy guam leaf - the state pair stops the herb ladder', () => {
+describe('foil Grimy guam leaf - the state pair answers alone', () => {
   const r = resolve('Grimy guam leaf')
 
   it('resolves as a state pair', () => {
@@ -164,11 +166,11 @@ describe('foil Grimy guam leaf - the state pair stops the herb ladder', () => {
     assertNotUnlocked(r, 'Marrentill', 'Tarromin', 'Ranarr weed', 'Torstol', 'Grimy marrentill')
   })
 
-  it('reports the herb ladder as excluded, so the stopped descent is visible', () => {
-    assert.equal(r.family?.id, 'herb')
-    assert.ok(excluded(r).includes('Marrentill'))
-    assert.ok(excluded(r).includes('Torstol'))
-    assert.ok(!excluded(r).includes('Guam leaf'))
+  // DEC-0026. The herb family is factual ordering with no ladder-down rule on it,
+  // so the pair stopped nothing and there is no forfeited descent to report.
+  it('does not draw the herb ladder, because no rule would have descended it', () => {
+    assert.equal(r.family, undefined)
+    assert.deepEqual(r.excluded, [])
   })
 
   it('resolves the same way from the clean side', () => {
@@ -221,8 +223,24 @@ describe('the plain-foil ruleset', () => {
   })
 })
 
+// Every shipped family now carries a rule, so this case has to be built. Adding an
+// unruled family to `data/` to keep a shipped-data test alive would be inventing
+// data to serve a test - fixtures.ts exists for exactly this.
 describe('a card with a family but no rule', () => {
-  const r = resolve('Rune cannonball')
+  const FAMILY: Family = {
+    id: 'trinket',
+    label: 'Trinkets',
+    kind: 'ladder',
+    actions: ['use'],
+    rungs: [
+      { tier: 'bronze', members: ['Bronze trinket'] },
+      { tier: 'iron', members: ['Iron trinket'] },
+    ],
+  }
+  const resolveUnruled = createResolver(
+    dataset({ cardNames: ['Bronze trinket', 'Iron trinket'], families: [FAMILY] }),
+  )
+  const r = resolveUnruled('Iron trinket')
 
   it('resolves unresolved cleanly', () => {
     assert.equal(r.strategy, 'unresolved')
@@ -235,15 +253,15 @@ describe('a card with a family but no rule', () => {
   })
 
   it('still carries the family, so the ladder renders as context', () => {
-    assert.equal(r.family?.id, 'cannonball')
+    assert.equal(r.family?.id, 'trinket')
     assert.equal(r.family?.kind, 'ladder')
     assert.ok((r.family?.rungs?.length ?? 0) > 1)
-    assert.ok(r.family?.rungs?.flatMap((g) => g.members).some((c) => c.name === 'Rune cannonball'))
+    assert.ok(r.family?.rungs?.flatMap((g) => g.members).some((c) => c.name === 'Iron trinket'))
   })
 
   it('claims nothing under any ruleset', () => {
     for (const ruleset of ['standard', 'extreme'] as const) {
-      const other = resolve('Rune cannonball', ruleset)
+      const other = resolveUnruled('Iron trinket', ruleset)
       assert.equal(other.strategy, 'unresolved')
       assert.deepEqual(other.sources, [])
       assert.equal(other.confidence, 'undecided')
@@ -686,20 +704,23 @@ describe('the sweep', () => {
     })
   }
 
-  it('reports the Phase 7 round 2 coverage numbers', () => {
+  // DEC-0024 added six utility ladders (+40 cards) and DEC-0025 regrouped the keys
+  // by tier (+25). state-pair is unchanged at 190: DEC-0026 altered which ladder a
+  // pair reports, never which cards it unlocks.
+  it('reports the Phase 7 round 3 coverage numbers', () => {
     const counts = new Map<string, number>()
     for (const card of shippedData.cards) {
       const s = resolve(card.name).strategy
       counts.set(s, (counts.get(s) ?? 0) + 1)
     }
 
-    assert.equal(counts.get('ladder-down'), 482)
+    assert.equal(counts.get('ladder-down'), 522)
     assert.equal(counts.get('state-pair'), 190)
-    assert.equal(counts.get('group'), 118)
-    assert.equal(counts.get('unresolved'), 5586)
+    assert.equal(counts.get('group'), 143)
+    assert.equal(counts.get('unresolved'), 5521)
     assert.equal(
       counts.get('ladder-down')! + counts.get('state-pair')! + counts.get('group')!,
-      790,
+      855,
     )
   })
 })

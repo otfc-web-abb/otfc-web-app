@@ -6,10 +6,16 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 
+import { shippedData } from '../rules/data.ts'
 import { resolve } from '../rules/index.ts'
+import type { Resolution } from '../rules/index.ts'
 import { GUIDELINE_LINE } from './copy.ts'
 import { esc } from './html.ts'
+import { renderLadder } from './ladder.ts'
 import { renderResult } from './result.ts'
+
+/** A card that reaches `unresolved`: no family, no rule, nothing claimed. */
+const UNRESOLVED_CARD = shippedData.cards.find((c) => c.cats.includes('monster'))!.name
 
 const count = (haystack: string, needle: string): number => haystack.split(needle).length - 1
 
@@ -24,7 +30,7 @@ describe('every screen carries the standing furniture', () => {
     ['Raw trout', 'standard'],
     ['Grimy guam leaf', 'standard'],
     ['Bronze dagger', 'standard'],
-    ['Rune cannonball', 'standard'],
+    [UNRESOLVED_CARD, 'standard'],
     ['Rune full helm', 'plain-foil'],
     ['Rune full helm', 'extreme'],
     ['Not a real card', 'standard'],
@@ -121,25 +127,27 @@ describe('foil Raw trout - a state pair with no ladder behind it', () => {
   })
 })
 
-describe('foil Grimy guam leaf - the pair stops the herb ladder', () => {
+// DEC-0026. The herb ladder carries no ladder-down rule, so the pair stopped
+// nothing and the ladder is not drawn at all. Previously it was, which put the
+// searched card in a footnote reading "and nothing else" directly beneath a ladder
+// showing 13 herbs locked - two true statements that read as a contradiction.
+describe('foil Grimy guam leaf - the pair answers alone', () => {
   const html = renderResult('Grimy guam leaf', 'standard')
 
-  it('marks the 13 herbs above as still locked', () => {
-    assert.equal(lockedRows(html), 13)
-    assert.ok(html.includes('Torstol'))
+  it('draws no ladder, because no rule would have descended the herbs', () => {
+    assert.equal(lockedRows(html), 0)
+    assert.ok(!html.includes('Torstol'))
   })
 
-  it('marks Guam leaf unlocked', () => {
-    assert.equal(unlockedRows(html), 1)
+  it('names both states, since no ladder is there to name them', () => {
+    assert.ok(html.includes('What you unlock'))
+    assert.ok(html.includes('Grimy guam leaf'))
+    assert.ok(html.includes('Guam leaf'))
+    assert.ok(!html.includes('On all 2 unlocked cards.'))
   })
 
-  it('still accounts for the searched card, which is not a ladder member', () => {
-    assert.ok(html.includes('What this lets you do'))
-    assert.ok(html.includes('On Grimy guam leaf, and nothing else.'))
-  })
-
-  it('explains that the descent stopped', () => {
-    assert.ok(html.includes('does not descend this progression'))
+  it('does not strand the partner card in an "and nothing else" footnote', () => {
+    assert.ok(!html.includes('On Grimy guam leaf, and nothing else.'))
   })
 })
 
@@ -184,11 +192,13 @@ describe('the extreme ruleset', () => {
 })
 
 describe('unresolved is a designed screen, not an error', () => {
-  const html = renderResult('Rune cannonball', 'standard')
+  // Every shipped family now carries a rule, so the unresolved screen is reached by
+  // a card with no family at all. Neutral-context rendering is covered separately.
+  const html = renderResult(UNRESOLVED_CARD, 'standard')
 
   it('treats the card the same as any other result', () => {
     assert.ok(html.includes('foil__sheen'))
-    assert.ok(html.includes('>Rune cannonball</h2>'))
+    assert.ok(html.includes(`>${esc(UNRESOLVED_CARD)}</h2>`))
   })
 
   it('states plainly that nothing is decided', () => {
@@ -196,11 +206,9 @@ describe('unresolved is a designed screen, not an error', () => {
     assert.ok(html.includes('badge--undecided'))
   })
 
-  it('renders the family as neutral context, marking nothing unlocked or locked', () => {
+  it('marks nothing unlocked or locked', () => {
     assert.equal(unlockedRows(html), 0)
     assert.equal(lockedRows(html), 0)
-    assert.equal(contextRows(html), 7)
-    assert.ok(html.includes('nothing here is marked unlocked or locked'))
   })
 
   it('shows the three camps as positions, never as an answer', () => {
@@ -218,7 +226,7 @@ describe('unresolved is a designed screen, not an error', () => {
   })
 
   it('claims no sources, per spec section 8', () => {
-    assert.deepEqual(resolve('Rune cannonball').sources, [])
+    assert.deepEqual(resolve(UNRESOLVED_CARD).sources, [])
     assert.ok(!html.includes('<h3 class="result__heading">Source'))
   })
 })
@@ -249,5 +257,41 @@ describe('escaping', () => {
 
     assert.ok(html.includes('Green d&#39;hide body'))
     assert.ok(!html.includes("d'hide body</h2>"))
+  })
+})
+
+// Section 8 requires that an unresolved card with a family still renders its ladder,
+// with no rung marked either way. No shipped card is in that state any more - every
+// family carries a rule - so the resolution is built directly.
+describe('an unresolved card that does have a family', () => {
+  const member = (name: string) => shippedData.cards.find((c) => c.name === name)!
+  const resolution = {
+    card: member('Bronze full helm'),
+    ruleset: 'standard',
+    strategy: 'unresolved',
+    unlocks: [],
+    excluded: [],
+    explanation: 'Nothing is decided here.',
+    caveats: [],
+    confidence: 'undecided',
+    sources: [],
+    family: {
+      id: 'full-helm',
+      label: 'Full helms',
+      kind: 'ladder',
+      rungs: [
+        { tier: 'bronze', members: [member('Bronze full helm')] },
+        { tier: 'iron', members: [member('Iron full helm')] },
+      ],
+    },
+  } as unknown as Resolution
+
+  const html = renderLadder(resolution)
+
+  it('renders the family as neutral context, marking nothing unlocked or locked', () => {
+    assert.equal(unlockedRows(html), 0)
+    assert.equal(lockedRows(html), 0)
+    assert.equal(contextRows(html), 2)
+    assert.ok(html.includes('nothing here is marked unlocked or locked'))
   })
 })
