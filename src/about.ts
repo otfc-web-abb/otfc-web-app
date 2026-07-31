@@ -1,5 +1,5 @@
 import './style.css'
-import { CAMPS_SOURCE, DISCORD_URL, GUIDELINE_LINE, RESOLUTION_ORDER, SUGGEST_A_RULE_URL } from './ui/copy.ts'
+import { CAMPS_SOURCE, GUIDELINE_LINE, RESOLUTION_ORDER } from './ui/copy.ts'
 import { esc } from './ui/html.ts'
 import { renderShell } from './ui/shell.ts'
 
@@ -109,24 +109,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderShell(
           <a class="link" href="${esc(CAMPS_SOURCE.url)}" target="_blank" rel="noopener">${esc(CAMPS_SOURCE.label)}</a>.
         </li>
       </ul>
-    </section>
-
-    <section class="result__section handoff">
-      <h2 class="result__heading">Suggest a rule</h2>
-      <p class="handoff__body">
-        Undecided cases get argued out in the community Discord, and settled rules get recorded with
-        their reasoning. That's the place to bring a case that isn't covered yet - or one you think
-        was called wrong. <a class="link" href="/open-questions.html">Open questions</a> covers how
-        that works.
-      </p>
-      <div class="handoff__actions">
-        ${
-          DISCORD_URL
-            ? `<a class="button button--primary" href="${esc(DISCORD_URL)}" target="_blank" rel="noopener">Suggest it in the Discord</a>`
-            : ''
-        }
-        <a class="button" href="${esc(SUGGEST_A_RULE_URL)}" target="_blank" rel="noopener">Open a GitHub issue</a>
-      </div>
     </section>
   `,
 )
