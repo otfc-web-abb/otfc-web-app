@@ -11,6 +11,8 @@ export function renderShell(
   body: string,
 ): string {
   return `
+    <div class="beta-banner">Beta - this tool is under active development. Rulings may change.</div>
+
     <header class="site-header">
       <div class="site-header__inner">
         <a class="wordmark" href="/">

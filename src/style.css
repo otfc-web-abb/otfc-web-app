@@ -127,6 +127,16 @@ img {
 
 /* --- shell ---------------------------------------------------------------- */
 
+.beta-banner {
+  background-color: var(--no-bg);
+  border-bottom: 2px solid var(--no-edge);
+  color: var(--no);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  padding: var(--s2) var(--s4);
+}
+
 .site-header {
   border-radius: 0;
   border-width: 0 0 2px;
