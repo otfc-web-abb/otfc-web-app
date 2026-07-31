@@ -466,6 +466,6 @@ No engine change. No new module. No test that needs rewriting beyond adding the 
 ## 14. Open items
 
 - Cosmetic tiers - Gilded, `(t)`/`(g)`, White - deferred to Phase 7. DEC-0003. Trimmed/gilded ladder shape now resolved regardless, DEC-0030.
-- The NPC hierarchy data model: shape resolved (DEC-0032, flat `group` per rank), but the ~1,227 monster cards and their recolour/rank groupings still need entering into `families.json`. Data-entry task, not an open ruling.
+- The NPC hierarchy data model: shape resolved (DEC-0032 for rank/recolours, DEC-0036 for the corrected boss/unique asymmetry, DEC-0037 for chromatic dragon lines). A first slice is entered - two recolour sets (elemental wizards, metallic dragons), four chromatic dragon ladders (red/green/blue/black), and four boss `components`+`group` pairs (General Graardor, Kree'arra, Commander Zilyana, K'ril Tsutsaroth). The remaining ~1,200+ monster cards and their recolour/boss-unique memberships still need entering. Data-entry task, not an open ruling.
 - Whether the ruleset toggle persists in `localStorage`. UI concern, Phase 4/5.
 - Code cleanup: `npc-hierarchy` strategy slot in `types.ts` and this spec (6.6, resolution order) is now dead per DEC-0032 and can be removed in a follow-up.

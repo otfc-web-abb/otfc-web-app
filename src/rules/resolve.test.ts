@@ -607,31 +607,67 @@ describe('Phase 7 round 2 - Avernic defender joins the ladder, DEC-0021', () => 
   })
 })
 
-describe('Phase 7 round 2 - General Graardor, the first boss-group case, DEC-0022', () => {
-  it('foil General Graardor unlocks the boss and all his uniques', () => {
+describe('Phase 7 round 2 - General Graardor, the first boss-group case, DEC-0022/DEC-0036', () => {
+  it('foil General Graardor unlocks the boss and all his uniques, including the hilt', () => {
     const r = resolve('General Graardor')
+
+    assert.equal(r.strategy, 'components')
+    assert.deepEqual(
+      new Set(names(r)),
+      new Set(['General Graardor', 'Bandos chestplate', 'Bandos tassets', 'Bandos boots', 'Bandos hilt']),
+    )
+  })
+
+  it('a foil unique alone unlocks the sibling uniques, not the boss - DEC-0036', () => {
+    const r = resolve('Bandos chestplate')
 
     assert.equal(r.strategy, 'group')
     assert.deepEqual(
       new Set(names(r)),
-      new Set([
-        'General Graardor',
-        'Bandos chestplate',
-        'Bandos tassets',
-        'Bandos boots',
-        'Bandos hilt',
-        'Godsword shard 1',
-        'Godsword shard 2',
-        'Godsword shard 3',
-      ]),
+      new Set(['Bandos chestplate', 'Bandos tassets', 'Bandos boots', 'Bandos hilt']),
     )
+    assertNotUnlocked(r, 'General Graardor')
   })
 
-  it('a foil unique also unlocks the boss', () => {
-    const r = resolve('Bandos hilt')
+  it('Saradomin sword unlocks its sibling Zilyana uniques, not Commander Zilyana', () => {
+    const r = resolve('Saradomin sword')
 
     assert.equal(r.strategy, 'group')
-    assert.ok(names(r).includes('General Graardor'))
+    assert.deepEqual(
+      new Set(names(r)),
+      new Set(["Saradomin sword", "Saradomin's light", 'Armadyl crossbow', 'Saradomin hilt']),
+    )
+    assertNotUnlocked(r, 'Commander Zilyana')
+  })
+
+  it('a godsword hilt still follows DEC-0028, not the boss-uniques group', () => {
+    const r = resolve('Bandos hilt')
+
+    assert.equal(r.strategy, 'components')
+    assert.deepEqual(new Set(names(r)), new Set(['Bandos hilt', 'Bandos godsword']))
+  })
+})
+
+describe('Phase 7 round 6 - chromatic dragon lines, DEC-0037', () => {
+  it('foil Brutal red dragon unlocks the normal and baby variants too', () => {
+    const r = resolve('Brutal red dragon')
+
+    assert.equal(r.strategy, 'ladder-down')
+    assert.deepEqual(new Set(names(r)), new Set(['Brutal red dragon', 'Red dragon', 'Baby red dragon']))
+  })
+
+  it('foil Red dragon unlocks the baby variant but not the brutal one', () => {
+    const r = resolve('Red dragon')
+
+    assert.equal(r.strategy, 'ladder-down')
+    assert.deepEqual(new Set(names(r)), new Set(['Red dragon', 'Baby red dragon']))
+    assertNotUnlocked(r, 'Brutal red dragon')
+  })
+
+  it('foil Baby black dragon unlocks only itself', () => {
+    const r = resolve('Baby black dragon')
+
+    assert.deepEqual(new Set(names(r)), new Set(['Baby black dragon']))
   })
 })
 
@@ -714,6 +750,17 @@ describe('the sweep', () => {
   // DEC-0033 added 27 enchanted-jewellery components families (each enchanted item
   // -> itself + its unenchanted gem base): components rises from 8 to 35, unresolved
   // drops by the same 27.
+  // DEC-0032/DEC-0035 added two monster-recolour sets (elemental wizards, metallic
+  // dragons) and, at first, three GWD boss-group sets modelled as symmetric groups.
+  // DEC-0036 then corrected the boss/unique relationship to asymmetric: each boss
+  // (General Graardor, Kree'arra, Commander Zilyana, K'ril Tsutsaroth) becomes a
+  // `components` family (boss -> boss + uniques, General Graardor's now including
+  // the hilt it was missing), paired with a `group` family of just the uniques
+  // (unique -> sibling uniques, not the boss). DEC-0037 added four 3-rung chromatic
+  // dragon ladders (red/green/blue/black: baby -> normal -> brutal).
+  // Net over DEC-0032/0035/0036/0037: ladder-down 522 -> 534 (+12, the 4 dragon
+  // lines), group 139 -> 157, components 8 -> 39 (+31: 27 jewellery + 4 bosses),
+  // unresolved 5490 -> 5456.
   it('reports the Phase 7 round 5 coverage numbers', () => {
     const counts = new Map<string, number>()
     for (const card of shippedData.cards) {
@@ -721,17 +768,17 @@ describe('the sweep', () => {
       counts.set(s, (counts.get(s) ?? 0) + 1)
     }
 
-    assert.equal(counts.get('ladder-down'), 522)
+    assert.equal(counts.get('ladder-down'), 534)
     assert.equal(counts.get('state-pair'), 190)
-    assert.equal(counts.get('group'), 139)
-    assert.equal(counts.get('components'), 35)
-    assert.equal(counts.get('unresolved'), 5490)
+    assert.equal(counts.get('group'), 157)
+    assert.equal(counts.get('components'), 39)
+    assert.equal(counts.get('unresolved'), 5456)
     assert.equal(
       counts.get('ladder-down')! +
         counts.get('state-pair')! +
         counts.get('group')! +
         counts.get('components')!,
-      886,
+      920,
     )
   })
 })

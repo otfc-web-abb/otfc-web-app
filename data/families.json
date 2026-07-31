@@ -809,18 +809,36 @@
     {
       "id": "boss-general-graardor",
       "label": "General Graardor and his uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "General Graardor",
+      "parts": [
+        "Bandos chestplate",
+        "Bandos tassets",
+        "Bandos boots",
+        "Bandos hilt"
+      ]
+    },
+    {
+      "id": "general-graardor-uniques",
+      "label": "General Graardor's uniques",
       "kind": "set",
       "tags": [
-        "boss-group"
+        "boss-uniques"
       ],
       "actions": [
         "use"
       ],
       "members": [
-        "General Graardor",
         "Bandos chestplate",
         "Bandos tassets",
-        "Bandos boots"
+        "Bandos boots",
+        "Bandos hilt"
       ]
     },
     {
@@ -5371,6 +5389,271 @@
       "whole": "Tormented bracelet",
       "parts": [
         "Zenyte bracelet"
+      ]
+    },
+    {
+      "id": "elemental-wizards",
+      "label": "Elemental wizards",
+      "kind": "set",
+      "tags": [
+        "monster-recolour"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Air wizard",
+        "Water wizard",
+        "Earth wizard",
+        "Fire wizard"
+      ]
+    },
+    {
+      "id": "metallic-dragons",
+      "label": "Metallic dragons",
+      "kind": "set",
+      "tags": [
+        "monster-recolour"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Bronze dragon",
+        "Iron dragon",
+        "Steel dragon",
+        "Mithril dragon",
+        "Adamant dragon",
+        "Rune dragon"
+      ]
+    },
+    {
+      "id": "boss-kreearra",
+      "label": "Kree'arra and his uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Kree'arra",
+      "parts": [
+        "Armadyl helmet",
+        "Armadyl chestplate",
+        "Armadyl chainskirt",
+        "Armadyl hilt"
+      ]
+    },
+    {
+      "id": "kreearra-uniques",
+      "label": "Kree'arra's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Armadyl helmet",
+        "Armadyl chestplate",
+        "Armadyl chainskirt",
+        "Armadyl hilt"
+      ]
+    },
+    {
+      "id": "boss-commander-zilyana",
+      "label": "Commander Zilyana and her uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Commander Zilyana",
+      "parts": [
+        "Saradomin sword",
+        "Saradomin's light",
+        "Armadyl crossbow",
+        "Saradomin hilt"
+      ]
+    },
+    {
+      "id": "commander-zilyana-uniques",
+      "label": "Commander Zilyana's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Saradomin sword",
+        "Saradomin's light",
+        "Armadyl crossbow",
+        "Saradomin hilt"
+      ]
+    },
+    {
+      "id": "boss-kril-tsutsaroth",
+      "label": "K'ril Tsutsaroth and his uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "K'ril Tsutsaroth",
+      "parts": [
+        "Steam battlestaff",
+        "Zamorakian spear",
+        "Staff of the dead",
+        "Zamorak hilt"
+      ]
+    },
+    {
+      "id": "kril-tsutsaroth-uniques",
+      "label": "K'ril Tsutsaroth's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Steam battlestaff",
+        "Zamorakian spear",
+        "Staff of the dead",
+        "Zamorak hilt"
+      ]
+    },
+    {
+      "id": "red-dragon-line",
+      "label": "Red dragons",
+      "kind": "ladder",
+      "tags": [
+        "chromatic-dragon-line"
+      ],
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "baby",
+          "members": [
+            "Baby red dragon"
+          ]
+        },
+        {
+          "tier": "normal",
+          "members": [
+            "Red dragon"
+          ]
+        },
+        {
+          "tier": "brutal",
+          "members": [
+            "Brutal red dragon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "green-dragon-line",
+      "label": "Green dragons",
+      "kind": "ladder",
+      "tags": [
+        "chromatic-dragon-line"
+      ],
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "baby",
+          "members": [
+            "Baby green dragon"
+          ]
+        },
+        {
+          "tier": "normal",
+          "members": [
+            "Green dragon"
+          ]
+        },
+        {
+          "tier": "brutal",
+          "members": [
+            "Brutal green dragon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blue-dragon-line",
+      "label": "Blue dragons",
+      "kind": "ladder",
+      "tags": [
+        "chromatic-dragon-line"
+      ],
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "baby",
+          "members": [
+            "Baby blue dragon"
+          ]
+        },
+        {
+          "tier": "normal",
+          "members": [
+            "Blue dragon"
+          ]
+        },
+        {
+          "tier": "brutal",
+          "members": [
+            "Brutal blue dragon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "black-dragon-line",
+      "label": "Black dragons",
+      "kind": "ladder",
+      "tags": [
+        "chromatic-dragon-line"
+      ],
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        {
+          "tier": "baby",
+          "members": [
+            "Baby black dragon"
+          ]
+        },
+        {
+          "tier": "normal",
+          "members": [
+            "Black dragon"
+          ]
+        },
+        {
+          "tier": "brutal",
+          "members": [
+            "Brutal black dragon"
+          ]
+        }
       ]
     }
   ]
