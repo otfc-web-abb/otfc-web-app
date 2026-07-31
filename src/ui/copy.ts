@@ -4,10 +4,10 @@
 
 export const DISCORD_URL: string | null = 'https://discord.gg/hyDXfXcYF'
 
-export const SUGGEST_A_RULE_URL = 'https://github.com/ojsy-hr/osrs-tcg-foils/issues/new'
+export const SUGGEST_A_RULE_URL = 'https://github.com/otfc-web-abb/otfc-web-app/issues/new'
 
 export const DECISIONS_URL =
-  'https://github.com/ojsy-hr/osrs-tcg-foils/blob/main/docs/decisions.md'
+  'https://github.com/otfc-web-abb/otfc-web-app/blob/main/docs/decisions.md'
 
 /** The project's whole posture, and the reason the result view has a sticky bar
  *  rather than a footnote. */

@@ -4,10 +4,8 @@ import {
   CAMPS_SOURCE,
   DECISIONS_URL,
   DISAGREEMENT_MODES,
-  DISCORD_URL,
   GUIDELINE_LINE,
   OPEN_QUESTIONS,
-  SUGGEST_A_RULE_URL,
 } from './ui/copy.ts'
 import { esc } from './ui/html.ts'
 import { renderShell } from './ui/shell.ts'
@@ -123,22 +121,5 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderShell(
         one entry per ruling.
       </p>
     </section>
-
-    <section class="result__section handoff">
-      <h2 class="result__heading">Argue with it</h2>
-      <p class="handoff__body">
-        Disagreeing with a call here is useful, not rude. The Discord is where cases get argued out -
-        a good argument changes rulings, and when it does, the change gets recorded with the
-        reasoning attached. Bring the card and why you read it differently.
-      </p>
-      <div class="handoff__actions">
-        ${
-          DISCORD_URL
-            ? `<a class="button button--primary" href="${esc(DISCORD_URL)}" target="_blank" rel="noopener">Take it to the Discord</a>`
-            : ''
-        }
-        <a class="button" href="${esc(SUGGEST_A_RULE_URL)}" target="_blank" rel="noopener">Open a GitHub issue</a>
-      </div>
-    </section>
-  `,
+  `
 )

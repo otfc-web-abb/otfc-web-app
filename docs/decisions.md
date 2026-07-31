@@ -46,7 +46,7 @@ This supersedes the osrscardexchange claim that a foil fish unlocks all fish cau
 
 Rejected: running both strategies and unioning them. It makes the answer depend on curation order and leaves no way to say "the pair stopped the descent", which is exactly what the player needs to see.
 
-**Source.** Rhys, project brief. Recorded in `phased_plan.md` under "Rules decided so far - State pairs". Contradicts [osrscardexchange - Foil cards: what people say](https://www.osrscardexchange.com/blog/foil-cards-what-people-say).
+**Source.** the maintainer, project brief. Recorded in `phased_plan.md` under "Rules decided so far - State pairs". Contradicts [osrscardexchange - Foil cards: what people say](https://www.osrscardexchange.com/blog/foil-cards-what-people-say).
 
 ---
 
@@ -61,7 +61,7 @@ The engine has no fallback heuristic and no default strategy. Absence of data pr
 
 **Rationale.** The governing principle of the project, made mechanical. Leaving it as a guideline means it erodes under pressure to raise coverage; making it a schema error means it cannot. A confidently wrong ruling destroys the app's reason to exist, while an honest "not decided yet" is still more useful than what a player has today.
 
-**Source.** Rhys, project brief. `phased_plan.md`, "Governing principle: do not invent rules".
+**Source.** the maintainer, project brief. `phased_plan.md`, "Governing principle: do not invent rules".
 
 ---
 
@@ -85,7 +85,7 @@ Deferring costs little because the mechanism is neutral: settling it later is a 
 
 Rejected: adopting siblings on the grounds that stats are what matter. Defensible, but it would make Phase 2 unable to reproduce TheSeahorsie's pickaxe ladder, and breaking the only written spec on a hunch is the failure mode this project exists to avoid.
 
-**Source.** Rhys and Claude, this session. Input: [User:TheSeahorsie/TCG_Foil_Rules](https://oldschool.runescape.wiki/w/User:TheSeahorsie/TCG_Foil_Rules), which orders pickaxes `Crystal > 3rd age > Dragon > Gilded > Rune`.
+**Source.** the maintainer, this session. Input: [User:TheSeahorsie/TCG_Foil_Rules](https://oldschool.runescape.wiki/w/User:TheSeahorsie/TCG_Foil_Rules), which orders pickaxes `Crystal > 3rd age > Dragon > Gilded > Rune`.
 
 ---
 
@@ -102,7 +102,7 @@ Rejected: adopting siblings on the grounds that stats are what matter. Defensibl
 
 Rejected: defining it from inference about how ironman rulesets usually work. That is inventing a rule.
 
-**Source.** [osrscardexchange - Foil cards: what people say](https://www.osrscardexchange.com/blog/foil-cards-what-people-say), the ruleset-dependent camp. Decision to proceed on that basis alone: Rhys, this session.
+**Source.** [osrscardexchange - Foil cards: what people say](https://www.osrscardexchange.com/blog/foil-cards-what-people-say), the ruleset-dependent camp. Decision to proceed on that basis alone: the maintainer, this session.
 
 **Open.** The Reddit thread still needs a manual read. When it is read, a new entry either confirms this definition and raises confidence, or supersedes it.
 
@@ -121,7 +121,7 @@ Mechanically: when a resolution grants a transformation action (`smelt`, `smith`
 
 Deriving the caveat from the action class rather than authoring it per rule keeps it correct in both directions: it fires for foil Iron ore, and correctly stays silent for foil Raw trout, where `cook` produces Trout and Trout is already in the unlock set.
 
-**Source.** Rhys, project brief. `phased_plan.md`, "Rules decided so far - From the project brief".
+**Source.** the maintainer, project brief. `phased_plan.md`, "Rules decided so far - From the project brief".
 
 ---
 
@@ -136,11 +136,11 @@ Gilded is its own rung above Rune (`Rune < Gilded`, below Dragon where a Dragon 
 
 Trimmed `(t)` armour would unlock the full trimmed set rather than descending - but no `(t)` cards exist anywhere in `Card.json`, so this half of the ruling has no data to apply to and is recorded for when the plugin adds them.
 
-**Rationale.** This is the question DEC-0003 deferred, settled directly by Rhys rather than inferred from a forum page - per Rhys's instruction on 2026-07-31, no ruling in this project cites public-forum material as its source going forward. Existing forum-sourced rules already shipped (the four TheSeahorsie ladders, the ruleset definitions) are left as they are; only new rulings are affected.
+**Rationale.** This is the question DEC-0003 deferred, settled directly by the maintainer rather than inferred from a forum page - per the maintainer's instruction on 2026-07-31, no ruling in this project cites public-forum material as its source going forward. Existing forum-sourced rules already shipped (the four TheSeahorsie ladders, the ruleset definitions) are left as they are; only new rulings are affected.
 
 The mechanism needed no engine change: `armour-ladder-down` and `weapon-ladder-down` already select by `familyTags: ["armour"/"weapon"]`, so adding the White and Gilded rungs to the existing family data is sufficient - this decision is what licenses that data edit, per DEC-0003's own wording that "rung placement is the ruling".
 
-**Source.** Rhys, this session (2026-07-31).
+**Source.** the maintainer, this session (2026-07-31).
 
 ---
 
@@ -157,7 +157,7 @@ This is new `families.json` ladder data (three new families, tagged `armour`), n
 
 The god-alignment recolours of Black d'hide body (Ancient, Armadyl, Bandos, Guthix, Saradomin, Zamorak) are left out of the ladder - they are cosmetic minigame rewards with no established rank relative to Black or each other, and ruling on them without a source would be a guess. They stay `unresolved`.
 
-**Source.** Rhys, this session (2026-07-31).
+**Source.** the maintainer, this session (2026-07-31).
 
 ---
 
@@ -170,7 +170,7 @@ The god-alignment recolours of Black d'hide body (Ancient, Armadyl, Bandos, Guth
 
 New `rules.json` entry selecting the existing `rune` family by explicit id.
 
-**Source.** Rhys, this session (2026-07-31).
+**Source.** the maintainer, this session (2026-07-31).
 
 ---
 
@@ -183,9 +183,9 @@ New `rules.json` entry selecting the existing `rune` family by explicit id.
 
 New `families.json` ladder family `combination-rune`, plus a new `rules.json` entry selecting it by explicit id.
 
-**Rationale.** Rhys's ruling explicitly rejects the "breaks down into components" reading that a combination rune's dual nature might suggest - the wiki confirms there is no in-game mechanism to physically split one back into its two elemental runes, so `components` would have had no factual basis anyway. Runecrafting level is used as the ordering key because it is the only factual, game-derived tier signal available; the pairing itself (which two elements) is not an ordering.
+**Rationale.** the maintainer's ruling explicitly rejects the "breaks down into components" reading that a combination rune's dual nature might suggest - the wiki confirms there is no in-game mechanism to physically split one back into its two elemental runes, so `components` would have had no factual basis anyway. Runecrafting level is used as the ordering key because it is the only factual, game-derived tier signal available; the pairing itself (which two elements) is not an ordering.
 
-**Source.** Rhys, this session (2026-07-31). Runecrafting levels: OSRS Wiki, Combination runes.
+**Source.** the maintainer, this session (2026-07-31). Runecrafting levels: OSRS Wiki, Combination runes.
 
 ---
 
@@ -198,7 +198,7 @@ New `families.json` ladder family `combination-rune`, plus a new `rules.json` en
 
 New `rules.json` entry selecting the existing `plank` family by explicit id.
 
-**Source.** Rhys, this session (2026-07-31).
+**Source.** the maintainer, this session (2026-07-31).
 
 ---
 
@@ -211,9 +211,9 @@ New `rules.json` entry selecting the existing `plank` family by explicit id.
 
 New `rules.json` entry selecting `ring`, `necklace`, `amulet`, `bracelet` by explicit id.
 
-**Rationale.** The brief's downward-unlock rule is stated for metal armour/weapon tiers; jewellery is a different item shape (a gem set into a mould, not a material reforged), so it needed its own ruling rather than inheriting the brief's rule by analogy. Rhys's ruling makes it explicit rather than assumed.
+**Rationale.** The brief's downward-unlock rule is stated for metal armour/weapon tiers; jewellery is a different item shape (a gem set into a mould, not a material reforged), so it needed its own ruling rather than inheriting the brief's rule by analogy. The maintainer's ruling makes it explicit rather than assumed.
 
-**Source.** Rhys, this session (2026-07-31).
+**Source.** the maintainer, this session (2026-07-31).
 
 ---
 
@@ -226,9 +226,9 @@ New `rules.json` entry selecting `ring`, `necklace`, `amulet`, `bracelet` by exp
 
 Mechanically: `state-pair-both-states-only`'s `applies.statePairKinds` gains `"cut"` and `"tan"`. No new rule, no engine change.
 
-**Rationale.** DEC-0001 was scoped to `cook` and `clean` because that was as far as the worked example went at the time, not because `cut` and `tan` were considered and excluded. Rhys confirms the same reasoning applies: a gem or a hide with two forms is one item finished, not a rung descended. This also means the standalone `gem` ladder and the jewellery ladders (DEC-0011) never compete with this rule in practice for cut/uncut cards, since state-pair is checked before ladder-down in the resolution order.
+**Rationale.** DEC-0001 was scoped to `cook` and `clean` because that was as far as the worked example went at the time, not because `cut` and `tan` were considered and excluded. The maintainer confirms the same reasoning applies: a gem or a hide with two forms is one item finished, not a rung descended. This also means the standalone `gem` ladder and the jewellery ladders (DEC-0011) never compete with this rule in practice for cut/uncut cards, since state-pair is checked before ladder-down in the resolution order.
 
-**Source.** Rhys, this session (2026-07-31).
+**Source.** the maintainer, this session (2026-07-31).
 
 ---
 
@@ -250,11 +250,11 @@ Mechanically: `state-pair-both-states-only`'s `applies.statePairKinds` gains `"c
 
 New `families.json` `kind: "set"` entries, tagged `community-set`, plus one new `rules.json` entry with `strategy: "group"` selecting `familyTags: ["community-set"]`.
 
-**Rationale.** These are all cases TheSeahorsie's page gestures at generically ("if the item is part of a group, unlock the group") but per Rhys's instruction this round no ruling cites that page - each grouping here is Rhys's own call, made item by item rather than inferred from the forum wording. 3rd age's split into four groups rather than one, and the amulet/cloak/vambraces assignment to mage/melee/range respectively, and Elite void's separation from regular Void, are all judgement calls Rhys made explicitly rather than obvious lookups.
+**Rationale.** These are all cases TheSeahorsie's page gestures at generically ("if the item is part of a group, unlock the group") but per the maintainer's instruction this round no ruling cites that page - each grouping here is the maintainer's own call, made item by item rather than inferred from the forum wording. 3rd age's split into four groups rather than one, and the amulet/cloak/vambraces assignment to mage/melee/range respectively, and Elite void's separation from regular Void, are all judgement calls the maintainer made explicitly rather than obvious lookups.
 
 Godswords (hilt + blade as `components`) were raised and put on hold - not decided this round.
 
-**Source.** Rhys, this session (2026-07-31).
+**Source.** the maintainer, this session (2026-07-31).
 
 ---
 
@@ -267,9 +267,9 @@ Godswords (hilt + blade as `components`) were raised and put on hold - not decid
 
 New `families.json` `kind: "set"` entry tagged `community-set` - the existing `community-set-group` rule (DEC-0013) already covers it, no new rule needed.
 
-**Rationale.** Rhys's own account holds the Ornate lockbox as a foil; the question of what it should unlock surfaced this ruling directly. Initially read as a possible downward-unlock ladder (Simple < Elaborate < Ornate, matching the wiki's display order), Rhys confirmed it is a flat group instead - the three are reward-tier variants of the same container, not a stat progression.
+**Rationale.** the maintainer's own account holds the Ornate lockbox as a foil; the question of what it should unlock surfaced this ruling directly. Initially read as a possible downward-unlock ladder (Simple < Elaborate < Ornate, matching the wiki's display order), the maintainer confirmed it is a flat group instead - the three are reward-tier variants of the same container, not a stat progression.
 
-**Source.** Rhys, this session (2026-07-31). Card check: OSRS Wiki, Camdozaal Vault.
+**Source.** the maintainer, this session (2026-07-31). Card check: OSRS Wiki, Camdozaal Vault.
 
 ---
 
@@ -284,9 +284,9 @@ Confirmed series, all four tiers present in `Card.json`: Rada's blessing, Explor
 
 New `families.json` ladder families (12), tagged `diary-reward`, plus one new `rules.json` entry (`diary-reward-ladder-down`) selecting that tag.
 
-**Rationale.** Raised via Rada's blessing specifically; Rhys's ruling was stated as covering the whole shape rather than that one item, which is why this entry lists every matching series found in the shipped card data rather than adding them one at a time.
+**Rationale.** Raised via Rada's blessing specifically; the maintainer's ruling was stated as covering the whole shape rather than that one item, which is why this entry lists every matching series found in the shipped card data rather than adding them one at a time.
 
-**Source.** Rhys, this session (2026-07-31).
+**Source.** the maintainer, this session (2026-07-31).
 
 ---
 
@@ -302,9 +302,9 @@ New `families.json` ladder families (12), tagged `diary-reward`, plus one new `r
 
 New `families.json` `kind: "set"` entries (`barronite-components`, `barronite-mace-rewards`), both tagged `community-set` - no new rule needed, DEC-0013's rule already covers the tag.
 
-**Rationale.** This is the case that ruled out `components` as the mechanism generally, not just for godswords (still on hold): a whole and its parts are not automatically a two-way relationship even when the parts are the only way to obtain the whole. Rhys's ruling keeps possession (the crafting materials) and completion-reward pool (the finished set of Fossil Island unlock items) as genuinely separate questions.
+**Rationale.** This is the case that ruled out `components` as the mechanism generally, not just for godswords (still on hold): a whole and its parts are not automatically a two-way relationship even when the parts are the only way to obtain the whole. The maintainer's ruling keeps possession (the crafting materials) and completion-reward pool (the finished set of Fossil Island unlock items) as genuinely separate questions.
 
-**Source.** Rhys, this session (2026-07-31). Component list: OSRS Wiki, Barronite mace.
+**Source.** the maintainer, this session (2026-07-31). Component list: OSRS Wiki, Barronite mace.
 
 ---
 
@@ -317,7 +317,7 @@ New `families.json` `kind: "set"` entries (`barronite-components`, `barronite-ma
 
 New `families.json` ladder family `fire-infernal-cape`, plus a new `rules.json` entry (`fire-cape-ladder-down`) selecting it by explicit id.
 
-**Source.** Rhys, this session (2026-07-31).
+**Source.** the maintainer, this session (2026-07-31).
 
 ---
 
@@ -330,7 +330,7 @@ New `families.json` ladder family `fire-infernal-cape`, plus a new `rules.json` 
 
 New `families.json` `kind: "set"` entry tagged `community-set`, covered by the existing DEC-0013 rule.
 
-**Source.** Rhys, this session (2026-07-31).
+**Source.** the maintainer, this session (2026-07-31).
 
 ---
 
@@ -343,7 +343,7 @@ New `families.json` `kind: "set"` entry tagged `community-set`, covered by the e
 
 New `families.json` `kind: "set"` entry tagged `community-set`, covered by the existing DEC-0013 rule.
 
-**Source.** Rhys, this session (2026-07-31).
+**Source.** the maintainer, this session (2026-07-31).
 
 ---
 
@@ -356,7 +356,7 @@ New `families.json` `kind: "set"` entry tagged `community-set`, covered by the e
 
 New `families.json` `kind: "set"` entry tagged `community-set`, covered by the existing DEC-0013 rule.
 
-**Source.** Rhys, this session (2026-07-31).
+**Source.** the maintainer, this session (2026-07-31).
 
 ---
 
@@ -371,7 +371,7 @@ This is a data-only change - the `defender` family is already tagged `armour`, s
 
 **Rationale.** Mooleta's wiki categorisation is a trap for exactly this kind of ruling: it presents as a defender but isn't one mechanically (different stats, different acquisition, the wiki's own template marks it "Other"). Recording the exclusion explicitly, rather than leaving it silently absent, is the point - a future session should not assume it belongs just because a card search turns it up next to "defender".
 
-**Source.** Rhys, this session (2026-07-31). Mooleta confirmed via OSRS Wiki as wiki-adjacent but not part of the tier chain.
+**Source.** the maintainer, this session (2026-07-31). Mooleta confirmed via OSRS Wiki as wiki-adjacent but not part of the tier chain.
 
 ---
 
@@ -380,7 +380,7 @@ This is a data-only change - the `defender` family is already tagged `armour`, s
 **Status:** Active (first case only - the general NPC hierarchy data model remains unspecified, per rules-spec section 6.6)
 **Date:** 2026-07-31
 
-**Ruling.** A foil of a boss NPC, or a foil of one of that boss's unique drops, unlocks the boss and every one of its uniques as a flat group. Ruled as a general principle ("this applies to every boss in the game"), but built out for one boss only this round: **General Graardor**, unlocking General Graardor, Bandos chestplate, Bandos tassets, Bandos boots, Bandos hilt, Godsword shard 1, Godsword shard 2, and Godsword shard 3. The three Godsword shards are included even though they are not exclusive to Graardor - all four Godwars Dungeon generals drop them - because Rhys confirmed they should be, on the reading that Graardor is still a valid source for them, not that they belong to him alone.
+**Ruling.** A foil of a boss NPC, or a foil of one of that boss's unique drops, unlocks the boss and every one of its uniques as a flat group. Ruled as a general principle ("this applies to every boss in the game"), but built out for one boss only this round: **General Graardor**, unlocking General Graardor, Bandos chestplate, Bandos tassets, Bandos boots, Bandos hilt, Godsword shard 1, Godsword shard 2, and Godsword shard 3. The three Godsword shards are included even though they are not exclusive to Graardor - all four Godwars Dungeon generals drop them - because the maintainer confirmed they should be, on the reading that Graardor is still a valid source for them, not that they belong to him alone.
 
 What a foil of a *unique item itself* unlocks (as opposed to a foil of the boss) was raised and explicitly deferred - "we will come back to" - so is not decided beyond following the same flat-group membership recorded here.
 
@@ -388,7 +388,7 @@ Mechanically, this needed no `npc-hierarchy` engine work at all: it is expressed
 
 **Rationale.** The full NPC/boss domain is explicitly out of MVP scope and project-sized on its own (phased_plan.md, "Monster and NPC domain"). Rather than leave a real, concrete case on the table because the general model isn't built, this ruling establishes the pattern - boss + uniques as a `boss-group`-tagged set - that future sessions can repeat per boss without more engine work, while leaving the harder questions (variant hierarchy, what a foil unique alone grants, whether every boss's group should include the boss itself) genuinely open.
 
-**Source.** Rhys, this session (2026-07-31). Uniques list: OSRS Wiki, General Graardor.
+**Source.** the maintainer, this session (2026-07-31). Uniques list: OSRS Wiki, General Graardor.
 
 ---
 
@@ -401,7 +401,7 @@ Mechanically, this needed no `npc-hierarchy` engine work at all: it is expressed
 
 **Rationale.** Each is a metal-tier progression with the same shape as the armour and weapon ladders already covered by DEC-0002's downward reading. Nothing about them argues for different treatment, and leaving them unresolved was an accident of coverage rather than a judgement that they were hard. They are given their own `families` selectors rather than a shared tag because they carry no common tag today and inventing one would imply a category that does not otherwise exist.
 
-**Source.** Rhys, this session (2026-07-31), ruling each family in turn.
+**Source.** the maintainer, this session (2026-07-31), ruling each family in turn.
 
 ---
 
@@ -416,7 +416,7 @@ This replaces the five per-colour ladder families (`key-black`, `key-brown`, `ke
 
 **Rationale.** The colour is an eyelet variant, not a progression step - the five colours at a tier are the same key. Modelling them as five colour ladders made the tier the thing you climb and the colour the thing you are locked into, which is backwards. Restructuring the data was preferred over adding a new `tier-group` strategy to the engine: the existing `group` strategy already expresses "these unlock together" exactly, and a new strategy would have needed spec, engine and validator work to say the same thing. The per-colour ladders are removed rather than left in place, because a ladder no rule descends is the failure mode DEC-0026 was written to stop.
 
-**Source.** Rhys, this session (2026-07-31): "so it goes bronze, steel, black, silver, gold. Any of these keys unlocks all of its colours".
+**Source.** the maintainer, this session (2026-07-31): "so it goes bronze, steel, black, silver, gold. Any of these keys unlocks all of its colours".
 
 ---
 
@@ -435,7 +435,7 @@ Reporting them anyway produced a screen that contradicted itself: foil Zenyte dr
 
 The precedence of `state-pair` over `ladder-down` (DEC-0001) is untouched. Raw trout still stops a fish ladder if one is ever given a rule, and the excluded list still fills in that case. What changed is only which ladders count as stopped.
 
-**Source.** Rhys, this session (2026-07-31): "this logic shouldnt even be touching them, it should just be state pair for all gems, cut or uncut", and the same for herbs.
+**Source.** the maintainer, this session (2026-07-31): "this logic shouldnt even be touching them, it should just be state pair for all gems, cut or uncut", and the same for herbs.
 
 ---
 
@@ -452,7 +452,7 @@ Modelled as a `components` family per god (`bandos-godsword`, `armadyl-godsword`
 
 Ancient godsword and Ancient hilt are excluded here. Whether they follow the same shard-combination mechanic as the four GWD generals is uncertain and not investigated as part of this ruling.
 
-**Source.** Rhys, this session (2026-07-31): "Godswords unlock the godsword, respective hilt and all shards", clarified to include the assembled Godsword blade card alongside the shards.
+**Source.** the maintainer, this session (2026-07-31): "Godswords unlock the godsword, respective hilt and all shards", clarified to include the assembled Godsword blade card alongside the shards.
 
 ---
 
@@ -465,11 +465,11 @@ Ancient godsword and Ancient hilt are excluded here. Whether they follow the sam
 
 Modelled as a second `components` family per god (`bandos-hilt-godsword`, `armadyl-hilt-godsword`, `saradomin-hilt-godsword`, `zamorak-hilt-godsword`), each with the hilt as `whole` and the godsword as its only `part`. A new `godsword-hilt-components` rule selects these via a `godsword-hilt` tag. The hilt is the `whole` of this family and a `part` of its god's `godsword` family from DEC-0027 at the same time; `matchFamily` filters composite candidates to where the searched card equals that family's `whole`, so the two families do not collide - foiling the hilt matches only the hilt-family, foiling the godsword matches only the godsword-family.
 
-**Rationale.** Rhys's phrasing was explicit and asymmetric: "a foil godsword hilt unlocks the hilt and godsword, not the blades" against "a foil godsword would unlock the godsword, hilt and blades" - two different unlock sets depending on which card is foiled, not one mutual set. This is a deliberate departure from the symmetric shape every other `components` family in this dataset has used so far (Barronite mace, DEC-0016) and is worth naming as its own decision rather than folding into DEC-0027, since a future session reading DEC-0027 alone would otherwise reasonably assume the hilt granted everything the godsword does.
+**Rationale.** the maintainer's phrasing was explicit and asymmetric: "a foil godsword hilt unlocks the hilt and godsword, not the blades" against "a foil godsword would unlock the godsword, hilt and blades" - two different unlock sets depending on which card is foiled, not one mutual set. This is a deliberate departure from the symmetric shape every other `components` family in this dataset has used so far (Barronite mace, DEC-0016) and is worth naming as its own decision rather than folding into DEC-0027, since a future session reading DEC-0027 alone would otherwise reasonably assume the hilt granted everything the godsword does.
 
 A foil shard or foil Godsword blade alone is still not decided and still resolves `unresolved`.
 
-**Source.** Rhys, this session (2026-07-31): "I would say a foil godsword hilt unlocks the hilt and godsword, not the blades. A foil godsword would unlock the godsword, hilt and blades." "Blades" confirmed to mean both the three shards and the separate Godsword blade card.
+**Source.** the maintainer, this session (2026-07-31): "I would say a foil godsword hilt unlocks the hilt and godsword, not the blades. A foil godsword would unlock the godsword, hilt and blades." "Blades" confirmed to mean both the three shards and the separate Godsword blade card.
 
 ---
 
@@ -484,7 +484,7 @@ No cards of this shape exist in the current plugin dataset yet, so this rule is 
 
 **Rationale.** Enchanted jewellery is a distinct item line from its unenchanted base once enchanted, but charge count is cosmetic to what the item unlocks, not a separate tier - all charges of the same enchanted item are the same card family. Unlike unenchanted jewellery, enchantment does not chain to other gems' enchanted versions.
 
-**Source.** Rhys, this session (2026-07-31): "Itself, unenchanted base and all charged values, i.e. 1 charge, 2 charges etc."
+**Source.** the maintainer, this session (2026-07-31): "Itself, unenchanted base and all charged values, i.e. 1 charge, 2 charges etc."
 
 ---
 
@@ -499,7 +499,7 @@ No (t) or (g) cards exist in the current plugin dataset, so this rule is not yet
 
 **Rationale.** Supersedes the "moot and unanswered" framing this question had under DEC-0003/`trimmed-variants`. Trim and gild are their own progression, not a plain-armour with a coat of paint, so they get their own ladder rather than inheriting or feeding the plain one - consistent with how Cosmetic tiers (White/Gilded, DEC-0006) were already treated as their own rungs.
 
-**Source.** Rhys, this session (2026-07-31): "trimmed and gilded items unlock their respective set."
+**Source.** the maintainer, this session (2026-07-31): "trimmed and gilded items unlock their respective set."
 
 ---
 
@@ -512,7 +512,7 @@ No (t) or (g) cards exist in the current plugin dataset, so this rule is not yet
 
 **Rationale.** Resolves the question left open at DEC-0022. Bosses and their uniques are a single named set either way you enter it, consistent with how every other `group` family in this dataset behaves (community sets, DEC-0013; Camdozaal lockboxes, DEC-0014).
 
-**Source.** Rhys, this session (2026-07-31): "Unlocks the whole boss group."
+**Source.** the maintainer, this session (2026-07-31): "Unlocks the whole boss group."
 
 ---
 
@@ -531,7 +531,7 @@ This ruling settles the *shape*; it does not populate the ~1,227 monster cards o
 
 **Rationale.** A cascading ladder across pet/boss/superior/normal would mean a foil pet (the rarest, hardest-to-get form) unlocks everything, which does not match how the community actually plays it and was never claimed by the source - the source only ever states an order, not a grant. Treating each rank as its own flat group is the narrower, more defensible reading and reuses machinery the engine already has, rather than adding new cross-rank strategy code for a claim the source doesn't make.
 
-**Source.** Rhys, this session (2026-07-31): "Each rank unlocks only itself (+ recolours)"; "Yes, flat group" for horizontal recolour unlocks. TheSeahorsie's page confirms the rank order and the horizontal-unlock/superior-exclusion wording (fetched 2026-07-31): "Pets -> Boss -> Superior -> Normal npc"; "Npc's unlock horizontally if they have any"; horizontal unlock does not apply "if you obtained the superior variant instead."
+**Source.** the maintainer, this session (2026-07-31): "Each rank unlocks only itself (+ recolours)"; "Yes, flat group" for horizontal recolour unlocks. TheSeahorsie's page confirms the rank order and the horizontal-unlock/superior-exclusion wording (fetched 2026-07-31): "Pets -> Boss -> Superior -> Normal npc"; "Npc's unlock horizontally if they have any"; horizontal unlock does not apply "if you obtained the superior variant instead."
 
 ---
 
@@ -573,7 +573,7 @@ The charge-tier half of DEC-0029's ruling (foiling one charge count unlocks all 
 
 If someone reads the Reddit thread by hand in the future and it says something different, that is new information and gets its own decision entry - this entry closes the "still needs a manual read" loop, it does not pre-empt a future correction.
 
-**Source.** Rhys, this session (2026-07-31): "Ignore the reddit thread, remove it entirely from this project, we're not relying on it."
+**Source.** the maintainer, this session (2026-07-31): "Ignore the reddit thread, remove it entirely from this project, we're not relying on it."
 
 ---
 
@@ -588,7 +588,7 @@ This settles the shape; it does not populate specific monster `boss-group`/colle
 
 **Rationale.** Generalises the one worked case (General Graardor) into a general principle rather than leaving every other monster's uniques to be ruled on individually later. Matches the existing `group` strategy exactly, so no new engine work is needed - only data entry, same as DEC-0032's recolour sets.
 
-**Source.** Rhys, this session (2026-07-31): "A foil of a monsters collection log unlocks all uniques for that monster."
+**Source.** the maintainer, this session (2026-07-31): "A foil of a monsters collection log unlocks all uniques for that monster."
 
 ---
 
@@ -606,11 +606,11 @@ General Graardor's unique set also gains **Bandos hilt**, which the original DEC
 
 **Exception, already covered elsewhere.** Godsword hilts (Bandos/Armadyl/Saradomin/Zamorak hilt) are each the `whole` of their own `components` family (DEC-0028: hilt unlocks hilt + assembled godsword only). Since `components` resolves before `group` in the strategy order, foiling one of these hilts follows DEC-0028, not this entry's uniques-group - it does not additionally unlock its boss's other armour uniques. This is intentional, not an oversight: DEC-0028 is a specific, already-reasoned ruling for hilts and takes precedence.
 
-**Rationale.** Caught by hands-on testing: foiling Saradomin sword was unlocking Commander Zilyana, which does not match how the community or Rhys actually reads it - a unique drop proves you can get that unique, not that you've fought the boss enough to be considered to have "unlocked" it in the collection-log sense the boss card represents. The asymmetry mirrors the godsword/hilt shape (DEC-0027/0028) that was already precedent in this dataset: a whole grants its parts, but a part alone does not imply the whole.
+**Rationale.** Caught by hands-on testing: foiling Saradomin sword was unlocking Commander Zilyana, which does not match how the community or the maintainer actually reads it - a unique drop proves you can get that unique, not that you've fought the boss enough to be considered to have "unlocked" it in the collection-log sense the boss card represents. The asymmetry mirrors the godsword/hilt shape (DEC-0027/0028) that was already precedent in this dataset: a whole grants its parts, but a part alone does not imply the whole.
 
 **Engine/data implication.** Every `boss-group`-tagged `set` family becomes two families: a `composite` (tag `boss`, boss as `whole`, uniques as `parts`) and a `set` (tag `boss-uniques`, uniques only, boss excluded). Two rules replace the old single `boss-group` rule: `boss-components` (strategy `components`) and `boss-uniques-group` (strategy `group`).
 
-**Source.** Rhys, this session (2026-07-31), from testing: "Saradomin sword unlocks the boss, it should only unlock the unique drops. General graador should unlock the bandos hilt too."
+**Source.** the maintainer, this session (2026-07-31), from testing: "Saradomin sword unlocks the boss, it should only unlock the unique drops. General graador should unlock the bandos hilt too."
 
 ---
 
@@ -623,6 +623,88 @@ General Graardor's unique set also gains **Bandos hilt**, which the original DEC
 
 This is a different, unrelated ladder to `metallic-dragons` (DEC-0032's flat recolour set of bronze/iron/steel/mithril/adamant/rune) - chromatic and metallic dragons are separate lines with no interaction between them.
 
-**Rationale.** Caught by hands-on testing: baby and brutal variants of the same colour were unresolved, with no rule connecting them to their normal-tier counterpart. Rhys specified the exact shape - normal unlocks baby too, brutal unlocks both - which is the standard `ladder-down` shape already used throughout this dataset (armour, weapons, cannonballs, etc.), just applied to a monster line instead of an item line.
+**Rationale.** Caught by hands-on testing: baby and brutal variants of the same colour were unresolved, with no rule connecting them to their normal-tier counterpart. The maintainer specified the exact shape - normal unlocks baby too, brutal unlocks both - which is the standard `ladder-down` shape already used throughout this dataset (armour, weapons, cannonballs, etc.), just applied to a monster line instead of an item line.
 
-**Source.** Rhys, this session (2026-07-31): "Red, Green, Blue, black etc dragons should unlock their baby variants too. Brutal variants of the above dragons unlocks the normal dragon and baby dragon variant."
+**Source.** the maintainer, this session (2026-07-31): "Red, Green, Blue, black etc dragons should unlock their baby variants too. Brutal variants of the above dragons unlocks the normal dragon and baby dragon variant."
+
+---
+
+### DEC-0038 - Boss-unique scope policy, and ten more bosses added under the DEC-0036 shape
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Establishes the scope policy for what counts as a "unique" in a boss's `boss`/`boss-uniques` family pair (DEC-0036): pets and jars (and other collection-log trophies of that kind) **are** included as members; tertiary drops that aren't boss-identity items - clue scrolls, brimstone keys, mutagens, key-master teleports - are **not**. Items that merely happen to drop from the boss but are common across many other monsters (e.g. Dragon 2h sword, Dragon pickaxe, Dragon med helm, Mystic robes, Rune warhammer/longsword) are excluded regardless of rarity - they are not boss-identity uniques.
+
+Under this policy and the DEC-0036 shape (boss `composite`: whole=boss, parts=uniques; paired `set` of just the uniques for DEC-0036's sibling-group behaviour), ten more bosses were added, each verified against the OSRS Wiki's own drop tables:
+
+- **Corporeal Beast**: Spirit shield, Holy elixir, Spectral/Arcane/Elysian sigil, Jar of spirits, Pet dark core.
+- **Zulrah**: Tanzanite fang, Magic fang, Serpentine visage, Uncut onyx, Jar of swamp, Pet snakeling.
+- **Vorkath**: Dragonbone necklace, Draconic visage, Skeletal visage, Vorkath's head, Jar of decay, Vorki.
+- **Cerberus**: Primordial/Pegasian/Eternal crystal, Smouldering stone, Jar of souls, Hellpuppy.
+- **Kraken**: Kraken tentacle, Jar of dirt, Pet kraken.
+- **Thermonuclear smoke devil**: Occult necklace, Smoke battlestaff, Jar of smoke, Pet smoke devil.
+- **Alchemical Hydra**: Hydra's eye/fang/heart, Hydra tail, Hydra leather, Hydra's claw, Jar of chemicals, Ikkle hydra.
+- **Sarachnis**: Sarachnis cudgel, Jar of eyes, Sraracha.
+- **Callisto and Artio** (share one loot pool, two boss cards): Claws of callisto, Voidwaker hilt, Callisto cub, plus Tyrannical ring (via the boss only, see exception below).
+- **Venenatis and Spindel** (share one loot pool): Fangs of venenatis, Voidwaker gem, Venenatis spiderling, plus Treasonous ring (via the boss only).
+- **Vet'ion and Calvar'ion** (share one loot pool): Skull of vet'ion, Voidwaker blade, Vet'ion jr., plus Ring of the gods (via the boss only).
+
+**Exception - the three wilderness rings.** Tyrannical ring, Treasonous ring, and Ring of the gods are each a `part` of their boss's `composite` family (so foiling the boss still unlocks the ring), but are deliberately left out of the paired `boss-uniques` sibling `set` for that boss. All three rings already belong to the existing `wilderness-rings` community set (DEC-0013/0018), which unlocks them symmetrically among themselves. Adding them to a second `set` family under a different tag would put a card in two `group`-strategy set families at once - `validate-rules`' ambiguity check (section 11) would catch this and fail the build, since a `part` of a composite can appear in unlimited families with no conflict, but a `set` membership cannot be split across two same-strategy rules. Leaving the wilderness-rings ruling as the sole authority for those three rings' sibling behaviour was the simpler, non-conflicting choice, rather than re-opening DEC-0013/0018 to merge the two groups.
+
+**Rationale.** The tertiary-exclusion policy mirrors the general/common-drop exclusion already implicit in DEC-0035/0036 ("not common/shared drops"); pets and jars are boss-identity trophies in the same spirit as armour/weapon uniques, so they're treated the same way rather than carved out as a separate category. The wilderness boss pairs sharing one family pair per boss card (not per pair) keeps each boss individually foilable while the identical unique item set is reused rather than duplicated as data.
+
+**Source.** the maintainer, this session (2026-07-31): "boss uniques unlock the jars and pets but no tertiary items"; approved each boss and the wilderness-pair shape as proposed. OSRS Wiki drop tables, fetched 2026-07-31, for [Corporeal Beast](https://oldschool.runescape.wiki/w/Corporeal_Beast), [Zulrah](https://oldschool.runescape.wiki/w/Zulrah), [Vorkath](https://oldschool.runescape.wiki/w/Vorkath), [Cerberus](https://oldschool.runescape.wiki/w/Cerberus), [Kraken](https://oldschool.runescape.wiki/w/Kraken), [Thermonuclear smoke devil](https://oldschool.runescape.wiki/w/Thermonuclear_smoke_devil), [Alchemical Hydra](https://oldschool.runescape.wiki/w/Alchemical_Hydra), [Sarachnis](https://oldschool.runescape.wiki/w/Sarachnis), [Callisto](https://oldschool.runescape.wiki/w/Callisto), [Artio](https://oldschool.runescape.wiki/w/Artio), [Venenatis](https://oldschool.runescape.wiki/w/Venenatis), [Vet'ion](https://oldschool.runescape.wiki/w/Vet%27ion).
+
+---
+
+### DEC-0039 - Voidwaker's three pieces form a cross-boss assembly group, taking precedence over the boss-uniques group
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Voidwaker hilt (Callisto/Artio), Voidwaker blade (Vet'ion/Calvar'ion), and Voidwaker gem (Venenatis/Spindel) each come from a different wilderness boss pair, but assemble into one weapon (Voidwaker). Foiling any of the four cards (the three pieces or the assembled Voidwaker) unlocks all four, as a flat symmetric `group` - crossing boss lines, unlike anything else ruled on so far.
+
+This takes precedence over the ordinary boss-uniques sibling behaviour (DEC-0036/0038) for the three piece cards specifically: foiling Voidwaker hilt unlocks the Voidwaker assembly, not Claws of callisto/Callisto cub. Mechanically this needed no engine change - the `voidwaker-assembly` family is selected by an explicit rule (`rules.json` names the family by id, not by tag), and explicit selection already beats a tag-based ("broad") match per the existing resolution-order rule (docs/rules-spec.md section 7.1). The boss-uniques-group rule still selects each boss's other uniques normally.
+
+**Rationale.** A player who foils one Voidwaker piece cares about assembling the weapon, not about the specific boss that happened to drop that piece - the three pieces are one item's components in every practical sense, closer to the godsword/Barronite mace component patterns (DEC-0016/0027) than to an ordinary boss-uniques sibling set.
+
+**Source.** the maintainer, this session (2026-07-31): "Yes, chain them" - "Foiling one Voidwaker piece unlocks all 3 pieces + assembled Voidwaker, mirroring the godsword shard pattern."
+
+---
+
+### DEC-0040 - Five more bosses added under the DEC-0036/0038 shape
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Under the same policy as DEC-0038 (pets/jars/trophies included; tertiary and common cross-monster drops excluded), the following bosses were added, verified against the OSRS Wiki:
+
+- **Nex**: Ancient hilt, Nihil horn, Torva full helm, Torva platebody, Torva platelegs, Zaryte vambraces, Nexling.
+- **The Nightmare and Phosani's Nightmare** (share one loot pool, two boss cards): Nightmare staff, Inquisitor's great helm/hauberk/plateskirt/mace, Eldritch orb, Harmonised orb, Volatile orb, Little nightmare, Jar of dreams.
+- **Skotizo**: Dark totem base/middle/top, the assembled Dark totem, Dark claw, Jar of darkness, Skotos. (Shield left half and Uncut onyx excluded - both are shared with other sources; see the onyx note below.)
+- **Dawn and Dusk** (Grotesque Guardians, share one loot pool, two boss cards): Granite maul, Granite gloves, Granite ring, Granite hammer, Black tourmaline core, Jar of stone, Noon.
+
+**Known inconsistency, left as-is.** Uncut onyx was included in Zulrah's unique set under DEC-0038, but it also drops from Skotizo (and other sources) - it isn't actually Zulrah-exclusive either, by the same "not common/shared drops" policy DEC-0038 itself states. The maintainer chose to leave Zulrah's entry as already shipped rather than revise it, and Uncut onyx is excluded from Skotizo's set to avoid a two-boss-uniques-set membership conflict. A future session tightening boss-unique accuracy should revisit whether Uncut onyx belongs in Zulrah's set at all.
+
+**Source.** the maintainer, this session (2026-07-31): approved each boss as proposed; "Yes, leave Zulrah as-is" on the onyx inconsistency. OSRS Wiki drop tables, fetched 2026-07-31, for [Nex](https://oldschool.runescape.wiki/w/Nex), [The Nightmare](https://oldschool.runescape.wiki/w/The_Nightmare), [Skotizo](https://oldschool.runescape.wiki/w/Skotizo), [Grotesque Guardians](https://oldschool.runescape.wiki/w/Grotesque_Guardians).
+
+---
+
+### DEC-0041 - Duke Sucellus, The Leviathan, The Whisperer, and Vardorvis added; their shared drops form a cross-boss group
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** The four Desert Treasure II bosses each get a `boss`/`boss-uniques` pair for their exclusive drops:
+
+- **Duke Sucellus**: Eye of the duke, Magus vestige, Frozen tablet, Ice quartz, Baron.
+- **The Leviathan**: Leviathan's lure, Venator vestige, Scarred tablet, Smoke quartz, Lil'viathan.
+- **The Whisperer**: Siren's staff, Bellator vestige, Sirenic tablet, Shadow quartz, Wisp.
+- **Vardorvis**: Ultor vestige, Strangled tablet, Blood quartz, Butch. (Executioner's axe head is not present in the plugin's card dataset at all, so it is left out entirely - not even unresolved-by-omission, there is no card to resolve.)
+
+All four bosses also share five items - Virtus mask, Virtus robe top, Virtus robe bottom, Chromium ingot, Awakener's orb - which drop from any of the four. These form their own cross-boss `dt2-shared-drops` group (mirroring DEC-0039's Voidwaker shape exactly): foiling any of the 5 shared items unlocks all 5, regardless of which of the four bosses is thought of as the source. Selected by an explicit rule (`dt2-shared-drops-group`, naming the family by id), so it takes precedence over each boss's own `boss-uniques-group` broad match, the same mechanism as DEC-0039.
+
+**Rationale.** Same reasoning as DEC-0039: a player foiling Virtus mask cares about the shared armour line, not which specific boss is credited, so a cross-boss shared group is the more honest shape than arbitrarily assigning it to one boss's set or duplicating it across four.
+
+**Source.** the maintainer, this session (2026-07-31): "Shared pool, like Voidwaker" for the DT2 items; approved each boss as proposed. OSRS Wiki drop tables, fetched 2026-07-31, for [Duke Sucellus](https://oldschool.runescape.wiki/w/Duke_Sucellus), [The Leviathan](https://oldschool.runescape.wiki/w/The_Leviathan), [The Whisperer](https://oldschool.runescape.wiki/w/The_Whisperer), [Vardorvis](https://oldschool.runescape.wiki/w/Vardorvis).
