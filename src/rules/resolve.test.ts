@@ -761,6 +761,18 @@ describe('the sweep', () => {
   // Net over DEC-0032/0035/0036/0037: ladder-down 522 -> 534 (+12, the 4 dragon
   // lines), group 139 -> 157, components 8 -> 39 (+31: 27 jewellery + 4 bosses),
   // unresolved 5490 -> 5456.
+  // DEC-0038 added ten more bosses under the same shape (Corporeal Beast, Zulrah,
+  // Vorkath, Cerberus, Kraken, Thermonuclear smoke devil, Alchemical Hydra,
+  // Sarachnis, Callisto/Artio, Venenatis/Spindel, Vet'ion/Calvar'ion - 9 `boss`
+  // composites plus their paired `boss-uniques` groups). DEC-0039 added the
+  // cross-boss Voidwaker assembly group (also added "Warm gloves" to the existing
+  // Pyromancer outfit community set). Net: group 157 -> 210, components 39 -> 53,
+  // unresolved 5456 -> 5389.
+  // DEC-0040 added five more bosses (Nex, The Nightmare/Phosani's Nightmare,
+  // Skotizo, Dawn/Dusk). DEC-0041 added the four Desert Treasure II bosses (Duke
+  // Sucellus, The Leviathan, The Whisperer, Vardorvis) plus their cross-boss
+  // dt2-shared-drops group. Net: group 210 -> 265, components 53 -> 63, unresolved
+  // 5389 -> 5324.
   it('reports the Phase 7 round 5 coverage numbers', () => {
     const counts = new Map<string, number>()
     for (const card of shippedData.cards) {
@@ -770,15 +782,15 @@ describe('the sweep', () => {
 
     assert.equal(counts.get('ladder-down'), 534)
     assert.equal(counts.get('state-pair'), 190)
-    assert.equal(counts.get('group'), 157)
-    assert.equal(counts.get('components'), 39)
-    assert.equal(counts.get('unresolved'), 5456)
+    assert.equal(counts.get('group'), 265)
+    assert.equal(counts.get('components'), 63)
+    assert.equal(counts.get('unresolved'), 5324)
     assert.equal(
       counts.get('ladder-down')! +
         counts.get('state-pair')! +
         counts.get('group')! +
         counts.get('components')!,
-      920,
+      1052,
     )
   })
 })
