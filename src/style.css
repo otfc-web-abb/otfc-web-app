@@ -87,7 +87,6 @@ img {
 .step,
 .example,
 .ruling,
-.handoff,
 .principles__item,
 .ladder,
 .site-header {
@@ -1262,34 +1261,6 @@ body.has-result #landing-root {
   color: var(--muted);
 }
 
-.handoff {
-  padding: var(--s5) var(--s4);
-  border-color: var(--gold-deep);
-}
-
-.handoff__body {
-  margin: 0;
-  font-size: 15px;
-  color: var(--ink);
-}
-
-.handoff__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s2);
-  margin-top: var(--s4);
-}
-
-.handoff__actions .button {
-  flex: 1 1 auto;
-}
-
-/* The same pair repeated high on the page, for a player who already knows they want
-   to go argue it. Sits between sections, so it carries no panel of its own. */
-.handoff__actions--inline {
-  margin-top: var(--s4);
-}
-
 /* About */
 
 .about__body {
@@ -1398,9 +1369,5 @@ body.has-result #landing-root {
 
   .checked__body {
     flex: 1;
-  }
-
-  .handoff__actions .button {
-    flex: 0 0 auto;
   }
 }

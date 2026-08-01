@@ -233,9 +233,8 @@ The view must show, in this order:
 2. **A plain statement** that there is no agreed rule for this card yet.
 3. **What is factually known** - the family and its order, rendered neutrally. A player who knows the ladder can reason about it themselves, which is the whole point of a guideline.
 4. **The general principles at play** - the three community camps, and the resolution order - presented as principles under discussion, never as a suggested answer for this card. No "it would probably...".
-5. **The Discord hand-off.** Direct, useful, and framed as where the decision gets made: this case has not been decided yet, take it to the Discord, and it can be recorded here once it is. Link out, plus the suggest-a-rule link.
 
-A player landing here should feel informed, not stonewalled. They arrive knowing more than they did: that their case is genuinely open, what the competing positions are, and where to settle it.
+A player landing here should feel informed, not stonewalled. They arrive knowing more than they did: that their case is genuinely open and what the competing positions are.
 
 ---
 

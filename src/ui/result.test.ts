@@ -218,13 +218,6 @@ describe('unresolved is a designed screen, not an error', () => {
     assert.ok(html.includes('not an answer for this card'))
   })
 
-  it('offers the hand-off twice - once up top, once with the reasoning', () => {
-    assert.ok(html.includes('Where this gets decided'))
-    assert.ok(html.includes('take it there'))
-    assert.equal(count(html, 'Suggest a rule'), 2)
-    assert.ok(html.includes('handoff__actions--inline'))
-  })
-
   it('claims no sources, per spec section 8', () => {
     assert.deepEqual(resolve(UNRESOLVED_CARD).sources, [])
     assert.ok(!html.includes('<h3 class="result__heading">Source'))
@@ -232,11 +225,10 @@ describe('unresolved is a designed screen, not an error', () => {
 })
 
 describe('a Monster card - unresolved with no family behind it', () => {
-  it('renders the hand-off without a ladder', () => {
+  it('renders the unresolved screen without a ladder', () => {
     const html = renderResult('Goblin', 'standard')
 
     assert.ok(html.includes('There is no agreed rule for this card yet'))
-    assert.ok(html.includes('Where this gets decided'))
     assert.ok(!html.includes('ladder__rungs'))
   })
 })

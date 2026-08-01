@@ -4,16 +4,7 @@
 
 import { resolve, type Resolution, type Ruleset, type Unlock } from '../rules/index.ts'
 import { actionBadges } from './actions.ts'
-import {
-  CAMPS,
-  CAMPS_SOURCE,
-  CONFIDENCE_BLURBS,
-  CONFIDENCE_LABELS,
-  DISCORD_URL,
-  GUIDELINE_LINE,
-  RULESET_BLURBS,
-  SUGGEST_A_RULE_URL,
-} from './copy.ts'
+import { CAMPS, CAMPS_SOURCE, CONFIDENCE_BLURBS, CONFIDENCE_LABELS, GUIDELINE_LINE, RULESET_BLURBS } from './copy.ts'
 import { esc, plural } from './html.ts'
 import { renderLadder } from './ladder.ts'
 
@@ -192,17 +183,8 @@ function renderRuling(resolution: Resolution): string {
 
 // --- the unresolved screen ----------------------------------------------------
 
-const discordButton = (label: string): string =>
-  DISCORD_URL
-    ? `<a class="button button--primary" href="${esc(DISCORD_URL)}" target="_blank" rel="noopener">${label}</a>`
-    : ''
-
-const suggestButton = `<a class="button" href="${esc(SUGGEST_A_RULE_URL)}" target="_blank" rel="noopener">Suggest a rule</a>`
-
 /**
- * rules-spec section 8: the card, the plain statement, the principles at play, then
- * the hand-off. The buttons appear twice on purpose - once for the player who has
- * read enough and wants to go argue it, once at the end with the reasoning.
+ * rules-spec section 8: the card, the plain statement, then the principles at play.
  *
  * Nothing here may read as a suggested answer for this card. The camps are the
  * positions people hold, not positions applied to the card on screen.
@@ -210,11 +192,6 @@ const suggestButton = `<a class="button" href="${esc(SUGGEST_A_RULE_URL)}" targe
 function renderUnresolved(resolution: Resolution): string {
   return `
     ${renderRuling(resolution)}
-
-    <div class="handoff__actions handoff__actions--inline">
-      ${discordButton('Ask in the Discord')}
-      ${suggestButton}
-    </div>
 
     ${renderLadder(resolution)}
 
@@ -238,20 +215,6 @@ function renderUnresolved(resolution: Resolution): string {
         Summarised from
         <a class="link" href="${esc(CAMPS_SOURCE.url)}" target="_blank" rel="noopener">${esc(CAMPS_SOURCE.label)}</a>.
       </p>
-    </section>
-
-    <section class="result__section handoff">
-      <h3 class="result__heading">Where this gets decided</h3>
-      <p class="handoff__body">
-        This case has not been settled yet. The community Discord is where these get argued out -
-        take it there, and once it is decided it gets recorded here with its reasoning.
-        <a class="link" href="/open-questions.html">Open questions</a> covers how that works and what
-        else is still undecided.
-      </p>
-      <div class="handoff__actions">
-        ${discordButton('Ask in the Discord')}
-        ${suggestButton}
-      </div>
     </section>
   `
 }

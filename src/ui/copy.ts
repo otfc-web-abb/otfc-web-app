@@ -2,10 +2,6 @@
 // file holds only what is true on every screen regardless of which card was
 // searched. Kept apart from the renderers so the wording is reviewable in one place.
 
-export const DISCORD_URL: string | null = 'https://discord.gg/hyDXfXcYF'
-
-export const SUGGEST_A_RULE_URL = 'https://github.com/otfc-web-abb/otfc-web-app/issues/new'
-
 export const DECISIONS_URL =
   'https://github.com/otfc-web-abb/otfc-web-app/blob/main/docs/decisions.md'
 

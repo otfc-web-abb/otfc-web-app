@@ -32,5 +32,4 @@ export const ends = (cards: Card[]) => ({
 
 export const UNRESOLVED_EXPLANATION =
   'There is no agreed rule for this card yet. Rather than guess, this app says so. ' +
-  'What is known factually about the card is shown below; what a foil of it unlocks has not been decided. ' +
-  'Take it to the Discord - once it is settled it gets recorded here.'
+  'What is known factually about the card is shown below; what a foil of it unlocks has not been decided.'
