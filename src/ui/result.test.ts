@@ -12,7 +12,7 @@ import type { Resolution } from '../rules/index.ts'
 import { GUIDELINE_LINE } from './copy.ts'
 import { esc } from './html.ts'
 import { renderLadder } from './ladder.ts'
-import { renderResult } from './result.ts'
+import { renderResult, renderUnresolved as renderUnresolvedForTest } from './result.ts'
 
 /** A card that reaches `unresolved`: no family, no rule, nothing claimed. */
 const UNRESOLVED_CARD = shippedData.cards.find((c) => c.cats.includes('monster'))!.name
@@ -55,7 +55,7 @@ describe('foil Rune full helm - the ladder marks both directions', () => {
   it('renders the foil hero', () => {
     assert.ok(html.includes('foil__sheen'))
     assert.ok(html.includes('foil__glare'))
-    assert.ok(html.includes('>Rune full helm</h2>'))
+    assert.ok(html.includes('<h2 class="hero__name">') && html.includes('>Rune full helm</a></h2>'))
   })
 
   it('marks 8 unlocked and 2 still locked, matching the engine', () => {
@@ -154,13 +154,13 @@ describe('foil Grimy guam leaf - the pair answers alone', () => {
 describe('the bottom of a ladder - foil Bronze dagger', () => {
   const html = renderResult('Bronze dagger', 'standard')
 
-  it('shows one unlock against eight explicit locks', () => {
+  it('shows one unlock against nine explicit locks', () => {
     assert.equal(unlockedRows(html), 1)
-    assert.equal(lockedRows(html), 8)
+    assert.equal(lockedRows(html), 9)
   })
 
   it('does not pretend anything is below it', () => {
-    assert.ok(html.includes('1 unlocked, 8 still locked'))
+    assert.ok(html.includes('1 unlocked, 9 still locked'))
   })
 })
 
@@ -191,31 +191,35 @@ describe('the extreme ruleset', () => {
   })
 })
 
-describe('unresolved is a designed screen, not an error', () => {
-  // Every shipped family now carries a rule, so the unresolved screen is reached by
-  // a card with no family at all. Neutral-context rendering is covered separately.
+describe('solo item - unresolved with no family (DEC-0062)', () => {
+  // A card with no family at all is not genuinely undecided - there is no wider
+  // ladder/group to be undecided about, so it gets its own "solo item" treatment
+  // instead of the full unresolved screen: no undecided banner, no camps.
   const html = renderResult(UNRESOLVED_CARD, 'standard')
 
   it('treats the card the same as any other result', () => {
     assert.ok(html.includes('foil__sheen'))
-    assert.ok(html.includes(`>${esc(UNRESOLVED_CARD)}</h2>`))
+    assert.ok(html.includes(`>${esc(UNRESOLVED_CARD)}</a></h2>`))
   })
 
-  it('states plainly that nothing is decided', () => {
-    assert.ok(html.includes('There is no agreed rule for this card yet'))
-    assert.ok(html.includes('badge--undecided'))
+  it('is tagged as a distinct solo-item result, not the undecided screen', () => {
+    assert.ok(html.includes('result--unresolved-solo'))
+    assert.ok(html.includes('ruling--solo'))
+    assert.ok(html.includes('simply unlocks itself'))
   })
 
-  it('marks nothing unlocked or locked', () => {
+  it('does not show the undecided ruling banner', () => {
+    assert.ok(!html.includes('There is no agreed rule for this card yet'))
+    assert.ok(!html.includes('badge--undecided'))
+  })
+
+  it('marks nothing unlocked or locked on a ladder, because there is none', () => {
     assert.equal(unlockedRows(html), 0)
     assert.equal(lockedRows(html), 0)
   })
 
-  it('shows the three camps as positions, never as an answer', () => {
-    assert.ok(html.includes('The positions people hold'))
-    assert.ok(html.includes('Downward unlocks'))
-    assert.ok(html.includes('A foil is just a foil'))
-    assert.ok(html.includes('not an answer for this card'))
+  it('does not show the community camps, since there is nothing genuinely undecided', () => {
+    assert.ok(!html.includes('The positions people hold'))
   })
 
   it('claims no sources, per spec section 8', () => {
@@ -224,11 +228,45 @@ describe('unresolved is a designed screen, not an error', () => {
   })
 })
 
+describe('an unresolved card with a family - the full undecided screen', () => {
+  const member = (name: string) => shippedData.cards.find((c) => c.name === name)!
+  const resolution = {
+    card: member('Bronze full helm'),
+    ruleset: 'standard',
+    strategy: 'unresolved',
+    unlocks: [{ card: member('Bronze full helm'), actions: [] }],
+    excluded: [],
+    explanation: 'Nothing is decided here.',
+    caveats: [],
+    confidence: 'undecided',
+    sources: [],
+    family: {
+      id: 'full-helm',
+      label: 'Full helms',
+      kind: 'ladder',
+      rungs: [
+        { tier: 'bronze', members: [member('Bronze full helm')] },
+        { tier: 'iron', members: [member('Iron full helm')] },
+      ],
+    },
+  } as unknown as Resolution
+
+  it('states plainly that nothing is decided, and shows the community camps', () => {
+    const html = renderUnresolvedForTest(resolution)
+    assert.ok(html.includes('Nothing is decided here.'))
+    assert.ok(html.includes('badge--undecided'))
+    assert.ok(html.includes('The positions people hold'))
+    assert.ok(html.includes('Downward unlocks'))
+    assert.ok(html.includes('A foil is just a foil'))
+    assert.ok(html.includes('not an answer for this card'))
+  })
+})
+
 describe('a Monster card - unresolved with no family behind it', () => {
-  it('renders the unresolved screen without a ladder', () => {
+  it('renders the plain single-card unlock, with no undecided framing and no ladder', () => {
     const html = renderResult('Goblin', 'standard')
 
-    assert.ok(html.includes('There is no agreed rule for this card yet'))
+    assert.ok(!html.includes('There is no agreed rule for this card yet'))
     assert.ok(!html.includes('ladder__rungs'))
   })
 })
@@ -261,7 +299,7 @@ describe('an unresolved card that does have a family', () => {
     card: member('Bronze full helm'),
     ruleset: 'standard',
     strategy: 'unresolved',
-    unlocks: [],
+    unlocks: [{ card: member('Bronze full helm'), actions: [] }],
     excluded: [],
     explanation: 'Nothing is decided here.',
     caveats: [],
@@ -280,10 +318,10 @@ describe('an unresolved card that does have a family', () => {
 
   const html = renderLadder(resolution)
 
-  it('renders the family as neutral context, marking nothing unlocked or locked', () => {
-    assert.equal(unlockedRows(html), 0)
+  it('marks only the searched card unlocked, the rest neutral context', () => {
+    assert.equal(unlockedRows(html), 1)
     assert.equal(lockedRows(html), 0)
-    assert.equal(contextRows(html), 2)
-    assert.ok(html.includes('nothing here is marked unlocked or locked'))
+    assert.equal(contextRows(html), 1)
+    assert.ok(html.includes('the card you pulled is always yours'))
   })
 })

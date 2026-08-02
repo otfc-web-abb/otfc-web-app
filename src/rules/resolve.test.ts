@@ -244,7 +244,8 @@ describe('a card with a family but no rule', () => {
 
   it('resolves unresolved cleanly', () => {
     assert.equal(r.strategy, 'unresolved')
-    assert.deepEqual(r.unlocks, [])
+    assert.equal(r.unlocks.length, 1)
+    assert.equal(r.unlocks[0]?.card.name, 'Iron trinket')
     assert.deepEqual(r.excluded, [])
     assert.equal(r.confidence, 'undecided')
     assert.deepEqual(r.sources, [])
@@ -275,7 +276,8 @@ describe('a Monster card', () => {
     const r = resolve(monster.name)
 
     assert.equal(r.strategy, 'unresolved')
-    assert.deepEqual(r.unlocks, [])
+    assert.equal(r.unlocks.length, 1)
+    assert.equal(r.unlocks[0]?.card.name, monster.name)
   })
 })
 
@@ -725,7 +727,10 @@ describe('the sweep', () => {
         }
 
         if (r.strategy === 'unresolved') {
-          assert.equal(r.unlocks.length, 0, `${card.name}: unresolved must claim no unlocks`)
+          // DEC-0061: unresolved still unlocks the searched card itself, same as
+          // plain-foil - only siblings in its family stay unclaimed.
+          assert.equal(r.unlocks.length, 1, `${card.name}: unresolved must unlock only the searched card`)
+          assert.equal(r.unlocks[0]?.card.name, card.name)
           assert.equal(r.excluded.length, 0, `${card.name}: unresolved must claim no exclusions`)
           assert.equal(r.sources.length, 0, `${card.name}: unresolved must cite no sources`)
           assert.equal(r.confidence, 'undecided')
@@ -809,17 +814,17 @@ describe('the sweep', () => {
       counts.set(s, (counts.get(s) ?? 0) + 1)
     }
 
-    assert.equal(counts.get('ladder-down'), 534)
+    assert.equal(counts.get('ladder-down'), 540)
     assert.equal(counts.get('state-pair'), 190)
-    assert.equal(counts.get('group'), 409)
-    assert.equal(counts.get('components'), 102)
-    assert.equal(counts.get('unresolved'), 5141)
+    assert.equal(counts.get('group'), 487)
+    assert.equal(counts.get('components'), 103)
+    assert.equal(counts.get('unresolved'), 5056)
     assert.equal(
       counts.get('ladder-down')! +
         counts.get('state-pair')! +
         counts.get('group')! +
         counts.get('components')!,
-      1235,
+      1320,
     )
   })
 })

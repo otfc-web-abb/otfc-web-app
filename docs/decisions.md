@@ -870,3 +870,209 @@ With this, the maintainer confirmed the session's boss/raid pass is complete: fu
 **Rationale.** Mirrors the "not every shared drop implies a cross-monster relationship" lesson from Uncut onyx (DEC-0040) - three monsters happening to drop pieces of the same craftable item doesn't automatically mean foiling one should reveal the others, and the maintainer drew that line explicitly here rather than defaulting to the Voidwaker precedent.
 
 **Source.** the maintainer, this session (2026-07-31): "A foil of any of the 3 bosses, unlocks that bosses specific shard drops, not the others. They should only unlock the shards, nothing else"; "Let's finish off bosses specifically. Monsters like dark best[beast] are slayer monsters, these shouldn't be tackled right now. They will be handled differently." OSRS Wiki, fetched 2026-07-31, for [Chaos Fanatic](https://oldschool.runescape.wiki/w/Chaos_Fanatic), [Crazy archaeologist](https://oldschool.runescape.wiki/w/Crazy_archaeologist), [Odium ward](https://oldschool.runescape.wiki/w/Odium_ward), [Malediction ward](https://oldschool.runescape.wiki/w/Malediction_ward).
+
+---
+
+### DEC-0050 - Individual item pass begins, alphabetical; anniversary/birthday event reward sets and the abyssal dyes grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Starts a new pass over the ~5,100 unresolved non-monster item cards, working alphabetically by name (no real OSRS item ID exists in this dataset - see DEC-0032's data-entry note). The maintainer confirmed the general principle for this pass: bosses unlock their full uniques table, but foiling an individual unique from a boss's table does not unlock the rest of that table - the existing `boss`/`boss-uniques` asymmetry (DEC-0036) already encodes this and nothing changes there; this just states the same principle applies going forward for item-level rulings.
+
+First batch, four small cosmetic reward groups (new `event-reward-group` family tag, reusing the `group` strategy - no boss/minigame anchor, same shape as `minigame-reward-group` from DEC-0044):
+
+- **20th anniversary set**: boots, bottom, cape, gloves, hat, necklace, top (7 pieces).
+- **25th anniversary set**: 5x5 hat, helmet, skeleton tabard, warrior tabard (4 pieces, kept as one group rather than two pairs).
+- **10th birthday set**: balloons, cape.
+- **Abyssal dyes**: blue, green, red.
+
+4th birthday hat has no sibling item in this dataset to group with, so it stays `unresolved` - no rule authored, not an oversight.
+
+**Rationale.** These are official one-time event cosmetics handed out together, not drop-table loot, so the community-set/minigame-reward-group precedent (DEC-0013/0044) applies directly - no boss card exists to anchor a `components` family, so a flat `group` is correct.
+
+**Source.** the maintainer, this session (2026-08-02): confirmed alphabetical ordering (no item-ID data available) and items-only scope; "go through every available item in the JSON set and explicitly state what each item unlocks. Bosses unlock their full uniques table, however an individual unique from a boss table wouldn't unlock the same items" (restating DEC-0036); approved all four groups as proposed, all Recommended options.
+
+---
+
+### DEC-0051 - Dragon masks and the Alchemist's outfit grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.**
+
+- **Dragon masks** (Bronze, Iron, Steel, Mithril, Adamant, Rune, Black, Red, Green, Blue, Lava): flat `group` - the maintainer rejected a metal-tier `ladder-down` reading, since they're cosmetic drops from their matching dragons, not a smithing progression. Foiling any one unlocks all eleven.
+- **Alchemist's outfit**: Prescription goggles, Alchemist labcoat, Alchemist pants, Alchemist gloves, Alchemist's amulet. Alchemist's signet is deliberately excluded per the maintainer. Prescription goggles is the actual head-slot piece of this outfit in the dataset (there is no card named "Alchemist goggles").
+
+Both use the existing `community-set-group` rule/tag (DEC-0013) - no new rule needed.
+
+**Source.** the maintainer, this session (2026-08-02): "Flat group" for dragon masks; "Prescription Goggles, labcoat, pants, gloves and amulet" for the Alchemist set, explicitly excluding the signet.
+
+---
+
+### DEC-0052 - Ancient ceremonial robes, Ankou's outfit, the Antisanta costume, and the Ancient pages grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.**
+
+- **Ancient ceremonial robes**: boots, gloves, legs, mask, top - all 5 grouped.
+- **Ankou's outfit**: gloves, mask, socks, top, leggings - all 5 grouped. The monster cards Ankou and Dark Ankou are out of scope (monster category).
+- **Antisanta costume**: boots, gloves, jacket, mask, pantaloons - grouped. Antisanta's coal box excluded per the maintainer - a prop, not a costume piece.
+- **Ancient pages**: the four numbered pages (1-4) grouped. The unrelated unnumbered "Ancient page" card is a different item and left alone.
+
+All four use the existing `community-set-group` rule/tag (DEC-0013).
+
+**Source.** the maintainer, this session (2026-08-02): approved Ancient ceremonial, Ankou's outfit, and the numbered Ancient pages as proposed (all Recommended); "Group the 5 costume pieces only" for Antisanta, excluding the coal box.
+
+---
+
+### DEC-0053 - 18lb shot and 22lb shot grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** 18lb shot and 22lb shot (ballista ammunition) grouped as a two-item set - foiling either unlocks both. Uses the existing `community-set-group` rule/tag.
+
+**Note on process.** This session initially proposed the next several items (18lb shot onward, plus a large batch of god-themed armour sets) in bundled multi-item AskUserQuestion calls. The maintainer stopped this and confirmed the process must go back to strictly one item at a time in alphabetical order, per the original session brief - resuming that discipline from here on.
+
+**Source.** the maintainer, this session (2026-08-02): "Group with 22lb shot".
+
+---
+
+### DEC-0054 - 4th birthday hat grouped with Birthday balloons
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** 4th birthday hat and Birthday balloons grouped as a two-item event set. Uses the existing `event-reward-group` rule/tag (DEC-0050).
+
+**Source.** the maintainer, this session (2026-08-02): "group with birthday balloons".
+
+---
+
+### DEC-0055 - Grand Library of Prifddinas readable books grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** 15 readable-book cards grouped as the Grand Library of Prifddinas set: A dear friend, Eastern discovery, The great divide, Crazed scribbles, Ode to eternity, Crystal singing for beginners, On leprechauns, Bloody diary, The eight clans, Soggy journal, Ebrill's journal, Stained journal, The living statues, The spurned demon, Legends of the mountain. Uses the existing `community-set-group` rule/tag.
+
+The maintainer's full 27-title list included 12 books not present as cards in this dataset at all (Prifddinas' History, Eastern Settlement, The Journal of Randas, Book on Baxtorian, Cadarn Lineage, Big Book of Bangs, Edern's Journal, Gollwyn's Final Statement, Niff & Harry, The Truth Behind the Myth, Harmony (book), The Tale of Iban) - those are simply excluded from the group since they can't be referenced.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks all of these books within the grand library of prifddinas" followed by the 27-title list; confirmed grouping the 15 that exist as cards.
+
+---
+
+### DEC-0056 - Ablenkian's escape, Imafore's betrayal, and The weeping grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Ablenkian's escape, Imafore's betrayal, and The weeping grouped as a readable-book set. Uses the existing `community-set-group` rule/tag.
+
+Of the maintainer's original 6-title list, "The Fall of Imcandoria" and "Lutwidge and the Moonfly" don't exist as cards at all, and "Serafina's diary" doesn't exactly match the listed "The Tale of Serafina" (different title) - excluded rather than guessed.
+
+**Source.** the maintainer, this session (2026-08-02): listed the 6 titles in response to the "A jester stick"/"A nice key"/"A powdered wig" prompts; confirmed grouping only the 3 exact matches.
+
+---
+
+### DEC-0057 - Super ranging, Super magic potion, and Absorption grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Super ranging, Super magic potion, and Absorption grouped as a raids-supply potion set. Overload was named by the maintainer too but does not exist as a card in this dataset, so it's excluded. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "Super ranging Super magic potion Overload Absorption"; confirmed grouping the 3 that exist.
+
+---
+
+### DEC-0058 - Sacred ashes ladder added
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Sacred ashes": Fiendish ashes < Vile ashes < Malicious ashes < Abyssal ashes (lowest to highest). Uses the existing `resource-ladder-down` rule via the `resource` tag - foiling one unlocks it and every tier below.
+
+Ashes, Infernal ashes, Eldritch ashes, and Ground ashes were in the dataset but not named by the maintainer as part of this ladder, so they're left out rather than guessed in.
+
+**Source.** the maintainer, this session (2026-08-02): "would unlock abyssal ashes and below, laddered"; "Fiendish ashes < Vile ashes < Malicious ashes < Abyssal ashes" for the tier order.
+
+---
+
+### DEC-0059 - Sacred ashes ladder corrected (Infernal ashes added above Abyssal); Abyssal bludgeon added as a new assembled-weapon composite shape
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.**
+
+- **Correction to DEC-0058**: Infernal ashes sits above Abyssal ashes on the sacred-ashes ladder, not omitted - the maintainer caught this immediately after DEC-0058 landed. Ladder is now Fiendish < Vile < Malicious < Abyssal < Infernal (lowest to highest); foiling Infernal ashes unlocks everything below, foiling Abyssal ashes leaves Infernal locked/excluded.
+- **Abyssal bludgeon**: new `components` composite, whole = Abyssal bludgeon, parts = Bludgeon axon, Bludgeon claw, Bludgeon spine. This is a genuinely new relationship shape - a weapon assembled from three drop pieces, not a boss-uniques or godsword-hilt relationship - so a new family tag `assembled-weapon` and matching rule were added (mirrors the `godsword-hilt` shape but grants the parts too, since here the parts have no other resolution of their own).
+
+**Rationale.** The godsword-hilt shape (DEC-0028) deliberately does NOT grant the shards because they're independently useful/tradeable pieces the ruling wanted separate; the bludgeon's three parts have no independent existence outside assembling the bludgeon, so granting them alongside the whole is the correct read of the same "assembled from drops" pattern applied to a different case.
+
+**Source.** the maintainer, this session (2026-08-02): "Infernal ashes sit above abyssal, so they would be locked still"; "Bludgeon axon, Bludgeon claw and Bludgeon spine" for Abyssal bludgeon's parts.
+
+---
+
+### DEC-0060 - Abyssal dagger added to the dagger ladder as its top rung
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Abyssal dagger added as the top rung of the existing `dagger` ladder, above Dragon dagger. Uses the existing `weapon-ladder-down` rule - no new rule needed.
+
+**Source.** the maintainer, this session (2026-08-02): "This is an item that would qualify for the laddered rule, all daggers below would be unlocked."
+
+---
+
+### DEC-0061 - `unresolved` now unlocks the searched card itself
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Changed the `unresolved` strategy's behaviour (rules-spec.md section 8): it now returns `unlocks: [{ card, actions }]` for the searched card only, same shape as `plain-foil`, instead of `unlocks: []`. Nothing about any sibling card in the family is claimed either way - only the card the player actually pulled is unlocked. Applies to the deliberate-refusal override case too (`mode: "replace"`, `strategy: "unresolved"`), since it's built on the same `unresolved()` function.
+
+**Code changes** (not data-only, spec-level):
+- `src/rules/strategies/unresolved.ts`: `unlocks` now includes the searched card with its curated actions (falls back to `[]` if it has none), mirroring `plain-foil.ts`.
+- `src/ui/ladder.ts`: `memberState` marks the searched card `unlocked` under the `unresolved` strategy while every other family member stays `context` (no ruling); tally text and caption updated to say so.
+- `src/ui/result.ts`: `renderUnresolved` now also calls `renderUnlocks`, so a card with no family (or an unlock outside its family's members) still shows its own action badges.
+- `docs/rules-spec.md` section 8 updated to describe the new `unlocks` shape.
+- Test updates across `resolve.test.ts`, `precedence.test.ts`, and `result.test.ts` to match: unresolved cards now assert `unlocks.length === 1` (the card itself) instead of `0`.
+
+**Rationale.** The maintainer's read: a foil is a foil regardless of whether a ruling exists for its wider family - not having decided what a Bronze full helm foil means for the rest of the full-helm ladder is no reason to also withhold Bronze full helm itself. This mirrors `plain-foil`'s "a foil unlocks at least the card it shows" position, just applied to the "no rule decided yet" case as well as the "ruleset says a foil is only itself" case.
+
+**Source.** the maintainer, this session (2026-08-02): "On items that go 'unresolved' the UI should reflect this as only that item being unlocked rather than the 'undecided' message"; confirmed doing this as a code change now rather than deferring it.
+
+---
+
+### DEC-0062 - Abyssal tentacle grouped with Abyssal whip
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Abyssal tentacle grouped with Abyssal whip - foiling either unlocks both. There's no plain "Whip" card in this dataset, only Abyssal whip. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks normal whip".
+
+---
+
+### DEC-0062 - Split "solo item" out of the unresolved screen
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Corrects DEC-0061: the maintainer flagged that a card with genuinely nothing to relate it to (no family, no group, no state pair) is not the same situation as a card caught in a real undecided ladder/group debate, and the UI should not present both the same way. Split into two distinct presentations, both still `strategy: 'unresolved'` in the data model, distinguished by whether `resolution.family` is populated:
+
+- **Has a family** (a ladder/group exists, no rule selects it yet): unchanged full undecided screen from DEC-0061/section 8 - ruling banner, undecided badge, neutral-context ladder, community camps.
+- **No family at all ("solo item")**: new quiet treatment - a single-line statement that the card "has no known ladder, group, or state-pair relationship to any other card, so it simply unlocks itself," its own action badges if it has any, no undecided badge, no camps section. Tagged with a distinct `result--unresolved-solo` CSS class and `ruling--solo` on its explanation block so it's stylable separately from the real undecided screen.
+
+**Code changes**: `src/ui/result.ts` (new `renderSoloItem`, exported `renderUnresolved` for direct testing, `renderResult`'s article class branches on family presence), `src/rules/index.ts` export surface unchanged, `docs/rules-spec.md` section 8 rewritten to describe the two presentations, tests in `result.test.ts` split into a solo-item block and a family-having full-screen block (the latter built from a synthetic resolution, since no shipped card is genuinely unresolved-with-family - every family carries a rule).
+
+**Rationale.** Per the maintainer: "unresolved and solo item should be two separate categories. Unresolved is literally unresolved, solo item means an item that unlocks itself and nothing else." Showing "There is no agreed rule for this card yet" plus a "positions people hold" debate about e.g. Abyssal book - which has no sibling item to relate it to at all - misrepresented a non-question as an open one. The data-layer behaviour from DEC-0061 (the searched card is always unlocked) stays exactly right; only the UI framing needed to stop treating "nothing to relate this to" the same as "genuinely caught between camps."
+
+**Source.** the maintainer, this session (2026-08-02): screenshot of the Abyssal book result showing the undecided banner, with "the section for undecided still appears when an item only unlocks itself, this needs to not show for single unlock items"; then, mid-implementation, "unresolved and solo item should be two separate categories. Unresolved is literally unresolved, solo item means an item that unlocks itself and nothing else" - correcting the first pass, which had collapsed the no-family case into a bare `renderUnlocks` call with no distinguishing copy at all.

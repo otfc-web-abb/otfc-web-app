@@ -256,7 +256,8 @@ describe('npc-hierarchy', () => {
     const r = resolve('Kalphite Queen')
 
     assert.equal(r.strategy, 'unresolved')
-    assert.deepEqual(r.unlocks, [])
+    assert.equal(r.unlocks.length, 1)
+    assert.equal(r.unlocks[0]?.card.name, 'Kalphite Queen')
     assert.equal(r.family?.id, 'kalphites')
   })
 })
@@ -348,7 +349,10 @@ describe('overrides', () => {
     const r = resolve('Raw trout')
 
     assert.equal(r.strategy, 'unresolved')
-    assert.deepEqual(r.unlocks, [])
+    // DEC-0061: even a deliberate-refusal override still unlocks the searched card
+    // itself - only the rest of the family stays unclaimed.
+    assert.equal(r.unlocks.length, 1)
+    assert.equal(r.unlocks[0]?.card.name, 'Raw trout')
     assert.deepEqual(r.excluded, [])
     assert.equal(r.confidence, 'undecided')
     assert.equal(r.explanation, 'The family rule over-reaches here.')

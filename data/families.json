@@ -1424,6 +1424,12 @@
           "members": [
             "Dragon dagger"
           ]
+        },
+        {
+          "tier": "abyssal",
+          "members": [
+            "Abyssal dagger"
+          ]
         }
       ]
     },
@@ -7842,6 +7848,327 @@
         "Fedora",
         "Odium shard 2",
         "Malediction shard 2"
+      ]
+    },
+    {
+      "id": "20th-anniversary-set",
+      "label": "20th anniversary set",
+      "kind": "set",
+      "tags": [
+        "event-reward-group"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "20th anniversary boots",
+        "20th anniversary bottom",
+        "20th anniversary cape",
+        "20th anniversary gloves",
+        "20th anniversary hat",
+        "20th anniversary necklace",
+        "20th anniversary top"
+      ]
+    },
+    {
+      "id": "25th-anniversary-set",
+      "label": "25th anniversary set",
+      "kind": "set",
+      "tags": [
+        "event-reward-group"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "25th anniversary 5x5 hat",
+        "25th anniversary helmet",
+        "25th anniversary skeleton tabard",
+        "25th anniversary warrior tabard"
+      ]
+    },
+    {
+      "id": "10th-birthday-set",
+      "label": "10th birthday set",
+      "kind": "set",
+      "tags": [
+        "event-reward-group"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "10th birthday balloons",
+        "10th birthday cape"
+      ]
+    },
+    {
+      "id": "abyssal-dye-set",
+      "label": "Abyssal dyes",
+      "kind": "set",
+      "tags": [
+        "event-reward-group"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Abyssal blue dye",
+        "Abyssal green dye",
+        "Abyssal red dye"
+      ]
+    },
+    {
+      "id": "dragon-mask-set",
+      "label": "Dragon masks",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Bronze dragon mask",
+        "Iron dragon mask",
+        "Steel dragon mask",
+        "Mithril dragon mask",
+        "Adamant dragon mask",
+        "Rune dragon mask",
+        "Black dragon mask",
+        "Red dragon mask",
+        "Green dragon mask",
+        "Blue dragon mask",
+        "Lava dragon mask"
+      ]
+    },
+    {
+      "id": "alchemist-set",
+      "label": "Alchemist's outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Prescription goggles",
+        "Alchemist labcoat",
+        "Alchemist pants",
+        "Alchemist gloves",
+        "Alchemist's amulet"
+      ]
+    },
+    {
+      "id": "ancient-ceremonial-set",
+      "label": "Ancient ceremonial robes",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Ancient ceremonial boots",
+        "Ancient ceremonial gloves",
+        "Ancient ceremonial legs",
+        "Ancient ceremonial mask",
+        "Ancient ceremonial top"
+      ]
+    },
+    {
+      "id": "ankou-set",
+      "label": "Ankou's outfit",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Ankou gloves",
+        "Ankou mask",
+        "Ankou socks",
+        "Ankou top",
+        "Ankou's leggings"
+      ]
+    },
+    {
+      "id": "antisanta-set",
+      "label": "Antisanta costume",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Antisanta boots",
+        "Antisanta gloves",
+        "Antisanta jacket",
+        "Antisanta mask",
+        "Antisanta pantaloons"
+      ]
+    },
+    {
+      "id": "sacred-ashes",
+      "label": "Sacred ashes",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        { "tier": "fiendish", "members": ["Fiendish ashes"] },
+        { "tier": "vile", "members": ["Vile ashes"] },
+        { "tier": "malicious", "members": ["Malicious ashes"] },
+        { "tier": "abyssal", "members": ["Abyssal ashes"] },
+        { "tier": "infernal", "members": ["Infernal ashes"] }
+      ]
+    },
+    {
+      "id": "abyssal-tentacle-whip-set",
+      "label": "Abyssal tentacle and whip",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "members": [
+        "Abyssal tentacle",
+        "Abyssal whip"
+      ]
+    },
+    {
+      "id": "abyssal-bludgeon",
+      "label": "Abyssal bludgeon",
+      "kind": "composite",
+      "tags": [
+        "assembled-weapon"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Abyssal bludgeon",
+      "parts": [
+        "Bludgeon axon",
+        "Bludgeon claw",
+        "Bludgeon spine"
+      ]
+    },
+    {
+      "id": "raids-supply-potions-set",
+      "label": "Raids supply potions",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Super ranging",
+        "Super magic potion",
+        "Absorption"
+      ]
+    },
+    {
+      "id": "meiyerditch-books-set",
+      "label": "Meiyerditch history books",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Ablenkian's escape",
+        "Imafore's betrayal",
+        "The weeping"
+      ]
+    },
+    {
+      "id": "prifddinas-library-set",
+      "label": "Grand Library of Prifddinas books",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "A dear friend",
+        "Eastern discovery",
+        "The great divide",
+        "Crazed scribbles",
+        "Ode to eternity",
+        "Crystal singing for beginners",
+        "On leprechauns",
+        "Bloody diary",
+        "The eight clans",
+        "Soggy journal",
+        "Ebrill's journal",
+        "Stained journal",
+        "The living statues",
+        "The spurned demon",
+        "Legends of the mountain"
+      ]
+    },
+    {
+      "id": "4th-birthday-set",
+      "label": "4th birthday",
+      "kind": "set",
+      "tags": [
+        "event-reward-group"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "4th birthday hat",
+        "Birthday balloons"
+      ]
+    },
+    {
+      "id": "ballista-shot-set",
+      "label": "Ballista shot",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "18lb shot",
+        "22lb shot"
+      ]
+    },
+    {
+      "id": "ancient-pages-set",
+      "label": "Ancient pages",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Ancient page 1",
+        "Ancient page 2",
+        "Ancient page 3",
+        "Ancient page 4"
       ]
     }
   ]

@@ -865,6 +865,17 @@ body.has-result #landing-root {
   text-shadow: var(--cut);
 }
 
+.hero__link {
+  color: inherit;
+  text-decoration-color: rgb(227 188 77 / 0.4);
+  text-underline-offset: 4px;
+}
+
+.hero__link:hover {
+  color: var(--gold);
+  text-decoration-color: currentColor;
+}
+
 .hero__examine {
   margin: var(--s2) 0 0;
   font-size: 14px;
@@ -1067,6 +1078,18 @@ body.has-result #landing-root {
   font-size: 14px;
   color: var(--ink);
   overflow-wrap: anywhere;
+}
+
+a.ladder__name,
+a.unlocks__name {
+  text-decoration: none;
+}
+
+a.ladder__name:hover,
+a.unlocks__name:hover {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .ladder__member--searched .ladder__name {

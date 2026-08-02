@@ -655,6 +655,42 @@
           "decision": "DEC-0044"
         }
       ]
+    },
+    {
+      "id": "assembled-weapon-components",
+      "strategy": "components",
+      "applies": {
+        "familyTags": [
+          "assembled-weapon"
+        ]
+      },
+      "explanation": "A foil of an assembled weapon unlocks the weapon and every drop component it's built from. {card} covers {count} cards in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Abyssal bludgeon added as an assembled-weapon composite",
+          "decision": "DEC-0059"
+        }
+      ]
+    },
+    {
+      "id": "event-reward-group",
+      "strategy": "group",
+      "applies": {
+        "familyTags": [
+          "event-reward-group"
+        ]
+      },
+      "explanation": "These cosmetic items were given out together as one Jagex anniversary/birthday event reward. {card} is part of {family} - {count} in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Anniversary and birthday event reward sets, and the abyssal dyes, grouped",
+          "decision": "DEC-0050"
+        }
+      ]
     }
   ]
 }

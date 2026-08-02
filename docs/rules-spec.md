@@ -221,13 +221,15 @@ This state will be common at launch. It is the app's honesty made visible and ge
 
 A resolution with `strategy: 'unresolved'` carries:
 
-- `unlocks: []` and `excluded: []`. Nothing is claimed in either direction. Not claiming an exclusion matters as much as not claiming an unlock.
+- `unlocks: [{ card, actions }]` for the searched card only (DEC-0061), and `excluded: []`. Nothing is claimed about any other card in either direction - the searched card is always the player's, but no sibling in its family is claimed unlocked or excluded. Not claiming an exclusion matters as much as not claiming an unlock.
 - `confidence: 'undecided'`
 - `sources: []`
 - `family`: populated when the card belongs to one, so the ladder still renders as **context** with no rung marked unlocked or locked.
 - `explanation`: the standard undecided copy, not a per-card string.
 
-The view must show, in this order:
+**Two distinct presentations share `strategy: 'unresolved'` (DEC-0062), split on whether `family` is populated:**
+
+**A card with a family** (a genuine ladder/group exists, just no rule selects it yet) gets the full undecided screen, shown in this order:
 
 1. **The card**, treated the same as any other result. The player is not being told off for searching.
 2. **A plain statement** that there is no agreed rule for this card yet.
@@ -235,6 +237,8 @@ The view must show, in this order:
 4. **The general principles at play** - the three community camps, and the resolution order - presented as principles under discussion, never as a suggested answer for this card. No "it would probably...".
 
 A player landing here should feel informed, not stonewalled. They arrive knowing more than they did: that their case is genuinely open and what the competing positions are.
+
+**A card with no family at all** ("solo item") has no ladder or group for the undecided framing or the community camps to be about - there is no wider question in dispute, just an item nobody has related to anything else. This gets a plain, quiet statement that the card unlocks only itself, with no undecided badge and no camps section, rather than presenting an absence of data as an open community debate it is not.
 
 ---
 

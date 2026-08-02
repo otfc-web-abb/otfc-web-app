@@ -5,7 +5,7 @@
 import { resolve, type Resolution, type Ruleset, type Unlock } from '../rules/index.ts'
 import { actionBadges } from './actions.ts'
 import { CAMPS, CAMPS_SOURCE, CONFIDENCE_BLURBS, CONFIDENCE_LABELS, GUIDELINE_LINE, RULESET_BLURBS } from './copy.ts'
-import { esc, plural } from './html.ts'
+import { esc, plural, wikiLink } from './html.ts'
 import { renderLadder } from './ladder.ts'
 
 const RULESETS: Ruleset[] = ['standard', 'extreme', 'plain-foil']
@@ -63,7 +63,7 @@ function renderHero(resolution: Resolution): string {
         >
       </div>
       <p class="hero__eyebrow">Foil</p>
-      <h2 class="hero__name">${esc(card.name)}</h2>
+      <h2 class="hero__name">${wikiLink(card.name, 'hero__link')}</h2>
       ${card.examine ? `<p class="hero__examine">${esc(card.examine)}</p>` : ''}
     </div>
   `
@@ -122,7 +122,7 @@ function renderUnlocks(resolution: Resolution): string {
             (u) => `
           <li class="unlocks__item">
             <img class="unlocks__thumb" src="${esc(u.card.img)}" alt="" loading="lazy" width="28" height="28" />
-            <span class="unlocks__name">${esc(u.card.name)}</span>
+            ${wikiLink(u.card.name, 'unlocks__name')}
             <span class="unlocks__actions">${actionBadges(u.actions)}</span>
             ${u.note ? `<span class="unlocks__note">${esc(u.note)}</span>` : ''}
           </li>
@@ -154,7 +154,7 @@ function renderExcluded(resolution: Resolution): string {
             (c) => `
           <li class="unlocks__item">
             <img class="unlocks__thumb" src="${esc(c.img)}" alt="" loading="lazy" width="28" height="28" />
-            <span class="unlocks__name">${esc(c.name)}</span>
+            ${wikiLink(c.name, 'unlocks__name')}
             <span class="badge badge--locked">Still locked</span>
           </li>
         `,
@@ -184,16 +184,53 @@ function renderRuling(resolution: Resolution): string {
 // --- the unresolved screen ----------------------------------------------------
 
 /**
+ * A card with no family at all is not genuinely undecided - there is no ladder or
+ * group for a "no agreed rule yet" framing to be about, and no camps to argue over.
+ * DEC-0062 splits this into its own "solo item" treatment: plain statement that it
+ * unlocks only itself, no undecided badge, no community-camps debate. This is
+ * distinct from the full unresolved screen (section 8), which stays for a card that
+ * does have a family and is genuinely caught between the resolution camps.
+ */
+function renderSoloItem(resolution: Resolution): string {
+  const card = resolution.card
+  if (!card) return ''
+  const actions = resolution.unlocks[0]?.actions ?? []
+
+  return `
+    <section class="result__section ruling ruling--solo">
+      <p class="ruling__explanation">
+        ${esc(card.name)} has no known ladder, group, or state-pair relationship to any other card, so it simply unlocks itself.
+      </p>
+    </section>
+    ${
+      actions.length > 0
+        ? `
+      <section class="result__section">
+        <h3 class="result__heading">What this lets you do</h3>
+        <div class="actions">${actionBadges(actions)}</div>
+      </section>
+    `
+        : ''
+    }
+  `
+}
+
+/**
  * rules-spec section 8: the card, the plain statement, then the principles at play.
  *
  * Nothing here may read as a suggested answer for this card. The camps are the
  * positions people hold, not positions applied to the card on screen.
  */
-function renderUnresolved(resolution: Resolution): string {
+export function renderUnresolved(resolution: Resolution): string {
+  if (!resolution.family) {
+    return renderSoloItem(resolution)
+  }
+
   return `
     ${renderRuling(resolution)}
 
     ${renderLadder(resolution)}
+    ${renderUnlocks(resolution)}
 
     <section class="result__section">
       <h3 class="result__heading">The positions people hold</h3>
@@ -253,8 +290,11 @@ export function renderResult(cardName: string, ruleset: Ruleset): string {
       ? renderUnresolved(resolution)
       : renderResolved(resolution)
 
+  const isSolo = resolution.strategy === 'unresolved' && resolution.card && !resolution.family
+  const strategyClass = isSolo ? 'unresolved-solo' : resolution.strategy
+
   return `
-    <article class="result result--${resolution.strategy}">
+    <article class="result result--${strategyClass}">
       <p class="guideline" role="note">${esc(GUIDELINE_LINE)}</p>
       ${renderHero(resolution)}
       ${renderToggle(ruleset, resolution.caveats)}

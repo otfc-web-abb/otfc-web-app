@@ -6,7 +6,7 @@
 
 import type { Card, FamilyContext, Resolution, Unlock } from '../rules/index.ts'
 import { actionBadges } from './actions.ts'
-import { esc, plural } from './html.ts'
+import { esc, plural, wikiLink } from './html.ts'
 
 /** The unlock behind each row, keyed by card name. The verbs and any per-card note
  *  live on the row they apply to rather than in a section of their own. */
@@ -15,13 +15,14 @@ type ActionMap = Map<string, Unlock>
 type MemberState = 'unlocked' | 'locked' | 'context'
 
 /**
- * `unresolved` renders every member neutrally - rules-spec section 8 requires that
- * no rung is marked unlocked or locked, because nothing was claimed in either
- * direction. Every other strategy states a complete unlock set, so a member outside
+ * `unresolved` renders every member neutrally except the searched card itself
+ * (DEC-0061) - no ruling exists for the rest of the family, so nothing there is
+ * marked unlocked or locked, but the card the player actually pulled is always
+ * theirs. Every other strategy states a complete unlock set, so a member outside
  * it is genuinely not unlocked and says so.
  */
 function memberState(name: string, unlocked: Set<string>, strategy: string): MemberState {
-  if (strategy === 'unresolved') return 'context'
+  if (strategy === 'unresolved') return unlocked.has(name) ? 'unlocked' : 'context'
   return unlocked.has(name) ? 'unlocked' : 'locked'
 }
 
@@ -31,7 +32,7 @@ const CAPTIONS: Record<string, string> = {
     'Your card is one item in two forms, so it does not descend this progression. The rest of it stays locked.',
   'plain-foil': 'Under this reading the foil unlocks only the card it shows. The rest stays locked.',
   unresolved:
-    'Shown as context only. No rule has been decided for this card, so nothing here is marked unlocked or locked.',
+    'No rule has been decided for this family, so nothing else here is marked unlocked or locked - but the card you pulled is always yours.',
   override: 'A card-specific ruling applies. The rest of the progression is shown for context.',
   components: 'Shown for context. This card unlocks its parts rather than the tiers below it.',
   group: 'Shown for context. This card unlocks its group rather than the tiers below it.',
@@ -50,7 +51,7 @@ function renderMember(card: Card, state: MemberState, isSearched: boolean, actio
   return `
     <li class="ladder__member ladder__member--${state}${isSearched ? ' ladder__member--searched' : ''}">
       <img class="ladder__thumb" src="${esc(card.img)}" alt="" loading="lazy" width="28" height="28" />
-      <span class="ladder__name">${esc(card.name)}</span>
+      ${wikiLink(card.name, 'ladder__name')}
       ${verbs.length > 0 ? `<span class="ladder__actions">${actionBadges(verbs)}</span>` : ''}
       <span class="ladder__mark">${marks[state]}</span>
       ${unlock?.note ? `<span class="ladder__member-note">${esc(unlock.note)}</span>` : ''}
@@ -138,10 +139,13 @@ export function renderLadder(resolution: Resolution): string {
 
   const unlockedCount = all.filter((m) => unlocked.has(m.name)).length
   const lockedCount = strategy === 'unresolved' ? 0 : all.length - unlockedCount
+  const noRulingCount = all.length - unlockedCount
 
   const tally =
     strategy === 'unresolved'
-      ? `${plural(all.length, 'card')} in this family, none ruled on`
+      ? unlockedCount > 0
+        ? `${plural(unlockedCount, 'card')} unlocked, ${plural(noRulingCount, 'card')} not ruled on`
+        : `${plural(all.length, 'card')} in this family, none ruled on`
       : `${unlockedCount} unlocked, ${lockedCount} still locked`
 
   return `
