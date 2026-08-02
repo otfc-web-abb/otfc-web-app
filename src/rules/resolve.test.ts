@@ -785,6 +785,23 @@ describe('the sweep', () => {
   // DEC-0044 added the six Barrows brothers, Hespori, and two un-anchored
   // minigame-reward groups (Wintertodt, Tempoross - neither has a boss card).
   // Net: group 281 -> 320, components 75 -> 82, unresolved 5296 -> 5250.
+  // DEC-0045 added TzTok-Jad/TzKal-Zuk (unlocking their gauntlet's wave monsters,
+  // not the cape reward), Phantom Muspah, and Sol Heredit. Net: group 320 -> 333,
+  // components 82 -> 86, unresolved 5250 -> 5233.
+  // DEC-0046 added the three raids (Chambers of Xeric, Theatre of Blood, Tombs of
+  // Amascut - the latter with two Warden cards sharing one uniques set). Net:
+  // group 333 -> 361, components 86 -> 90, unresolved 5233 -> 5201.
+  // DEC-0047 added Yama, Amoxliatl, The Hueycoatl, and Doom of Mokhaiotl. Net:
+  // group 361 -> 378, components 90 -> 94, unresolved 5201 -> 5180.
+  // DEC-0048 added Araxxor, The Gauntlet (Crystalline/Corrupted Hunllef sharing
+  // one uniques set), and the three Moons of Peril. Net: group 378 -> 400,
+  // components 94 -> 100, unresolved 5180 -> 5152.
+  // DEC-0049 added Chaos Fanatic and Crazy archaeologist (closing the Odium/
+  // Malediction shard deferral from DEC-0042; each of the 3 shard bosses is
+  // self-contained, no cross-boss ward group). Closes out the boss/raid pass for
+  // this session - remaining monster-side work (Dark beast and other slayer
+  // monsters, Revenants) is explicitly deferred to future slayer-monster rules.
+  // Net: group 400 -> 409, components 100 -> 102, unresolved 5152 -> 5141.
   it('reports the Phase 7 round 5 coverage numbers', () => {
     const counts = new Map<string, number>()
     for (const card of shippedData.cards) {
@@ -794,15 +811,15 @@ describe('the sweep', () => {
 
     assert.equal(counts.get('ladder-down'), 534)
     assert.equal(counts.get('state-pair'), 190)
-    assert.equal(counts.get('group'), 320)
-    assert.equal(counts.get('components'), 82)
-    assert.equal(counts.get('unresolved'), 5250)
+    assert.equal(counts.get('group'), 409)
+    assert.equal(counts.get('components'), 102)
+    assert.equal(counts.get('unresolved'), 5141)
     assert.equal(
       counts.get('ladder-down')! +
         counts.get('state-pair')! +
         counts.get('group')! +
         counts.get('components')!,
-      1126,
+      1235,
     )
   })
 })

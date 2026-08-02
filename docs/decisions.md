@@ -771,3 +771,102 @@ All four bosses also share five items - Virtus mask, Virtus robe top, Virtus rob
 **Rationale.** New pattern needed here: DEC-0036's `components` shape depends on a boss card to be the `whole`. Wintertodt and Tempoross don't have one, so a flat, un-anchored `group` (mirroring how community sets like the Pyromancer outfit already work) is the correct fallback rather than inventing a fake boss card or leaving the items disconnected.
 
 **Source.** the maintainer, this session (2026-07-31): "Yes, all 6, gloves excluded" (Barrows); "yes but add attas, iasor and kronos seeds, they only come from hespori" (Hespori); "Tome of fire, bruma torch, burnt pages, pheonix and dragon axe should be their own group. Tome of water, dragon harpoon, fish barrel, soaked page, tackle box, tiny tempor from their own group too" (Wintertodt/Tempoross). OSRS Wiki, fetched 2026-07-31, for [Barrows](https://oldschool.runescape.wiki/w/Barrows), [Wintertodt](https://oldschool.runescape.wiki/w/Wintertodt), [Tempoross](https://oldschool.runescape.wiki/w/Tempoross), [Hespori](https://oldschool.runescape.wiki/w/Hespori).
+
+---
+
+### DEC-0045 - TzTok-Jad and TzKal-Zuk unlock their gauntlet's wave monsters, not the cape reward; Phantom Muspah and Sol Heredit added normally
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** TzTok-Jad (Fight Caves) and TzKal-Zuk (Inferno) break from the DEC-0036 boss/uniques shape: the maintainer specified that foiling either unlocks the **wave monsters fought to reach them**, not the Fire cape / Infernal cape reward or Tokkul currency. Both capes are already governed by the existing `fire-infernal-cape` ladder (DEC-0017) regardless.
+
+- **TzTok-Jad**'s composite `parts`: Tz-Kih, Tz-Kek, Tok-Xil, Yt-MejKot, Ket-Zek, Yt-HurKot (the Fight Caves wave monsters).
+- **TzKal-Zuk**'s composite `parts`: Jal-Nib, Jal-MejRah, Jal-Ak, Jal-AkRek-Xil, Jal-AkRek-Mej, Jal-AkRek-Ket, Jal-ImKot, Jal-Xil, Jal-Zek, JalTok-Jad, Yt-HurKot, Jal-MejJak (the Inferno wave monsters, per the OSRS Wiki's own Inferno page - not guessed from name patterns). Yt-HurKot appears in both lists (it's a healer-type enemy present in both encounters) - no conflict, since a card can be a `part` of more than one composite family with no ambiguity.
+
+Neither gets a `boss-uniques` sibling set - this isn't a loot relationship, so DEC-0036's asymmetric unique-drop shape doesn't apply here at all.
+
+Phantom Muspah and Sol Heredit (Colosseum) follow the ordinary DEC-0036/0038 shape instead:
+
+- **Phantom Muspah**: Ancient essence, Frozen cache, Ancient icon, Venator shard, Muphin.
+- **Sol Heredit**: Dizana's quiver, Tonalztics of ralos, Sunfire splinters, Echo crystal, Sunfire fanatic helm/cuirass/chausses, Smol heredit.
+
+**Rationale.** Fight Caves and Inferno are not "kill a boss, get loot" encounters in the collection-log-unique sense every other entry so far has used - the entire point of foiling Jad/Zuk, per the maintainer, is proving you fought through their gauntlet, so the unlock should represent the fight itself. This is a genuinely new relationship shape (composite `parts` = prerequisite encounter monsters, not drop-table items), reusing the same `components` strategy/engine mechanics with no code change, just a different kind of fact being recorded.
+
+**Source.** the maintainer, this session (2026-07-31): "foil jad unlocks the fights caves monsters, not the fire cape or tokkul. Foil zuk, unlocks the infernal fight monsters, not the cape or tokkul"; approved Phantom Muspah and Sol Heredit as proposed. OSRS Wiki, fetched 2026-07-31, for [Fight Caves](https://oldschool.runescape.wiki/w/Fight_Caves), [Inferno](https://oldschool.runescape.wiki/w/Inferno), [Phantom Muspah](https://oldschool.runescape.wiki/w/Phantom_Muspah), [Sol Heredit](https://oldschool.runescape.wiki/w/Sol_Heredit).
+
+---
+
+### DEC-0046 - The three raids added: Chambers of Xeric, Theatre of Blood, Tombs of Amascut
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.**
+
+- **Chambers of Xeric** (`boss-great-olm`, whole = Great Olm): Dexterous prayer scroll, Arcane prayer scroll, Twisted buckler, Dragon hunter crossbow, Dinh's bulwark, Ancestral hat/robe top/robe bottom, Dragon claws, Elder maul, Kodai wand, Twisted bow, Olmlet. (An initial pass excluded a "Kodai insignia" that turned out not to exist in this plugin's card dataset - the maintainer corrected the actual reward name to Kodai wand, which does exist and is now included.)
+- **Theatre of Blood** (`boss-verzik-vitur`, whole = Verzik Vitur): Avernic defender hilt, Justiciar faceguard/chestguard/legguards, Ghrazi rapier, Sanguinesti staff, Scythe of vitur, Lil' zik.
+- **Tombs of Amascut**: the unique roll happens once at the end of the raid (after the Warden fight), not per path-boss (Ba-Ba, Kephri, Akkha, Zebak) - so both `Elidinis' Warden` and `Tumeken's Warden` composites share one `toa-uniques` set: Masori mask/body/chaps, Osmumten's fang, Tumeken's shadow, Elidinis' ward, Lightbearer, Tumeken's guardian. The maintainer scoped this to armour/weapon/pet only - Thread of elidinis, Breach of the scarab, Eye of the corruptor, Jewel of the sun, and Jewel of amascut (tertiary reward-track items) are deliberately excluded.
+
+**Note on Dragon claws.** Also the top rung of the existing `claws` metal-tier ladder (`ladder-down`, which resolves before `group`) - same harmless asymmetry as Dragon axe in DEC-0044: foiling Dragon claws directly still goes through the ladder, but it still shows correctly as an unlock from Great Olm's other uniques.
+
+**Rationale.** Theatre of Blood and Chambers of Xeric are single-boss raids so they follow the ordinary DEC-0036 shape without modification. Tombs of Amascut needed the same "two whole cards, one shared set" shape already established for the wilderness pairs and Grotesque Guardians (DEC-0038/0040), since its two final-phase NPCs are fought together and share one loot roll.
+
+**Source.** the maintainer, this session (2026-07-31): approved Great Olm ("yes but with kodai insignia too", then corrected to "it's kodai wand"), Verzik Vitur, and Tombs of Amascut ("Yes, but armour/weapon/pet only"). OSRS Wiki, fetched 2026-07-31, for [Chambers of Xeric](https://oldschool.runescape.wiki/w/Chambers_of_Xeric), [Ancient chest](https://oldschool.runescape.wiki/w/Ancient_chest), [Theatre of Blood](https://oldschool.runescape.wiki/w/Theatre_of_Blood), [Tombs of Amascut](https://oldschool.runescape.wiki/w/Tombs_of_Amascut).
+
+---
+
+### DEC-0047 - Yama, Amoxliatl, The Hueycoatl, and Doom of Mokhaiotl added
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.**
+
+- **Yama**: Soulflame horn, Oathplate helm, Oathplate chest, Oathplate legs, Yami. Narrower than initially proposed - the maintainer dropped Dossier, Forgotten lockbox, and Oathplate shards from the set.
+- **Amoxliatl**: Glacial temotli, Pendant of ates, Moxi. The moon-key tooth half is excluded - shared tertiary drop across several Varlamore bosses, not Amoxliatl-exclusive.
+- **The Hueycoatl**: Dragon hunter wand, Hueycoatl hide, Tome of earth, Soiled page, Huberte. Same moon-key exclusion as Amoxliatl.
+- **Doom of Mokhaiotl**: Mokhaiotl cloth, Eye of ayak, Avernic treads, Dom.
+
+All four follow the ordinary DEC-0036/0038 `boss`/`boss-uniques` pair shape with no cross-boss sharing.
+
+**Source.** the maintainer, this session (2026-07-31): "Yama, Soulflame horn, Oathplate helm/chest/legs, Yami" (trimming the original proposal); "Amoxliatl - Glacial Temotli, Moxi, Pendant of ates, Moxi. Hueycoatl - Hueycoatl hide, Tome of earth, dragon hunter wand, soiled page, Huberte"; approved Doom of Mokhaiotl as proposed. OSRS Wiki, fetched 2026-07-31, for [Yama](https://oldschool.runescape.wiki/w/Yama), [Amoxliatl](https://oldschool.runescape.wiki/w/Amoxliatl), [The Hueycoatl](https://oldschool.runescape.wiki/w/The_Hueycoatl), [Doom of Mokhaiotl](https://oldschool.runescape.wiki/w/Doom_of_Mokhaiotl).
+
+---
+
+### DEC-0048 - Araxxor, The Gauntlet, and the Moons of Peril added; Fragment of Seren confirmed to have no unique drops
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.**
+
+- **Araxxor**: Noxious pommel, Noxious point, Noxious blade, Araxyte fang, Nid.
+- **The Gauntlet**: Crystalline Hunllef (normal) and Corrupted Hunllef (corrupted) share one loot pool - `gauntlet-uniques`: Crystal weapon seed, Crystal armour seed, Enhanced crystal weapon seed, Youngllef. Gauntlet cape is excluded from both - a guaranteed completion reward from Corrupted Hunllef, not part of the RNG unique table, same reasoning as the Jad/Zuk cape exclusion in DEC-0045.
+- **Moons of Peril**: three fully independent bosses, no sharing between them. Blood Moon: Blood moon helm/chestplate/tassets, Dual macuahuitl. Blue Moon: Blue moon helm/chestplate/tassets, Blue moon spear. Eclipse Moon: Eclipse moon helm/chestplate/tassets, Eclipse atlatl, Atlatl dart.
+- **Fragment of Seren**: checked and confirmed to have no unique/rare drop table at all on the OSRS Wiki - skipped, not an oversight.
+
+**Rationale.** The Gauntlet's cape exclusion extends the Jad/Zuk precedent (DEC-0045) to another "prove you finished it" completion reward, rather than treating every guaranteed reward as if it were a rare drop-table roll.
+
+**Source.** the maintainer, this session (2026-07-31): approved Araxxor and the Moons of Peril as proposed; "Exclude Gauntlet cape" for The Gauntlet. OSRS Wiki, fetched 2026-07-31, for [Araxxor](https://oldschool.runescape.wiki/w/Araxxor), [The Gauntlet](https://oldschool.runescape.wiki/w/The_Gauntlet), [Moons of Peril](https://oldschool.runescape.wiki/w/Moons_of_Peril), [Fragment of Seren](https://oldschool.runescape.wiki/w/Fragment_of_Seren).
+
+---
+
+### DEC-0049 - Chaos Fanatic and Crazy archaeologist added, closing the Odium/Malediction shard deferral from DEC-0042; each of the three shard-dropping bosses is self-contained
+
+**Status:** Active
+**Date:** 2026-07-31
+
+**Ruling.** Closes the deferral from DEC-0042. Odium shard 1/Malediction shard 1 come from Chaos Fanatic, Odium shard 2/Malediction shard 2 from Crazy archaeologist, Odium shard 3/Malediction shard 3 from Scorpia. The maintainer explicitly rejected a Voidwaker-style cross-boss assembly group for the two wards: **foiling one of the three bosses unlocks only that boss's own shard pair, not the other two bosses' shards and not the assembled Odium ward / Malediction ward.**
+
+- **Chaos Fanatic**: Ancient staff, Odium shard 1, Malediction shard 1. (Pet chaos elemental also drops here but is excluded - already governed by Chaos Elemental's uniques set, DEC-0043.)
+- **Crazy archaeologist**: Fedora, Odium shard 2, Malediction shard 2.
+- **Scorpia**: Scorpia's offspring, Odium shard 3, Malediction shard 3 (extends the pet-only entry from DEC-0042).
+
+Each of the three gets its own ordinary `boss`/`boss-uniques` pair - no shared/explicit cross-boss family is created this time, unlike Voidwaker (DEC-0039) or the DT2 items (DEC-0041). The assembled wards (Odium ward, Malediction ward) are not referenced anywhere and stay `unresolved` if foiled directly - a deliberate scope boundary, not an oversight.
+
+With this, the maintainer confirmed the session's boss/raid pass is complete: further monster-side rules (Dark beast and other slayer-category monsters, the Revenants/ancient-emblem network, etc.) are explicitly out of scope here and will be handled separately as slayer-monster rules, not as bosses.
+
+**Rationale.** Mirrors the "not every shared drop implies a cross-monster relationship" lesson from Uncut onyx (DEC-0040) - three monsters happening to drop pieces of the same craftable item doesn't automatically mean foiling one should reveal the others, and the maintainer drew that line explicitly here rather than defaulting to the Voidwaker precedent.
+
+**Source.** the maintainer, this session (2026-07-31): "A foil of any of the 3 bosses, unlocks that bosses specific shard drops, not the others. They should only unlock the shards, nothing else"; "Let's finish off bosses specifically. Monsters like dark best[beast] are slayer monsters, these shouldn't be tackled right now. They will be handled differently." OSRS Wiki, fetched 2026-07-31, for [Chaos Fanatic](https://oldschool.runescape.wiki/w/Chaos_Fanatic), [Crazy archaeologist](https://oldschool.runescape.wiki/w/Crazy_archaeologist), [Odium ward](https://oldschool.runescape.wiki/w/Odium_ward), [Malediction ward](https://oldschool.runescape.wiki/w/Malediction_ward).

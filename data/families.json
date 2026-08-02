@@ -6557,7 +6557,7 @@
     },
     {
       "id": "boss-scorpia",
-      "label": "Scorpia and its unique",
+      "label": "Scorpia and its uniques",
       "kind": "composite",
       "tags": [
         "boss"
@@ -6566,9 +6566,27 @@
         "use"
       ],
       "whole": "Scorpia",
-      "note": "Odium shard 3 and Malediction shard 3 also drop here but are deferred - they're shared with Revenants and need their own ruling before being added.",
+      "note": "Odium shard 3 and Malediction shard 3 are Scorpia-specific only - foiling Scorpia does not unlock Chaos Fanatic's or Crazy archaeologist's shards, or the assembled wards.",
       "parts": [
-        "Scorpia's offspring"
+        "Scorpia's offspring",
+        "Odium shard 3",
+        "Malediction shard 3"
+      ]
+    },
+    {
+      "id": "scorpia-uniques",
+      "label": "Scorpia's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Scorpia's offspring",
+        "Odium shard 3",
+        "Malediction shard 3"
       ]
     },
     {
@@ -7123,6 +7141,707 @@
         "Soaked page",
         "Tackle box",
         "Tiny tempor"
+      ]
+    },
+    {
+      "id": "boss-tztok-jad",
+      "label": "TzTok-Jad and the Fight Caves",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "TzTok-Jad",
+      "note": "Unlocks the Fight Caves wave monsters, not the Fire cape or Tokkul reward - the maintainer specified the fight, not the loot.",
+      "parts": [
+        "Tz-Kih",
+        "Tz-Kek",
+        "Tok-Xil",
+        "Yt-MejKot",
+        "Ket-Zek",
+        "Yt-HurKot"
+      ]
+    },
+    {
+      "id": "boss-tzkal-zuk",
+      "label": "TzKal-Zuk and the Inferno",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "TzKal-Zuk",
+      "note": "Unlocks the Inferno wave monsters, not the Infernal cape or Tokkul reward - the maintainer specified the fight, not the loot.",
+      "parts": [
+        "Jal-Nib",
+        "Jal-MejRah",
+        "Jal-Ak",
+        "Jal-AkRek-Xil",
+        "Jal-AkRek-Mej",
+        "Jal-AkRek-Ket",
+        "Jal-ImKot",
+        "Jal-Xil",
+        "Jal-Zek",
+        "JalTok-Jad",
+        "Yt-HurKot",
+        "Jal-MejJak"
+      ]
+    },
+    {
+      "id": "boss-phantom-muspah",
+      "label": "Phantom Muspah and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Phantom Muspah",
+      "parts": [
+        "Ancient essence",
+        "Frozen cache",
+        "Ancient icon",
+        "Venator shard",
+        "Muphin"
+      ]
+    },
+    {
+      "id": "phantom-muspah-uniques",
+      "label": "Phantom Muspah's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Ancient essence",
+        "Frozen cache",
+        "Ancient icon",
+        "Venator shard",
+        "Muphin"
+      ]
+    },
+    {
+      "id": "boss-sol-heredit",
+      "label": "Sol Heredit and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Sol Heredit",
+      "parts": [
+        "Dizana's quiver",
+        "Tonalztics of ralos",
+        "Sunfire splinters",
+        "Echo crystal",
+        "Sunfire fanatic helm",
+        "Sunfire fanatic cuirass",
+        "Sunfire fanatic chausses",
+        "Smol heredit"
+      ]
+    },
+    {
+      "id": "sol-heredit-uniques",
+      "label": "Sol Heredit's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Dizana's quiver",
+        "Tonalztics of ralos",
+        "Sunfire splinters",
+        "Echo crystal",
+        "Sunfire fanatic helm",
+        "Sunfire fanatic cuirass",
+        "Sunfire fanatic chausses",
+        "Smol heredit"
+      ]
+    },
+    {
+      "id": "boss-great-olm",
+      "label": "Great Olm and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Great Olm",
+      "parts": [
+        "Dexterous prayer scroll",
+        "Arcane prayer scroll",
+        "Twisted buckler",
+        "Dragon hunter crossbow",
+        "Dinh's bulwark",
+        "Ancestral hat",
+        "Ancestral robe top",
+        "Ancestral robe bottom",
+        "Dragon claws",
+        "Elder maul",
+        "Kodai wand",
+        "Twisted bow",
+        "Olmlet"
+      ]
+    },
+    {
+      "id": "great-olm-uniques",
+      "label": "Great Olm's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Dragon claws is also the top rung of the existing 'claws' ladder - ladder-down resolves first if Dragon claws itself is foiled, same asymmetry as Dragon axe in DEC-0044.",
+      "members": [
+        "Dexterous prayer scroll",
+        "Arcane prayer scroll",
+        "Twisted buckler",
+        "Dragon hunter crossbow",
+        "Dinh's bulwark",
+        "Ancestral hat",
+        "Ancestral robe top",
+        "Ancestral robe bottom",
+        "Dragon claws",
+        "Elder maul",
+        "Kodai wand",
+        "Twisted bow",
+        "Olmlet"
+      ]
+    },
+    {
+      "id": "boss-verzik-vitur",
+      "label": "Verzik Vitur and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Verzik Vitur",
+      "parts": [
+        "Avernic defender hilt",
+        "Justiciar faceguard",
+        "Justiciar chestguard",
+        "Justiciar legguards",
+        "Ghrazi rapier",
+        "Sanguinesti staff",
+        "Scythe of vitur",
+        "Lil' zik"
+      ]
+    },
+    {
+      "id": "verzik-vitur-uniques",
+      "label": "Verzik Vitur's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Avernic defender hilt",
+        "Justiciar faceguard",
+        "Justiciar chestguard",
+        "Justiciar legguards",
+        "Ghrazi rapier",
+        "Sanguinesti staff",
+        "Scythe of vitur",
+        "Lil' zik"
+      ]
+    },
+    {
+      "id": "boss-elidinis-warden",
+      "label": "Elidinis' Warden and the raid's uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Elidinis' Warden",
+      "note": "Tombs of Amascut's unique roll happens once at the end of the raid, not per path-boss, so both Wardens share this one set. Tertiary items (Thread of elidinis, Breach of the scarab, Eye of the corruptor, Jewel of the sun, Jewel of amascut) deliberately excluded.",
+      "parts": [
+        "Masori mask",
+        "Masori body",
+        "Masori chaps",
+        "Osmumten's fang",
+        "Tumeken's shadow",
+        "Elidinis' ward",
+        "Lightbearer",
+        "Tumeken's guardian"
+      ]
+    },
+    {
+      "id": "boss-tumekens-warden",
+      "label": "Tumeken's Warden and the raid's uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Tumeken's Warden",
+      "note": "Tombs of Amascut's unique roll happens once at the end of the raid, not per path-boss, so both Wardens share this one set. Tertiary items (Thread of elidinis, Breach of the scarab, Eye of the corruptor, Jewel of the sun, Jewel of amascut) deliberately excluded.",
+      "parts": [
+        "Masori mask",
+        "Masori body",
+        "Masori chaps",
+        "Osmumten's fang",
+        "Tumeken's shadow",
+        "Elidinis' ward",
+        "Lightbearer",
+        "Tumeken's guardian"
+      ]
+    },
+    {
+      "id": "toa-uniques",
+      "label": "Tombs of Amascut's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Masori mask",
+        "Masori body",
+        "Masori chaps",
+        "Osmumten's fang",
+        "Tumeken's shadow",
+        "Elidinis' ward",
+        "Lightbearer",
+        "Tumeken's guardian"
+      ]
+    },
+    {
+      "id": "boss-yama",
+      "label": "Yama and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Yama",
+      "parts": [
+        "Soulflame horn",
+        "Oathplate helm",
+        "Oathplate chest",
+        "Oathplate legs",
+        "Yami"
+      ]
+    },
+    {
+      "id": "yama-uniques",
+      "label": "Yama's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Soulflame horn",
+        "Oathplate helm",
+        "Oathplate chest",
+        "Oathplate legs",
+        "Yami"
+      ]
+    },
+    {
+      "id": "boss-amoxliatl",
+      "label": "Amoxliatl and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Amoxliatl",
+      "parts": [
+        "Glacial temotli",
+        "Pendant of ates",
+        "Moxi"
+      ]
+    },
+    {
+      "id": "amoxliatl-uniques",
+      "label": "Amoxliatl's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Glacial temotli",
+        "Pendant of ates",
+        "Moxi"
+      ]
+    },
+    {
+      "id": "boss-the-hueycoatl",
+      "label": "The Hueycoatl and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "The Hueycoatl",
+      "parts": [
+        "Dragon hunter wand",
+        "Hueycoatl hide",
+        "Tome of earth",
+        "Soiled page",
+        "Huberte"
+      ]
+    },
+    {
+      "id": "the-hueycoatl-uniques",
+      "label": "The Hueycoatl's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Dragon hunter wand",
+        "Hueycoatl hide",
+        "Tome of earth",
+        "Soiled page",
+        "Huberte"
+      ]
+    },
+    {
+      "id": "boss-doom-of-mokhaiotl",
+      "label": "Doom of Mokhaiotl and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Doom of Mokhaiotl",
+      "parts": [
+        "Mokhaiotl cloth",
+        "Eye of ayak",
+        "Avernic treads",
+        "Dom"
+      ]
+    },
+    {
+      "id": "doom-of-mokhaiotl-uniques",
+      "label": "Doom of Mokhaiotl's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Mokhaiotl cloth",
+        "Eye of ayak",
+        "Avernic treads",
+        "Dom"
+      ]
+    },
+    {
+      "id": "boss-araxxor",
+      "label": "Araxxor and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Araxxor",
+      "parts": [
+        "Noxious pommel",
+        "Noxious point",
+        "Noxious blade",
+        "Araxyte fang",
+        "Nid"
+      ]
+    },
+    {
+      "id": "araxxor-uniques",
+      "label": "Araxxor's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Noxious pommel",
+        "Noxious point",
+        "Noxious blade",
+        "Araxyte fang",
+        "Nid"
+      ]
+    },
+    {
+      "id": "boss-crystalline-hunllef",
+      "label": "Crystalline Hunllef and the Gauntlet's uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Crystalline Hunllef",
+      "note": "Gauntlet cape excluded - a guaranteed completion reward from Corrupted Hunllef, not part of the RNG unique table.",
+      "parts": [
+        "Crystal weapon seed",
+        "Crystal armour seed",
+        "Enhanced crystal weapon seed",
+        "Youngllef"
+      ]
+    },
+    {
+      "id": "boss-corrupted-hunllef",
+      "label": "Corrupted Hunllef and the Gauntlet's uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Corrupted Hunllef",
+      "note": "Gauntlet cape excluded - a guaranteed completion reward, not part of the RNG unique table.",
+      "parts": [
+        "Crystal weapon seed",
+        "Crystal armour seed",
+        "Enhanced crystal weapon seed",
+        "Youngllef"
+      ]
+    },
+    {
+      "id": "gauntlet-uniques",
+      "label": "The Gauntlet's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Crystal weapon seed",
+        "Crystal armour seed",
+        "Enhanced crystal weapon seed",
+        "Youngllef"
+      ]
+    },
+    {
+      "id": "boss-blood-moon",
+      "label": "Blood Moon and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Blood Moon",
+      "parts": [
+        "Blood moon helm",
+        "Blood moon chestplate",
+        "Blood moon tassets",
+        "Dual macuahuitl"
+      ]
+    },
+    {
+      "id": "blood-moon-uniques",
+      "label": "Blood Moon's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Blood moon helm",
+        "Blood moon chestplate",
+        "Blood moon tassets",
+        "Dual macuahuitl"
+      ]
+    },
+    {
+      "id": "boss-blue-moon",
+      "label": "Blue Moon and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Blue Moon",
+      "parts": [
+        "Blue moon helm",
+        "Blue moon chestplate",
+        "Blue moon tassets",
+        "Blue moon spear"
+      ]
+    },
+    {
+      "id": "blue-moon-uniques",
+      "label": "Blue Moon's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Blue moon helm",
+        "Blue moon chestplate",
+        "Blue moon tassets",
+        "Blue moon spear"
+      ]
+    },
+    {
+      "id": "boss-eclipse-moon",
+      "label": "Eclipse Moon and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Eclipse Moon",
+      "parts": [
+        "Eclipse moon helm",
+        "Eclipse moon chestplate",
+        "Eclipse moon tassets",
+        "Eclipse atlatl",
+        "Atlatl dart"
+      ]
+    },
+    {
+      "id": "eclipse-moon-uniques",
+      "label": "Eclipse Moon's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Eclipse moon helm",
+        "Eclipse moon chestplate",
+        "Eclipse moon tassets",
+        "Eclipse atlatl",
+        "Atlatl dart"
+      ]
+    },
+    {
+      "id": "boss-chaos-fanatic",
+      "label": "Chaos Fanatic and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Chaos Fanatic",
+      "note": "Pet chaos elemental also drops here but is excluded - already governed by Chaos Elemental's uniques set (DEC-0043). Odium/Malediction shard 1 are Chaos Fanatic-specific only, not connected to the other two shard-dropping bosses or the assembled wards.",
+      "parts": [
+        "Ancient staff",
+        "Odium shard 1",
+        "Malediction shard 1"
+      ]
+    },
+    {
+      "id": "chaos-fanatic-uniques",
+      "label": "Chaos Fanatic's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Ancient staff",
+        "Odium shard 1",
+        "Malediction shard 1"
+      ]
+    },
+    {
+      "id": "boss-crazy-archaeologist",
+      "label": "Crazy archaeologist and its uniques",
+      "kind": "composite",
+      "tags": [
+        "boss"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Crazy archaeologist",
+      "note": "Odium/Malediction shard 2 are Crazy archaeologist-specific only, not connected to the other two shard-dropping bosses or the assembled wards.",
+      "parts": [
+        "Fedora",
+        "Odium shard 2",
+        "Malediction shard 2"
+      ]
+    },
+    {
+      "id": "crazy-archaeologist-uniques",
+      "label": "Crazy archaeologist's uniques",
+      "kind": "set",
+      "tags": [
+        "boss-uniques"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Fedora",
+        "Odium shard 2",
+        "Malediction shard 2"
       ]
     }
   ]
