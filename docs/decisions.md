@@ -1076,3 +1076,198 @@ Ashes, Infernal ashes, Eldritch ashes, and Ground ashes were in the dataset but 
 **Rationale.** Per the maintainer: "unresolved and solo item should be two separate categories. Unresolved is literally unresolved, solo item means an item that unlocks itself and nothing else." Showing "There is no agreed rule for this card yet" plus a "positions people hold" debate about e.g. Abyssal book - which has no sibling item to relate it to at all - misrepresented a non-question as an open one. The data-layer behaviour from DEC-0061 (the searched card is always unlocked) stays exactly right; only the UI framing needed to stop treating "nothing to relate this to" the same as "genuinely caught between camps."
 
 **Source.** the maintainer, this session (2026-08-02): screenshot of the Abyssal book result showing the undecided banner, with "the section for undecided still appears when an item only unlocks itself, this needs to not show for single unlock items"; then, mid-implementation, "unresolved and solo item should be two separate categories. Unresolved is literally unresolved, solo item means an item that unlocks itself and nothing else" - correcting the first pass, which had collapsed the no-family case into a bare `renderUnlocks` call with no distinguishing copy at all.
+
+---
+
+### DEC-0063 - Demonic Pacts (Leagues) rewards grouped; general leagues-reward principle established
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Impish whistle, Demonic trident ornament kit, Demonic axe ornament kit, Demonic staff ornament kit, Demonic quill, and Demonic skin contract grouped as the Demonic Pacts league's reward set - foiling any one unlocks the rest. Uses the existing `community-set-group` rule/tag.
+
+Of the maintainer's full 13-item Leagues VI reward list (from the GE price table), only these 6 exist as cards in this dataset - "Demonic skin sample" doesn't exist exactly but "Demonic skin contract" was confirmed as the same reward under a different name; the banner, the three Relic Hunter trophy tiers, the throne scroll, the Impish ritual scroll, and the demon butler scroll aren't cards here at all, so they're simply excluded.
+
+**General principle (applies going forward, not just this league).** Leagues reward-shop items are scoped per league: a foil of any reward from a given league's shop unlocks every other reward from that same league's shop (that exists as a card), and nothing from any other league. This is the same `community-set-group` shape used for minigame/event reward groups elsewhere (DEC-0013/0044/0050) - each future league gets its own `community-set`-tagged `set` family as its rewards are worked through in the alphabetical item pass.
+
+**Source.** the maintainer, this session (2026-08-02): "I've just unlocked impish whistle foil in game... it's a leagues 6 reward so this one (and any other leagues 6 reward) should unlock the other league 6 rewards. This rule goes for all leagues rewards for that specific league." - followed by the Domain of Despair/Demonic Pacts GE price table listing the 13 rewards; confirmed including Demonic skin contract despite the name mismatch.
+
+---
+
+### DEC-0064 - Accursed sceptre grouped with Thammaron's sceptre; the Blessed bones ladder added
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.**
+
+- **Accursed sceptre** grouped with **Thammaron's sceptre** - foiling either unlocks both. Uses the existing `community-set-group` rule/tag.
+- **Blessed bones ladder** added, lowest to highest: Blessed bones < Blessed bat bones < Blessed big bones < Blessed zogre bones < Blessed babywyrm bones < Blessed babydragon bones < Blessed strykewyrm bones < Blessed wyrm bones < Sun-kissed bones < Blessed wyvern bones < Blessed dragon bones < Blessed drake bones < Blessed fayrg bones < Blessed lava dragon bones < Blessed raurg bones < Blessed frost dragon bones < Blessed hydra bones < Blessed ourg bones < Blessed superior dragon bones. Uses the existing `resource-ladder-down` rule via the `resource` tag.
+  - Blessed dagannoth bones is skipped - it isn't a card in this dataset (only unblessed Dagannoth bones is).
+  - Blessed bone statuette is deliberately excluded from the ladder, per the maintainer's explicit "not blessed bone statuette."
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks Thamarons sceptre" (confirmed correct spelling "Thammaron's sceptre" via screenshot after an initial not-found check); "I've also just unlocked blessed superior dragon bones which would ladder unlock the blessed bones below it, see screenshot, but not blessed bone statuette", followed by a wiki XP-rates table confirming the tier order and Sun-kissed bones' position; confirmed skipping Blessed dagannoth bones since it isn't a card here.
+
+---
+
+### DEC-0065 - Regular tree seeds laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Tree seeds", lowest to highest: Acorn < Willow seed < Maple seed < Yew seed < Magic seed. Uses the existing `resource-ladder-down` rule via the `resource` tag. Fruit tree and hardwood tree seeds are a separate ladder, deferred until the alphabetical item pass reaches them.
+
+**Source.** the maintainer, this session (2026-08-02): "just unlocks acorn seeds as it's the lowest tree seed"; "Acorn > willow > maple > Yew > Magic for regular trees. There are fruit tree and hardwood trees but we'll cover those when we get to them."
+
+---
+
+### DEC-0066 - Canes laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Canes", lowest to highest: Black cane < Adamant cane < Rune cane < Dragon cane. Uses the existing `weapon-ladder-down` rule via the `weapon` tag.
+
+**Source.** the maintainer, this session (2026-08-02): "There are 4 canes. Dragon > Rune > Adamant > Black."
+
+---
+
+### DEC-0067 - Adamant seeds grouped with Mithril seeds
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Adamant seeds and Mithril seeds grouped - foiling either unlocks both. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks mithril seeds and vice versa".
+
+---
+
+### DEC-0068 - Ore fragments laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Ore fragments", lowest to highest: Iron ore fragment < Silver ore fragment < Coal fragment < Gold ore fragment < Mithril ore fragment < Adamantite ore fragment < Runite ore fragment. Uses the existing `resource-ladder-down` rule via the `resource` tag.
+
+**Source.** the maintainer, this session (2026-08-02): provided the full fragment tier table ("part of a tree") confirming the order and level requirements.
+
+---
+
+### DEC-0069 - Potion packs laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Potion packs", lowest to highest: Apprentice potion pack < Adept potion pack < Expert potion pack. Uses the existing `resource-ladder-down` rule via the `resource` tag.
+
+**Source.** the maintainer, this session (2026-08-02): provided the resin-ratio table for the three packs; confirmed "Apprentice < Adept < Expert ladder" as the tier order.
+
+---
+
+### DEC-0070 - Aether rune added to the combination rune ladder
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Aether rune added as the top rung of the existing `combination-rune` ladder, above Lava rune. Uses the existing `combination-rune-ladder-down` rule - no new rule needed.
+
+**Source.** the maintainer, this session (2026-08-02): "laddered combination rune" followed by the rune-creation level/component table confirming Aether (level 90) sits above the six standard combination runes (Mist through Lava, already laddered).
+
+---
+
+### DEC-0071 - Resin pastes grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Aga paste, Mox paste, and Lye paste grouped flat - foiling any unlocks all three. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "flat group with Mox and Lye paste".
+
+---
+
+### DEC-0072 - Potion mixes laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Potion mixes", lowest to highest by Herblore level: Attack mix < Antipoison mix < Relicym's mix < Strength mix < Restore mix < Energy mix < Defence mix < Agility mix < Combat mix < Prayer mix < Superattack mix < Anti-poison supermix < Fishing mix < Super energy mix < Hunting mix < Super str. mix < Magic essence mix < Super restore mix < Super def. mix < Antidote+ mix < Antifire mix < Ranging mix < Magic mix < Zamorak mix < Stamina mix < Extended antifire mix < Ancient mix < Super antifire mix < Extended super antifire mix. Uses the existing `resource-ladder-down` rule via the `resource` tag - a foil grants the `use` verb on that tier and below; each mix still needs its own ingredients to actually make.
+
+**Source.** the maintainer, this session (2026-08-02): full Herblore level/XP table for all 29 mixes ("part of a tree"), confirming order and that "each potion still needs the relevant ingredients to make them."
+
+---
+
+### DEC-0073 - Potions laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Potions", 49 tiers lowest to highest by Herblore level: Imp repellent < Attack potion < Antipoison < Relicym's balm < Strength potion < Restore potion < Guthix balance < Energy potion < Defence potion < Agility potion < Combat potion < Prayer potion < Super attack < Superantipoison < Fishing potion < Super energy < Hunter potion < Goading potion < Super strength < Prayer regeneration potion < Super fishing potion < Super restore < Sanfew serum < Extreme energy potion < Super defence < Super hunter potion < Antidote+ < Antifire potion < Ranging potion < Magic potion < Stamina potion < Zamorak brew < Antidote++ < Bastion potion < Battlemage potion < Saradomin brew < Surge potion < Extended antifire < Ancient brew < Extended stamina potion < Anti-venom < Menaphite remedy < Armadyl brew < Super combat potion < Forgotten brew < Super antifire potion < Anti-venom+ < Extended anti-venom+ < Extended super antifire. Uses the existing `resource-ladder-down` rule via the `resource` tag - each tier still needs its own ingredients to make.
+
+Deliberately excluded, per the maintainer: the 8 Divine-tier potions (they boost the same as their base potion with no degradation, a different mechanic), and non-drinkable herblore products - Haemostatic poultice/dressing (applied to a wound), Blamish oil (poured on a fishing rod), Compost potion (poured on compost), and Weapon poison/+/++  (applied to weapons, not drunk). Also excluded because they don't exist as cards in this dataset: Serum 207, Guthix rest tea, Goblin potion, Shrink-me-quick, and Magic essence (only "Magic essence mix," a separate item on the DEC-0072 potion-mix ladder, exists).
+
+**Source.** the maintainer, this session (2026-08-02): full Herblore potion table with levels, ingredients and effects; "Potions are a tree, though divine pots and none pot items should not be included in the tree... an unlocked pot can be consumed but still need the items to create them"; clarified the non-pot exclusion as "exclude non drinkable items but poison related pots can be included"; confirmed the specific exclusion list (poultice/dressing, oil, compost potion, weapon poisons, Divine tier).
+
+---
+
+### DEC-0074 - Temple Trekking tomes grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** The 7 Temple Trekking skill tomes (Agility, Firemaking, Fishing, Mining, Slayer, Thieving, Woodcutting) grouped flat - foiling any one unlocks all 7. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks all temple trekking tomes" followed by the list of 7 skills.
+
+---
+
+### DEC-0075 - Elemental staves laddered (basic, battlestaves, mystic - three separate trees)
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Three separate `ladder-down` families, each lowest to highest Air < Water < Earth < Fire:
+
+- **Basic elemental staves**: Staff of air < Staff of water < Staff of earth < Staff of fire.
+- **Elemental battlestaves**: Air battlestaff < Water battlestaff < Earth battlestaff < Fire battlestaff.
+- **Mystic elemental staves**: Mystic air staff < Mystic water staff < Mystic earth staff < Mystic fire staff.
+
+Each uses the existing `weapon-ladder-down` rule via the `weapon` tag. The three tiers (basic/battlestaff/mystic) are kept as separate ladders rather than one combined one, per the maintainer.
+
+**Source.** the maintainer, this session (2026-08-02): "there are 3 types of elemental staff, basic, battlestaves, mystic, each should be their own laddered tree from fire down to air" followed by the rune-provided/GE-price table confirming all 12 items and the air-water-earth-fire order.
+
+---
+
+### DEC-0076 - Elemental orbs laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Elemental orbs", lowest to highest by Magic level to charge: Water orb < Earth orb < Fire orb < Air orb. Uses the existing `resource-ladder-down` rule via the `resource` tag.
+
+**Source.** the maintainer, this session (2026-08-02): "laddered with other orbs" followed by the obelisk/charge-spell Magic level table confirming the order (Water 56 < Earth 60 < Fire 63 < Air 66).
+
+---
+
+### DEC-0077 - Elemental rune packs laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Elemental rune packs", lowest to highest: Air rune pack < Water rune pack < Earth rune pack < Fire rune pack. Uses the existing `resource-ladder-down` rule via the `resource` tag. Same order as the elemental orb/staff ladders (DEC-0075/0076).
+
+**Source.** the maintainer, this session (2026-08-02): "ladder: air > water> earth>fire" (initially read as highest-to-lowest, giving Fire as the lowest tier - corrected immediately after: "flip the order for those rune packs").
+
+---
+
+### DEC-0078 - Talismans laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Talismans", lowest to highest by Runecraft level: (Air talisman / Elemental talisman) < (Mind talisman / Catalytic talisman) < Water talisman < Earth talisman < Fire talisman < Body talisman < Cosmic talisman < Chaos talisman < Nature talisman < Law talisman < Blood talisman < Wrath talisman. Uses the existing `resource-ladder-down` rule via the `resource` tag.
+
+Elemental talisman and Catalytic talisman are combination talismans sharing Runecraft levels 1 and 2 with Air and Mind respectively, so they sit on the same rungs rather than getting separate tiers. Death talisman is skipped - it isn't a card in this dataset.
+
+**Source.** the maintainer, this session (2026-08-02): "laddered:" followed by the full Runecraft-level talisman table; then mid-turn, "also in the ladder:" adding Cosmic/Chaos/Nature/Law/Death/Blood/Wrath and the two combination talismans; confirmed skipping Death and placing Elemental/Catalytic alongside Air/Mind.

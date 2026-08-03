@@ -4,12 +4,12 @@ import { esc } from './ui/html.ts'
 import { renderShell } from './ui/shell.ts'
 
 /**
- * Coverage as of the last `npm run validate-rules` run (Phase 7 round 1 data). This
- * is a hand-updated number, not a live computation - About is a separate, lightweight
- * Vite entry that should not pull in the ~2.6 MB rules dataset just to count it.
- * Re-check it whenever `data/` changes and update this line alongside.
+ * Coverage as of the last `npm run validate-rules` run (DEC-0078, alphabetical item
+ * pass). This is a hand-updated number, not a live computation - About is a separate,
+ * lightweight Vite entry that should not pull in the ~2.6 MB rules dataset just to
+ * count it. Re-check it whenever `data/` changes and update this line alongside.
  */
-const COVERAGE = { resolved: 790, total: 6376 }
+const COVERAGE = { resolved: 1491, total: 6376 }
 const coveragePct = ((COVERAGE.resolved / COVERAGE.total) * 100).toFixed(1)
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderShell(

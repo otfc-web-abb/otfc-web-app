@@ -814,17 +814,17 @@ describe('the sweep', () => {
       counts.set(s, (counts.get(s) ?? 0) + 1)
     }
 
-    assert.equal(counts.get('ladder-down'), 540)
+    assert.equal(counts.get('ladder-down'), 691)
     assert.equal(counts.get('state-pair'), 190)
-    assert.equal(counts.get('group'), 487)
+    assert.equal(counts.get('group'), 507)
     assert.equal(counts.get('components'), 103)
-    assert.equal(counts.get('unresolved'), 5056)
+    assert.equal(counts.get('unresolved'), 4885)
     assert.equal(
       counts.get('ladder-down')! +
         counts.get('state-pair')! +
         counts.get('group')! +
         counts.get('components')!,
-      1320,
+      1491,
     )
   })
 })

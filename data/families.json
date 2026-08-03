@@ -1265,6 +1265,12 @@
           "members": [
             "Lava rune"
           ]
+        },
+        {
+          "tier": "aether",
+          "members": [
+            "Aether rune"
+          ]
         }
       ]
     },
@@ -8030,6 +8036,412 @@
         { "tier": "malicious", "members": ["Malicious ashes"] },
         { "tier": "abyssal", "members": ["Abyssal ashes"] },
         { "tier": "infernal", "members": ["Infernal ashes"] }
+      ]
+    },
+    {
+      "id": "talisman",
+      "label": "Talismans",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Death talisman is skipped - not a card in this dataset. Elemental and Catalytic talismans are combination talismans sharing Runecraft levels 1 and 2 with Air and Mind, so they sit on the same rungs.",
+      "rungs": [
+        { "tier": "air", "members": ["Air talisman", "Elemental talisman"] },
+        { "tier": "mind", "members": ["Mind talisman", "Catalytic talisman"] },
+        { "tier": "water", "members": ["Water talisman"] },
+        { "tier": "earth", "members": ["Earth talisman"] },
+        { "tier": "fire", "members": ["Fire talisman"] },
+        { "tier": "body", "members": ["Body talisman"] },
+        { "tier": "cosmic", "members": ["Cosmic talisman"] },
+        { "tier": "chaos", "members": ["Chaos talisman"] },
+        { "tier": "nature", "members": ["Nature talisman"] },
+        { "tier": "law", "members": ["Law talisman"] },
+        { "tier": "blood", "members": ["Blood talisman"] },
+        { "tier": "wrath", "members": ["Wrath talisman"] }
+      ]
+    },
+    {
+      "id": "elemental-rune-pack",
+      "label": "Elemental rune packs",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        { "tier": "air", "members": ["Air rune pack"] },
+        { "tier": "water", "members": ["Water rune pack"] },
+        { "tier": "earth", "members": ["Earth rune pack"] },
+        { "tier": "fire", "members": ["Fire rune pack"] }
+      ]
+    },
+    {
+      "id": "elemental-orb",
+      "label": "Elemental orbs",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        { "tier": "water", "members": ["Water orb"] },
+        { "tier": "earth", "members": ["Earth orb"] },
+        { "tier": "fire", "members": ["Fire orb"] },
+        { "tier": "air", "members": ["Air orb"] }
+      ]
+    },
+    {
+      "id": "basic-elemental-staff",
+      "label": "Basic elemental staves",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        { "tier": "air", "members": ["Staff of air"] },
+        { "tier": "water", "members": ["Staff of water"] },
+        { "tier": "earth", "members": ["Staff of earth"] },
+        { "tier": "fire", "members": ["Staff of fire"] }
+      ]
+    },
+    {
+      "id": "elemental-battlestaff",
+      "label": "Elemental battlestaves",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        { "tier": "air", "members": ["Air battlestaff"] },
+        { "tier": "water", "members": ["Water battlestaff"] },
+        { "tier": "earth", "members": ["Earth battlestaff"] },
+        { "tier": "fire", "members": ["Fire battlestaff"] }
+      ]
+    },
+    {
+      "id": "mystic-elemental-staff",
+      "label": "Mystic elemental staves",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        { "tier": "air", "members": ["Mystic air staff"] },
+        { "tier": "water", "members": ["Mystic water staff"] },
+        { "tier": "earth", "members": ["Mystic earth staff"] },
+        { "tier": "fire", "members": ["Mystic fire staff"] }
+      ]
+    },
+    {
+      "id": "temple-trekking-tomes-set",
+      "label": "Temple Trekking tomes",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Agility tome",
+        "Firemaking tome",
+        "Fishing tome",
+        "Mining tome",
+        "Slayer tome",
+        "Thieving tome",
+        "Woodcutting tome"
+      ]
+    },
+    {
+      "id": "potion",
+      "label": "Potions",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Non-drinkable herblore products (poultices/dressings, oils, weapon poisons, compost potion) and Divine-tier potions are deliberately excluded. A foil unlocks the use verb on that tier and below - each potion still needs its own ingredients to make.",
+      "rungs": [
+        { "tier": "imp-repellent", "members": ["Imp repellent"] },
+        { "tier": "attack", "members": ["Attack potion"] },
+        { "tier": "antipoison", "members": ["Antipoison"] },
+        { "tier": "relicyms-balm", "members": ["Relicym's balm"] },
+        { "tier": "strength", "members": ["Strength potion"] },
+        { "tier": "restore", "members": ["Restore potion"] },
+        { "tier": "guthix-balance", "members": ["Guthix balance"] },
+        { "tier": "energy", "members": ["Energy potion"] },
+        { "tier": "defence", "members": ["Defence potion"] },
+        { "tier": "agility", "members": ["Agility potion"] },
+        { "tier": "combat", "members": ["Combat potion"] },
+        { "tier": "prayer", "members": ["Prayer potion"] },
+        { "tier": "superattack", "members": ["Super attack"] },
+        { "tier": "superantipoison", "members": ["Superantipoison"] },
+        { "tier": "fishing", "members": ["Fishing potion"] },
+        { "tier": "super-energy", "members": ["Super energy"] },
+        { "tier": "hunter", "members": ["Hunter potion"] },
+        { "tier": "goading", "members": ["Goading potion"] },
+        { "tier": "super-strength", "members": ["Super strength"] },
+        { "tier": "prayer-regeneration", "members": ["Prayer regeneration potion"] },
+        { "tier": "super-fishing", "members": ["Super fishing potion"] },
+        { "tier": "super-restore", "members": ["Super restore"] },
+        { "tier": "sanfew-serum", "members": ["Sanfew serum"] },
+        { "tier": "extreme-energy", "members": ["Extreme energy potion"] },
+        { "tier": "super-defence", "members": ["Super defence"] },
+        { "tier": "super-hunter", "members": ["Super hunter potion"] },
+        { "tier": "antidote-plus", "members": ["Antidote+"] },
+        { "tier": "antifire", "members": ["Antifire potion"] },
+        { "tier": "ranging", "members": ["Ranging potion"] },
+        { "tier": "magic", "members": ["Magic potion"] },
+        { "tier": "stamina", "members": ["Stamina potion"] },
+        { "tier": "zamorak-brew", "members": ["Zamorak brew"] },
+        { "tier": "antidote-plusplus", "members": ["Antidote++"] },
+        { "tier": "bastion", "members": ["Bastion potion"] },
+        { "tier": "battlemage", "members": ["Battlemage potion"] },
+        { "tier": "saradomin-brew", "members": ["Saradomin brew"] },
+        { "tier": "surge", "members": ["Surge potion"] },
+        { "tier": "extended-antifire", "members": ["Extended antifire"] },
+        { "tier": "ancient-brew", "members": ["Ancient brew"] },
+        { "tier": "extended-stamina", "members": ["Extended stamina potion"] },
+        { "tier": "anti-venom", "members": ["Anti-venom"] },
+        { "tier": "menaphite-remedy", "members": ["Menaphite remedy"] },
+        { "tier": "armadyl-brew", "members": ["Armadyl brew"] },
+        { "tier": "super-combat", "members": ["Super combat potion"] },
+        { "tier": "forgotten-brew", "members": ["Forgotten brew"] },
+        { "tier": "super-antifire", "members": ["Super antifire potion"] },
+        { "tier": "anti-venom-plus", "members": ["Anti-venom+"] },
+        { "tier": "extended-anti-venom-plus", "members": ["Extended anti-venom+"] },
+        { "tier": "extended-super-antifire", "members": ["Extended super antifire"] }
+      ]
+    },
+    {
+      "id": "potion-mix",
+      "label": "Potion mixes",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "A foil unlocks the use verb on every mix at this tier and below - each mix still needs its own ingredients to make.",
+      "rungs": [
+        { "tier": "attack", "members": ["Attack mix"] },
+        { "tier": "antipoison", "members": ["Antipoison mix"] },
+        { "tier": "relicyms", "members": ["Relicym's mix"] },
+        { "tier": "strength", "members": ["Strength mix"] },
+        { "tier": "restore", "members": ["Restore mix"] },
+        { "tier": "energy", "members": ["Energy mix"] },
+        { "tier": "defence", "members": ["Defence mix"] },
+        { "tier": "agility", "members": ["Agility mix"] },
+        { "tier": "combat", "members": ["Combat mix"] },
+        { "tier": "prayer", "members": ["Prayer mix"] },
+        { "tier": "superattack", "members": ["Superattack mix"] },
+        { "tier": "anti-poison-super", "members": ["Anti-poison supermix"] },
+        { "tier": "fishing", "members": ["Fishing mix"] },
+        { "tier": "super-energy", "members": ["Super energy mix"] },
+        { "tier": "hunting", "members": ["Hunting mix"] },
+        { "tier": "super-strength", "members": ["Super str. mix"] },
+        { "tier": "magic-essence", "members": ["Magic essence mix"] },
+        { "tier": "super-restore", "members": ["Super restore mix"] },
+        { "tier": "super-defence", "members": ["Super def. mix"] },
+        { "tier": "antidote-plus", "members": ["Antidote+ mix"] },
+        { "tier": "antifire", "members": ["Antifire mix"] },
+        { "tier": "ranging", "members": ["Ranging mix"] },
+        { "tier": "magic", "members": ["Magic mix"] },
+        { "tier": "zamorak", "members": ["Zamorak mix"] },
+        { "tier": "stamina", "members": ["Stamina mix"] },
+        { "tier": "extended-antifire", "members": ["Extended antifire mix"] },
+        { "tier": "ancient", "members": ["Ancient mix"] },
+        { "tier": "super-antifire", "members": ["Super antifire mix"] },
+        { "tier": "extended-super-antifire", "members": ["Extended super antifire mix"] }
+      ]
+    },
+    {
+      "id": "resin-paste-set",
+      "label": "Resin pastes",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Aga paste",
+        "Mox paste",
+        "Lye paste"
+      ]
+    },
+    {
+      "id": "potion-pack",
+      "label": "Potion packs",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        { "tier": "apprentice", "members": ["Apprentice potion pack"] },
+        { "tier": "adept", "members": ["Adept potion pack"] },
+        { "tier": "expert", "members": ["Expert potion pack"] }
+      ]
+    },
+    {
+      "id": "ore-fragment",
+      "label": "Ore fragments",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        { "tier": "iron", "members": ["Iron ore fragment"] },
+        { "tier": "silver", "members": ["Silver ore fragment"] },
+        { "tier": "coal", "members": ["Coal fragment"] },
+        { "tier": "gold", "members": ["Gold ore fragment"] },
+        { "tier": "mithril", "members": ["Mithril ore fragment"] },
+        { "tier": "adamantite", "members": ["Adamantite ore fragment"] },
+        { "tier": "runite", "members": ["Runite ore fragment"] }
+      ]
+    },
+    {
+      "id": "adamant-mithril-seeds-set",
+      "label": "Adamant and Mithril seeds",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Adamant seeds",
+        "Mithril seeds"
+      ]
+    },
+    {
+      "id": "cane",
+      "label": "Canes",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "rungs": [
+        { "tier": "black", "members": ["Black cane"] },
+        { "tier": "adamant", "members": ["Adamant cane"] },
+        { "tier": "rune", "members": ["Rune cane"] },
+        { "tier": "dragon", "members": ["Dragon cane"] }
+      ]
+    },
+    {
+      "id": "tree-seed",
+      "label": "Tree seeds",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "plant"
+      ],
+      "note": "Regular trees only - fruit tree and hardwood tree seeds are separate and get their own ladders when the alphabetical item pass reaches them.",
+      "rungs": [
+        { "tier": "acorn", "members": ["Acorn"] },
+        { "tier": "willow", "members": ["Willow seed"] },
+        { "tier": "maple", "members": ["Maple seed"] },
+        { "tier": "yew", "members": ["Yew seed"] },
+        { "tier": "magic", "members": ["Magic seed"] }
+      ]
+    },
+    {
+      "id": "blessed-bones",
+      "label": "Blessed bones",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        { "tier": "blessed-bones", "members": ["Blessed bones"] },
+        { "tier": "bat", "members": ["Blessed bat bones"] },
+        { "tier": "big", "members": ["Blessed big bones"] },
+        { "tier": "zogre", "members": ["Blessed zogre bones"] },
+        { "tier": "babywyrm", "members": ["Blessed babywyrm bones"] },
+        { "tier": "babydragon", "members": ["Blessed babydragon bones"] },
+        { "tier": "strykewyrm", "members": ["Blessed strykewyrm bones"] },
+        { "tier": "wyrm", "members": ["Blessed wyrm bones"] },
+        { "tier": "sun-kissed", "members": ["Sun-kissed bones"] },
+        { "tier": "wyvern", "members": ["Blessed wyvern bones"] },
+        { "tier": "dragon", "members": ["Blessed dragon bones"] },
+        { "tier": "drake", "members": ["Blessed drake bones"] },
+        { "tier": "fayrg", "members": ["Blessed fayrg bones"] },
+        { "tier": "lava-dragon", "members": ["Blessed lava dragon bones"] },
+        { "tier": "raurg", "members": ["Blessed raurg bones"] },
+        { "tier": "frost-dragon", "members": ["Blessed frost dragon bones"] },
+        { "tier": "hydra", "members": ["Blessed hydra bones"] },
+        { "tier": "ourg", "members": ["Blessed ourg bones"] },
+        { "tier": "superior-dragon", "members": ["Blessed superior dragon bones"] }
+      ]
+    },
+    {
+      "id": "accursed-thammaron-sceptre-set",
+      "label": "Accursed sceptre and Thammaron's sceptre",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "members": [
+        "Accursed sceptre",
+        "Thammaron's sceptre"
+      ]
+    },
+    {
+      "id": "leagues-6-demonic-pacts-set",
+      "label": "Demonic Pacts league rewards",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Impish whistle",
+        "Demonic trident ornament kit",
+        "Demonic axe ornament kit",
+        "Demonic staff ornament kit",
+        "Demonic quill",
+        "Demonic skin contract"
       ]
     },
     {
