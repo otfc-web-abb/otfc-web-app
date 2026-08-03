@@ -101,9 +101,9 @@ export function renderLanding(): string {
       <section class="landing__section">
         <p class="coverage">
           <span class="coverage__pct">${pct}%</span>
-          <span class="coverage__of">${resolved} of ${total} cards resolve to a sourced ruling</span>
+          <span class="coverage__of">${resolved} of ${total} cards resolve to a ruling</span>
         </p>
-        <div class="coverage__bar" role="img" aria-label="${pct} per cent of cards have a sourced ruling">
+        <div class="coverage__bar" role="img" aria-label="${pct} per cent of cards have a ruling">
           <div class="coverage__fill" style="width: ${pct}%"></div>
         </div>
       </section>
