@@ -154,7 +154,6 @@ export function renderLadder(resolution: Resolution): string {
       <p class="ladder__caption">${CAPTIONS[strategy] ?? ''}</p>
       ${body}
       <p class="ladder__tally">${tally}</p>
-      ${family.note ? `<p class="ladder__note">${esc(family.note)}</p>` : ''}
     </section>
   `
 }

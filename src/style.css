@@ -351,6 +351,44 @@ body.has-result #landing-root {
   color: var(--body);
 }
 
+.feedback {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s3);
+}
+
+/* Green invites, red reports - the two accents the palette already uses for
+   unlocked and locked, so neither reads as page chrome. */
+.feedback__button {
+  padding: var(--s2) var(--s4);
+  font-size: 14px;
+  color: var(--ink);
+  text-shadow: var(--cut);
+}
+
+.feedback__button--go {
+  background-image: linear-gradient(#3f7534, #2b5424);
+  border-color: #14210f;
+}
+
+.feedback__button--go:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.14),
+    0 0 0 3px rgb(107 220 99 / 0.4);
+}
+
+.feedback__button--bug {
+  background-image: linear-gradient(#9c3b31, #71271f);
+  border-color: #26100c;
+}
+
+.feedback__button--bug:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.14),
+    0 0 0 3px rgb(255 111 98 / 0.4);
+}
+
 .steps {
   list-style: none;
   margin: 0;
