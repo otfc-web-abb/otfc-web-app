@@ -13,15 +13,15 @@ import { esc } from './html.ts'
 const STEPS = [
   {
     label: 'Search the card',
-    body: 'Type the item you pulled as a foil. Card names come straight from the plugin.',
+    body: 'Type the item you pulled as a foil.',
   },
   {
     label: 'Read the ruling',
-    body: 'What it unlocks, what stays locked, and which rule decided it - shown side by side.',
+    body: 'What it unlocks, what stays locked, and which rule decided it.',
   },
   {
     label: 'Check the source',
-    body: 'Every ruling cites where it came from. No source, no ruling - it shows as undecided instead.',
+    body: 'No source, no ruling - it shows as undecided instead.',
   },
 ]
 
