@@ -362,6 +362,19 @@ body.has-result #landing-root {
   color: var(--body);
 }
 
+/* The main invite leads, in Discord's own blurple so it reads as the platform
+   rather than as another site control. */
+.discord-link {
+  gap: var(--s2);
+  margin-bottom: var(--s3);
+  padding: var(--s3) var(--s5);
+  font-size: 15px;
+  color: #fff;
+  text-shadow: var(--cut);
+  background-image: linear-gradient(#7681ff, #5865f2);
+  border-color: #313b9e;
+}
+
 /* In the footer, so the two are reachable from any page without competing with
    the search for attention. */
 .feedback {
