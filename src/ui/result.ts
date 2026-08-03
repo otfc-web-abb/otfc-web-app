@@ -4,7 +4,7 @@
 
 import { resolve, type Resolution, type Ruleset, type Unlock } from '../rules/index.ts'
 import { actionBadges } from './actions.ts'
-import { CAMPS, CONFIDENCE_BLURBS, CONFIDENCE_LABELS, GUIDELINE_LINE, RULESET_BLURBS } from './copy.ts'
+import { CAMPS, CAMPS_SOURCE, CONFIDENCE_BLURBS, CONFIDENCE_LABELS, GUIDELINE_LINE, RULESET_BLURBS } from './copy.ts'
 import { esc, plural, wikiLink } from './html.ts'
 import { renderLadder } from './ladder.ts'
 
@@ -237,19 +237,20 @@ export function renderUnresolved(resolution: Resolution): string {
       <p class="principles__lede">
         These are the general arguments in circulation, not an answer for this card.
       </p>
-      <ul class="principles principles--compact">
+      <ul class="principles">
         ${CAMPS.map(
           (c) => `
           <li class="principles__item">
             <p class="principles__label">${esc(c.label)}</p>
             <p class="principles__weight">${esc(c.weight)}</p>
+            <p class="principles__body">${esc(c.body)}</p>
           </li>
         `,
         ).join('')}
       </ul>
       <p class="principles__source">
-        What each one argues, and how a ruling gets made, is on
-        <a class="link" href="/open-questions.html">Open questions</a>.
+        Summarised from
+        <a class="link" href="${esc(CAMPS_SOURCE.url)}" target="_blank" rel="noopener">${esc(CAMPS_SOURCE.label)}</a>.
       </p>
     </section>
   `

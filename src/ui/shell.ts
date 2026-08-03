@@ -2,12 +2,11 @@
 
 const NAV = [
   { href: '/', label: 'Search', key: 'search' },
-  { href: '/open-questions.html', label: 'Open questions', key: 'open-questions' },
   { href: '/about.html', label: 'About', key: 'about' },
 ]
 
 export function renderShell(
-  options: { current: 'search' | 'about' | 'open-questions' },
+  options: { current: 'search' | 'about' },
   body: string,
 ): string {
   return `

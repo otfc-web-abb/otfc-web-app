@@ -72,6 +72,18 @@ body {
   background-attachment: fixed;
 }
 
+/* The footer sits at the foot of the viewport on short pages - the search and the
+   unresolved screen are both short enough to leave a gap otherwise. */
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app {
+  flex: 1;
+}
+
 img {
   max-width: 100%;
 }
@@ -331,6 +343,12 @@ body.has-result #landing-root {
 
 .landing__section + .landing__section {
   margin-top: var(--s6);
+}
+
+.landing__lede {
+  margin: 0;
+  font-size: 15px;
+  color: var(--body);
 }
 
 .steps {

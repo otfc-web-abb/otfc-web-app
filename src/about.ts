@@ -3,15 +3,6 @@ import { CAMPS_SOURCE, GUIDELINE_LINE, RESOLUTION_ORDER } from './ui/copy.ts'
 import { esc } from './ui/html.ts'
 import { renderShell } from './ui/shell.ts'
 
-/**
- * Coverage as of the last `npm run validate-rules` run (DEC-0078, alphabetical item
- * pass). This is a hand-updated number, not a live computation - About is a separate,
- * lightweight Vite entry that should not pull in the ~2.6 MB rules dataset just to
- * count it. Re-check it whenever `data/` changes and update this line alongside.
- */
-const COVERAGE = { resolved: 1491, total: 6376 }
-const coveragePct = ((COVERAGE.resolved / COVERAGE.total) * 100).toFixed(1)
-
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderShell(
   { current: 'about' },
   `
@@ -29,23 +20,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderShell(
       <p class="about__body">
         A rule only ships with a stated source. Anything without one shows as
         <strong>not decided yet</strong> rather than a guess - being wrong is worse than being
-        incomplete. Where the community is split,
-        <a class="link" href="/open-questions.html">Open questions</a> sets out the positions.
-      </p>
-    </section>
-
-    <section class="result__section">
-      <h2 class="result__heading">Coverage right now</h2>
-      <p class="coverage">
-        <span class="coverage__pct">${coveragePct}%</span>
-        <span class="coverage__of">${COVERAGE.resolved} of ${COVERAGE.total} cards resolve to a sourced ruling</span>
-      </p>
-      <div class="coverage__bar" role="img" aria-label="${coveragePct} per cent of cards have a sourced ruling">
-        <div class="coverage__fill" style="width: ${coveragePct}%"></div>
-      </div>
-      <p class="about__body">
-        The rest show as <strong>unresolved</strong>. That number climbs as rules get worked out,
-        never in a hurry to fill a gap.
+        incomplete. Where the community is split, an undecided card shows the positions people hold
+        instead of picking one.
       </p>
     </section>
 

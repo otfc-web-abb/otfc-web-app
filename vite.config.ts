@@ -7,7 +7,6 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         about: resolve(__dirname, 'about.html'),
-        'open-questions': resolve(__dirname, 'open-questions.html'),
       },
     },
   },

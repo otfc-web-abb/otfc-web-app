@@ -35,33 +35,6 @@ export const CAMPS_SOURCE = {
   url: 'https://www.osrscardexchange.com/blog/foil-cards-what-people-say',
 }
 
-/**
- * The three places disagreement surfaces in the product. Written for the open-questions
- * page, whose job is to say that division is expected and already has somewhere to go -
- * so a player who disagrees with a result reads this rather than assuming an oversight.
- */
-export const DISAGREEMENT_MODES = [
-  {
-    label: 'The ruleset toggle',
-    body: 'All three readings sit on every result and you pick the one your group plays by. Standard, Extreme and Plain foil are three camps, not three difficulty settings.',
-  },
-  {
-    label: 'A caveat on the result',
-    body: 'Where a card had a real alternative reading that was considered and rejected, the result says so under the toggle.',
-  },
-  {
-    label: 'Not decided yet',
-    body: 'Where no answer can be defended, the card resolves to undecided - a designed outcome, not a gap waiting for a guess.',
-  },
-]
-
-/**
- * Genuinely open questions, each one already recorded as deferred in docs/decisions.md
- * or phased_plan.md. Hand-maintained: an entry leaves this list when a DEC entry answers
- * it, and answering one is what removes it - not quietly dropping it.
- */
-export const OPEN_QUESTIONS: { label: string; weight: string; body: string }[] = []
-
 /** docs/rules-spec.md section 7. Shown on About so a player can see which questions
  *  get asked, and in what order the first match wins. */
 export const RESOLUTION_ORDER = [

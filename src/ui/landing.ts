@@ -10,21 +10,6 @@ import cardsJson from '../data/cards.json' with { type: 'json' }
 import { resolve } from '../rules/index.ts'
 import { esc } from './html.ts'
 
-const STEPS = [
-  {
-    label: 'Search the card',
-    body: 'Type the item you pulled as a foil.',
-  },
-  {
-    label: 'Read the ruling',
-    body: 'What it unlocks, what stays locked, and which rule decided it.',
-  },
-  {
-    label: 'Check the source',
-    body: 'No source, no ruling - it shows as undecided instead.',
-  },
-]
-
 interface RawCard {
   name: string
   slug: string
@@ -58,6 +43,15 @@ function poolsByStrategy(): Map<string, RawCard[]> {
   return pools
 }
 
+/** Counted off the same pass the examples use, so the figure cannot drift from what
+ *  the engine actually does - the landing page already holds the whole card list. */
+function coverage(): { resolved: number; total: number; pct: string } {
+  const total = (cardsJson as RawCard[]).length
+  const resolved = total - (poolsByStrategy().get('unresolved')?.length ?? 0)
+
+  return { resolved, total, pct: ((resolved / total) * 100).toFixed(1) }
+}
+
 const pickOne = <T,>(items: T[]): T => items[Math.floor(Math.random() * items.length)]
 
 function pickExamples(): (RawCard & { what: string })[] {
@@ -71,24 +65,10 @@ function pickExamples(): (RawCard & { what: string })[] {
 
 export function renderLanding(): string {
   const examples = pickExamples()
+  const { resolved, total, pct } = coverage()
 
   return `
     <div class="landing">
-      <section class="landing__section">
-        <h2 class="section-heading">How this works</h2>
-        <ol class="steps">
-          ${STEPS.map(
-            (step, i) => `
-            <li class="step">
-              <span class="step__n" aria-hidden="true">${i + 1}</span>
-              <p class="step__label">${esc(step.label)}</p>
-              <p class="step__body">${esc(step.body)}</p>
-            </li>
-          `,
-          ).join('')}
-        </ol>
-      </section>
-
       <section class="landing__section">
         <h2 class="section-heading">Try one of these</h2>
         <ul class="examples">
@@ -108,6 +88,24 @@ export function renderLanding(): string {
           `,
           ).join('')}
         </ul>
+      </section>
+
+      <section class="landing__section">
+        <h2 class="section-heading">What is a foil?</h2>
+        <p class="landing__lede">
+          A rare shiny version of a card. It unlocks the item on the card, and usually items either "laddered" downwards, sideways or as a state-pair.
+		  Choose one of the items above to see it in action.
+        </p>
+      </section>
+
+      <section class="landing__section">
+        <p class="coverage">
+          <span class="coverage__pct">${pct}%</span>
+          <span class="coverage__of">${resolved} of ${total} cards resolve to a sourced ruling</span>
+        </p>
+        <div class="coverage__bar" role="img" aria-label="${pct} per cent of cards have a sourced ruling">
+          <div class="coverage__fill" style="width: ${pct}%"></div>
+        </div>
       </section>
     </div>
   `
