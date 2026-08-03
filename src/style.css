@@ -1259,6 +1259,10 @@ a.unlocks__name:hover {
   font-size: 14px;
 }
 
+.principles--compact .principles__item {
+  padding: var(--s3);
+}
+
 .principles__source {
   margin: var(--s3) 0 0;
   font-size: 13px;

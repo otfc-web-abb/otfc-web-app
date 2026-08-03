@@ -8048,10 +8048,12 @@
       "actions": [
         "use"
       ],
-      "note": "Death talisman is skipped - not a card in this dataset. Elemental and Catalytic talismans are combination talismans sharing Runecraft levels 1 and 2 with Air and Mind, so they sit on the same rungs.",
+      "note": "Death talisman is skipped - not a card in this dataset. Elemental and Catalytic talismans are combination talismans sharing Runecraft levels 1 and 2 with Air and Mind, but each gets its own tier rather than sharing a rung.",
       "rungs": [
-        { "tier": "air", "members": ["Air talisman", "Elemental talisman"] },
-        { "tier": "mind", "members": ["Mind talisman", "Catalytic talisman"] },
+        { "tier": "air", "members": ["Air talisman"] },
+        { "tier": "elemental", "members": ["Elemental talisman"] },
+        { "tier": "mind", "members": ["Mind talisman"] },
+        { "tier": "catalytic", "members": ["Catalytic talisman"] },
         { "tier": "water", "members": ["Water talisman"] },
         { "tier": "earth", "members": ["Earth talisman"] },
         { "tier": "fire", "members": ["Fire talisman"] },

@@ -22,16 +22,15 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderShell(
       <h2 class="result__heading">What this is</h2>
       <p class="about__body">
         The OSRS TCG RuneLite plugin unlocks in-game items behind cards pulled from booster packs.
-        Cards have a rare foil variant, and there is no single agreed answer for what a foil actually
-        does. This tool answers that question for a specific item: what it unlocks, what it does not,
-        why, and how confident the community is about it.
+        Cards have a rare foil variant, and there is no agreed answer for what a foil does. This tool
+        answers that for a specific item: what it unlocks, what it does not, and how confident the
+        community is about it.
       </p>
       <p class="about__body">
-        A rule only ships once it has a stated source - the project brief, a community source, or an
-        explicit decision recorded with its rationale. Anything without a source shows honestly as
-        <strong>not decided yet</strong>, rather than a guess. Being wrong is worse than being
-        incomplete: a confidently wrong answer defeats the point of the tool, and an honest
-        "undecided" is still more useful than what a player has today without it.
+        A rule only ships with a stated source. Anything without one shows as
+        <strong>not decided yet</strong> rather than a guess - being wrong is worse than being
+        incomplete. Where the community is split,
+        <a class="link" href="/open-questions.html">Open questions</a> sets out the positions.
       </p>
     </section>
 
@@ -45,18 +44,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderShell(
         <div class="coverage__fill" style="width: ${coveragePct}%"></div>
       </div>
       <p class="about__body">
-        The rest are honestly <strong>unresolved</strong>. That number climbs over time as rules get
-        worked out deliberately, never in a hurry to fill a gap.
-      </p>
-    </section>
-
-    <section class="result__section">
-      <h2 class="result__heading">Where people disagree</h2>
-      <p class="about__body">
-        Three camps show up in the community's own discussion of foils, and none is treated as more
-        correct than the others here. That split, the questions still genuinely open, and how a
-        ruling gets made and challenged all live on
-        <a class="link" href="/open-questions.html">Open questions</a>.
+        The rest show as <strong>unresolved</strong>. That number climbs as rules get worked out,
+        never in a hurry to fill a gap.
       </p>
     </section>
 
@@ -76,36 +65,15 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderShell(
     </section>
 
     <section class="result__section">
-      <h2 class="result__heading">Guidelines, not rulings</h2>
-      <p class="about__body">
-        Nothing here is gospel. Every result is a reasoned guideline meant to help a player reach a
-        logical decision - player discretion, and your group's, applies throughout. Where a ruleset
-        changes what's expected of you (whether you may gather-then-bank before an unlock, or not
-        touch the source at all), that's stated on the result rather than folded silently into the
-        answer.
-      </p>
-    </section>
-
-    <section class="result__section">
       <h2 class="result__heading">Sources and attribution</h2>
+      <p class="principles__lede">Card data and item names are credited in the footer.</p>
       <ul class="sources">
         <li class="sources__item">
-          Card data comes from the
-          <a class="link" href="https://github.com/Azderi/osrs-tcg" target="_blank" rel="noopener">OSRS TCG RuneLite plugin</a>
-          by Azderi.
-        </li>
-        <li class="sources__item">
-          Item names, images and examine text originate with the
-          <a class="link" href="https://oldschool.runescape.wiki/" target="_blank" rel="noopener">Old School RuneScape Wiki</a>.
-        </li>
-        <li class="sources__item">
-          The foil resolution order and explicit ladders (shortbow, longbow, pickaxe, axe) are
-          transcribed from
+          Resolution order and the explicit ladders, from
           <a class="link" href="https://oldschool.runescape.wiki/w/User:TheSeahorsie/TCG_Foil_Rules" target="_blank" rel="noopener">TheSeahorsie's TCG Foil Rules page</a>.
         </li>
         <li class="sources__item">
-          The three community camps on
-          <a class="link" href="/open-questions.html">Open questions</a> are summarised from
+          The community camps, from
           <a class="link" href="${esc(CAMPS_SOURCE.url)}" target="_blank" rel="noopener">${esc(CAMPS_SOURCE.label)}</a>.
         </li>
       </ul>

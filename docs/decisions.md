@@ -1266,8 +1266,8 @@ Each uses the existing `weapon-ladder-down` rule via the `weapon` tag. The three
 **Status:** Active
 **Date:** 2026-08-02
 
-**Ruling.** New `ladder-down` family "Talismans", lowest to highest by Runecraft level: (Air talisman / Elemental talisman) < (Mind talisman / Catalytic talisman) < Water talisman < Earth talisman < Fire talisman < Body talisman < Cosmic talisman < Chaos talisman < Nature talisman < Law talisman < Blood talisman < Wrath talisman. Uses the existing `resource-ladder-down` rule via the `resource` tag.
+**Ruling.** New `ladder-down` family "Talismans", lowest to highest by Runecraft level: Air talisman < Elemental talisman < Mind talisman < Catalytic talisman < Water talisman < Earth talisman < Fire talisman < Body talisman < Cosmic talisman < Chaos talisman < Nature talisman < Law talisman < Blood talisman < Wrath talisman. Uses the existing `resource-ladder-down` rule via the `resource` tag.
 
-Elemental talisman and Catalytic talisman are combination talismans sharing Runecraft levels 1 and 2 with Air and Mind respectively, so they sit on the same rungs rather than getting separate tiers. Death talisman is skipped - it isn't a card in this dataset.
+Elemental talisman and Catalytic talisman are combination talismans sharing Runecraft levels 1 and 2 with Air and Mind respectively - each still gets its own tier rather than sharing a rung with its level-mate (corrected shortly after the initial pass, which had paired them). Death talisman is skipped - it isn't a card in this dataset.
 
-**Source.** the maintainer, this session (2026-08-02): "laddered:" followed by the full Runecraft-level talisman table; then mid-turn, "also in the ladder:" adding Cosmic/Chaos/Nature/Law/Death/Blood/Wrath and the two combination talismans; confirmed skipping Death and placing Elemental/Catalytic alongside Air/Mind.
+**Source.** the maintainer, this session (2026-08-02): "laddered:" followed by the full Runecraft-level talisman table; then mid-turn, "also in the ladder:" adding Cosmic/Chaos/Nature/Law/Death/Blood/Wrath and the two combination talismans; confirmed skipping Death; then, after seeing the shared-rung result, "Air and mind should be their own tier, move the the others to their own tier" - splitting Elemental and Catalytic into their own rungs.

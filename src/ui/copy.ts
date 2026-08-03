@@ -2,9 +2,6 @@
 // file holds only what is true on every screen regardless of which card was
 // searched. Kept apart from the renderers so the wording is reviewable in one place.
 
-export const DECISIONS_URL =
-  'https://github.com/otfc-web-abb/otfc-web-app/blob/main/docs/decisions.md'
-
 /** The project's whole posture, and the reason the result view has a sticky bar
  *  rather than a footnote. */
 export const GUIDELINE_LINE =
@@ -46,15 +43,15 @@ export const CAMPS_SOURCE = {
 export const DISAGREEMENT_MODES = [
   {
     label: 'The ruleset toggle',
-    body: 'The biggest split is whether a foil cascades at all. Rather than pick a winner, all three readings sit on every result and you choose the one your group plays by. Standard, Extreme and Plain foil are three camps, not three difficulty settings.',
+    body: 'All three readings sit on every result and you pick the one your group plays by. Standard, Extreme and Plain foil are three camps, not three difficulty settings.',
   },
   {
     label: 'A caveat on the result',
-    body: 'Where a specific card had a real alternative reading that was considered and rejected, the result says so under the toggle. You get the answer and the argument against it in the same place.',
+    body: 'Where a card had a real alternative reading that was considered and rejected, the result says so under the toggle.',
   },
   {
     label: 'Not decided yet',
-    body: 'Where no answer can be defended, the card resolves to undecided and nothing is claimed in either direction. That is a designed outcome with its own screen, not a gap waiting to be filled with a guess.',
+    body: 'Where no answer can be defended, the card resolves to undecided - a designed outcome, not a gap waiting for a guess.',
   },
 ]
 
@@ -65,8 +62,8 @@ export const DISAGREEMENT_MODES = [
  */
 export const OPEN_QUESTIONS: { label: string; weight: string; body: string }[] = []
 
-/** docs/rules-spec.md section 7. Shown on the unresolved screen so a player can see
- *  which questions get asked, and that this card reached the end without matching. */
+/** docs/rules-spec.md section 7. Shown on About so a player can see which questions
+ *  get asked, and in what order the first match wins. */
 export const RESOLUTION_ORDER = [
   { label: 'Card-specific ruling', body: 'Is there a recorded ruling for this exact card?' },
   { label: 'Two forms of one item', body: 'Does it have an unprocessed and a processed form?' },
@@ -83,17 +80,6 @@ export const RULESET_BLURBS: Record<string, string> = {
   standard: 'The usual reading. You may gather and bank an item before its card is unlocked.',
   extreme: 'Strictest reading. Same unlocks, but you may not touch a locked source at all.',
   'plain-foil': 'A foil unlocks only the card it shows, and nothing else.',
-}
-
-export const STRATEGY_LABELS: Record<string, string> = {
-  override: 'Card-specific ruling',
-  'state-pair': 'Two forms of one item',
-  'ladder-down': 'Unlocks downward',
-  components: 'Unlocks its parts',
-  group: 'Unlocks the group',
-  'npc-hierarchy': 'NPC hierarchy',
-  'plain-foil': 'A foil is just a foil',
-  unresolved: 'Not decided yet',
 }
 
 export const CONFIDENCE_LABELS: Record<string, string> = {
