@@ -64,6 +64,13 @@
   box-sizing: border-box;
 }
 
+/* Reserve the scrollbar's gutter always. Plain foil renders a shorter result than
+   Standard, so without this the scrollbar drops out on the toggle and the centred
+   column jumps sideways. */
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -221,7 +228,11 @@ img {
   color: var(--gold);
 }
 
+/* `width: 100%` is load-bearing: #app is a flex column, so `margin: 0 auto` is a
+   cross-axis auto margin, and that suppresses the default stretch. Without an
+   explicit width the column sizes to its content and changes width per ruleset. */
 .app {
+  width: 100%;
   max-width: 760px;
   margin: 0 auto;
   padding: var(--s5) var(--s4) var(--s7);
@@ -351,11 +362,14 @@ body.has-result #landing-root {
   color: var(--body);
 }
 
+/* In the footer, so the two are reachable from any page without competing with
+   the search for attention. */
 .feedback {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--s3);
+  margin-bottom: var(--s4);
 }
 
 /* Green invites, red reports - the two accents the palette already uses for
@@ -675,13 +689,25 @@ body.has-result #landing-root {
   box-shadow: 0 0 0 2px rgb(227 188 77 / 0.5);
 }
 
-/* Says in plain words what the selected ruleset changes, so the three labels
- * are not the only explanation a player gets. */
+/* Says in plain words what the selected ruleset changes, so the three labels are
+ * not the only explanation a player gets. Given a gold-edged panel rather than
+ * grey fine print - it has to be read before the item list, not after. */
 .ruleset__blurb {
   justify-self: stretch;
   margin: 0;
-  font-size: 13px;
-  color: var(--muted);
+  padding: var(--s3);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--slot);
+  border: 1px solid var(--edge-dark);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--r);
+  box-shadow: inset 1px 1px 3px rgb(0 0 0 / 0.45);
+}
+
+.ruleset__blurb + .ruleset__blurb {
+  margin-top: var(--s2);
 }
 
 /*
@@ -1191,19 +1217,72 @@ a.unlocks__name:hover {
   padding: 0 var(--s2);
 }
 
-.ladder__tally,
-.ladder__note {
+.ladder__tally {
   margin: var(--s3) 0 0;
   font-size: 13px;
   color: var(--muted);
-}
-
-.ladder__tally {
   font-variant-numeric: tabular-nums;
 }
 
-.ladder__note {
-  font-style: italic;
+/* Copy list */
+
+.copylist__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s3);
+}
+
+.copylist__head .result__heading {
+  margin-bottom: var(--s3);
+}
+
+/* Quiet by design - the list is the thing being read, and the button only has to
+   be found once. */
+/* Outlined rather than filled - the list is the thing being read, so the button
+   states its presence without taking the page's one gold fill. */
+.copylist__button {
+  flex-shrink: 0;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: none;
+  border: 1px solid var(--gold-deep);
+  border-radius: var(--r);
+  padding: var(--s1) var(--s3);
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    background-color 0.15s;
+}
+
+.copylist__button:hover {
+  border-color: var(--gold);
+  background-color: rgb(227 188 77 / 0.12);
+}
+
+.copylist__button:focus-visible {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgb(227 188 77 / 0.4);
+}
+
+.copylist__text {
+  display: block;
+  max-height: 8em;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  padding: var(--s3);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--body);
+  background: var(--slot-grey);
+  border: 1px solid var(--edge-dark);
+  border-radius: var(--r);
+  user-select: all;
 }
 
 /* Unlocks and actions */

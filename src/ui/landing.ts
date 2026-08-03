@@ -108,16 +108,6 @@ export function renderLanding(): string {
         </div>
       </section>
 
-      <section class="landing__section">
-        <div class="feedback">
-          <a class="button feedback__button feedback__button--go" href="https://discord.gg/9dzWV9upA" target="_blank" rel="noopener">
-            Foil rule feedback
-          </a>
-          <a class="button feedback__button feedback__button--bug" href="https://discord.gg/x6MRPXxnr" target="_blank" rel="noopener">
-            Report a website bug
-          </a>
-        </div>
-      </section>
     </div>
   `
 }

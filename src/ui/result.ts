@@ -165,6 +165,33 @@ function renderExcluded(resolution: Resolution): string {
   `
 }
 
+/**
+ * The unlock set as one comma-delimited line. Players transcribe this into their
+ * plugin's exempt list by hand, so the value here is the exact string - the ladder
+ * says what is unlocked and why, this says it in the shape the plugin wants.
+ */
+function renderCopyList(resolution: Resolution): string {
+  const names = resolution.unlocks.map((u) => u.card.name)
+  if (names.length === 0) return ''
+
+  const list = names.join(', ')
+
+  return `
+    <section class="result__section copylist">
+      <div class="copylist__head">
+        <h3 class="result__heading">Copy for your exempt list</h3>
+        <button
+          class="copylist__button"
+          type="button"
+          data-copy="${esc(list)}"
+          aria-label="Copy ${plural(names.length, 'item')} to the clipboard"
+        >Copy</button>
+      </div>
+      <code class="copylist__text">${esc(list)}</code>
+    </section>
+  `
+}
+
 /** The verdict, and how much to trust it. The strategy label and the tally both used
  *  to sit here too - the explanation states the first, the ladder counts the second. */
 function renderRuling(resolution: Resolution): string {
@@ -212,6 +239,7 @@ function renderSoloItem(resolution: Resolution): string {
     `
         : ''
     }
+    ${renderCopyList(resolution)}
   `
 }
 
@@ -231,6 +259,7 @@ export function renderUnresolved(resolution: Resolution): string {
 
     ${renderLadder(resolution)}
     ${renderUnlocks(resolution)}
+    ${renderCopyList(resolution)}
 
     <section class="result__section">
       <h3 class="result__heading">The positions people hold</h3>
@@ -266,6 +295,7 @@ function renderResolved(resolution: Resolution): string {
     ${renderLadder(resolution)}
     ${renderUnlocks(resolution)}
     ${renderExcluded(resolution)}
+    ${renderCopyList(resolution)}
   `
 }
 
@@ -325,8 +355,28 @@ export function createResultView(root: HTMLElement): ResultView {
     root.innerHTML = cardName ? renderResult(cardName, ruleset) : ''
   }
 
-  root.addEventListener('click', (event) => {
-    const option = (event.target as HTMLElement).closest<HTMLButtonElement>('.ruleset__option')
+  root.addEventListener('click', async (event) => {
+    const target = event.target as HTMLElement
+
+    const copy = target.closest<HTMLButtonElement>('.copylist__button')
+    if (copy?.dataset.copy) {
+      // Clipboard access can be refused by the browser, and a button that silently
+      // does nothing is worse than one that admits it - the text is on screen to
+      // select by hand either way.
+      const label = copy.textContent
+      const ok = await navigator.clipboard
+        .writeText(copy.dataset.copy)
+        .then(() => true)
+        .catch(() => false)
+
+      copy.textContent = ok ? 'Copied' : 'Press Ctrl+C'
+      window.setTimeout(() => {
+        copy.textContent = label
+      }, 1400)
+      return
+    }
+
+    const option = target.closest<HTMLButtonElement>('.ruleset__option')
     if (!option) return
 
     ruleset = option.dataset.ruleset as Ruleset
