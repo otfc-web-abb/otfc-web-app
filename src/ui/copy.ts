@@ -43,7 +43,7 @@ export const RESOLUTION_ORDER = [
   { label: 'Down the progression', body: 'Is it a tier in a progression that unlocks downward?' },
   { label: 'Made of parts', body: 'Can it be broken down into components?' },
   { label: 'Part of a group', body: 'Does it belong to a set that unlocks together?' },
-  { label: 'Monsters and NPCs', body: 'Does the NPC hierarchy apply? Not yet specified for any card.' },
+  { label: 'Monsters and NPCs', body: 'Does the NPC hierarchy apply?' },
 ]
 
 /** What each ruleset actually changes, in one line. The three toggle labels are

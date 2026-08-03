@@ -13,15 +13,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = renderShell(
       <h2 class="result__heading">What this is</h2>
       <p class="about__body">
         The OSRS TCG RuneLite plugin unlocks in-game items behind cards pulled from booster packs.
-        Cards have a rare foil variant, and there is no agreed answer for what a foil does. This tool
-        answers that for a specific item: what it unlocks, what it does not, and how confident the
-        community is about it.
+        Cards have a rare <strong>foil</strong> variant, and there is no agreed answer for what a foil does. This tool
+        answers that for a specific item: what it unlocks and what it does not.
       </p>
       <p class="about__body">
-        A rule only ships with a stated source. Anything without one shows as
-        <strong>not decided yet</strong> rather than a guess - being wrong is worse than being
-        incomplete. Where the community is split, an undecided card shows the positions people hold
-        instead of picking one.
+        Some items either only unlock <strong>themselves</strong> (which I class as a solo unlock) or <strong>undecided</strong> where a decision has not officially been made.
       </p>
     </section>
 
