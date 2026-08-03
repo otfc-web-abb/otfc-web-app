@@ -10,7 +10,7 @@ export function renderShell(
   body: string,
 ): string {
   return `
-    <div class="beta-banner">Beta - this tool is under active development</div>
+    <div class="beta-banner">Beta - this tool is under active development - <strong>rulings may change</strong></div>
 
     <header class="site-header">
       <div class="site-header__inner">
