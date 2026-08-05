@@ -2132,6 +2132,12 @@
           "members": [
             "Dragon full helm"
           ]
+        },
+        {
+          "tier": "3rd-age",
+          "members": [
+            "3rd age full helmet"
+          ]
         }
       ]
     },
@@ -2856,6 +2862,12 @@
           "members": [
             "Dragon kiteshield"
           ]
+        },
+        {
+          "tier": "3rd-age",
+          "members": [
+            "3rd age kiteshield"
+          ]
         }
       ]
     },
@@ -3215,6 +3227,12 @@
           "tier": "dragon",
           "members": [
             "Dragon longsword"
+          ]
+        },
+        {
+          "tier": "3rd-age",
+          "members": [
+            "3rd age longsword"
           ]
         }
       ]
@@ -3836,6 +3854,12 @@
           "members": [
             "Dragon platebody"
           ]
+        },
+        {
+          "tier": "3rd-age",
+          "members": [
+            "3rd age platebody"
+          ]
         }
       ]
     },
@@ -3909,6 +3933,12 @@
           "members": [
             "Dragon platelegs"
           ]
+        },
+        {
+          "tier": "3rd-age",
+          "members": [
+            "3rd age platelegs"
+          ]
         }
       ]
     },
@@ -3981,6 +4011,12 @@
           "tier": "dragon",
           "members": [
             "Dragon plateskirt"
+          ]
+        },
+        {
+          "tier": "3rd-age",
+          "members": [
+            "3rd age plateskirt"
           ]
         }
       ]
@@ -4678,8 +4714,7 @@
         "3rd age robe top",
         "3rd age robe",
         "3rd age mage hat",
-        "3rd age wand",
-        "3rd age amulet"
+        "3rd age wand"
       ]
     },
     {
@@ -4698,8 +4733,7 @@
         "3rd age plateskirt",
         "3rd age kiteshield",
         "3rd age full helmet",
-        "3rd age longsword",
-        "3rd age cloak"
+        "3rd age longsword"
       ]
     },
     {
@@ -8081,6 +8115,645 @@
         { "tier": "water", "members": ["Water rune pack"] },
         { "tier": "earth", "members": ["Earth rune pack"] },
         { "tier": "fire", "members": ["Fire rune pack"] }
+      ]
+    },
+    {
+      "id": "god-cloak-set",
+      "label": "God cloaks",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Ancient cloak",
+        "Armadyl cloak",
+        "Bandos cloak",
+        "Guthix cloak",
+        "Saradomin cloak",
+        "Zamorak cloak"
+      ]
+    },
+    {
+      "id": "god-chaps-set",
+      "label": "God chaps",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Ancient chaps",
+        "Armadyl chaps",
+        "Bandos chaps",
+        "Guthix chaps",
+        "Saradomin chaps",
+        "Zamorak chaps"
+      ]
+    },
+    {
+      "id": "god-bracers-set",
+      "label": "God bracers",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Ancient bracers",
+        "Armadyl bracers",
+        "Bandos bracers",
+        "Guthix bracers",
+        "Saradomin bracers",
+        "Zamorak bracers"
+      ]
+    },
+    {
+      "id": "ancient-blood-ornament-kit",
+      "label": "Ancient blood ornament kit",
+      "kind": "composite",
+      "tags": [
+        "ornament-kit"
+      ],
+      "actions": [
+        "wear",
+        "craft"
+      ],
+      "note": "Applies to all three Torva armour pieces to make the Sanguine torva recolour, which is not a card in this dataset - the crafted result stays outside the unlock set, so the product-boundary caveat fires generically.",
+      "whole": "Ancient blood ornament kit",
+      "parts": [
+        "Torva full helm",
+        "Torva platebody",
+        "Torva platelegs"
+      ]
+    },
+    {
+      "id": "god-blessing-set",
+      "label": "God blessings",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Holy blessing",
+        "Unholy blessing",
+        "Peaceful blessing",
+        "Honourable blessing",
+        "War blessing",
+        "Ancient blessing"
+      ]
+    },
+    {
+      "id": "pizza",
+      "label": "Pizzas",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        { "tier": "plain", "members": ["Plain pizza"] },
+        { "tier": "meat", "members": ["Meat pizza"] },
+        { "tier": "anchovy", "members": ["Anchovy pizza"] },
+        { "tier": "pineapple", "members": ["Pineapple pizza"] }
+      ]
+    },
+    {
+      "id": "anchovy-set",
+      "label": "Anchovy oil and paste",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Anchovy oil",
+        "Anchovy paste"
+      ]
+    },
+    {
+      "id": "amylase-set",
+      "label": "Amylase crystal and pack",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Amylase crystal",
+        "Amylase pack"
+      ]
+    },
+    {
+      "id": "amys-saw",
+      "label": "Amy's saw",
+      "kind": "composite",
+      "tags": [
+        "upgrade-tool"
+      ],
+      "actions": [
+        "use"
+      ],
+      "whole": "Amy's saw",
+      "parts": [
+        "Saw"
+      ]
+    },
+    {
+      "id": "amulet-of-eternal-glory",
+      "label": "Amulet of eternal glory",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "note": "Its own branch - foiling Amulet of eternal glory unlocks Amulet of Glory but not Dragonstone amulet, per the maintainer.",
+      "whole": "Amulet of eternal glory",
+      "parts": [
+        "Amulet of Glory"
+      ]
+    },
+    {
+      "id": "amulet-of-chemistry",
+      "label": "Amulet of chemistry",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Amulet of chemistry",
+      "parts": [
+        "Jade amulet"
+      ]
+    },
+    {
+      "id": "amulet-of-bounty",
+      "label": "Amulet of bounty",
+      "kind": "composite",
+      "tags": [
+        "enchanted-jewellery"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "whole": "Amulet of bounty",
+      "parts": [
+        "Opal amulet"
+      ]
+    },
+    {
+      "id": "fury-amulet",
+      "label": "Fury amulets",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        { "tier": "fury", "members": ["Amulet of fury"] },
+        { "tier": "blood-fury", "members": ["Amulet of blood fury"] }
+      ]
+    },
+    {
+      "id": "jewellery-mould-set",
+      "label": "Jewellery moulds",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Amulet mould",
+        "Bracelet mould",
+        "Holy mould",
+        "Necklace mould",
+        "Ring mould",
+        "Tiara mould",
+        "Unholy mould"
+      ]
+    },
+    {
+      "id": "broad-bolts",
+      "label": "Broad bolts",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "use"
+      ],
+      "rungs": [
+        { "tier": "broad", "members": ["Broad bolts"] },
+        { "tier": "amethyst", "members": ["Amethyst broad bolts"] }
+      ]
+    },
+    {
+      "id": "ambrosia-consumables-set",
+      "label": "Ambrosia and related consumables",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Nectar",
+        "Ambrosia",
+        "Blessed crystal scarab",
+        "Liquid adrenaline",
+        "Silk dressing",
+        "Smelling salts",
+        "Tears of elidinis"
+      ]
+    },
+    {
+      "id": "teleport-tablet",
+      "label": "Teleport tablets",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Ordered by Construction level to make, per the OSRS Wiki. Trollheim teleport is not a card in this dataset, so it's skipped.",
+      "rungs": [
+        { "tier": "rimmington", "members": ["Rimmington teleport"] },
+        { "tier": "taverley", "members": ["Taverley teleport"] },
+        { "tier": "pollnivneach", "members": ["Pollnivneach teleport"] },
+        { "tier": "hosidius", "members": ["Hosidius teleport"] },
+        { "tier": "rellekka", "members": ["Rellekka teleport"] },
+        { "tier": "aldarin", "members": ["Aldarin teleport"] },
+        { "tier": "brimhaven", "members": ["Brimhaven teleport"] },
+        { "tier": "yanille", "members": ["Yanille teleport"] },
+        { "tier": "prifddinas", "members": ["Prifddinas teleport"] }
+      ]
+    },
+    {
+      "id": "mixology-potion",
+      "label": "Mixology potions",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Ordered by Herblore level, per the Guardians of the Rift/Mastering Mixology point table.",
+      "rungs": [
+        { "tier": "60a", "members": ["Alco-augmentator"] },
+        { "tier": "60b", "members": ["Mammoth-might mix"] },
+        { "tier": "60c", "members": ["Liplack liquor"] },
+        { "tier": "63", "members": ["Mystic mana amalgam"] },
+        { "tier": "66", "members": ["Marley's moonlight"] },
+        { "tier": "69", "members": ["Azure aura mix"] },
+        { "tier": "72", "members": ["Aqualux amalgam"] },
+        { "tier": "75", "members": ["Megalite liquid"] },
+        { "tier": "78", "members": ["Anti-leech lotion"] },
+        { "tier": "81", "members": ["Mixalot"] }
+      ]
+    },
+    {
+      "id": "hydra-heads-set",
+      "label": "Alchemical hydra heads crafts",
+      "kind": "set",
+      "tags": [
+        "hydra-heads-craft"
+      ],
+      "actions": [
+        "craft"
+      ],
+      "members": [
+        "Alchemical hydra heads",
+        "Hydra slayer helmet",
+        "Stuffed hydra heads"
+      ]
+    },
+    {
+      "id": "bounty-feather-set",
+      "label": "Bounty feathers",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Albatross feather",
+        "Frigatebird feather",
+        "Osprey feather",
+        "Tern feather"
+      ]
+    },
+    {
+      "id": "bounty-beak-set",
+      "label": "Bounty beaks",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Albatross beak",
+        "Frigatebird beak",
+        "Osprey beak",
+        "Tern beak"
+      ]
+    },
+    {
+      "id": "tiara",
+      "label": "Tiaras",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "note": "Ordered by Crafting XP to make, per the OSRS Wiki. A foil unlocks the wear verb on that tier and below - each tiara still needs a Tiara and the matching talisman to craft.",
+      "rungs": [
+        { "tier": "air", "members": ["Air tiara"] },
+        { "tier": "mind", "members": ["Mind tiara"] },
+        { "tier": "water", "members": ["Water tiara"] },
+        { "tier": "earth", "members": ["Earth tiara"] },
+        { "tier": "fire", "members": ["Fire tiara"] },
+        { "tier": "body", "members": ["Body tiara"] },
+        { "tier": "cosmic", "members": ["Cosmic tiara"] },
+        { "tier": "chaos", "members": ["Chaos tiara"] },
+        { "tier": "nature", "members": ["Nature tiara"] },
+        { "tier": "law", "members": ["Law tiara"] },
+        { "tier": "death", "members": ["Death tiara"] },
+        { "tier": "blood", "members": ["Blood tiara"] },
+        { "tier": "wrath", "members": ["Wrath tiara"] }
+      ]
+    },
+    {
+      "id": "coif",
+      "label": "Coifs",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "rungs": [
+        { "tier": "coif", "members": ["Coif"] },
+        { "tier": "3rd-age", "members": ["3rd age range coif"] }
+      ]
+    },
+    {
+      "id": "ancient-artefact",
+      "label": "Ancient artefacts",
+      "kind": "ladder",
+      "tags": [
+        "resource"
+      ],
+      "actions": [
+        "use"
+      ],
+      "note": "Ordered by coin value, per the OSRS Wiki artefact table.",
+      "rungs": [
+        { "tier": "emblem", "members": ["Ancient emblem"] },
+        { "tier": "totem", "members": ["Ancient totem"] },
+        { "tier": "statuette", "members": ["Ancient statuette"] },
+        { "tier": "medallion", "members": ["Ancient medallion"] },
+        { "tier": "effigy", "members": ["Ancient effigy"] },
+        { "tier": "relic", "members": ["Ancient relic"] }
+      ]
+    },
+    {
+      "id": "god-dhide-shield-set",
+      "label": "God d'hide shields",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "members": [
+        "Ancient d'hide shield",
+        "Armadyl d'hide shield",
+        "Bandos d'hide shield",
+        "Guthix d'hide shield",
+        "Saradomin d'hide shield",
+        "Zamorak d'hide shield"
+      ]
+    },
+    {
+      "id": "god-dhide-boots-set",
+      "label": "God d'hide boots",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Ancient d'hide boots",
+        "Armadyl d'hide boots",
+        "Bandos d'hide boots",
+        "Guthix d'hide boots",
+        "Saradomin d'hide boots",
+        "Zamorak d'hide boots"
+      ]
+    },
+    {
+      "id": "god-dhide-body-set",
+      "label": "God d'hide bodies",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Ancient d'hide body",
+        "Armadyl d'hide body",
+        "Bandos d'hide body",
+        "Guthix d'hide body",
+        "Saradomin d'hide body",
+        "Zamorak d'hide body"
+      ]
+    },
+    {
+      "id": "digsite-artefacts-set",
+      "label": "Digsite unique artefacts",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "use"
+      ],
+      "members": [
+        "Old symbol",
+        "Ancient symbol",
+        "Old coin",
+        "Ancient coin"
+      ]
+    },
+    {
+      "id": "god-coif-set",
+      "label": "God coifs",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Ancient coif",
+        "Armadyl coif",
+        "Bandos coif",
+        "Guthix coif",
+        "Saradomin coif",
+        "Zamorak coif"
+      ]
+    },
+    {
+      "id": "god-crozier-set",
+      "label": "God croziers",
+      "kind": "set",
+      "tags": [
+        "community-set"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "members": [
+        "Ancient crozier",
+        "Armadyl crozier",
+        "Bandos crozier",
+        "Guthix crozier",
+        "Saradomin crozier",
+        "Zamorak crozier"
+      ]
+    },
+    {
+      "id": "vambraces",
+      "label": "Vambraces",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "note": "Gilded d'hide vambraces and Hueycoatl hide vambraces are excluded - checked against the OSRS Wiki and neither matches the Black d'hide/3rd age tier cleanly, so they're left out rather than guessed in.",
+      "rungs": [
+        { "tier": "leather", "members": ["Leather vambraces", "Spiky vambraces", "Black spiky vambraces", "Blue spiky vambraces", "Green spiky vambraces", "Red spiky vambraces"] },
+        { "tier": "green-dhide", "members": ["Green d'hide vambraces"] },
+        { "tier": "blue-dhide", "members": ["Blue d'hide vambraces"] },
+        { "tier": "red-dhide", "members": ["Red d'hide vambraces"] },
+        { "tier": "black-dhide", "members": ["Black d'hide vambraces"] },
+        { "tier": "3rd-age", "members": ["3rd age vambraces"] },
+        { "tier": "zaryte", "members": ["Zaryte vambraces"] }
+      ]
+    },
+    {
+      "id": "mage-hat",
+      "label": "Mage hats",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "note": "Ordered by Magic attack bonus per the OSRS Wiki. Ahrim's hood, Zuriel's hood, and Dagon'hai hat excluded - boss/GWD items, not part of this generic progression.",
+      "rungs": [
+        { "tier": "wizard", "members": ["Black wizard hat", "Blue wizard hat"] },
+        { "tier": "mystic", "members": ["Mystic hat"] },
+        { "tier": "infinity", "members": ["Infinity hat", "Dark infinity hat", "Light infinity hat"] },
+        { "tier": "3rd-age", "members": ["3rd age mage hat"] }
+      ]
+    },
+    {
+      "id": "mage-robe-top",
+      "label": "Mage robe tops",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "note": "Ordered by Magic attack bonus per the OSRS Wiki. No wizard-tier robe top exists as a card in this dataset.",
+      "rungs": [
+        { "tier": "mystic", "members": ["Mystic robe top"] },
+        { "tier": "infinity", "members": ["Infinity top", "Dark infinity top", "Light infinity top"] },
+        { "tier": "3rd-age", "members": ["3rd age robe top"] }
+      ]
+    },
+    {
+      "id": "mage-robe-bottom",
+      "label": "Mage robe bottoms",
+      "kind": "ladder",
+      "tags": [
+        "armour"
+      ],
+      "actions": [
+        "wear"
+      ],
+      "note": "Ordered by Magic attack bonus per the OSRS Wiki.",
+      "rungs": [
+        { "tier": "wizard", "members": ["Black wizard robe", "Blue wizard robe"] },
+        { "tier": "mystic", "members": ["Mystic robe bottom"] },
+        { "tier": "infinity", "members": ["Infinity bottoms"] },
+        { "tier": "3rd-age", "members": ["3rd age robe"] }
+      ]
+    },
+    {
+      "id": "wand",
+      "label": "Wands",
+      "kind": "ladder",
+      "tags": [
+        "weapon"
+      ],
+      "actions": [
+        "wield"
+      ],
+      "note": "Ordered by Magic level to wield, per the OSRS Wiki. Dragon hunter wand and 3rd age wand tie at 65 Magic - each still gets its own tier rather than sharing a rung.",
+      "rungs": [
+        { "tier": "beginner", "members": ["Beginner wand"] },
+        { "tier": "apprentice", "members": ["Apprentice wand"] },
+        { "tier": "teacher", "members": ["Teacher wand"] },
+        { "tier": "master", "members": ["Master wand"] },
+        { "tier": "dragon-hunter", "members": ["Dragon hunter wand"] },
+        { "tier": "3rd-age", "members": ["3rd age wand"] },
+        { "tier": "kodai", "members": ["Kodai wand"] }
       ]
     },
     {

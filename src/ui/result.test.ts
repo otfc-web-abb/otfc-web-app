@@ -58,11 +58,11 @@ describe('foil Rune full helm - the ladder marks both directions', () => {
     assert.ok(html.includes('<h2 class="hero__name">') && html.includes('>Rune full helm</a></h2>'))
   })
 
-  it('marks 8 unlocked and 2 still locked, matching the engine', () => {
+  it('marks 8 unlocked and 3 still locked, matching the engine', () => {
     const r = resolve('Rune full helm', 'standard')
     assert.equal(unlockedRows(html), r.unlocks.length)
     assert.equal(lockedRows(html), r.excluded.length)
-    assert.equal(lockedRows(html), 2)
+    assert.equal(lockedRows(html), 3)
   })
 
   it('names the excluded tier explicitly rather than dropping it', () => {
@@ -174,7 +174,7 @@ describe('the plain-foil ruleset', () => {
 
   it('unlocks only the searched card and locks the rest of the ladder', () => {
     assert.equal(unlockedRows(html), 1)
-    assert.equal(lockedRows(html), 9)
+    assert.equal(lockedRows(html), 10)
   })
 })
 
@@ -183,7 +183,7 @@ describe('the extreme ruleset', () => {
 
   it('keeps the same unlock set as standard', () => {
     assert.equal(unlockedRows(html), 8)
-    assert.equal(lockedRows(html), 2)
+    assert.equal(lockedRows(html), 3)
   })
 
   it('states the stricter caveat', () => {

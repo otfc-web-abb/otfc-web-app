@@ -1271,3 +1271,393 @@ Each uses the existing `weapon-ladder-down` rule via the `weapon` tag. The three
 Elemental talisman and Catalytic talisman are combination talismans sharing Runecraft levels 1 and 2 with Air and Mind respectively - each still gets its own tier rather than sharing a rung with its level-mate (corrected shortly after the initial pass, which had paired them). Death talisman is skipped - it isn't a card in this dataset.
 
 **Source.** the maintainer, this session (2026-08-02): "laddered:" followed by the full Runecraft-level talisman table; then mid-turn, "also in the ladder:" adding Cosmic/Chaos/Nature/Law/Death/Blood/Wrath and the two combination talismans; confirmed skipping Death; then, after seeing the shared-rung result, "Air and mind should be their own tier, move the the others to their own tier" - splitting Elemental and Catalytic into their own rungs.
+
+---
+
+### DEC-0079 - 3rd age melee/range weapon and armor pieces moved from outfit groups into their metal-tier ladders
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Corrects an inconsistency the maintainer flagged: 3rd age gear was resolving via flat community-set outfit groups (foiling any piece unlocked the whole 3rd age outfit), while 3rd age axe/pickaxe were already correctly laddered as the top tier of their respective metal-tier ladders (per TheSeahorsie's source data). The maintainer's principle: every 3rd age piece that has a metal-tier progression below it should ladder, not group.
+
+Added as the new top rung (above Dragon, or above Gilded/Dragon for the armour pieces) of their existing ladders:
+- **3rd age longsword** → `longsword` ladder.
+- **3rd age platebody** → `platebody` ladder.
+- **3rd age platelegs** → `platelegs` ladder.
+- **3rd age plateskirt** → `plateskirt` ladder.
+- **3rd age kiteshield** → `kiteshield` ladder.
+- **3rd age full helmet** → `full-helm` ladder.
+
+**3rd age bow was already correctly on the `shortbow` ladder** (not longsword/longbow) per TheSeahorsie's sourced ladder data - confirmed via `validate-rules`'s seahorsie fidelity check, which caught an initial mistake of also adding it to `longbow` before this ruling landed. No change was needed there.
+
+These 6 cards remain factual members of the `third-age-melee`/`third-age-range` community-set families for now (so those groups still list them correctly as unlocks when a *different* group member is foiled), but `ladder-down` resolves before `group` in the strategy order, so foiling one of these 6 directly now goes through its ladder - the same harmless asymmetry already documented for Dragon axe/claws (DEC-0044/0046). The outfit sets themselves will be pruned down to their remaining non-laddered pieces once the maintainer supplies tier data for the 3rd age wand, staff, cloak, coif, vambraces, amulet, mage hat, and robe pieces (in progress, see next decision).
+
+**Source.** the maintainer, this session (2026-08-02): "Currently 3rd age pieces unlock the rest of the 3rd age set, this is inconsistent. 3rd age pieces should follow the laddering logic, so a third age sword unlocks all sword under it, a 3rd bow unlocks all bows below it"; confirmed extending this to platebody/platelegs/plateskirt/kiteshield/full helm since matching ladders already existed; "also start wand and staff. For the armour/robes etc these should be in a ladder too for their respective slot" (tier data pending).
+
+---
+
+### DEC-0080 - Wands laddered by Magic level, including 3rd age wand
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Wands", lowest to highest by Magic level to wield (per OSRS Wiki): Beginner wand (45) < Apprentice wand (50) < Teacher wand (55) < Master wand (60) < Dragon hunter wand (65) < 3rd age wand (65) < Kodai wand (80). Uses the existing `weapon-ladder-down` rule via the `weapon` tag.
+
+Dragon hunter wand and 3rd age wand tie at 65 Magic - the maintainer rejected sharing one rung between them (screenshot flagged "never group items like this, they should be on their own row"), so each gets its own tier instead; Dragon hunter wand placed below 3rd age wand per the maintainer's tie-break call.
+
+Kodai wand is also a member of the Chambers of Xeric uniques `group` (DEC-0046) - `ladder-down` resolves before `group`, so foiling Kodai wand directly now goes through this ladder instead, same asymmetry already documented for Dragon axe/claws. Foiling any *other* CoX unique still correctly lists Kodai wand as one of Great Olm's drops.
+
+3rd age wand stays a factual member of the `third-age-mage` outfit group for now (harmless, since `ladder-down` resolves first - same deferred-pruning approach as DEC-0079) until the rest of that outfit's pieces (robes, mage hat, amulet) get their own ladders.
+
+**Source.** the maintainer, this session (2026-08-02): screenshot of the OSRS Wiki wands table (Beginner/Apprentice/Teacher/Master, and the "Other wands" table with Dragon hunter wand/3rd age wand/Kodai wand), asking me to find each wand's Magic level and ladder them accordingly. Levels confirmed via the OSRS Wiki: Beginner wand (45), Apprentice wand (50), Teacher wand (55), Master wand (60), Dragon hunter wand (65), 3rd age wand (65), Kodai wand (80). Then, after seeing the tied rung rendered: "never group items like this, they should be on their own row"; "Dragon hunter wand below, 3rd age wand above" to break the tie.
+
+---
+
+### DEC-0081 - Coif, vambraces, mage hat, and mage robe pieces laddered; 3rd age cloak and amulet made solo items
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Continues DEC-0079/0080's principle of laddering 3rd age gear by its real-world material/magic-bonus progression instead of grouping it into outfit sets.
+
+- **Coifs**: Coif < (Ancient/Armadyl/Bandos/Guthix/Saradomin/Zamorak coif, tied) < 3rd age range coif. Per the maintainer's correction - initially proposed as just Coif < 3rd age range coif (no god items), then broadened to include the god coifs after all.
+- **Vambraces**: (Leather/Spiky/Black spiky/Blue spiky/Green spiky/Red spiky vambraces, tied) < Green d'hide < Blue d'hide < Red d'hide < Black d'hide < 3rd age vambraces < Zaryte vambraces. Gilded d'hide vambraces and Hueycoatl hide vambraces checked against the Wiki and excluded - neither matches the Black d'hide/3rd age tier cleanly (Gilded is a distinct lower-power F2P variant; Hueycoatl is a lateral "same ranged bonus, different secondary stat" reskin, not clearly above or below).
+- **Mage hats**: (Black/Blue wizard hat, tied) < Mystic hat < (Infinity/Dark infinity/Light infinity hat, tied) < 3rd age mage hat. Ordered by Magic attack bonus per the OSRS Wiki (+2/+4/+6/+8).
+- **Mage robe tops**: Mystic robe top < (Infinity/Dark infinity/Light infinity top, tied) < 3rd age robe top. No wizard-tier robe top exists as a card in this dataset, so the ladder starts at Mystic.
+- **Mage robe bottoms**: (Black/Blue wizard robe, tied) < Mystic robe bottom < Infinity bottoms < 3rd age robe. Ordered by Magic attack bonus (+0/+15/+17/+19).
+
+All five use the existing `armour-ladder-down` rule via the `armour` tag.
+
+Ahrim's hood, Zuriel's hood, and Dagon'hai hat/robe pieces are excluded from the mage hat/robe ladders as boss/GWD-specific items, consistent with the "not god items" principle the maintainer set for these ladders.
+
+**3rd age cloak and 3rd age amulet are solo items** - no lower tier exists for either, and the maintainer confirmed they should not group with the rest of the outfit. Removed from the `third-age-melee` and `third-age-mage` outfit sets respectively so they resolve `unresolved` (self-only, per DEC-0061/0062) rather than through the group.
+
+**3rd age druidic cloak/robe bottoms/robe top/staff stay in the `third-age-druidic` outfit group as-is** - the maintainer confirmed "druidic can be left as a set," since 3rd age druidic staff has no Magic requirement at all (same stats as a Crozier) and there's no clean ladder for the druidic pieces to descend.
+
+`third-age-range` keeps 3rd age range coif and 3rd age vambraces as factual members even though they now ladder independently - harmless, since `ladder-down` resolves before `group` (same deferred-pruning approach as DEC-0079/0080). 3rd age range top and 3rd age range legs still have no ladder, so the group remains load-bearing for them.
+
+**Source.** the maintainer, this session (2026-08-02): "cloak, amulet solo, the rest unlock downwards but not god items like god dhide"; on coifs, "hmm maybe include god items then, so all god coifs below"; on vambraces, "all vambraces"; on the mage hat/robe proposal, "include all of those item[s]." OSRS Wiki, fetched 2026-08-02, for [Mystic hat](https://oldschool.runescape.wiki/w/Mystic_hat), [Magic armour](https://oldschool.runescape.wiki/w/Magic_armour) bonus tables, [3rd age vambraces](https://oldschool.runescape.wiki/w/3rd_age_vambraces), [Spiky vambraces](https://oldschool.runescape.wiki/w/Spiky_vambraces), [Zaryte vambraces](https://oldschool.runescape.wiki/w/Zaryte_vambraces), [Gilded d'hide vambraces](https://oldschool.runescape.wiki/w/Gilded_d%27hide_vambraces), [Hueycoatl hide vambraces](https://oldschool.runescape.wiki/w/Hueycoatl_hide_vambraces), [3rd age druidic staff](https://oldschool.runescape.wiki/w/3rd_age_druidic_staff).
+
+---
+
+### DEC-0082 - Tiaras laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Tiaras", lowest to highest by Crafting XP to make (per OSRS Wiki): Air (25) < Mind (27.5) < Water (30) < Earth (32.5) < Fire (35) < Body (37.5) < Cosmic (40) < Chaos (42.5) < Nature (45) < Law (47.5) < Death (50) < Blood (52.5) < Wrath (52.5). Uses the existing `resource-ladder-down` rule via the `resource` tag - a foil unlocks the wear verb on that tier and below; each tiara still needs a Tiara and the matching talisman to craft.
+
+Blood and Wrath tiara tie at 52.5 XP - the maintainer broke the tie with Blood below, Wrath above, each on its own rung (no shared rungs, per the standing "never group items like this" rule from DEC-0080).
+
+**Source.** the maintainer, this session (2026-08-02): "part of the runecrafting tiara ladder, unlocks ability to wear but still need respective items to craft" followed by the full Crafting XP/materials table for all 13 tiaras; "Blood below, Wrath above" for the tie-break.
+
+---
+
+### DEC-0083 - Bounty beaks grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Albatross beak, Frigatebird beak, Osprey beak, and Tern beak grouped flat - foiling any one unlocks all four. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks the other bounty beaks" with OSRS Wiki links to all four.
+
+---
+
+### DEC-0084 - Bounty feathers grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Albatross feather, Frigatebird feather, Osprey feather, and Tern feather grouped flat - foiling any one unlocks all four. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): OSRS Wiki links to all four bounty feathers.
+
+---
+
+### DEC-0085 - Alchemical hydra heads crafts grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Alchemical hydra heads, Hydra slayer helmet, and Stuffed hydra heads grouped flat - foiling any one unlocks the `craft` verb across all three. Hydra slayer helmet (i) is not a card in this dataset, so it's excluded.
+
+**Correction on the product-boundary caveat.** The first pass used the generic `community-set-group` rule, which let the engine's default product-boundary logic fire the generic "you get the action, not what it makes" caveat - misleading here, since both crafted results (Hydra slayer helmet, Stuffed hydra heads) are already inside this same unlock set, not separate cards still to pull. Fixed with a dedicated `hydra-heads-craft-group` rule (new `hydra-heads-craft` family tag) that sets `grants.productBoundary: false` to suppress the generic caveat, plus a targeted `annotate` override on Alchemical hydra heads stating the one genuinely external requirement: crafting the Hydra slayer helmet also needs a Slayer helmet, which is not part of this unlock and has no rule of its own yet.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks the slayer helm variants but still need the other items to craft them" with the crafting-requirements table for all three; then, after seeing the caveat rendered: "this isn't right for the alchemical hydra heads... Any of those means they're unlocked, the hydra slayer helm would still require the slayer helmet unlock."
+
+---
+
+### DEC-0086 - Mixology potions laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Mixology potions" (Mastering Mixology minigame), lowest to highest by Herblore level: Alco-augmentator < Mammoth-might mix < Liplack liquor (all three tied at level 60, ordered as the maintainer's table listed them, each on its own rung per the standing "never group items like this" rule) < Mystic mana amalgam (63) < Marley's moonlight (66) < Azure aura mix (69) < Aqualux amalgam (72) < Megalite liquid (75) < Anti-leech lotion (78) < Mixalot (81). Uses the existing `resource-ladder-down` rule via the `resource` tag.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks all mixology potions made in the minigame" with the full points/Herblore-level table for all 10.
+
+---
+
+### DEC-0087 - Teleport tablets laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Teleport tablets", lowest to highest by Construction level to make: Rimmington (1) < Taverley (10) < Pollnivneach (20) < Hosidius (25) < Rellekka (30) < Aldarin (35) < Brimhaven (40) < Yanille (50) < Prifddinas (70). Uses the existing `resource-ladder-down` rule via the `resource` tag. Trollheim teleport is not a card in this dataset, so it's excluded.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks tablets below in a tree" with the full Construction-level table for all 10 tablets.
+
+---
+
+### DEC-0088 - Ambrosia and related consumables grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Nectar, Ambrosia, Blessed crystal scarab, Liquid adrenaline, Silk dressing, Smelling salts, and Tears of elidinis grouped flat - foiling any one unlocks all seven. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks: nectar, ambrosia, blessed crystal scarabs, liquid adrenaline, silk dressings, smelling salts, and tears of Elidinis."
+
+---
+
+### DEC-0089 - Broad bolts laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Broad bolts": Broad bolts < Amethyst broad bolts. Uses the existing `weapon-ladder-down` rule via the `weapon` tag. Unfinished broad bolt pack/Unfinished broad bolts are a different (unfletched) state, not included here.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks broad bolts".
+
+---
+
+### DEC-0090 - Jewellery moulds grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Amulet mould, Bracelet mould, Holy mould, Necklace mould, Ring mould, Tiara mould, and Unholy mould grouped flat - foiling any one unlocks all seven. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks Amulet Bracelet Holy Necklace Ring Tiara Unholy".
+
+---
+
+### DEC-0091 - Fury amulets laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Fury amulets": Amulet of fury < Amulet of blood fury. Uses the existing `armour-ladder-down` rule via the `armour` tag.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks regular fury, laddered".
+
+---
+
+### DEC-0092 - Amulet of bounty added to the enchanted-jewellery composite model
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Amulet of bounty added as a `components` composite (whole = Amulet of bounty, parts = Opal amulet), same shape as the 27 existing enchanted-jewellery entries (DEC-0029/0033) which start at Sapphire tier - Opal/Jade/Red topaz tier items were never covered. No new rule needed; reuses `enchanted-jewellery-components`.
+
+This started as a broader proposal to rework all charged jewellery into an uncharged/charged/dose-count grouping. Checked against the dataset: no jewellery item here has separate cards per charge state (Amulet of glory, Ring of dueling, Combat bracelet, etc. are each a single card covering every charge level), so there is nothing for that rework to act on. The maintainer's concrete example (Amulet of bounty unlocking Opal amulet and itself) turned out to match the existing components shape exactly - just a coverage gap at the Opal tier, not a new mechanism. No other Opal/Jade/Red topaz enchanted items were named, so none were added speculatively.
+
+**Source.** the maintainer, this session (2026-08-02): "This type of item needs a rework. Jewellrey is technically a two 3 state item..."; after confirming no charge-state cards exist in this dataset, "so the amulet of bounty for example unlocks opal amulet and amulet of bounty. This applies to all jewellry that can be charged."
+
+---
+
+### DEC-0093 - Amulet of chemistry added to the enchanted-jewellery composite model
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Amulet of chemistry added as a `components` composite (whole = Amulet of chemistry, parts = Jade amulet), continuing DEC-0092's Opal/Jade-tier coverage. No new rule needed; reuses `enchanted-jewellery-components`.
+
+**Source.** the maintainer, this session (2026-08-02): "again this unlocks itself and jade amulet".
+
+---
+
+### DEC-0094 - Amulet of eternal glory added as its own branch, separate from the Dragonstone amulet chain
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Amulet of eternal glory added as a `components` composite (whole = Amulet of eternal glory, parts = Amulet of Glory), tagged `enchanted-jewellery` so it reuses the existing rule. Deliberately does **not** chain further to Dragonstone amulet - Amulet of Glory already has its own separate `enchanted-jewellery` composite (whole = Amulet of Glory, parts = Dragonstone amulet, DEC-0029/0033), and `components` unlocks only a whole's *named* parts, not a part's own composite transitively - so this stays correctly scoped without any extra work.
+
+An initial pass modeled this as a `ladder-down` family (Amulet of Glory < Amulet of eternal glory) instead, which would have been wrong: `ladder-down` resolves before `components` in the strategy order, so it would have silently hijacked every direct foil of Amulet of Glory away from its existing Dragonstone amulet unlock. Caught before landing and corrected to the composite shape.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks amulet of glory but not dragonstone amulet, this is its own branch".
+
+---
+
+### DEC-0095 - Amy's saw added as a one-way upgrade of the basic Saw
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `components` composite (whole = Amy's saw, parts = Saw), with a new `upgrade-tool` family tag and matching rule - foiling Amy's saw unlocks both, but foiling the plain Saw does not unlock Amy's saw, per the maintainer. This is a new small relationship shape (a rare tool upgrade of a basic one), reusable for similar one-way tool-upgrade cases later in the alphabetical pass.
+
+**Source.** the maintainer, this session (2026-08-02): "unlock regular saw but not the other way round".
+
+---
+
+### DEC-0096 - Amylase crystal grouped with Amylase pack
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Amylase crystal and Amylase pack grouped - foiling either unlocks both. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks amylase pack".
+
+---
+
+### DEC-0097 - Anchovy oil grouped with Anchovy paste
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Anchovy oil and Anchovy paste grouped - foiling either unlocks both. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks anchovy paste".
+
+---
+
+### DEC-0098 - Pizzas laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Pizzas", lowest to highest by Cooking level: Plain pizza (35) < Meat pizza (45) < Anchovy pizza (55) < Pineapple pizza (65). Uses the existing `resource-ladder-down` rule via the `resource` tag.
+
+**Source.** the maintainer, this session (2026-08-02): "part of a tree" with the full Cooking level/XP/topping table for all 4 pizzas.
+
+---
+
+### DEC-0099 - God blessings grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Holy, Unholy, Peaceful, Honourable, War, and Ancient blessing (Saradomin/Zamorak/Guthix/Armadyl/Bandos/Zaros) grouped flat - foiling any one unlocks all six. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "all god blessings" with the GE price/god table for all 6.
+
+---
+
+### DEC-0100 - Ancient blood ornament kit added, applying to all three Torva pieces
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `components` composite (whole = Ancient blood ornament kit, parts = Torva full helm, Torva platebody, Torva platelegs) - foiling any of the four unlocks all four. New `ornament-kit` family tag and matching rule, since this is a genuinely new relationship shape (an ornament kit applying to several base armour pieces at once) not covered by any existing rule.
+
+The crafted result (Sanguine torva full helm/platebody/platelegs) is **not** a card in this dataset, so it stays outside the unlock set and the product-boundary caveat fires generically ("whatever comes out is a separate card you still need to pull").
+
+**Source.** the maintainer, this session (2026-08-02): "ability to wear blood torva, still need normal torva to craft it"; then the full crafting-requirements table confirming the kit applies to all three Torva pieces and the correct name is "Sanguine torva," not "Blood torva."
+
+---
+
+### DEC-0101 - God bracers grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Ancient, Armadyl, Bandos, Guthix, Saradomin, and Zamorak bracers grouped flat - foiling any one unlocks all six. No metal-tier bracers exist in this dataset to ladder against, and the maintainer confirmed no order among the six gods. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks bracers below it"; when asked for the tier order, "no order just unlocks those bracers then I guess."
+
+---
+
+### DEC-0102 - God chaps grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Ancient, Armadyl, Bandos, Guthix, Saradomin, and Zamorak chaps grouped flat - foiling any one unlocks all six. Same shape as the god bracers (DEC-0101) - no metal-tier chaps ladder applies to these 6, and the maintainer confirmed no order among them. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "Group all 6 god chaps" (Recommended option).
+
+---
+
+### DEC-0103 - God cloaks grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Ancient, Armadyl, Bandos, Guthix, Saradomin, and Zamorak cloak grouped flat - foiling any one unlocks all six. Same shape as god bracers/chaps (DEC-0101/0102). Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "Group all 6 god cloaks" (Recommended option).
+
+---
+
+### DEC-0104 - God coifs split out of the coif ladder into their own flat group; God croziers grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.**
+
+- **Correction to DEC-0081**: the 6 god coifs (Ancient/Armadyl/Bandos/Guthix/Saradomin/Zamorak) are removed from the `coif` ladder and grouped flat instead - consistent with the god bracers/chaps/cloak treatment (DEC-0101-0103), since there's no real metal-tier relationship between the god coifs and the base Coif. The `coif` ladder now reads Coif < 3rd age range coif only.
+- **God croziers**: Ancient, Armadyl, Bandos, Guthix, Saradomin, and Zamorak crozier grouped flat, same shape.
+
+Both use the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "remove god coif from the coif tree and group all god coifs, yes group god croziers".
+
+---
+
+### DEC-0105 - Digsite unique artefacts grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Old symbol, Ancient symbol, Old coin, and Ancient coin grouped flat - foiling any one unlocks all four. Uses the existing `community-set-group` rule/tag. Clean necklace (also a unique Digsite find) is not a card in this dataset, so it's excluded. The much longer common/unremarkable finds table (Iron dagger, Bones, Coins, Broken arrow, Broken glass, Pottery, Jewellery, etc) is deliberately excluded - those are ordinary widespread drops, not Digsite-specific, per the "not common/shared drops" policy already established (DEC-0038/0040).
+
+**Source.** the maintainer, this session (2026-08-02): "unlocks group of artifacts" with the full Digsite uncleaned-finds drop table; confirmed scoping to just the unique finds.
+
+---
+
+### DEC-0106 - God d'hide bodies grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Ancient, Armadyl, Bandos, Guthix, Saradomin, and Zamorak d'hide body grouped flat - foiling any one unlocks all six. Same shape as the other god-item groups (DEC-0101-0104). Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "Group all god d'hide bodies" (Recommended option).
+
+---
+
+### DEC-0107 - God d'hide boots grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Ancient, Armadyl, Bandos, Guthix, Saradomin, and Zamorak d'hide boots grouped flat - foiling any one unlocks all six. Same shape as the other god-item groups. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "Group all god d'hide boots" (Recommended option).
+
+---
+
+### DEC-0108 - God d'hide shields grouped
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** Ancient, Armadyl, Bandos, Guthix, Saradomin, and Zamorak d'hide shield grouped flat - foiling any one unlocks all six. Same shape as the other god-item groups. Uses the existing `community-set-group` rule/tag.
+
+**Source.** the maintainer, this session (2026-08-02): "Group all god d'hide shields" (Recommended option).
+
+---
+
+### DEC-0109 - Ancient artefacts laddered
+
+**Status:** Active
+**Date:** 2026-08-02
+
+**Ruling.** New `ladder-down` family "Ancient artefacts", lowest to highest by coin value: Ancient emblem (500k) < Ancient totem (1M) < Ancient statuette (2M) < Ancient medallion (4M) < Ancient effigy (8M) < Ancient relic (16M). Uses the existing `resource-ladder-down` rule via the `resource` tag.
+
+**Source.** the maintainer, this session (2026-08-02): "laddered with the others" with the coins-given/GE-price table for all six artefacts.

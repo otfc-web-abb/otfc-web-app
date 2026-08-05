@@ -55,7 +55,7 @@ describe('the brief examples - downward unlocks', () => {
     const r = resolve('Rune full helm')
 
     assertNotUnlocked(r, 'Dragon full helm')
-    assert.deepEqual(excluded(r), ['Gilded full helm', 'Dragon full helm'])
+    assert.deepEqual(excluded(r), ['Gilded full helm', 'Dragon full helm', '3rd age full helmet'])
   })
 
   it('foil Mithril platebody stops at mithril', () => {
@@ -75,6 +75,7 @@ describe('the brief examples - downward unlocks', () => {
       'Rune platebody',
       'Gilded platebody',
       'Dragon platebody',
+      '3rd age platebody',
     ])
     assertNotUnlocked(r, 'Adamant platebody', 'Rune platebody')
   })
@@ -84,7 +85,7 @@ describe('the brief examples - downward unlocks', () => {
 
     assert.equal(r.strategy, 'ladder-down')
     assert.deepEqual(names(r), ['Bronze platelegs', 'Iron platelegs'])
-    assert.equal(r.excluded.length, 8)
+    assert.equal(r.excluded.length, 9)
     assertNotUnlocked(r, 'Steel platelegs', 'Rune platelegs')
   })
 })
@@ -186,7 +187,7 @@ describe('the bottom of a ladder', () => {
 
     assert.equal(r.strategy, 'ladder-down')
     assert.deepEqual(names(r), ['Bronze full helm'])
-    assert.equal(r.excluded.length, 9)
+    assert.equal(r.excluded.length, 10)
     assert.equal(excluded(r)[0], 'Iron full helm')
   })
 
@@ -455,10 +456,21 @@ describe('Phase 7 round 1 - named community sets, DEC-0013', () => {
   })
 
   it('3rd age splits into separate groups by combat style', () => {
-    const melee = resolve('3rd age platebody')
-    assert.equal(melee.strategy, 'group')
-    assert.ok(names(melee).includes('3rd age cloak'))
-    assertNotUnlocked(melee, '3rd age amulet', '3rd age vambraces', '3rd age axe')
+    // DEC-0079/0081: 3rd age platebody now has its own metal-tier ladder (Bronze..
+    // Dragon below it), which resolves before the range outfit group - the same
+    // asymmetry already documented for Dragon axe/claws. 3rd age range top has no
+    // ladder yet, so it still resolves through the range group. 3rd age cloak and
+    // amulet were removed from their outfit groups entirely and are solo items now.
+    const range = resolve('3rd age range top')
+    assert.equal(range.strategy, 'group')
+    assert.ok(names(range).includes('3rd age range legs'))
+    assertNotUnlocked(range, '3rd age amulet', '3rd age platebody', '3rd age axe')
+
+    const platebody = resolve('3rd age platebody')
+    assert.equal(platebody.strategy, 'ladder-down')
+
+    assert.equal(resolve('3rd age cloak').strategy, 'unresolved')
+    assert.equal(resolve('3rd age amulet').strategy, 'unresolved')
   })
 
   it('Elite void is its own group, separate from regular Void Knight equipment', () => {
@@ -814,17 +826,17 @@ describe('the sweep', () => {
       counts.set(s, (counts.get(s) ?? 0) + 1)
     }
 
-    assert.equal(counts.get('ladder-down'), 691)
+    assert.equal(counts.get('ladder-down'), 777)
     assert.equal(counts.get('state-pair'), 190)
-    assert.equal(counts.get('group'), 507)
-    assert.equal(counts.get('components'), 103)
-    assert.equal(counts.get('unresolved'), 4885)
+    assert.equal(counts.get('group'), 577)
+    assert.equal(counts.get('components'), 107)
+    assert.equal(counts.get('unresolved'), 4725)
     assert.equal(
       counts.get('ladder-down')! +
         counts.get('state-pair')! +
         counts.get('group')! +
         counts.get('components')!,
-      1491,
+      1651,
     )
   })
 })

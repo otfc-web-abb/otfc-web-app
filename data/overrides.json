@@ -1,4 +1,20 @@
 {
   "$schema": "./schema/overrides.schema.json",
-  "overrides": []
+  "overrides": [
+    {
+      "card": "Alchemical hydra heads",
+      "mode": "annotate",
+      "caveats": [
+        "Crafting the Hydra slayer helmet also needs a Slayer helmet, which is not part of this unlock."
+      ],
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Alchemical hydra heads crafts grouped",
+          "decision": "DEC-0085"
+        }
+      ]
+    }
+  ]
 }

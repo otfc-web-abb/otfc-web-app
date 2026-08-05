@@ -1089,6 +1089,7 @@ body.has-result #landing-root {
   overflow: hidden;
 }
 
+
 .ladder__rung {
   position: relative;
   display: grid;
@@ -1098,6 +1099,22 @@ body.has-result #landing-root {
   padding: var(--s2) var(--s3) var(--s2) 0;
   border-bottom: 1px solid rgb(0 0 0 / 0.45);
   border-left: 3px solid transparent;
+}
+
+/* The tier column sizes to the longest label in the ladder - 'Elemental' does not
+   fit a fixed 78px and used to wrap to two lines. Subgrid keeps every rung sharing
+   one track, so the rows still line up, and minmax(0, 1fr) absorbs the remainder
+   rather than widening the panel. */
+@supports (grid-template-columns: subgrid) {
+  .ladder__rungs {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+  }
+
+  .ladder__rung {
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+  }
 }
 
 .ladder__rung:last-child {
@@ -1126,7 +1143,7 @@ body.has-result #landing-root {
   text-transform: uppercase;
   color: var(--muted);
   text-shadow: var(--cut);
-  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 
 .ladder__members {

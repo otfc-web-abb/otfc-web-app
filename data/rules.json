@@ -275,6 +275,27 @@
       ]
     },
     {
+      "id": "hydra-heads-craft-group",
+      "strategy": "group",
+      "applies": {
+        "familyTags": [
+          "hydra-heads-craft"
+        ]
+      },
+      "grants": {
+        "productBoundary": false
+      },
+      "explanation": "A foil of Alchemical hydra heads, Hydra slayer helmet, or Stuffed hydra heads unlocks the craft verb across all three - the crafted results are already in this set, no separate card to chase.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Alchemical hydra heads crafts grouped",
+          "decision": "DEC-0085"
+        }
+      ]
+    },
+    {
       "id": "fire-cape-ladder-down",
       "strategy": "ladder-down",
       "applies": {
@@ -671,6 +692,42 @@
           "kind": "decision",
           "label": "Abyssal bludgeon added as an assembled-weapon composite",
           "decision": "DEC-0059"
+        }
+      ]
+    },
+    {
+      "id": "ornament-kit-components",
+      "strategy": "components",
+      "applies": {
+        "familyTags": [
+          "ornament-kit"
+        ]
+      },
+      "explanation": "A foil ornament kit unlocks itself and the base armour piece(s) it applies to. {card} covers {count} cards in total. The recoloured result is a separate card you still need to pull, if it exists at all.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Ancient blood ornament kit added, applying to all three Torva pieces",
+          "decision": "DEC-0100"
+        }
+      ]
+    },
+    {
+      "id": "upgrade-tool-components",
+      "strategy": "components",
+      "applies": {
+        "familyTags": [
+          "upgrade-tool"
+        ]
+      },
+      "explanation": "A foil upgraded tool unlocks itself and the basic tool it replaces, one-way - foiling the basic tool does not unlock the upgrade. {card} covers {count} cards in total.",
+      "confidence": "sourced",
+      "sources": [
+        {
+          "kind": "decision",
+          "label": "Amy's saw added as a one-way upgrade of the basic Saw",
+          "decision": "DEC-0095"
         }
       ]
     },
